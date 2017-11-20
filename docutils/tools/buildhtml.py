@@ -216,7 +216,7 @@ class Builder:
                     # Modify in place!
                     del names[i]
         for name in names:
-            if name.endswith('.txt'):
+            if name.endswith('.txt') or name.endswith('.rst'):
                 self.process_txt(directory, name)
 
     def process_txt(self, directory, name):

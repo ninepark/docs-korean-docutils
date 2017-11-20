@@ -1,66 +1,93 @@
-﻿=================================
-PEP 257 -- Docstring Conventions
-=================================
-:PEP: 257
-:버전: $Revision$
-:마지막-수정: $Date$
-:저자: David Goodger <goodger@python.org>, Guido van Rossum <guido@python.org>
-:토론-연락: doc-sig@python.org
-:상태: Active
-:유형: Informational
-:정보-유형: text/x-rst
-:생성날짜: 29-May-2001
-:포스팅-날짜: 13-Jun-2001
+PEP: 257
+Title: Docstring Conventions
+Version: $Revision$
+Last-Modified: $Date$
+Authors: David Goodger <goodger@python.org>,
+         Guido van Rossum <guido@python.org>
+Discussions-To: doc-sig@python.org
+Status: Active
+Type: Informational
+Content-Type: text/x-rst
+Created: 29-May-2001
+Post-History: 13-Jun-2001
 
-.. contents::
 
-개요
+Abstract
 ========
 
-이 PEP는 Python docstring의 semantics와 규약에 대해 서술한다.
+This PEP documents the semantics and conventions associated with
+Python docstrings.
 
 
-근거
-===========
+Rationale
+=========
 
-이 PEP의 목표는 docstring의 high-level 구조를 표준화하는 것이다. 이 PEP는 syntax가 아닌 규약만을 포함한다.
+The aim of this PEP is to standardize the high-level structure of
+docstrings: what they should contain, and how to say it (without
+touching on any markup syntax within docstrings).  The PEP contains
+conventions, not laws or syntax.
 
-    
+    "A universal convention supplies all of maintainability, clarity,
+    consistency, and a foundation for good programming habits too.
+    What it doesn't do is insist that you follow it against your will.
+    That's Python!"
 
-    
+    -- Tim Peters on comp.lang.python, 2001-06-16
 
-이 규약을 어기더라도 큰 문제는 되지 않지만, 일부 소프트웨어(Docutils_ docstring processing system [1]_ [2]_)는 규약을 알고 있기 때문에 가급적 지키는게 좋다.
+If you violate these conventions, the worst you'll get is some dirty
+looks.  But some software (such as the Docutils_ docstring processing
+system [1]_ [2]_) will be aware of the conventions, so following them
+will get you the best results.
 
 
-상세
+Specification
 =============
 
-Docstring이란 무엇인가?
-------------------------------------
-
-Docstring은 module, function, class, method 내에 첫 번째로 오는 string literal이다. 그러한 docstring은 그 객체의 ``__doc__`` 특수 속성이 된다.
-
-모든 module, function, class는 일반적으로 docstring이 있어야 하며 public method(``__init__`` constructor 포함)에도 docstring은 있어야 한다. Package 또한 package directory에 있는 ``__init __.py`` 파일의 module docstring에 의해 documentation이 가능하다.
-
-Python 코드 다른 곳에서의 string literal 또한 documentation으로 이용 될 수 있다. 이들은 Python bytecode compiler에 의해 인식되지 않고 runtime 객체 속성으로는 접근 할 수 없다 (즉 ``__doc__`` 에 할당되지 않는다). 하지만 소프트웨어 도구에 의해 두 종류의 docstring 추출이 가능하다.
-
-1. Module, class, ``__init__`` method 선언 직후에 오는 string literal은 "속성(attribute) docstring"이라고 한다.
-
-2. 다른 docstring 바로 뒤에 오는 string literal은 "추가(additional) docstring"이라고 한다.
-
-속성 및 추가 docstring에 대한 자세한 설명은 PEP 258, "Docutils Design Specification"[2]_ 을 참조한다.
-
-
-
-일관성을 위해 docstring은 항상 ``"""triple double quotes"""`` 를 사용한다. Docstring에서 backslash를 사용한다면 ``r"""raw triple double quotes"""`` 를 사용한다. Unicode docstring의 경우, ``u"""unicode triple-quoted string"""`` 을 사용한다.
-
-Docstring에는 one-line과 multi-line으로 된 두 가지 형식이 있다.
-
-
-One-line Docstring
+What is a Docstring?
 --------------------
 
-One-line docstring은 한줄에 전부 들어가야 한다. 예::
+A docstring is a string literal that occurs as the first statement in
+a module, function, class, or method definition.  Such a docstring
+becomes the ``__doc__`` special attribute of that object.
+
+All modules should normally have docstrings, and all functions and
+classes exported by a module should also have docstrings.  Public
+methods (including the ``__init__`` constructor) should also have
+docstrings.  A package may be documented in the module docstring of
+the ``__init__.py`` file in the package directory.
+
+String literals occurring elsewhere in Python code may also act as
+documentation.  They are not recognized by the Python bytecode
+compiler and are not accessible as runtime object attributes (i.e. not
+assigned to ``__doc__``), but two types of extra docstrings may be
+extracted by software tools:
+
+1. String literals occurring immediately after a simple assignment at
+   the top level of a module, class, or ``__init__`` method are called
+   "attribute docstrings".
+
+2. String literals occurring immediately after another docstring are
+   called "additional docstrings".
+
+Please see PEP 258, "Docutils Design Specification" [2]_, for a
+detailed description of attribute and additional docstrings.
+
+XXX Mention docstrings of 2.2 properties.
+
+For consistency, always use ``"""triple double quotes"""`` around
+docstrings.  Use ``r"""raw triple double quotes"""`` if you use any
+backslashes in your docstrings.  For Unicode docstrings, use
+``u"""Unicode triple-quoted strings"""``.
+
+There are two forms of docstrings: one-liners and multi-line
+docstrings.
+
+
+One-line Docstrings
+--------------------
+
+One-liners are for really obvious cases.  They should really fit on
+one line.  For example::
 
     def kos_root():
         """Return the pathname of the KOS root directory."""
@@ -68,47 +95,105 @@ One-line docstring은 한줄에 전부 들어가야 한다. 예::
         if _kos_root: return _kos_root
         ...
 
-노트:
+Notes:
 
-- 심지어 한줄 안에 다 들어가더라도 확장성을 생각하여 triple quote가 쓰인다.
+- Triple quotes are used even though the string fits on one line.
+  This makes it easy to later expand it.
 
-- One-line docstring에서는 closing quote와 opening quote가 같은 줄에 있는게 보기 더 좋다.
+- The closing quotes are on the same line as the opening quotes.  This
+  looks better for one-liners.
 
-- Docstring 앞뒤에 blank line이 없다.
+- There's no blank line either before or after the docstring.
 
-- Docstring은 function이나 method의 기능을 설명하는 마침표로 끝나는 문장이다.
+- The docstring is a phrase ending in a period.  It prescribes the
+  function or method's effect as a command ("Do this", "Return that"),
+  not as a description; e.g. don't write "Returns the pathname ...".
 
-- One-line docstring은 function, method의 parameter를 알려주는 "서명"이 되어서는 안된다. 즉, 다음과 같이 하면 안된다::
+- The one-line docstring should NOT be a "signature" reiterating the
+  function/method parameters (which can be obtained by introspection).
+  Don't do::
 
       def function(a, b):
           """function(a, b) -> list"""
 
-  이런 종류의 docstring은 introspection이 불가한 C function에나 적합하다. Introspection으로 *return value* 는 알 수 없으므로 언급하는게 좋다. 따라서 위 예시는 다음과 같이 쓰는게 좋다::
+  This type of docstring is only appropriate for C functions (such as
+  built-ins), where introspection is not possible.  However, the
+  nature of the *return value* cannot be determined by introspection,
+  so it should be mentioned.  The preferred form for such a docstring
+  would be something like::
 
       def function(a, b):
           """Do X and return a list."""
 
-  
+  (Of course "Do X" should be replaced by a useful description!)
 
 
-Multi-line Docstring
+Multi-line Docstrings
 ----------------------
 
-Multi-line docstring은 우선 요약줄이 오고, 그 다음 blank line이 오며, 그 이후 보다 자세한 설명이 이어진다. 요약줄은 automatic indexing tool에서 사용 가능하다. 요약줄은 한줄 안에 들어가야 하고 나머지 내용과는 blank line으로 분리되어야 한다. 요약줄은 opening quote와 같은 줄에 있을 수도 있고 다음 줄에 있을 수도 있다. 전체 docstring은 첫번째 줄의 quote와 똑같이 indent를 한다 (아래 예제 참조).
+Multi-line docstrings consist of a summary line just like a one-line
+docstring, followed by a blank line, followed by a more elaborate
+description.  The summary line may be used by automatic indexing
+tools; it is important that it fits on one line and is separated from
+the rest of the docstring by a blank line.  The summary line may be on
+the same line as the opening quotes or on the next line.  The entire
+docstring is indented the same as the quotes at its first line (see
+example below).
 
-모든 class의 docstring에는 앞뒤로 blank line이 있어야 한다. 이는 Python에서 class의 스타일에 부합하는 형식이다. Function이나 method의 docstring에는 이러한 요구사항이 있지는 않으나, 만약 function이나 method 내부가 blank line을 이용한 부분들로 구분되어 있다면 거기에 맞춰 function이나 method의 docstring에도 앞뒤로 blank line을 넣는게 좋다.
+Insert a blank line before and after all docstrings (one-line or
+multi-line) that document a class -- generally speaking, the class's
+methods are separated from each other by a single blank line, and the
+docstring needs to be offset from the first method by a blank line;
+for symmetry, put a blank line between the class header and the
+docstring.  Docstrings documenting functions or methods generally
+don't have this requirement, unless the function or method's body is
+written as a number of blank-line separated sections -- in this case,
+treat the docstring as another section, and precede it with a blank
+line.
 
-Script의 docstring은 올바르지 않게 또는 "-h"(help) 옵션과 함께 호출 되었을 때 인쇄되는 "사용법" 메시지로 쓰여야 한다. 이러한 docstring은 script의 기능과 명령어 syntax, environment variable 및 파일을 설명해야 한다. 사용법 메시지는 정교할 수도 있고 아니면 모든 옵션과 argument에 대한 간단한 참조만 될 수도 있다.
+The docstring of a script (a stand-alone program) should be usable as
+its "usage" message, printed when the script is invoked with incorrect
+or missing arguments (or perhaps with a "-h" option, for "help").
+Such a docstring should document the script's function and command
+line syntax, environment variables, and files.  Usage messages can be
+fairly elaborate (several screens full) and should be sufficient for a
+new user to use the command properly, as well as a complete quick
+reference to all options and arguments for the sophisticated user.
 
-Module의 docstring은 일반적으로 전달되는 module의 모든 class, exception, function을 각각 한줄로 요약하여 나열해야 한다. Package의 docstring (즉, 패키지의 ``__init __.py`` module의 docstring)은 package 내부의 module과 subpackage도 나열해야 한다 .
+The docstring for a module should generally list the classes,
+exceptions and functions (and any other objects) that are exported by
+the module, with a one-line summary of each.  (These summaries
+generally give less detail than the summary line in the object's
+docstring.)  The docstring for a package (i.e., the docstring of the
+package's ``__init__.py`` module) should also list the modules and
+subpackages exported by the package.
 
-Function, method의 docstring은 그 동작을 요약하고 argument, return value, exception 등을 설명해야 한다. Optional argument와 keyword argument 또한 표시해야 한다.
+The docstring for a function or method should summarize its behavior
+and document its arguments, return value(s), side effects, exceptions
+raised, and restrictions on when it can be called (all if applicable).
+Optional arguments should be indicated.  It should be documented
+whether keyword arguments are part of the interface.
 
-Class의 docstring은 그 동작을 요약하고 public method와 instance variable을 나열해야 한다. Class가 subclass에 의해 쓰이고 subclass에 대한 추가 interface가 있는 경우 이 interface는 별도로 docstring 내부에 나열되어야 한다. Class constructor는 ``__init__`` method의 docstring에 의해 문서화되어야 한다. 개별 method는 자신의 docstring에 의해 문서화되어야 한다.
+The docstring for a class should summarize its behavior and list the
+public methods and instance variables.  If the class is intended to be
+subclassed, and has an additional interface for subclasses, this
+interface should be listed separately (in the docstring).  The class
+constructor should be documented in the docstring for its ``__init__``
+method.  Individual methods should be documented by their own
+docstring.
 
-Class가 subclass로 다른 class의 동작 대부분을 상속하는 경우, docstring에서 이를 언급하고 차이점을 요약해야 한다. Subclass method가 superclass method를 대체하여 superclass method를 호출하지 않을 경우 "override"라는 표현을 사용하며, subclass method가 자체 동작 외에도 superclass method를 추가적으로 호출한다면 "extend"라는 표현을 사용한다.
+If a class subclasses another class and its behavior is mostly
+inherited from that class, its docstring should mention this and
+summarize the differences.  Use the verb "override" to indicate that a
+subclass method replaces a superclass method and does not call the
+superclass method; use the verb "extend" to indicate that a subclass
+method calls the superclass method (in addition to its own behavior).
 
-대문자로 function 또는 method의 argument를 언급하는 Emacs 규약을 *사용하여선 안된다*. Python은 대소문자를 구별하기 때문에 docstring은 올바른 argument 이름을 사용해야 한다. 각 argument는 별도의 개별행에 나열하는 것이 좋다. 예를 들면::
+*Do not* use the Emacs convention of mentioning the arguments of
+functions or methods in upper case in running text.  Python is case
+sensitive and the argument names can be used for keyword arguments, so
+the docstring should document the correct argument names.  It is best
+to list each argument on a separate line.  For example::
 
     def complex(real=0.0, imag=0.0):
         """Form a complex number.
@@ -121,15 +206,25 @@ Class가 subclass로 다른 class의 동작 대부분을 상속하는 경우, do
         if imag == 0.0 and real == 0.0: return complex_zero
         ...
 
-BDFL [3]_ 은 multi-line docstring의 마지막 단락과 closing quote 사이에 blank line을 삽입하는 것을 권장한다. 이렇게 하면 Emacs의 ``fill-paragraph`` 명령을 사용할 수 있다.
+The BDFL [3]_ recommends inserting a blank line between the last
+paragraph in a multi-line docstring and its closing quotes, placing
+the closing quotes on a line by themselves.  This way, Emacs'
+``fill-paragraph`` command can be used on it.
 
 
-Docstring의 Indent 처리
+Handling Docstring Indentation
 ------------------------------
 
-Docstring 처리 도구는 두번째 줄 이후의 모든 non-blank line에서 제일 적은 indent와 같은 크기로 indent를 일정하게 제거한다. 첫 줄에 있는 indent는 무조건 제거된다. 이후 줄에 대한 상대적 indent는 유지된다. Blank line은 docstring 시작과 끝에서 제거되어야 한다.
+Docstring processing tools will strip a uniform amount of indentation
+from the second and further lines of the docstring, equal to the
+minimum indentation of all non-blank lines after the first line.  Any
+indentation in the first line of the docstring (i.e., up to the first
+newline) is insignificant and removed.  Relative indentation of later
+lines in the docstring is retained.  Blank lines should be removed
+from the beginning and end of the docstring.
 
-코드로 된 정확한 알고리즘 구현은 다음과 같다::
+Since code is much more precise than words, here is an implementation
+of the algorithm::
 
     def trim(docstring):
         if not docstring:
@@ -156,14 +251,15 @@ Docstring 처리 도구는 두번째 줄 이후의 모든 non-blank line에서 �
         # Return a single string:
         return '\n'.join(trimmed)
 
-다음 예제의 docstring에서는 두개의 newline 문자를 포함해서 세줄 길이이다. 첫번째 줄과 마지막 줄은 비어 있다::
+The docstring in this example contains two newline characters and is
+therefore 3 lines long.  The first and last lines are blank::
 
     def foo():
         """
         This is the second line of the docstring.
         """
 
-설명::
+To illustrate::
 
     >>> print repr(foo.__doc__)
     '\n    This is the second line of the docstring.\n    '
@@ -172,7 +268,7 @@ Docstring 처리 도구는 두번째 줄 이후의 모든 non-blank line에서 �
     >>> trim(foo.__doc__)
     'This is the second line of the docstring.'
 
-다듬어진 이후에 다음 docstring들은 동등하다::
+Once trimmed, these docstrings are equivalent::
 
     def foo():
         """A multi-line
@@ -186,8 +282,8 @@ Docstring 처리 도구는 두번째 줄 이후의 모든 non-blank line에서 �
         """
 
 
-참고 문헌 및 각주
-======================
+References and Footnotes
+========================
 
 .. [1] PEP 256, Docstring Processing System Framework, Goodger
    (http://www.python.org/peps/pep-0256.html)
@@ -206,18 +302,20 @@ Docstring 처리 도구는 두번째 줄 이후의 모든 non-blank line에서 �
 .. _Doc-SIG: http://www.python.org/sigs/doc-sig/
 
 
-저작권
+Copyright
 =========
 
-이 문서는 공개 도메인에 속한다.
+This document has been placed in the public domain.
 
 
-감사 인사
+Acknowledgements
 ================
 
-"상세" 텍스트는 Guido van Rossum의 `Python Style Guide`_ 에세이에서 거의 그대로 가져왔습니다.
+The "Specification" text comes mostly verbatim from the `Python Style
+Guide`_ essay by Guido van Rossum.
 
-이 문서는 Python Doc-SIG_ 의 아카이브에서의 아이디어를 차용했습니다.
+This document borrows ideas from the archives of the Python Doc-SIG_.
+Thanks to all members past and present.
 
 
 
