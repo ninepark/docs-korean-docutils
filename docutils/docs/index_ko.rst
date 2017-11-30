@@ -214,7 +214,7 @@ Docutils-general:
 * `Plan for Enthought API Documentation Tool <dev/enthought-plan.html>`_
 * `Enthought API Documentation Tool RFP <dev/enthought-rfp.html>`_
 
-reStructuredText_:
+리스트럭처드텍스트_:
 
 * `A Record of reStructuredText Syntax Alternatives
   <dev/rst/alternatives.html>`__
