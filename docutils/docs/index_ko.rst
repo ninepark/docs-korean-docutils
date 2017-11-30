@@ -2,14 +2,13 @@
  Docutils_ Project 도큐먼테이션 개요
 ==========================================
 
-:Author: David Goodger
+:Author: 데이비드 굿저(David Goodger)
 :Contact: docutils-develop@lists.sourceforge.net
 :Date: $Date$
 :Revision: $Revision$
-:Copyright: This document has been placed in the public domain.
+:Copyright: 이 문서는 퍼블릭 도메인에 속한다.
 
-The latest working documents may be accessed individually below, or
-from the ``docs`` directory of the `Docutils distribution`_.
+이 문서의 가장 최신 버전은 아래의 `Docutils distribution`_ 의 ``docs`` 디렉토리나 아래의 개별 링크에서 구할 수 있다.
 
 .. _Docutils: http://docutils.sourceforge.net/
 .. _Docutils distribution: http://docutils.sourceforge.net/#download
@@ -17,60 +16,56 @@ from the ``docs`` directory of the `Docutils distribution`_.
 .. contents::
 
 
-Docutils Stakeholders
+독유틸즈 관련자
 =====================
 
-Docutils stakeholders can be categorized in several groups:
+독유틸즈 관련자는 몇 가지 그룹으로 나뉜다.
 
-1. End-users: users of reStructuredText and the Docutils tools.
-   Although some are developers (e.g. Python developers utilizing
-   reStructuredText for docstrings in their source), many are not.
+1. 최종 사용자: 리스트럭처드텍스트(reStructuredTest)와 독유틸즈 도구를 사용하는 사람들.
+   일부 개발자(소스코드에서 독스트링을 위해 리스트럭처드텍스트를 사용하는 파이썬 개발자)가 해당되며 대부분은 최종 사용자가 아니다.
 
-2. Client-developers: developers using Docutils as a library,
-   programmers developing *with* Docutils.
+2. 클라이언트 개발자: 독유틸즈를 라이브러리로 사용하는 개발자 혹은 독유틸즈를 (도구로) 사용하여 개발하는 개발자.
 
-3. Component-developers: those who implement application-specific
-   components, directives, and/or roles, separately from Docutils.
+3. 컴포넌트 개발자: 특정 응용프로그램을 위한 독유틸즈 컴포넌트, 지시자(directives), 역할자(roles) 등을 개발하는 사람.
 
-4. Core-developers: developers of the Docutils codebase and
-   participants in the Docutils project community.
+4. 핵심 개발자: 독유틸즈 코드 자체를 개발하고 독유틸즈 프로젝트 커뮤니티에 참여하는 사람.
 
-5. Re-implementers: developers of alternate implementations of
-   Docutils.
+5. 재구현자(re-implementers): 독유틸즈의 다른 구현(implementation)을 만드는 개발자.
 
-There's a lot of overlap between these groups.  Most (perhaps all)
-core-developers, component-developers, client-developers, and
-re-implementers are also end-users.  Core-developers are also
-client-developers, and may also be component-developers in other
-projects.  Component-developers are also client-developers.
+이 그룹들은 겹칠수 있다.
+(다는 아니라도) 대부분의 핵심 개발자와 컴포넌트 개발자, 클라이어트 개발자, 그리고 재구현자는 최종 사용자이기도 하다.
+핵심 개발자는 클라이언트 개발자일 수도 있고 다른 프로젝트의 컴포넌트 개발자일 수도 있다.
+컴포넌트 개발자도 클라이언트 개발자 일 수 있다.
 
 
-Project Fundamentals
+프로젝트 핵심
 ====================
 
-These files are for all Docutils stakeholders.  They are kept at the
-top level of the Docutils project directory.
+이 파일들은 모든 독유틸즈 관련자에게 필요하다.
+이 파일들은 독유틸즈 프로젝트 디렉토리의 최상단에 있다.
 
-:README.txt_: Project overview: quick-start, requirements,
-              installation, and usage.
-:COPYING.txt_: Conditions for Docutils redistribution, with links to
-               licenses.
-:FAQ.txt_: Docutils Frequently Asked Questions.  If you have a
-           question or issue, there's a good chance it's already
-           answered here.
-:BUGS.txt_: A list of known bugs, and how to report a bug.
-:RELEASE-NOTES.txt_: Summary of the major changes in recent releases.
-:HISTORY.txt_: Detailed change history log.
-:THANKS.txt_: Acknowledgements.
+(역주. 파일의 이름과 확장자는 편의를 위해 변경하였다.)
 
-.. _README.txt: ../README.html
-.. _BUGS.txt: ../BUGS.html
-.. _COPYING.txt: ../COPYING.html
+:README_ko.rst_: 프로젝트 개요: 간단한 지침서, 필요사항과 설치방법, 그리고 사용법
+
+:COPYING_ko.rst_: 독유틸즈 재배포 조건. 라이선스와 링크.
+
+:FAQ_ko.rst_: 독유틸즈에 관련하여 자주 물어보는 질문들.
+              만약 질문이나 이슈가 있으면 여기에 이미 대답이 있을 가능성이 높다.
+
+:BUGS_ko.rst_: 알려진 버그 목록과 버그를 보고하는 방법.
+:RELEASE-NOTES_ko.rst_: 최근 배포판의 중요한 변화 요약.
+:HISTORY_ko.rst_: 상세 변화 기록 로그.
+:THANKS_ko.rst_: 감사의 글.
+
+.. _README_ko.rst: ../README_ko.html
+.. _BUGS_ko.rst: ../BUGS_ko.html
+.. _COPYING_ko.rst: ../COPYING_ko.html
 .. _Docutils FAQ:
-.. _FAQ.txt: ../FAQ.html
-.. _RELEASE-NOTES.txt: ../RELEASE-NOTES.html
-.. _HISTORY.txt: ../HISTORY.html
-.. _THANKS.txt: ../THANKS.html
+.. _FAQ_ko.rst: ../FAQ_ko.html
+.. _RELEASE-NOTES_ko.rst: ../RELEASE-NOTES_ko.html
+.. _HISTORY_ko.rst: ../HISTORY_ko.html
+.. _THANKS_ko.rst: ../THANKS_ko.html
 
 
 .. _user:
@@ -128,7 +123,7 @@ reference for any Docutils developer.
 reStructuredText_:
 
 * `reStructuredText 소개 <ref/rst/introduction_ko.html>`__
-  (`목표 <ref/rst/introduction_ko.html#목표>`__\ 와 
+  (`목표 <ref/rst/introduction_ko.html#목표>`__\ 와
   `reStructuredText 이력 <ref/rst/introduction_ko.html#이력>`__ 포함)
 * `reStructuredText 마크업 설명서 <ref/rst/restructuredtext_ko.html>`__
 * `reStructuredText 명령어 <ref/rst/directives_ko.html>`__
