@@ -70,40 +70,39 @@
 
 .. _user:
 
-``user/``: Introductory & Tutorial Material for End-Users
-=========================================================
+``user/``: 최종 사용자를 위한 소개와 입문용 자료
+=========================================================================
 
-Docutils-general:
+독유틸즈 일반:
 
-* `Docutils Front-End Tools <user/tools.html>`__
-* `Docutils Configuration <user/config.html>`__
-* `Docutils Mailing Lists <user/mailing-lists.html>`__
-* `Docutils Link List <user/links.html>`__
+* `독유틸즈 프론트엔드 도구 <user/tools.html>`__
+* `독유틸즈 설정 <user/config.html>`__
+* `독유틸즈 메일링 리스트 <user/mailing-lists.html>`__
+* `독유틸즈 링크 목록 <user/links.html>`__
 
-Writer-specific:
+문서 작셩자용:
 
-* `Docutils HTML writers <user/html.html>`__
-* `Easy Slide Shows With reStructuredText & S5 <user/slide-shows.html>`__
-* `Docutils LaTeX Writer <user/latex.html>`__
-* `Docutils ODF/OpenOffice/odt Writer <user/odt.html>`__
+* `독유틸즈로 HTML 작성 <user/html.html>`__
+* `리스트럭처드텍스트와 S5로 쉽게 슬라이드 쇼를 만드는 법 <user/slide-shows.html>`__
+* `독유틸즈로 레이텍(LaTeX) 작성 <user/latex.html>`__
+* `독유틸즈로 ODF/OpenOffice/odt 작성 <user/odt.html>`__
 
-`reStructuredText <http://docutils.sourceforge.net/rst.html>`_:
+`리스트럭처드텍스트 <http://docutils.sourceforge.net/rst.html>`_:
 
-* `ReStructuredText 입문 (HTML) <user/rst/quickstart_ko.html>`__ (또는
-  `텍스트 소스 <user/rst/quickstart_ko.txt>`__)
-* `빠른 reStructuredText <user/rst/quickref_ko.html>`__ (사용자 레퍼런스)
-* `reStructuredText 치트 시트 <user/rst/cheatsheet_ko.txt>`__ (텍스트; 신택스 1 페이지, 명령어 & 역할 레퍼런스 1페이지)
-* `reStructuredText 데모 <user/rst/demo_ko.html>`_ (reStructuredText의 대부분 기능에 대한 데모; `텍스트 소스 <user/rst/demo_ko.txt>`__\ 를 참고할 수도 있다.)
+* `리스트럭처드텍스트 입문 (HTML) <user/rst/quickstart_ko.html>`__ (또는 `텍스트 소스 <user/rst/quickstart_ko.txt>`__)
+* `리스트럭처드텍스트 간단 참고서 <user/rst/quickref_ko.html>`__ (사용자 레퍼런스)
+* `리스트럭처드텍스트 치트시트 <user/rst/cheatsheet_ko.txt>`__ (텍스트; 신택스 1 페이지, 명령어 & 역할 레퍼런스 1페이지)
+* `리스트럭처드텍스트 데모 <user/rst/demo_ko.html>`_ (리스트럭처드텍스트의 기능에 대부분에 대한 데모; `텍스트 소스 <user/rst/demo_ko.txt>`__\ 를 참고할 수도 있다.)
 
-Editor support:
+에디터 지원:
 
-* `Emacs support for reStructuredText <user/emacs.html>`_
+* `이맥스(Emacs)의 리스트럭처드텍스트 지원 <user/emacs.html>`_
 
 
 .. _ref:
 
-``ref/``: Reference Material for All Groups
-===========================================
+``ref/``: 모든 사용자를 위한 참고 자료
+=====================================================================
 
 Many of these files began as developer specifications, but now that
 they're mature and used by end-users and client-developers, they have
@@ -139,7 +138,7 @@ Prehistoric:
 
 .. _peps:
 
-``peps/``: Python Enhancement Proposals
+``peps/``: 파이썬 개선 제안서
 =======================================
 
 * `PEP 256: Docstring Processing System Framework`__ is a high-level
@@ -169,8 +168,8 @@ __ http://www.python.org/peps/pep-0287.html
 
 .. _api:
 
-``api/``: API Reference Material for Client-Developers
-======================================================
+``api/``: 클라이언트 개발자를 위한 API 참고서
+================================================================
 
 * `The Docutils Publisher <api/publisher.html>`__
 * `Inside A Docutils Command-Line Front-End Tool <api/cmdline-tool.html>`__
@@ -182,8 +181,8 @@ __ http://www.python.org/peps/pep-0287.html
 
 .. _howto:
 
-``howto/``: Instructions for Developers
-=======================================
+``howto/``: 개발자를 위한 지침서
+================================================================
 
 * **Security:** `Deploying Docutils Securely <howto/security.html>`__
 * `Writing HTML (CSS) Stylesheets for Docutils
@@ -196,8 +195,8 @@ __ http://www.python.org/peps/pep-0287.html
 
 .. _dev:
 
-``dev/``: Development Notes and Plans for Core-Developers
-=========================================================
+``dev/``: 핵심 개발자를 위한 개발시 주의 사항과 계획
+=======================================================================
 
 Docutils-general:
 

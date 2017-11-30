@@ -1,4 +1,6 @@
-
+# current git branch must be `docs-korean`
+git add . -A
+git commit -m "edit"
 git checkout -B gh-pages
 git rebase docs-korean
 touch .nojekyll
