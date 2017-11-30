@@ -119,7 +119,7 @@ Docutils-general:
 Although not in the "ref" directory, `PEP 258`_ is a must-read
 reference for any Docutils developer.
 
-reStructuredText_:
+리스트럭처드텍스트_:
 
 * `reStructuredText 소개 <ref/rst/introduction_ko.html>`__
   (`목표 <ref/rst/introduction_ko.html#목표>`__\ 와
