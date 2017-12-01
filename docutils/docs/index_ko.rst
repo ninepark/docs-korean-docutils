@@ -1,5 +1,5 @@
 ==============================================
- 독유틸즈_ 프로젝트 문서 개요
+ 독유틸즈_\ (docutils) 프로젝트 문서 개요
 ==============================================
 
 :저자: 데이비드 굿저(David Goodger)
@@ -87,7 +87,7 @@
 * `독유틸즈로 레이텍(LaTeX) 작성 <user/latex.html>`__
 * `독유틸즈로 ODF/OpenOffice/odt 작성 <user/odt.html>`__
 
-`리스트럭처드텍스트 <https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html>`_:
+`리스트럭처드텍스트(reStructuredTest) <https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html>`_:
 
 * `리스트럭처드텍스트 입문 (HTML) <user/rst/quickstart_ko.html>`__ (또는 `텍스트 소스 <user/rst/quickstart_ko.txt>`__)
 * `리스트럭처드텍스트 간단 참고서 <user/rst/quickref_ko.html>`__ (사용자 레퍼런스)
