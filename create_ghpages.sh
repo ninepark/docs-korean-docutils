@@ -8,10 +8,11 @@ git rebase docs-korean
 
 touch .nojekyll
 
-cd docutils
-tools/buildhtml.py . ../web --config=tools/docutils.conf
-
+cd docutils/tools
+cp ../docutils/writers/html4css1/html4css1.css ..
+./buildhtml.py .. ../../web --config=tools/docutils.conf --stylesheet-path=../html4css1.css ..
 cd ..
+
 git add . -A
 git commit -m "build"
 git push -f origin gh-pages
