@@ -11,7 +11,7 @@ touch .nojekyll
 cd docutils/tools
 cp ../docutils/writers/html4css1/html4css1.css ..
 ./buildhtml.py .. ../../web --config=tools/docutils.conf --stylesheet-path=../html4css1.css ..
-cd ..
+cd ../..
 
 git add . -A
 git commit -m "build"
