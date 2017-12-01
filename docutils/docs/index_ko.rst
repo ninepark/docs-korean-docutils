@@ -8,7 +8,7 @@
 :버전: $Revision$
 :저작권: 이 문서는 퍼블릭 도메인에 속한다.
 
-이 문서의 가장 최신 버전은 아래의 `독유틸즈 배포판`_ 의 ``docs`` 디렉토리나 아래의 개별 링크에서 구할 수 있다.
+이 문서의 가장 최신 버전은 아래의 `독유틸즈 배포판`_\ 의 ``docs`` 디렉토리나 아래의 개별 링크에서 구할 수 있다.
 
 .. _독유틸즈: https://veranostech.github.io/docs-korean-docutils/web/index_ko.html
 .. _독유틸즈 배포판: https://veranostech.github.io/docs-korean-docutils/web/index_ko.html#download
