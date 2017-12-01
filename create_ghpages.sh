@@ -9,7 +9,7 @@ git rebase docs-korean
 touch .nojekyll
 
 cd docutils
-tools/buildhtml.py --config=tools/docutils.conf
+tools/buildhtml.py . ../web --config=tools/docutils.conf
 
 cd ..
 git add . -A
