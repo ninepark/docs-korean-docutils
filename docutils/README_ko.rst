@@ -6,7 +6,7 @@
 :연락처: goodger@python.org
 :날짜: $Date$
 :웹 사이트: http://docutils.sourceforge.net/
-:저작권: This document has been placed in the public domain.
+:저작권: 이 문서는 퍼블릭 도메인에 속한다.
 
 .. contents::
 
@@ -71,23 +71,18 @@
 배포판과 스냅샷
 ====================
 
-While we are trying to follow a "release early & often" policy,
-features are added frequently.  Since the code in the Subversion
-repository is usually in a bug-free state, we recommend that you use
-a current snapshot.
+"빨리, 그리고 자주 배포하기" 정책을 따르려고 노력하므로 기능이 자주 추가된다.
+서브버전 리포지토리의 코드는 보통 버그가 없는 상태이므로 최신 코드 스냅샷(snapshot)을 사용하는 것을 권장한다.
 
-To get a snapshot, go to the code page and click the download snapshot
-button:
+코드 스냅샷은 다음 코드 페이지로 가서 "스냅샷 내려받기(download snapshot)" 버튼을 눌러 받을 수 있다.
 
-* Docutils code, documentation, front-end tools, and tests:
+* 독유틸즈 코드, 문서, 프론트엔드 도구, 테스트:
   https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/
 
-* Sandbox (experimental, contributed code):
+* 샌드박스(Sandbox) (실험적인 코드나 외부 기여 코드):
   https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/sandbox/
 
-To keep up to date on the latest developments, download fresh copies of
-the snapshots regularly or use a working copy of the
-`서브버전 레포지토리`_.
+최신 개발 상황을 따라가려면 스냅샷을 정기적으로 내려받거나 `서브버전 레포지토리`_\ 를 이용한다.
 
 .. _서브버전 레포지토리: docs/dev/repository.html
 
@@ -95,44 +90,36 @@ the snapshots regularly or use a working copy of the
 요구사항
 ============
 
-To run the code, 파이썬_ must be installed.
-Docutils is compatible with Python versions 2.6, 2.7, and
-versions 3.3 to 3.5 (cf. `파이썬 3 호환`_).
+코드를 실행하려면 파이썬_\ 이 설치되어 있어야 한다.
+독유틸즈는 파이썬 버전 2.6, 2.7, 그리고 3.3부터 3.5까지 호환된다(`파이썬 3 호환`_ 참조).
 
-Docutils uses the following packages for enhanced functionality, if they are
-installed:
+독유틸즈는 기능 강화를 위해 다음과 같은 패키지를 (설치된 경우) 사용한다.
 
-* The `Python Imaging Library`_, or PIL, is used for some image
+* `Python Image Library`_, 즉 PIL 패키지를 사용하여 이미지를 다룬다.
   manipulation operations.
 
-* The `Pygments`_ syntax highlighter is used for content of `code`
-  directives and roles.
+* `Pygments`_ 문법 하이라이터(syntax highlighter)를 사용하여 코드 명령어와 역할 지시자를 다룬다.
 
 .. _파이썬: http://www.python.org/.
-.. _Python Imaging Library: http://www.pythonware.com/products/pil/
+.. _Python Image Library: http://www.pythonware.com/products/pil/
 .. _Pygments: http://pygments.org/
 
 
 파이썬 3 호환
 ----------------------
 
-The Docutils codebase is written for Python 2 and uses "on-demand"
-translation for `porting to Python 3`_.
+독유틸즈 코드는 파이썬 2에 기반하여 작성되었지만 `파이썬 3로 포팅하기`_\ 에 따른 변환이 가능하다.
 
-* The `setup.py` script generates Python 3 compatible sources in
-  ``build/`` and tests in ``tests3/`` sub-directories during
-  설치_ with Python 3.
+* `setup.py` 스크립트는 ``build/`` 디렉토리에 파이썬 3 호환 코드와 
+  ``tests3/`` 서브디렉토리에 파이썬 3에 호환되는 테스트 코드를 생성한다.
 
-* The scripts in the ``tools/`` sub-directory work with all supported
-  Python versions without conversion.
+* ``tools/`` 서브디렉토리에 있는 스크립트는 파이썬 버전과 상관없이 동작한다.
 
-* To convert the sources without installing (e.g. for testing), run
-  ``python3 setup.py build``.
+* (테스트 등을 위해) 설치하지 않고 변환만 하려면 ``python3 setup.py build`` 이라고 실행한다.
 
-* When editing the source, do changes on the Python 2 versions of the
-  files and re-run the build command.
+* 소스코드를 편집할 때는 파이썬 2 버전을 변경하고 build 명령을 다시 실행한다.
 
-.. _porting to Python 3: http://docs.python.org/py3k/howto/pyporting.html
+.. _파이썬 3로 포팅하기: http://docs.python.org/py3k/howto/pyporting.html
 
 
 프로젝트 파일과 디렉토리
