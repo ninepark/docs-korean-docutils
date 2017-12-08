@@ -20,7 +20,7 @@
 
      http://www.python.org/
 
-   자세한 요구상은 아래의 요구사항_\ 를 참조한다.
+   자세한 내용은 아래의 `요구사항`_\ 를 참조한다.
 
 2. 최신 독유틸즈 코드를 사용한다. 코드는 `서브버전 레포지토리`_\ 나 다음 링크에서 얻을 수 있다.
 
@@ -32,7 +32,7 @@
   해제한 후, 새로 생긴 디렉토리에 들어가서 ``setup.py install``\ 을 실행한다.
   윈도우 환경에서는 ``install.py``\ 를 더블클릭해도 된다.
   
-  자세한 사항은 설치_ 부분을 참조한다.
+  자세한 내용은 설치_ 부분을 참조한다.
   
 4. 리스트럭처드텍스트 문서를 변환하려면 프론트엔드 스크립트를 사용한다. 
    예를 들면 다음과 같다.::
@@ -40,7 +40,7 @@
        rst2html.py FAQ.txt FAQ.html         (Unix)
        python tools/rst2html.py FAQ.txt FAQ.html  (Windows)
 
-   자세한 사항은 사용법_ 부분을 참조한다.
+   자세한 내용은 사용법_ 부분을 참조한다.
 
 목적
 =======
@@ -87,17 +87,17 @@ button:
 
 To keep up to date on the latest developments, download fresh copies of
 the snapshots regularly or use a working copy of the
-`Subversion repository`_.
+`서브버전 레포지토리`_.
 
-.. _Subversion repository: docs/dev/repository.html
+.. _서브버전 레포지토리: docs/dev/repository.html
 
 
 요구사항
 ============
 
-To run the code, Python_ must be installed.
+To run the code, 파이썬_ must be installed.
 Docutils is compatible with Python versions 2.6, 2.7, and
-versions 3.3 to 3.5 (cf. `Python 3 compatibility`_).
+versions 3.3 to 3.5 (cf. `파이썬 3 호환`_).
 
 Docutils uses the following packages for enhanced functionality, if they are
 installed:
@@ -108,7 +108,7 @@ installed:
 * The `Pygments`_ syntax highlighter is used for content of `code`
   directives and roles.
 
-.. _Python: http://www.python.org/.
+.. _파이썬: http://www.python.org/.
 .. _Python Imaging Library: http://www.pythonware.com/products/pil/
 .. _Pygments: http://pygments.org/
 
@@ -121,7 +121,7 @@ translation for `porting to Python 3`_.
 
 * The `setup.py` script generates Python 3 compatible sources in
   ``build/`` and tests in ``tests3/`` sub-directories during
-  installation_ with Python 3.
+  설치_ with Python 3.
 
 * The scripts in the ``tools/`` sub-directory work with all supported
   Python versions without conversion.
