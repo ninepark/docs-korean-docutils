@@ -2,80 +2,73 @@
  README: Docutils 0.15b.dev
 ============================
 
-:Author: David Goodger
-:Contact: goodger@python.org
-:Date: $Date$
-:Web site: http://docutils.sourceforge.net/
-:Copyright: This document has been placed in the public domain.
+:저자: 데이비드 굿저(David Goodger)
+:연락처: goodger@python.org
+:날짜: $Date$
+:웹 사이트: http://docutils.sourceforge.net/
+:저작권: This document has been placed in the public domain.
 
 .. contents::
 
 
-Quick-Start
-===========
+빠른 시작 안내
+===============
 
-This is for those who want to get up & running quickly.
+다음은 독유틸즈를 빨리 한 번 실행해 보고 싶은 사람을 위한 내용이다.
 
-1. Docutils requires Python (version 2.6 or later), available from
+1. 독유틸즈를 실행하려면 파이썬(버전 2.6 이상)이 필요하다. 다음 웹 사이트에서 구할 수 있다.
 
      http://www.python.org/
 
-   See Requirements_ below for details.
+   자세한 요구상은 아래의 요구사항_\ 를 참조한다.
 
-2. Use the latest Docutils code.  Get the code from the `Subversion
-   repository`_ or from the snapshot:
+2. 최신 독유틸즈 코드를 사용한다. 코드는 `서브버전 레포지토리`_\ 나 다음 링크에서 얻을 수 있다.
 
      http://docutils.svn.sourceforge.net/viewvc/docutils/trunk/docutils/?view=tar
 
-   See `Releases & Snapshots`_ below for details.
+   자세한 내용은 아래의 `배포판과 스냅샷`_\ 을 참조한다.
 
-3. Unpack the tarball in a temporary directory (**not** directly in
-   Python's ``site-packages``), go to the directory created by expanding
-   the archive, and run ``setup.py install``. On
-   Windows systems it may be sufficient to double-click ``install.py``.
-
-   See Installation_ below for details.
-
-4. Use the front-end scripts to convert reStructuredText documents.
-   Try for example::
+3. 소스 압축파일을 임시 디렉토리(파이썬의 ``site-packages``는 안된다)에서 압축 
+  해제한 후, 새로 생긴 디렉토리에 들어가서 ``setup.py install``\ 을 실행한다.
+  윈도우 환경에서는 ``install.py``\ 를 더블클릭해도 된다.
+  
+  자세한 사항은 설치_ 부분을 참조한다.
+  
+4. 리스트럭처드텍스트 문서를 변환하려면 프론트엔드 스크립트를 사용한다. 
+   예를 들면 다음과 같다.::
 
        rst2html.py FAQ.txt FAQ.html         (Unix)
        python tools/rst2html.py FAQ.txt FAQ.html  (Windows)
 
-   See Usage_ below for details.
+   자세한 사항은 사용법_ 부분을 참조한다.
 
-
-Purpose
+목적
 =======
 
-The purpose of the Docutils project is to create a set of tools for
-processing plaintext documentation into useful formats, such as HTML,
-XML, and LaTeX.  Support for the following sources has been
-implemented:
+독유틸즈 프로젝트의 목적은 일반 텍스트 문서를 HTML이나 XML, 또는 LaTeX과 같은 유용한 형식으로 변환하기 위한 도구들을 만드는 것이다.
+다음과 같은 소스를 지원하도록 구현하였다.
 
-* Standalone files.
+* 단독 파일.
 
-* `PEPs (Python Enhancement Proposals)`_.
+* `PEP (Python Enhancement Proposals. 파이썬 개선 제안서)`_.
 
-Support for the following sources is planned:
+다음 소스 코드에 대한 지원도 계획하고 있다.
 
-* Inline documentation from Python modules and packages, extracted
-  with namespace context.
+* 네임스페이스 문맥과 같이 추출된 파이썬 모듈과 패키지내의 인라인 문서
 
-* Email (RFC-822 headers, quoted excerpts, signatures, MIME parts).
+* 이메일 (RFC-822 헤더, 인용구, 서명, MIME 파트).
 
-* Wikis, with global reference lookups of "wiki links".
+* "위키 링크"로 참조할 수 있는 위키 문서.
 
-* Compound documents, such as multiple chapter files merged into a
-  book.
+* 책을 만들기 위해 여러개의 장(chapter)이 결합된 복합 문서
 
-* And others as discovered.
+* 다른 형식들도 있다..
 
-.. _PEPs (Python Enhancement Proposals):
+.. _PEP (Python Enhancement Proposals. 파이썬 개선 제안서):
    http://www.python.org/peps/pep-0012.html
 
 
-Releases & Snapshots
+배포판과 스냅샷
 ====================
 
 While we are trying to follow a "release early & often" policy,
@@ -99,7 +92,7 @@ the snapshots regularly or use a working copy of the
 .. _Subversion repository: docs/dev/repository.html
 
 
-Requirements
+요구사항
 ============
 
 To run the code, Python_ must be installed.
@@ -120,7 +113,7 @@ installed:
 .. _Pygments: http://pygments.org/
 
 
-Python 3 compatibility
+파이썬 3 호환
 ----------------------
 
 The Docutils codebase is written for Python 2 and uses "on-demand"
@@ -142,7 +135,7 @@ translation for `porting to Python 3`_.
 .. _porting to Python 3: http://docs.python.org/py3k/howto/pyporting.html
 
 
-Project Files & Directories
+프로젝트 파일과 디렉토리
 ===========================
 
 * README.txt: You're reading it.
@@ -201,7 +194,7 @@ Generated directories when installing under Python 3:
 * test3: Converted tests.
 
 
-Installation
+설치
 ============
 
 The first step is to expand the ``.tgz`` archive in a temporary
@@ -240,7 +233,7 @@ GNU/Linux, BSDs, Unix, Mac OS X, etc.
 
    .. _shebang line: http://en.wikipedia.org/wiki/Shebang_%28Unix%29
 
-Windows
+윈도우
 -------
 
 Just double-click ``install.py``.  If this doesn't work, try the
@@ -270,8 +263,8 @@ Optional steps:
 * `converting the documentation`_
 
 
-Usage
-=====
+사용법
+========
 
 There are many front-end tools in the unpacked "tools" subdirectory.
 Installation under Unix places copies in the PATH.
