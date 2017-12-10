@@ -239,19 +239,19 @@ GNU/리눅스, BSD, 유닉스, 맥 OS X 등
 사용법
 ========
 
-There are many front-end tools in the unpacked "tools" subdirectory.
-Installation under Unix places copies in the PATH.
-You may want to begin with the "rst2html.py" front-end tool.  Most
-tools take up to two arguments, the source path and destination path,
-with STDIN and STDOUT being the defaults.  Use the "--help" option to
-the front-end tools for details on options and arguments.  See
-Docutils Front-End Tools (``docs/user/tools.txt``) for full documentation.
+압축이 풀린 "tools" 서브디렉토리에는 여러가지 프론트엔드 도구가 있다.
+유닉스에서는 복사본 위치를 PATH 설정에 추가한다.
+보통 "rst2html.py" 프론트엔드 도구부터 쓰게 된다.
+대부분의 도구는 소스 코드의 경로과 목표 파일의 경로, 두 개의 인수를 받는다.
+인수가 없으면 디폴트로 표준입력(STDIN)과 표준출력(STDOUT)을 사용한다. 
+프론트엔드 도구의 옵션과 인수에 대해 더 자세히 알고싶으면 "--help" 옵션을 사용한다.
+더 상세한 내용은 독유틸즈 프론트엔드 도구(``docs/user/tools.txt``) 문서를 참조한다.
 
-The package modules are continually growing and evolving.  The
-``docutils.statemachine`` module is usable independently.  It contains
-extensive inline documentation (in reStructuredText format of course).
+패키지내의 모듈은 계속 바뀌고 늘어난다.
+``docutils.statemachine`` 모듈은 독립적으로 사용할 수 있다.
+이 모듈에는 (리스트럭처드텍스트 형식으로 되어 있는) 인라인 설명문이 방대하게 포함되어 있다.
 
-Contributions are welcome!
+여러분이 보다 기여해 줄 수 있기를 바란다.
 
 
 문서 변환
