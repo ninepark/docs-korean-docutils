@@ -257,98 +257,90 @@ GNU/리눅스, BSD, 유닉스, 맥 OS X 등
 문서 변환
 ============================
 
-After unpacking and installing the Docutils package, the following
-shell commands will generate HTML for all included documentation::
+독유틸즈 패키지 압축을 풀고 설치한 후에는 다음 셸 명령으로 포함된 문서의 HTML을 생성한다.::
 
     cd <archive_directory_path>/tools
     ./buildhtml.py ../
 
-On Windows systems, type::
+윈도우 시스템에서는 다음처럼 실행한다.::
 
     cd <archive_directory_path>\tools
     python buildhtml.py ..
 
-The final directory name of the ``<archive_directory_path>`` is
-"docutils" for snapshots.  For official releases, the directory may be
-called "docutils-X.Y.Z", where "X.Y.Z" is the release version.
-Alternatively::
+소스코드 스냅샷에서 ``<archive_directory_path>``\ 의 마지막 디렉토리 이름은 "docutils"이다.
+
+공식 버전에서는 이 이름이 "docutils-X.Y.Z"일 수 있다. 여기에서 "X.Y.Z"는 배포 버전이다. 
+이 때는 다음과 같이 실행한다.::
 
     cd <archive_directory_path>
     tools/buildhtml.py --config=tools/docutils.conf          (Unix)
     python tools\buildhtml.py --config=tools\docutils.conf   (Windows)
 
-Some files may generate system messages (warnings and errors).  The
-``docs/user/rst/demo.txt`` file (under the archive directory) contains
-five intentional errors.  (They test the error reporting mechanism!)
-
+몇몇 파일은 (경고나 에러과 같은) 시스템 메세지를 출력할 수 있다.
+(아카이브 디렉토리 아래의) ``docs/user/rst/demo.txt`` 파일에는 의도적으로 
+5개의 에러가 있다. (이는 에러 리포트 메커니즘을 테스트하기 위한 것이다.)
 
 테스트수트 실행
 ======================
 
-The test suite is documented in `Docutils Testing`_ (docs/dev/testing.txt).
+테스트수트에 대한 문서는 `독유틸즈 테스팅`_ (docs/dev/testing.txt)에 있다.
 
-To run the entire test suite, open a shell and use the following
-commands::
+전체 테스트수트를 실행하려면 셸을 열고 다음 명령을 실행한다.::
 
     cd <archive_directory_path>/test
     ./alltests.py
 
-Under Windows, type::
+윈도우즈에서는 다음처럼 실행한다.::
 
     cd <archive_directory_path>\test
     python alltests.py
 
-For testing with Python 3 use the converted test suite::
+파이썬 3로 테스팅하려면 변환된 테스트수트를 사용한다.::
 
     cd <archive_directory_path>/test3
     python3 alltests.py
 
 
-You should see a long line of periods, one for each test, and then a
-summary like this::
-
-    Ran 1111 tests in 24.653s
+실행하면 마침표(마침표 하나가 테스트 하나이다)가 길게 나오고 다음처럼 결과 요약이 출력된다.::
+    Ran 1111 tests in 24.653s
 
     OK
     Elapsed time: 26.189 seconds
 
-The number of tests will grow over time, and the times reported will
-depend on the computer running the tests.  The difference between the
-two times represents the time required to set up the tests (import
-modules, create data structures, etc.).
+테스트의 수는 시간이 지나면 늘어날 것이다. 그리고 시간은 테스트를 수행하는 컴퓨터에 의존한다.
+두 시간 값의 차이는 테스트를 (모듈을 임포트하고 데이터 구조를 생성하는 등의) 셋업 시간 때문이다.
 
-If any of the tests fail, please `open a bug report`_ or `send an email`_
-(see `Bugs <BUGS.html>`_).
-Please include all relevant output, information about your operating
-system, Python version, and Docutils version.  To see the Docutils
-version, use one of the ``rst2*`` front ends or ``tools/quicktest.py``
-with the ``--version`` option, e.g.::
+만약 테스트가 실패하면 `버그 리포팅하기`_\ 나 `이메일 보내기`_\ 를 해주길 바란다
+(`버그 <BUGS_ko.html>`_ 참조).
+
+관련 출력 모두와 운영체제, 파이썬 버전, 그리고 독유틸즈 버전에 대한 정보가 있어야 한다.
+독유틸즈 버전을 보려면 ``rst2*`` 프론트엔드 도구 또는 ``tools/quicktest.py``\ 를 
+``--version`` 옵션과 함께 실행한다.::
 
     cd ../tools
     ./quicktest.py --version
 
-Windows users type these commands::
+윈도우에서는 다음 명령을 사용한다.::
 
     cd ..\tools
     python quicktest.py --version
 
 
-.. _Docutils Testing: http://docutils.sourceforge.net/docs/dev/testing.html
-.. _open a bug report:
+.. _독유틸즈 테스팅: http://docutils.sourceforge.net/docs/dev/testing.html
+.. _버그 리포팅하기:
    http://sourceforge.net/p/docutils/bugs/
-.. _send an email: mailto:docutils-users@lists.sourceforge.net
+.. _이메일 보내기: mailto:docutils-users@lists.sourceforge.net
    ?subject=Test%20suite%20failure
-.. _web interface: https://sourceforge.net/p/docutils/mailman/
+.. _웹 인터페이스: https://sourceforge.net/p/docutils/mailman/
 
 
-Getting Help
+도움말
 ============
 
-If you have questions or need assistance with Docutils or
-reStructuredText, please post a message to the Docutils-users_ mailing
-list.
+만약 독유틸즈나 리스트럭처드텍스트에 대해 질문이 있거나 도움이 필요하면 
+`독유틸즈 사용자`_ 메일링리스트에 메세지를 보내주길 바란다.
 
-.. _Docutils-users: docs/user/mailing-lists.html#docutils-users
+.. _독유틸즈 사용자: docs/user/mailing-lists.html#docutils-users
 
 
 ..
