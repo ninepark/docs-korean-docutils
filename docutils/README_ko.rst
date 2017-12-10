@@ -166,7 +166,7 @@
   자세한 사항은 ``docs/user/tools.txt``\ 를 참조.
 
 * test: 유니트 테스트. 소프트웨어 사용에는 필요하지 않으나 개발과 수정에 유용하다.
-  `테스트수트 실행`_\ 를 참조한다.
+  `테스트수트 실행`_\ 을 참조한다.
 
 파이썬 3으로 설치할 때 생성되는 디렉토리:
 
@@ -178,70 +178,62 @@
 설치
 ============
 
-The first step is to expand the ``.tgz`` archive in a temporary
-directory (**not** directly in Python's ``site-packages``).  It
-contains a distutils setup file "setup.py".  OS-specific installation
-instructions follow.
+처음 단계는 ``.tgz`` 아카이브 파일을 임시 디렉토리(파이썬의 ``site-packages``\ 는 안된다)에 푸는 것이다.
+여기에는 "setup.py" distutils 설치 파일이 포함되어 있다. 운영체제에 따른 설치방법은 아래를 참조한다.
 
 
-GNU/Linux, BSDs, Unix, Mac OS X, etc.
--------------------------------------
+GNU/리눅스, BSD, 유닉스, 맥 OS X 등
+----------------------------------------------
 
-1. Open a shell.
+1. 셸을 연다.
 
-2. Go to the directory created by expanding the archive::
+2. 아카이브 파일을 풀 때 만들어진 디렉토리로 들어간다.::
 
        cd <archive_directory_path>
 
-3. Install the package (you may need root permissions to complete this
-   step)::
+3. 패키지를 설치한다(관리자 권한이 있어야 한다).::
 
        su
        (enter admin password)
        python setup.py install
 
-   If the python executable isn't on your path, you'll have to specify
-   the complete path, such as ``/usr/local/bin/python``.
+   만약 파이썬 실행 파일이 패스 환경에 없다면 ``/usr/local/bin/python``\ 와 같이 전체 경로를 지정해야 한다.
 
-   To install for a specific Python version, use this version in the
-   setup call, e.g. ::
+   특정한 파이썬 버전용으로 설치하려면 설치 호출시에 다음과 같이 해당 버전을 사용해야 한다.::
 
        python3.1 setup.py install
 
-   To install for different Python versions, repeat step 3 for every
-   required version. The last installed version will be used in the
-   `shebang line`_ of the ``rst2*.py`` wrapper scripts.
-
-   .. _shebang line: http://en.wikipedia.org/wiki/Shebang_%28Unix%29
+   다른 파이썬 버전에 대해서 설치하려면 필요한 모든 파이선 버전에 대해 위의 단계를 반복한다.
+   
+   ``rst2*.py`` 래퍼 스크립트의 `셔뱅 라인(shebang line)`_\ 에 대해서는
+   가장 마지막에 설치된 버전이 사용된다.
+  
+   .. _셔뱅 라인(shebang line): http://en.wikipedia.org/wiki/Shebang_%28Unix%29
 
 윈도우
 -------
 
-Just double-click ``install.py``.  If this doesn't work, try the
-following:
+``install.py``\ 를 더블클릭한다.  만약 동작하지 않으면 다음과 같이 실행한다.
 
-1. Open a DOS Box (Command Shell, MS-DOS Prompt, or whatever they're
-   calling it these days).
+1. 도스(DOS) 박스(커맨드 셸, 도스 프롬프트, 또는 현재 사용되는 동등한 이름)를 연다.
 
-2. Go to the directory created by expanding the archive::
+2. 아카이브 파일을 풀 때 만들어진 디렉토리로 들어간다.::
 
        cd <archive_directory_path>
 
-3. Install the package::
+3. 패키지를 설치한다.::
 
        <path_to_python.exe>\python setup.py install
 
-   To install for a specific python version, specify the Python
-   executable for this version.
+   특정한 파이썬 버전용으로 설치하려면 설치 호출시에 해당 버전을 사용해야 한다.
 
-   To install for different Python versions, repeat step 3 for every
-   required version.
+   다른 파이썬 버전에 대해서 설치하려면 필요한 모든 파이선 버전에 대해 위의 단계를 반복한다.
 
-Optional steps:
+추가적인 단계:
 
-* `running the test suite`_
+* `테스트수트 실행`_
 
-* `converting the documentation`_
+* `문서 변환`_
 
 
 사용법
@@ -262,7 +254,7 @@ extensive inline documentation (in reStructuredText format of course).
 Contributions are welcome!
 
 
-Converting the documentation
+문서 변환
 ============================
 
 After unpacking and installing the Docutils package, the following
