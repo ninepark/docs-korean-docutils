@@ -125,60 +125,54 @@
 프로젝트 파일과 디렉토리
 ===========================
 
-* README.txt: You're reading it.
+(한글 번역본의 제목은 ``_ko`` 접미사가 붙어있다.)
 
-* COPYING.txt: Public Domain Dedication and copyright details for
-  non-public-domain files (most are PD).
+* README.txt: 지금 읽고 있는 이 파일.
 
-* FAQ.txt: Frequently Asked Questions (with answers!).
+* COPYING.txt: 퍼블릭 도메인 기여 및 퍼블릭 도메인이 아닌 파일에 대한 저작권 상세.
 
-* RELEASE-NOTES.txt: Summary of the major changes in recent releases.
+* FAQ.txt: 자주 물어보는 질문(Frequently Asked Questions)과 답변.
 
-* HISTORY.txt: A detailed change log, for the current and all previous
-  project releases.
+* RELEASE-NOTES.txt: 최근 배포판의 중요한 변화 사항 요약.
 
-* BUGS.txt: Known bugs, and how to report a bug.
+* HISTORY.txt: 현재 및 과거의 모든 프로젝트 배포판의 자세한 변화 로그
 
-* THANKS.txt: List of contributors.
+* BUGS.txt: 알려진 버그과 버그 보고 방법.
 
-* setup.py: Installation script.  See "Installation" below.
+* THANKS.txt: 기여자 복록.
 
-* install.py: Quick & dirty installation script.  Just run it.  For
-  any kind of customization or help though, setup.py must be used.
+* setup.py: 설치 파일. 아래의 "설치" 항목 참조.
 
-* docutils: The project source directory, installed as a Python
-  package.
+* install.py: 빠른 설치용 스크립트. 그냥 실행하된 된다. 개인화를 하려면 setup.py 파일을 사용해야 한다.
 
-* docs: The project documentation directory.  Read ``docs/index.txt``
-  for an overview.
+* docutils: 프로젝트 소스 디렉토리. 파이썬 패키지로서 설치된다.
 
-* docs/user: The project user documentation directory.  Contains the
-  following documents, among others:
+* docs: 프로젝트 문서 디렉토리.  개략적인 내용은 ``docs/index.txt``\ 를 참조한다.
 
-  - docs/user/tools.txt: Docutils Front-End Tools
-  - docs/user/latex.txt: Docutils LaTeX Writer
-  - docs/user/rst/quickstart.txt: A ReStructuredText Primer
-  - docs/user/rst/quickref.html: Quick reStructuredText (HTML only)
+* docs/user: 프로젝트 사용자 문서 디렉토리.
+  다음 문서를 포함하고 있다.:
 
-* docs/ref: The project reference directory.
-  ``docs/ref/rst/restructuredtext.txt`` is the reStructuredText
-  reference.
+  - docs/user/tools.txt: 독유틸즈 프론트엔드 도구.
+  - docs/user/latex.txt: 독유틸즈 LaTeX 작성기(Writer).
+  - docs/user/rst/quickstart.txt: 리스트럭처드텍스트 소개의 글.
+  - docs/user/rst/quickref.html: 리스트럭처드텍스트의 간략한 소개(HTML파일만 존재한다).
 
-* licenses: Directory containing copies of license files for
-  non-public-domain files.
+* docs/ref: 프로젝트 참조 디렉토리.
+  ``docs/ref/rst/restructuredtext.txt`` 리스트럭처드텍스트의 참조서이다.
 
-* tools: Directory for Docutils front-end tools.  See
-  ``docs/user/tools.txt`` for documentation.
+* licenses: 퍼블릭 도메인이 아닌 파일에 대한 라이선스 파일 복사본을 담고 있는 디렉토리.
 
-* test: Unit tests.  Not required to use the software, but very useful
-  if you're planning to modify it.  See `Running the Test Suite`_
-  below.
+* tools: 독유틸즈 프론트엔드 도구 디렉토리. 
+  자세한 사항은 ``docs/user/tools.txt``\ 를 참조.
 
-Generated directories when installing under Python 3:
+* test: 유니트 테스트. 소프트웨어 사용에는 필요하지 않으나 개발과 수정에 유용하다.
+  `테스트수트 실행`_\ 를 참조한다.
 
-* build: Converted sources.
+파이썬 3으로 설치할 때 생성되는 디렉토리:
 
-* test3: Converted tests.
+* build: 파이썬2으로 변환된 소스 코드.
+
+* test3: 파이썬2으로 변환된 테스트 코드.
 
 
 설치
@@ -296,7 +290,7 @@ Some files may generate system messages (warnings and errors).  The
 five intentional errors.  (They test the error reporting mechanism!)
 
 
-Running the Test Suite
+테스트수트 실행
 ======================
 
 The test suite is documented in `Docutils Testing`_ (docs/dev/testing.txt).
