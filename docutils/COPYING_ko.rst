@@ -1,45 +1,36 @@
 ==================
- Copying Docutils
+독유틸즈 복제
 ==================
 
-:Author: David Goodger
-:Contact: goodger@python.org
-:Date: $Date$
-:Web site: http://docutils.sourceforge.net/
-:Copyright: This document has been placed in the public domain.
+:저자: 데이비드 굿저
+:연락처: goodger@python.org
+:날짜: $Date$
+:웹 사이트: http://docutils.sourceforge.net/
+:저작권: 이 문서는 퍼블릭 도메인에 속한다.
 
-Most of the files included in this project have been placed in the
-public domain, and therefore have no license requirements and no
-restrictions on copying or usage; see the `Public Domain Dedication`_
-below.  There are a few exceptions_, listed below.
-Files in the Sandbox_ are not distributed with Docutils releases and
-may have different license terms.
+이 프로젝트에 포함된 대부분의 파일은 퍼블릭 도메인에 속한다. 
+따라서 라이선스가 필요하지 않으며 복제나 사용상의 제한도 없다.
+아래의 `퍼블릭 도메인 기여`\ 를 참조하라. 
+아래에 제시한 몇가지 예외가 있다.
+샌드박스_\ 의 파일은 독유틸즈 배포판과 같이 배포되지 않으며 별개의 라이선스 조항을 가질 수 있다.
 
 
-Public Domain Dedication
-========================
+퍼블릭 도메인 기여
+================================================
 
-The persons who have associated their work with this project (the
-"Dedicator": David Goodger and the many contributors to the Docutils
-project) hereby dedicate the entire copyright, less the exceptions_
-listed below, in the work of authorship known as "Docutils" identified
-below (the "Work") to the public domain.
+자신의 작업물을 이 프로젝트에 연관시킨 사람(이하 "기여자": 데이비드 굿저와 많은 독유틸즈 프로젝트 기여자)들은
+아래에 명시한 몇가지 예외를 제외하고 아래의 "독유틸즈"로 알려진 저작권 작업(이하 "작업")의 전체 저작권을 퍼블릭 도메인에 바친다.
 
-The primary repository for the Work is the Internet World Wide Web
-site <http://docutils.sourceforge.net/>.  The Work consists of the
-files within the "docutils" module of the Docutils project Subversion
-repository (Internet host docutils.svn.sourceforge.net, filesystem path
-/svnroot/docutils), whose Internet web interface is located at
-<http://docutils.svn.sourceforge.net/viewvc/docutils/>.  Files dedicated to the
-public domain may be identified by the inclusion, near the beginning
-of each file, of a declaration of the form::
+작업의 일차 레포지토리는 인터넷 웹 사이트 <http://docutils.sourceforge.net/>\ 이다.
+작업은 독유틸즈 프로젝트의 서브버전 레포지토리(인터넷 호스트 docutils.svn.sourceforge.net의 파일 시스템의 /svnroot/docutils 경로)의 "docutils" 모듈내의 파일로 이루어지며 웹 인터페이스는 <http://docutils.svn.sourceforge.net/viewvc/docutils/>\ 이다.
+퍼블릭 도메인에 기여된 파일은 각 파일의 시작 부근에 다음 형식의 내용이 추가된다.::
 
     Copyright: This document/module/DTD/stylesheet/file/etc. has been
                placed in the public domain.
 
-Dedicator makes this dedication for the benefit of the public at large
-and to the detriment of Dedicator's heirs and successors.  Dedicator
-intends this dedication to be an overt act of relinquishment in
+기여자는 기여자의 상속자가 아닌 공공의 이익을 위해 이러한 기여를 행한다.
+
+Dedicator intends this dedication to be an overt act of relinquishment in
 perpetuity of all present and future rights under copyright law,
 whether vested or contingent, in the Work.  Dedicator understands that
 such relinquishment of all rights includes the relinquishment of all
