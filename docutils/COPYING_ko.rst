@@ -53,8 +53,7 @@
 * docutils/writers/s5_html/themes/default/iepngfix.htc:
 
       IE5.5+ PNG Alpha Fix v1.0 by Angus Turnbull
-      <http://www.twinhelix.com>.  Free usage permitted as long as
-      this notice remains intact.
+      <http://www.twinhelix.com>.  이 경고문이 변경없이 남아있는한 자유로운 사용이 허용된다.
 
 * docutils/utils/math/__init__.py,
   docutils/utils/math/latex2mathml.py,
@@ -64,40 +63,40 @@
   docutils/utils/error_reporting.py,
   docutils/test/transforms/test_smartquotes.py:
 
-  Copyright © Günter Milde.
-  Released under the terms of the `2-Clause BSD license`_
-  (`local copy <licenses/BSD-2-Clause.txt>`__).
+  저작권 © Günter Milde.
+  `2조항 BSD 라이선스`_\ 의 조항에 따라 배포.
+  (`복제본 <licenses/BSD-2-Clause.txt>`__).
 
 * docutils/utils/smartquotes.py
 
-  Copyright © 2011 Günter Milde,
-  based on `SmartyPants`_ © 2003 John Gruber
-  (released under a 3-Clause BSD license included in the file)
-  and smartypants.py © 2004, 2007 Chad Miller.
-  Released under the terms of the `2-Clause BSD license`_
-  (`local copy <licenses/BSD-2-Clause.txt>`__).
+  저작권 © 2011 Günter Milde,
+  `SmartyPants`_ © 2003 John Gruber 와
+  (이 파일에 포함된 3조항 BSD 라이선스의 조항에 따라 배포)
+  smartypants.py © 2004, 2007 Chad Miller 에 기반 
+  `2조항 BSD 라이선스`_\ 의 조항에 따라 배포.
+  (`복제본 <licenses/BSD-2-Clause.txt>`__).
 
   .. _SmartyPants: http://daringfireball.net/projects/smartypants/
 
 * docutils/utils/math/math2html.py,
   docutils/writers/html4css1/math.css
 
-  Copyright © Alex Fernández
-  These files are part of eLyXer_, released under the `GNU
-  General Public License`_ version 3 or later. The author relicensed
-  them for Docutils under the terms of the `2-Clause BSD license`_
-  (`local copy <licenses/BSD-2-Clause.txt>`__).
+  저작권 © Alex Fernández
+  이 파일은 eLyXer_\ 의 일부로,
+  `GNU General Public License`_\ 버전 3 이후에 따라 배포. 
+  저자는  `2조항 BSD 라이선스`_\ 의 조항에 따라 독유틸즈에 라이선스를 줌.
+  (`복제본 <licenses/BSD-2-Clause.txt>`__).
 
   .. _eLyXer: http://www.nongnu.org/elyxer/
 
-* docutils/utils/roman.py, copyright by Mark Pilgrim, released under the
-  `Python 2.1.1 license`_ (`local copy`__).
+* docutils/utils/roman.py, Mark Pilgrim에 의한 저작권 소유, 
+  `파이썬 2.1.1 라이선스`_ (`복제본`__).
 
   __ licenses/python-2-1-1.txt
 
-* tools/editors/emacs/rst.el, copyright by Free Software Foundation,
+* tools/editors/emacs/rst.el, 자유 소프트웨어 제단에 의한 저작권 소유.
   Inc., released under the `GNU General Public License`_ version 3 or
-  later (`local copy`__).
+  later (`복제본`__).
 
   __ licenses/gpl-3-0.txt
 
@@ -107,7 +106,7 @@
 
 .. _샌드박스: http://docutils.sourceforge.net/sandbox/README.html
 .. _licenses: licenses/
-.. _Python 2.1.1 license: http://www.python.org/2.1.1/license.html
+.. _파이썬 2.1.1 라이선스: http://www.python.org/2.1.1/license.html
 .. _GNU General Public License: http://www.gnu.org/copyleft/gpl.html
 .. _2조항 BSD 라이선스: http://www.spdx.org/licenses/BSD-2-Clause
 .. _OSI-인증: http://opensource.org/licenses/
