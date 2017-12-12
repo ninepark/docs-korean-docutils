@@ -39,7 +39,7 @@
 .. [#] 크리에이티브 커먼즈는 `이 법률적 도구를  더이상 사용하지 않으며`__ 
    작업물에 적용하는 것을 권장하지 않는다. 이 도구는 미합중국 법률에 기반한 것으로 미합중국 외부에서는 적용되지 않을 수 있다.
    크리에이티브 커먼즈는 퍼블릭 도메인에 새로운 저작물을 기증할 때 
-   Public Domain Dedication CC0_ (CC zero, "No Rights Reserved")와 자유 소프트웨어 제단의 라이선스 목록 중에서 
+   Public Domain Dedication CC0_ (CC zero, "No Rights Reserved")와 자유 소프트웨어 제단의 `라이선스 목록`_ 중에서 
    사용할 것을 권장한다.
 
    __  http://creativecommons.org/retiredlicenses
@@ -48,7 +48,7 @@
 면책사항
 ==========
 
-위의 `퍼블릭 도메인 기여`_ 에 대한 면책사항은 다음과 같다.
+위의 `퍼블릭 도메인 기증`_ 에 대한 면책사항은 다음과 같다.
 
 * docutils/writers/s5_html/themes/default/iepngfix.htc:
 
@@ -101,17 +101,15 @@
 
   __ licenses/gpl-3-0.txt
 
-The `2-Clause BSD license`_ and the Python licenses are OSI-approved_
-and GPL-compatible_.
+`2조항 BSD 라이선스`_ 와 파이썬 라이선스는 `OSI-인증`_\ 이며 `GPL-호환`_\ 이다.
 
-Plaintext versions of all the linked-to licenses are provided in the
-licenses_ directory.
+링크된 모든 라이선스의 본문은 licenses_ 디렉토리에 있다.
 
 .. _샌드박스: http://docutils.sourceforge.net/sandbox/README.html
 .. _licenses: licenses/
 .. _Python 2.1.1 license: http://www.python.org/2.1.1/license.html
 .. _GNU General Public License: http://www.gnu.org/copyleft/gpl.html
-.. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
-.. _OSI-approved: http://opensource.org/licenses/
-.. _license-list:
-.. _GPL-compatible: http://www.gnu.org/licenses/license-list.html
+.. _2조항 BSD 라이선스: http://www.spdx.org/licenses/BSD-2-Clause
+.. _OSI-인증: http://opensource.org/licenses/
+.. _라이선스 목록:
+.. _GPL-호환: http://www.gnu.org/licenses/license-list.html
