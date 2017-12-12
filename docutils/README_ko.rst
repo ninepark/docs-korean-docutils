@@ -302,7 +302,8 @@ GNU/리눅스, BSD, 유닉스, 맥 OS X 등
 
 
 실행하면 마침표(마침표 하나가 테스트 하나이다)가 길게 나오고 다음처럼 결과 요약이 출력된다.::
-    Ran 1111 tests in 24.653s
+
+    Ran 1111 tests in 24.653s
 
     OK
     Elapsed time: 26.189 seconds
