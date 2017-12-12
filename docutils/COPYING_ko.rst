@@ -11,7 +11,7 @@
 이 프로젝트에 포함된 대부분의 파일은 퍼블릭 도메인에 속한다. 
 따라서 라이선스가 필요하지 않으며 복제나 사용상의 제한도 없다.
 아래의 `퍼블릭 도메인 기여`\ 를 참조하라. 
-일부 면책사항을 아래에 제시하였다.
+일부 예외 사항을 아래에 제시하였다.
 샌드박스_\ 의 파일은 독유틸즈 배포판과 같이 배포되지 않으며 별개의 라이선스 조항을 가질 수 있다.
 
 
@@ -45,10 +45,10 @@
    __  http://creativecommons.org/retiredlicenses
    .. _CC0: http://creativecommons.org/about/cc0
 
-면책사항
+예외 사항
 ==========
 
-위의 `퍼블릭 도메인 기증`_ 에 대한 면책사항은 다음과 같다.
+위의 `퍼블릭 도메인 기증`_ 에 대한 예외 사항은 다음과 같다.
 
 * docutils/writers/s5_html/themes/default/iepngfix.htc:
 
@@ -65,7 +65,7 @@
 
   저작권 © Günter Milde.
   `2조항 BSD 라이선스`_\ 의 조항에 따라 배포.
-  (`복제본 <licenses/BSD-2-Clause.txt>`__).
+  (`복사본 <licenses/BSD-2-Clause.txt>`__).
 
 * docutils/utils/smartquotes.py
 
@@ -74,7 +74,7 @@
   (이 파일에 포함된 3조항 BSD 라이선스의 조항에 따라 배포)
   smartypants.py © 2004, 2007 Chad Miller 에 기반 
   `2조항 BSD 라이선스`_\ 의 조항에 따라 배포.
-  (`복제본 <licenses/BSD-2-Clause.txt>`__).
+  (`복사본 <licenses/BSD-2-Clause.txt>`__).
 
   .. _SmartyPants: http://daringfireball.net/projects/smartypants/
 
@@ -85,18 +85,18 @@
   이 파일은 eLyXer_\ 의 일부로,
   `GNU General Public License`_\ 버전 3 이후에 따라 배포. 
   저자는  `2조항 BSD 라이선스`_\ 의 조항에 따라 독유틸즈에 라이선스를 줌.
-  (`복제본 <licenses/BSD-2-Clause.txt>`__).
+  (`복사본 <licenses/BSD-2-Clause.txt>`__).
 
   .. _eLyXer: http://www.nongnu.org/elyxer/
 
 * docutils/utils/roman.py, Mark Pilgrim에 의한 저작권 소유, 
-  `파이썬 2.1.1 라이선스`_ (`복제본`__).
+  `파이썬 2.1.1 라이선스`_ (`복사본`__).
 
   __ licenses/python-2-1-1.txt
 
 * tools/editors/emacs/rst.el, 자유 소프트웨어 제단에 의한 저작권 소유.
   Inc., released under the `GNU General Public License`_ version 3 or
-  later (`복제본`__).
+  later (`복사본`__).
 
   __ licenses/gpl-3-0.txt
 
