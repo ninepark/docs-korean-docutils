@@ -29,19 +29,11 @@
                placed in the public domain.
 
 기여자는 기여자의 상속자가 아닌 공공의 이익을 위해 이러한 기여를 행한다.
+기여자는 작업에 대한 이러한 기여가 미리 확보된 혹은 앞으로 발생할 현재 및 미래의 저작권법상의 모든 권리의 소유를 포기하는 행위임을 인지한다.
+기여자는 이러한 권리의 포기가 작업의 저작권을 강제하는 소송 및 기타 행위에 대한 권리의 포기도 포함하고 있음을 이해한다.
 
-Dedicator intends this dedication to be an overt act of relinquishment in
-perpetuity of all present and future rights under copyright law,
-whether vested or contingent, in the Work.  Dedicator understands that
-such relinquishment of all rights includes the relinquishment of all
-rights to enforce (by lawsuit or otherwise) those copyrights in the
-Work.
+기여자는 퍼블릭 도메인에서 작업이 상업적, 비상업적으로 어떤 목적으로든 지금까지 발명되고 고안되지 않은 방법을 포함하여 어떤 방법으로든 자유롭게 재생산, 배포, 전달, 사용, 수정, 빌드 및 기타 이용되게 된다는 점을 인지한다.
 
-Dedicator recognizes that, once placed in the public domain, the Work
-may be freely reproduced, distributed, transmitted, used, modified,
-built upon, or otherwise exploited by anyone for any purpose,
-commercial or non-commercial, and in any way, including by methods
-that have not yet been invented or conceived.
 
 (This dedication is derived from the text of the `Creative Commons
 Public Domain Dedication`. [#]_)
@@ -59,7 +51,7 @@ Public Domain Dedication`. [#]_)
 Exceptions
 ==========
 
-The exceptions to the `Public Domain Dedication`_ above are:
+The exceptions to the `퍼블릭 도메인 기여`_ above are:
 
 * docutils/writers/s5_html/themes/default/iepngfix.htc:
 
@@ -118,7 +110,7 @@ and GPL-compatible_.
 Plaintext versions of all the linked-to licenses are provided in the
 licenses_ directory.
 
-.. _sandbox: http://docutils.sourceforge.net/sandbox/README.html
+.. _샌드박스: http://docutils.sourceforge.net/sandbox/README.html
 .. _licenses: licenses/
 .. _Python 2.1.1 license: http://www.python.org/2.1.1/license.html
 .. _GNU General Public License: http://www.gnu.org/copyleft/gpl.html
