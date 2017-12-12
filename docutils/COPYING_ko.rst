@@ -37,10 +37,10 @@
 (이 기증문은 `크리에이티브 커먼즈 퍼블릭 도메인 기증`\ 에서 파생하였다. [#]_)
 
 .. [#] 크리에이티브 커먼즈는 `이 법률적 도구를  더이상 사용하지 않으며`__ 
-    작업물에 적용하는 것을 권장하지 않는다.: 이 도구는 미합중국 법률에 기반한 것으로 미합중국 외부에서는 적용되지 않을 수 있다.
-    크리에이티브 커먼즈는 퍼블릭 도메인에 새로운 저작물을 기증할 때 
-    Public Domain Dedication CC0_ (CC zero, "No Rights Reserved")와 자유 소프트웨어 제단의 라이선스 목록 중에서 
-    사용할 것을 권장한다.
+   작업물에 적용하는 것을 권장하지 않는다. 이 도구는 미합중국 법률에 기반한 것으로 미합중국 외부에서는 적용되지 않을 수 있다.
+   크리에이티브 커먼즈는 퍼블릭 도메인에 새로운 저작물을 기증할 때 
+   Public Domain Dedication CC0_ (CC zero, "No Rights Reserved")와 자유 소프트웨어 제단의 라이선스 목록 중에서 
+   사용할 것을 권장한다.
 
    __  http://creativecommons.org/retiredlicenses
    .. _CC0: http://creativecommons.org/about/cc0
