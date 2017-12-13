@@ -1591,7 +1591,7 @@ See the examples for the option_list_ element.
 
 
 ``문서정보``
-===========
+======================
 
 The ``문서정보`` element is a container for document bibliographic
 data, or meta-data (data about the document).  It corresponds to the
@@ -1828,7 +1828,7 @@ of a ``문서``.
     names_, dupnames_, source_, and classes_), plus an optional 제목__
     attribute which stores the document title metadata.
 
-    __ `title (attribute)`_
+    __ `제목 (속성)`_
 
 
 Examples
@@ -2137,7 +2137,7 @@ See the examples for the 필드_리스트_ and 문서정보_ elements.
 
 
 ``필드_리스트``
-==============
+============================
 
 The ``필드_리스트`` element contains two-column table-like structures
 resembling database records (label & data pairs).  Field lists are
@@ -3717,7 +3717,7 @@ Complete pseudo-XML_ result after parsing::
 
 
 ``사이드바``
-===========
+======================
 
 Sidebars are like miniature, parallel documents that occur inside
 other documents, providing related or reference material.  A
