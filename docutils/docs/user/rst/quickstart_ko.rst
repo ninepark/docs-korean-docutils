@@ -3,12 +3,12 @@ ReStructuredText 입문
 =========================
 
 :저자: 리차드 존스(Richard Jones)
-:버전: $Revision$
+:리비전: $Revision$
 :저작권: 이 문서는 퍼블릭 도메인에 속해있다.
 
 .. Contents::
 
-아래에 있는 텍스트는 "(quickref__)" 같은 링크를 포함하고 있다. 이 링크는 
+아래에 있는 텍스트는 "(quickref__)" 같은 링크를 포함하고 있다. 이 링크는
 `빠른 reStructuredText`_ 사용자 레퍼런스에 연결된 상대 링크다. 링크가 작동하지 않는다면
 `master quick reference`_ 문서를 참고하기 바란다.
 

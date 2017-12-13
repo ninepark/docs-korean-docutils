@@ -7,7 +7,7 @@
 
 :저자: 데이비드 굿저
 :연락처: docutils-develop@lists.sourceforge.net
-:버전: $Revision$
+:리비전: $Revision$
 :날짜: $Date$
 :저작권: 이 문서는 퍼블릭 도메인에 속한다.
 
@@ -85,10 +85,10 @@ reStructuredText_ 마크업은 이 문서 전반에 걸쳐 설명예제로 사�
 
 
 
-구조 요소(structural element)
+구조 요소
 ======================================
 
-구조 요소는 자식 요소만 가질 수 있다.
+구조 요소(structural elements)는 자식 요소만 가질 수 있다.
 직접 텍스트 데이터를 가질 수는 없다.
 구조 요소는 바디 요소 또는 다른 구조 요소를 가질 수 있다.
 구조 요소는 다른 구조 요소의 자식 요소가 될 수 있다.
@@ -96,22 +96,22 @@ reStructuredText_ 마크업은 이 문서 전반에 걸쳐 설명예제로 사�
 카테고리 멤버: 문서_, 절_, 토픽_, 사이드바_
 
 
-구조 서브요소(structural subelement)
+구조 서브요소
 --------------------------------------------
 
-구조 서브요소는 구조 요소의 자식 요소이다.
+구조 서브요소(structural subelements)는 구조 요소의 자식 요소이다.
 간단한 구조 서브요소(제목_, 부제목_)는 텍스트 데이터를 가질 수 있다.
 다른 구조 서브요소는 복합 요소로서 직접 텍스트 데이터를 가질 수 없다.
 
 카테고리 멤버: 제목_, 부제목_, 장식_, 문서정보_, 전환_
 
 
-문헌 요소(bibliographic element)
+문헌 요소
 ````````````````````````````````````````````
 
 문서정보_ 요소는 문서_\ 의 선택적인(optional) 자식이 될 수 있다.
 문서정보 요소는 문헌 요소들을 합쳐놓을 것이다.
-복수저자_\ 와 필드_\ 를 제외한 모든 문헌 요소는 텍스트 데이터를 가진다.
+복수저자_\ 와 필드_\ 를 제외한 모든 문헌 요소(bibliographic elements)는 텍스트 데이터를 가진다.
 복수저자_\ 는 다른 문헌 요소(보통 저자_)를 가질 수 있다.
 필드_ 는 필드_이름_\ 과 필드_바디_ 바디 요소를 가진다.
 
@@ -119,19 +119,19 @@ reStructuredText_ 마크업은 이 문서 전반에 걸쳐 설명예제로 사�
 날짜_, 필드_, 기관_, 리비전_, 상태_, 버전_
 
 
-장식 요소(decoration element)
+장식 요소
 ``````````````````````````````````````
 
-장식_ 요소는 문서_\ 의 선택적인(optional) 자식이 될 수 있다.
+장식_ 요소(decoration elements)는 문서_\ 의 선택적인(optional) 자식이 될 수 있다.
 장식 요소는 페이지 머리말과 꼬리말을 생성하는데 쓰인다.
 
 카테고리 멤버: 꼬리말_, 머리말_
 
 
-바디 요소(body element)
+바디 요소
 ==========================
 
-바디 요소는 구조 요소와 복합 바디 요소에 들어간다.
+바디 요소(body elements)는 구조 요소와 복합 바디 요소에 들어간다.
 바디 요소에는 단순 바디 요소와 복합 바디 요소, 두 종류가 있다.
 
 
@@ -144,10 +144,10 @@ pending_, raw_, rubric_, substitution_definition_, system_message_,
 table_, target_, tip_, warning_
 
 
-단순 바디 요소(simple body element)
+단순 바디 요소
 ----------------------------------------
 
-단순 바디 요소 are empty or directly contain text data.  Those
+단순 바디 요소(simple body elements) are empty or directly contain text data.  Those
 that contain text data may also contain inline elements.  Such
 elements therefore have a "mixed content model".
 
@@ -156,10 +156,10 @@ math_block_, paragraph_, pending_, raw_, rubric_, substitution_definition_,
 target_
 
 
-복합 바디 요소(compound body element)
+복합 바디 요소
 ----------------------------------------
 
-복합 바디 요소 contain local substructure (body subelements)
+복합 바디 요소(compound body elements) contain local substructure (body subelements)
 and further body elements.  They do not directly contain text data.
 
 카테고리 멤버: admonition_, attention_, block_quote_, bullet_list_,
@@ -199,7 +199,7 @@ body elements.  Most inline elements have a "mixed content model".
 Category members: abbreviation_, acronym_, citation_reference_,
 emphasis_, footnote_reference_, generated_, image_, inline_, literal_,
 math_, problematic_, reference_, strong_, subscript_,
-substitution_reference_, superscript_, target_, 제목_reference_, raw_
+substitution_reference_, superscript_, target_, 제목_참조_, raw_
 
 
 .. _HTML: http://www.w3.org/MarkUp/
@@ -333,7 +333,7 @@ Pseudo-XML_ example from a custom `:abbr:` role::
 
 
 ``주소``
-===========
+======================
 
 The ``주소`` element holds the surface mailing address information
 for the author (individual or group) of the document, or a third-party
@@ -346,7 +346,7 @@ Details
 -------
 
 :Category:
-    `Bibliographic Elements`_
+    `문헌 요소`_
 
 :Parents:
     The following elements may contain ``주소``: 문서정보_, 복수저자_
@@ -418,7 +418,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -427,7 +427,7 @@ Details
 
 :Children:
     ``admonition`` elements begin with a 제목_ and may contain one or
-    more `body elements`_.
+    more `바디 요소`_.
 
 :Analogues:
     ``admonition`` has no direct analogues in common DTDs.  It can be
@@ -485,7 +485,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -493,7 +493,7 @@ Details
     may contain ``attention``.
 
 :Children:
-    ``attention`` elements contain one or more `body elements`_.
+    ``attention`` elements contain one or more `바디 요소`_.
 
 :Analogues:
     ``attention`` has no direct analogues in common DTDs.  It can be
@@ -542,7 +542,7 @@ Pseudo-XML_ fragment from simple parsing::
 
 
 ``저자``
-==========
+=====================
 
 The ``저자`` element holds the name of the author of the document.
 
@@ -551,7 +551,7 @@ Details
 -------
 
 :Category:
-    `Bibliographic Elements`_
+    `문헌 요소`_
 
 :Parents:
     The following elements may contain ``저자``: 문서정보_, 복수저자_
@@ -606,7 +606,7 @@ context.
 
 
 ``복수저자``
-===========
+======================
 
 The ``복수저자`` element is a container for author information for
 documents with multiple authors.
@@ -616,7 +616,7 @@ Details
 -------
 
 :Category:
-    `Bibliographic Elements`_
+    `문헌 요소`_
 
 :Parents:
     Only the 문서정보_ element contains ``복수저자``.
@@ -690,7 +690,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -698,7 +698,7 @@ Details
     may contain ``block_quote``.
 
 :Children:
-    ``block_quote`` elements contain `body elements`_ followed by an
+    ``block_quote`` elements contain `바디 요소`_ followed by an
     optional attribution_ element.
 
 :Analogues:
@@ -761,7 +761,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -850,7 +850,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -858,7 +858,7 @@ Details
     may contain ``caution``.
 
 :Children:
-    ``caution`` elements contain one or more `body elements`_.
+    ``caution`` elements contain one or more `바디 요소`_.
 
 :Analogues:
     ``caution`` is analogous to the DocBook "caution" element.
@@ -1001,7 +1001,7 @@ Pseudo-XML_ fragment from simple parsing::
 
 
 ``연락처``
-===========
+======================
 
 The ``연락처`` element holds contact information for the author
 (individual or group) of the document, or a third-party contact.  It
@@ -1012,7 +1012,7 @@ Details
 -------
 
 :Category:
-    `Bibliographic Elements`_
+    `문헌 요소`_
 
 :Parents:
     The following elements may contain ``연락처``: 문서정보_, 복수저자_
@@ -1076,7 +1076,7 @@ context.
 
 
 ``저작권``
-=============
+========================
 
 The ``저작권`` element contains the document's copyright statement.
 
@@ -1085,7 +1085,7 @@ Details
 -------
 
 :Category:
-    `Bibliographic Elements`_
+    `문헌 요소`_
 
 :Parents:
     Only the 문서정보_ element contains ``저작권``.
@@ -1153,7 +1153,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -1161,7 +1161,7 @@ Details
     may contain ``danger``.
 
 :Children:
-    ``danger`` elements contain one or more `body elements`_.
+    ``danger`` elements contain one or more `바디 요소`_.
 
 :Analogues:
     ``danger`` has no direct analogues in common DTDs.  It can be
@@ -1204,7 +1204,7 @@ Pseudo-XML_ fragment from simple parsing::
 
 
 ``날짜``
-========
+===================
 
 The ``날짜`` element contains the date of publication, release, or
 last modification of the document.
@@ -1214,7 +1214,7 @@ Details
 -------
 
 :Category:
-    `Bibliographic Elements`_
+    `문헌 요소`_
 
 :Parents:
     Only the 문서정보_ element contains ``날짜``.
@@ -1280,7 +1280,7 @@ Details
 -------
 
 :Category:
-    `Structural Subelements`_
+    `구조 서브요소`_
 
 :Parents:
     Only the 문서_ element contains ``장식``.
@@ -1349,7 +1349,7 @@ Details
     Only definition_list_item_ elements contain ``definition``.
 
 :Children:
-    ``definition`` elements may contain `body elements`_.
+    ``definition`` elements may contain `바디 요소`_.
 
 :Analogues:
     ``definition`` is analogous to the HTML "dd" element and to the
@@ -1391,7 +1391,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -1563,7 +1563,7 @@ Details
     Only the option_list_item_ element contains ``description``.
 
 :Children:
-    ``description`` elements may contain `body elements`_.
+    ``description`` elements may contain `바디 요소`_.
 
 :Analogues:
     ``description`` has no direct analogues in common DTDs.
@@ -1602,13 +1602,13 @@ Details
 -------
 
 :Category:
-    `Structural Subelements`_
+    `구조 서브요소`_
 
 :Parents:
     Only the 문서_ element contains ``문서정보``.
 
 :Children:
-    ``문서정보`` elements contain `bibliographic elements`_.
+    ``문서정보`` elements contain `문헌 요소`_.
 
 :Analogues:
     ``문서정보`` is analogous to DocBook "info" elements ("bookinfo"
@@ -1692,7 +1692,7 @@ generic ``필드`` element.  Also note that the "RCSfile" keyword
 syntax has been stripped from the "Filename" data.
 
 See 필드_리스트_ for an example in a non-bibliographic context.  Also
-see the individual examples for the various `bibliographic elements`_.
+see the individual examples for the various `문헌 요소`_.
 
 
 ``doctest_block``
@@ -1715,7 +1715,7 @@ Details
 -------
 
 :Category:
-    `Simple Body Elements`_
+    `단순 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -1785,14 +1785,14 @@ Details
 -------
 
 :Category:
-    `Structural Elements`_
+    `구조 요소`_
 
 :Parents:
     The ``문서`` element has no parents.
 
 :Children:
     ``문서`` elements may contain `structural subelements`_,
-    `structural elements`_, and `body elements`_.
+    `structural elements`_, and `바디 요소`_.
 
 :Analogues:
     ``문서`` is analogous to the HTML "html" element and to
@@ -1883,7 +1883,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -1992,7 +1992,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -2000,7 +2000,7 @@ Details
     may contain ``error``.
 
 :Children:
-    ``error`` elements contain one or more `body elements`_.
+    ``error`` elements contain one or more `바디 요소`_.
 
 :Analogues:
     ``error`` has no direct analogues in common DTDs.  It can be
@@ -2109,7 +2109,7 @@ Details
     Only the 필드_ element contains ``필드_바디``.
 
 :Children:
-    ``필드_바디`` elements may contain `body elements`_.
+    ``필드_바디`` elements may contain `바디 요소`_.
 
 :Analogues:
     ``필드_바디`` has no direct analogues in common DTDs.
@@ -2150,7 +2150,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -2298,7 +2298,7 @@ Details
     Only the 장식_ element contains ``꼬리말``.
 
 :Children:
-    ``꼬리말`` elements may contain `body elements`_.
+    ``꼬리말`` elements may contain `바디 요소`_.
 
 :Analogues:
     There are no direct analogies to ``꼬리말`` in HTML or DocBook.
@@ -2378,7 +2378,7 @@ Details
     Only the 장식_ element contains ``머리말``.
 
 :Children:
-    ``머리말`` elements may contain `body elements`_.
+    ``머리말`` elements may contain `바디 요소`_.
 
 :Analogues:
     There are no direct analogies to ``머리말`` in HTML or DocBook.
@@ -2428,7 +2428,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -2436,7 +2436,7 @@ Details
     may contain ``hint``.
 
 :Children:
-    ``hint`` elements contain one or more `body elements`_.
+    ``hint`` elements contain one or more `바디 요소`_.
 
 :Analogues:
     ``hint`` has no direct analogues in common DTDs.  It can be
@@ -2498,7 +2498,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -2506,7 +2506,7 @@ Details
     may contain ``important``.
 
 :Children:
-    ``important`` elements contain one or more `body elements`_.
+    ``important`` elements contain one or more `바디 요소`_.
 
 :Analogues:
     ``important`` is analogous to the DocBook "important" element.
@@ -2641,7 +2641,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -2760,7 +2760,7 @@ Details
     ``list_item``.
 
 :Children:
-    ``list_item`` elements may contain `body elements`_.
+    ``list_item`` elements may contain `바디 요소`_.
 
 :Analogues:
     ``list_item`` is analogous to the HTML "li" element and to the
@@ -2834,7 +2834,7 @@ Details
 -------
 
 :Category:
-    `Simple Body Elements`_
+    `단순 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -2955,7 +2955,7 @@ Details
 -------
 
 :Category:
-    `Simple Body Elements`_
+    `단순 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -2999,7 +2999,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -3007,7 +3007,7 @@ Details
     may contain ``note``.
 
 :Children:
-    ``note`` elements contain one or more `body elements`_.
+    ``note`` elements contain one or more `바디 요소`_.
 
 :Analogues:
     ``note`` is analogous to the DocBook "note" element.
@@ -3210,7 +3210,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -3391,7 +3391,7 @@ Details
 -------
 
 :Category:
-    `Bibliographic Elements`_
+    `문헌 요소`_
 
 :Parents:
     Only the 문서정보_ element contains ``기관``.
@@ -3458,7 +3458,7 @@ Details
 -------
 
 :Category:
-    `Simple Body Elements`_
+    `단순 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -3539,7 +3539,7 @@ Details
 -------
 
 :Category:
-    `Bibliographic Elements`_
+    `문헌 요소`_
 
 :Parents:
     Only the 문서정보_ element contains ``리비전``.
@@ -3634,7 +3634,7 @@ Details
 -------
 
 :Category:
-    `Structural Elements`_
+    `구조 요소`_
 
 :Parents:
     The following elements may contain ``절``: 문서_,
@@ -3738,7 +3738,7 @@ Details
 -------
 
 :Category:
-    `Structural Elements`_
+    `구조 요소`_
 
 :Parents:
     The following elements may contain ``사이드바``: 문서_,
@@ -3746,7 +3746,7 @@ Details
 
 :Children:
     ``사이드바`` elements begin with a 제목_ and an optional 부제목_
-    and contain `body elements`_ and 토픽_ elements.
+    and contain `바디 요소`_ and 토픽_ elements.
 
 :Analogues:
     ``사이드바`` is analogous to the DocBook "sidebar" element.
@@ -3810,7 +3810,7 @@ Details
 -------
 
 :Category:
-    `Bibliographic Elements`_
+    `문헌 요소`_
 
 :Parents:
     Only the 문서정보_ element contains ``상태``.
@@ -3898,7 +3898,7 @@ Details
 -------
 
 :Category:
-    `Structural Subelements`_
+    `구조 서브요소`_
 
 :Parents:
     The 문서_ and 사이드바_ elements may contain ``부제목``.
@@ -4062,7 +4062,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -4070,7 +4070,7 @@ Details
     may contain ``tip``.
 
 :Children:
-    ``tip`` elements contain one or more `body elements`_.
+    ``tip`` elements contain one or more `바디 요소`_.
 
 :Analogues:
     ``tip`` is analogous to the DocBook "tip" element.
@@ -4114,7 +4114,7 @@ Pseudo-XML_ fragment from simple parsing::
 .. _title:
 
 ``제목``
-=========
+=================
 
 The ``제목`` element stores the title of a 문서_, 절_,
 토픽_, 사이드바_, or generic admonition_.
@@ -4124,7 +4124,7 @@ Details
 -------
 
 :Category:
-    `Structural Subelements`_
+    `구조 서브요소`_
 
 :Parents:
     The following elements may contain ``제목``: 문서_, 절_,
@@ -4174,14 +4174,14 @@ Pseudo-XML_ fragment from simple parsing::
             A paragraph.
 
 
-``제목_reference``
-===================
+``제목_참조``
+======================================
 
 `To be completed`_.
 
 
 ``토픽``
-=========
+============================
 
 The ``토픽`` element is a nonrecursive 절_-like construct which
 may occur at the top level of a 절_ wherever a body element
@@ -4194,7 +4194,7 @@ Details
 -------
 
 :Category:
-    `Structural Elements`_
+    `구조 요소`_
 
 :Parents:
     The following elements may contain ``토픽``: 문서_, 절_,
@@ -4276,7 +4276,7 @@ Details
 -------
 
 :Category:
-    `Structural Subelements`_
+    `구조 서브요소`_
 
 :Parents:
     The following elements may contain ``전환``: 문서_,
@@ -4346,7 +4346,7 @@ Details
 -------
 
 :Category:
-    `Bibliographic Elements`_
+    `문헌 요소`_
 
 :Parents:
     Only the 문서정보_ element contains ``버전``.
@@ -4416,7 +4416,7 @@ Details
 -------
 
 :Category:
-    `Compound Body Elements`_
+    `복합 바디 요소`_
 
 :Parents:
     All elements employing the `%body.elements;`_ or
@@ -4424,7 +4424,7 @@ Details
     may contain ``warning``.
 
 :Children:
-    ``warning`` elements contain one or more `body elements`_.
+    ``warning`` elements contain one or more `바디 요소`_.
 
 :Analogues:
     ``warning`` is analogous to the DocBook "warning" element.
@@ -4824,7 +4824,7 @@ wrapper DTDs to extend ``%basic.atts;``.
 ============================
 
 The ``%bibliographic.elements;`` parameter entity contains an OR-list of all
-`bibliographic elements`_.
+`문헌 요소`_.
 
 Entity definition:
 
@@ -4846,7 +4846,7 @@ Only the 문서정보_ element directly employs the
 ===================
 
 The ``%body.elements;`` parameter entity contains an OR-list of all
-`body elements`_.  ``%body.elements;`` is itself contained within the
+`바디 요소`_.  ``%body.elements;`` is itself contained within the
 `%structure.model;`_ parameter entity.
 
 Entity definition:
@@ -4908,7 +4908,7 @@ Entity definition:
     abbreviation_ | acronym_ | citation_reference_ | emphasis_ |
     footnote_reference_ | generated_ | image_ | inline_ | literal_ |
     problematic_ | raw_ | reference_ | strong_ | substitution_reference_ |
-    subscript_ | superscript_ | target_ | 제목_reference_
+    subscript_ | superscript_ | target_ | 제목_참조_
     %additional.inline.elements;
 
 The ``%additional.inline.elements;`` parameter entity can be used by
@@ -4923,7 +4923,7 @@ generated_, inline_, line_block_, literal_block_, math_, math_block_,
 paragraph_, problematic_, raw_, reference_, 리비전_, rubric_,
 상태_, strong_, subscript_, substitution_definition_,
 substitution_reference_, 부제목_, superscript_, target_, term_,
-제목_, 제목_reference_, 버전_
+제목_, 제목_참조_, 버전_
 
 
 ``%reference.atts;``
