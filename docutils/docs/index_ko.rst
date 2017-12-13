@@ -110,7 +110,7 @@ become reference material.  Successful specs evolve into refs.
 
 Docutils-general:
 
-* `The Docutils Document Tree <ref/doctree.html>`__ (incomplete)
+* `독유틸즈 문서 트리 <ref/doctree_ko.html>`__ (미완성)
 * `Docutils Transforms <ref/transforms.html>`__
 * `Docutils Generic DTD <ref/docutils.dtd>`__
 * `OASIS XML Exchange Table Model Declaration Module
