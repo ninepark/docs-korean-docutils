@@ -100,10 +100,10 @@ reStructuredText_ 마크업은 이 문서 전반에 걸쳐 설명예제로 사�
 --------------------------------------------
 
 구조 서브요소(structural subelements)는 구조 요소의 자식 요소이다.
-간단한 구조 서브요소(제목_, 부제목_)는 텍스트 데이터를 가질 수 있다.
+간단한 구조 서브요소(제목_\ , 부제목_\ )는 텍스트 데이터를 가질 수 있다.
 다른 구조 서브요소는 복합 요소로서 직접 텍스트 데이터를 가질 수 없다.
 
-카테고리 멤버: 제목_, 부제목_, 장식_, 문서정보_, 전환_
+카테고리 멤버: 제목_\ , 부제목_\ , 장식_, 문서정보_, 전환_
 
 
 문헌 요소
@@ -199,7 +199,7 @@ body elements.  Most inline elements have a "mixed content model".
 Category members: abbreviation_, acronym_, citation_reference_,
 emphasis_, footnote_reference_, generated_, image_, inline_, literal_,
 math_, problematic_, reference_, strong_, subscript_,
-substitution_reference_, superscript_, target_, 제목_참조_, raw_
+substitution_reference_, superscript_, target_, 제목_\ 참조_, raw_
 
 
 .. _HTML: http://www.w3.org/MarkUp/
@@ -426,7 +426,7 @@ Details
     may contain ``admonition``.
 
 :Children:
-    ``admonition`` elements begin with a 제목_ and may contain one or
+    ``admonition`` elements begin with a 제목_\  and may contain one or
     more `바디 요소`_.
 
 :Analogues:
@@ -442,7 +442,7 @@ Content Model
 
 .. parsed-literal::
 
-   (제목_, (`%body.elements;`_)+)
+   (제목_\ , (`%body.elements;`_)+)
 
 :Attributes:
     The ``admonition`` element contains only the `common attributes`_:
@@ -1647,7 +1647,7 @@ Examples
 
 Docinfo is represented in reStructuredText_ by a 필드_리스트_ in a
 bibliographic context: the first non-comment element of a 문서_,
-after any document 제목_/부제목_.  The field list is transformed
+after any document 제목_\ /부제목_\ .  The field list is transformed
 into a ``문서정보`` element and its children by a transform.  Source::
 
     Docinfo Example
@@ -1804,7 +1804,7 @@ Content Model
 
 .. parsed-literal::
 
-    ( (제목_, 부제목_?)?,
+    ( (제목_\ , 부제목_\ ?)?,
       장식_?,
       (문서정보_, 전환_?)?,
       `%structure.model;`_ )
@@ -1813,8 +1813,8 @@ Depending on the source of the data and the stage of processing, the
 "document" may not initially contain a "title".  A document title is
 not directly representable in reStructuredText_.  Instead, a lone
 top-level section may have its title promoted to become the document
-제목_, and similarly for a lone second-level (sub)section's title to
-become the document 부제목_.
+제목_\ , and similarly for a lone second-level (sub)section's title to
+become the document 부제목_\ .
 
 The contents of "장식_" may be specified in a document,
 constructed programmatically, or both.  The "문서정보_" may be
@@ -1825,7 +1825,7 @@ of a ``문서``.
 
 :Attributes:
     The ``문서`` element contains the `common attributes`_ (ids_,
-    names_, dupnames_, source_, and classes_), plus an optional 제목__
+    names_, dupnames_, source_, and classes_), plus an optional 제목_\ _
     attribute which stores the document title metadata.
 
     __ `title (attribute)`_
@@ -3641,7 +3641,7 @@ Details
     절_
 
 :Children:
-    ``절`` elements begin with a 제목_, and may contain `body
+    ``절`` elements begin with a 제목_\ , and may contain `body
     elements`_ as well as 전환_, 토픽_, and 사이드바_ elements.
 
 :Analogues:
@@ -3654,7 +3654,7 @@ Content Model
 
 .. parsed-literal::
 
-    (제목_,
+    (제목_\ ,
      `%structure.model;`_)
 
 See the `%structure.model;`_ parameter entity for details of the body
@@ -3745,7 +3745,7 @@ Details
     절_
 
 :Children:
-    ``사이드바`` elements begin with a 제목_ and an optional 부제목_
+    ``사이드바`` elements begin with a 제목_\  and an optional 부제목_\
     and contain `바디 요소`_ and 토픽_ elements.
 
 :Analogues:
@@ -3763,7 +3763,7 @@ Content Model
 
 .. parsed-literal::
 
-    (제목_, 부제목_?,
+    (제목_\ , 부제목_\ ?,
      (`%body.elements;`_ | 토픽_)+)
 
 :Attributes:
@@ -3912,7 +3912,7 @@ Details
     to the DocBook "subtitle" element.
 
 :Processing:
-    A document's subtitle is usually rendered smaller than its 제목_.
+    A document's subtitle is usually rendered smaller than its 제목_\ .
 
 
 Content Model
@@ -4174,7 +4174,7 @@ Pseudo-XML_ fragment from simple parsing::
             A paragraph.
 
 
-``제목_참조``
+``제목_\ 참조``
 ======================================
 
 `To be completed`_.
@@ -4201,7 +4201,7 @@ Details
     사이드바_
 
 :Children:
-    ``토픽`` elements begin with a 제목_ and may contain `body
+    ``토픽`` elements begin with a 제목_\  and may contain `body
     elements`_.
 
 :Analogues:
@@ -4217,7 +4217,7 @@ Content Model
 
 .. parsed-literal::
 
-    (제목_?,
+    (제목_\ ?,
      (`%body.elements;`_)+)
 
 :Attributes:
@@ -4532,7 +4532,7 @@ entity).
 `Attribute type`_: ``CDATA``.  Default value: none.
 
 The ``auto`` attribute is used to indicate automatically-numbered
-footnote_, footnote_reference_ and 제목_ elements (via the
+footnote_, footnote_reference_ and 제목_\  elements (via the
 `%auto.att;`_ parameter entity).
 
 
@@ -4652,7 +4652,7 @@ The ``prefix`` attribute is used in the enumerated_list_ element.
 
 The ``refid`` attribute contains references to `ids`_ attributes in
 other elements.  It is used by the target_, reference_,
-footnote_reference_, citation_reference_, 제목_ and problematic_
+footnote_reference_, citation_reference_, 제목_\  and problematic_
 elements (via the `%refid.att;`_ and `%reference.atts;`_ parameter
 entities).
 
@@ -4779,7 +4779,7 @@ Entity definition:
 
     auto_     CDATA     #IMPLIED
 
-The footnote_, footnote_reference_, and 제목_ elements directly
+The footnote_, footnote_reference_, and 제목_\  elements directly
 employ the ``%auto.att;`` parameter entity in their attribute lists.
 
 
@@ -4908,7 +4908,7 @@ Entity definition:
     abbreviation_ | acronym_ | citation_reference_ | emphasis_ |
     footnote_reference_ | generated_ | image_ | inline_ | literal_ |
     problematic_ | raw_ | reference_ | strong_ | substitution_reference_ |
-    subscript_ | superscript_ | target_ | 제목_참조_
+    subscript_ | superscript_ | target_ | 제목_\ 참조_
     %additional.inline.elements;
 
 The ``%additional.inline.elements;`` parameter entity can be used by
@@ -4922,8 +4922,8 @@ generated_, inline_, line_block_, literal_block_, math_, math_block_,
 기관_,
 paragraph_, problematic_, raw_, reference_, 리비전_, rubric_,
 상태_, strong_, subscript_, substitution_definition_,
-substitution_reference_, 부제목_, superscript_, target_, term_,
-제목_, 제목_참조_, 버전_
+substitution_reference_, 부제목_\ , superscript_, target_, term_,
+제목_\ , 제목_\ 참조_, 버전_
 
 
 ``%reference.atts;``
@@ -4961,7 +4961,7 @@ Entity definition:
 
     refid_   CDATA     #IMPLIED
 
-The 제목_ and problematic_ elements directly employ the
+The 제목_\  and problematic_ elements directly employ the
 ``%refid.att;`` parameter entity in their attribute lists.
 
 Via `%reference.atts;`_, the ``%refid.att;`` parameter entity is
@@ -5087,7 +5087,7 @@ content models of the following elements: abbreviation_, acronym_,
 doctest_block_, emphasis_, 필드_이름_, generated_, line_block_,
 literal_block_, 기관_, paragraph_, problematic_, raw_,
 reference_, 리비전_, 상태_, strong_, substitution_definition_,
-substitution_reference_, 부제목_, target_, term_, 제목_, 버전_
+substitution_reference_, 부제목_\ , target_, term_, 제목_\ , 버전_
 
 
 
