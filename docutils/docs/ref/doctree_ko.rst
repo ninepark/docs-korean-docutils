@@ -15,28 +15,24 @@
 .. contents:: :depth: 1
 
 
-이 문서는 독유틸 문서의 XML 데이터 구조 즉, 각 요소와 속성의 관계 및 문법을 서술한다.
-독유틸 문서 구조는 `Docutils Generic DTD`_ XML 문서 타입 정의 문서인 
-docutils.dtd_\ 에 정식으로 정의되어 있다. 
+이 문서는 독유틸즈 문서의 XML 데이터 구조 즉, 각 요소와 속성의 관계 및 문법을 서술한다.
+독유틸 문서 구조는 `독유틸즈 제너릭 DTD`_ XML 문서 타입 정의 문서인 docutils.dtd_\ 에 정식으로 정의되어 있다.
 이 문서는 각 요소의 구조적 관계에 대한 세부사항을 정의한다.
 
-이 문서는 자세한 구현 사항까지 논의하지 않는다. 
+이 문서는 자세한 구현 사항까지 논의하지 않는다.
 그러한 정보는 트리 데이터 구조를 클래스 라이브러리로 구현한 ``docutils.nodes`` 모듈의 내부 문서(독스트링)에서 볼 수 있다.
 
-The reader is assumed to have some familiarity with XML or SGML, and
-an understanding of the data structure meaning of "tree".  For a list
-of introductory articles, see `Introducing the Extensible Markup
-Language (XML)`_.
+이 글의 독자는 XML이나 SGML에 익숙하고 "트리" 데이터 구조에 대해 이해하고 있다고 가정한다.
+입문용 글들이 필요하면 `Introducing the Extensible Markup Language (XML)`_\ 을 보라.
 
-The reStructuredText_ markup is used for illustrative examples
-throughout this document.  For a gentle introduction, see `A
-ReStructuredText Primer`_.  For complete technical details, see the
-`reStructuredText Markup Specification`_.
+reStructuredText_ 마크업은 이 문서 전반에 걸쳐 설명예제로 사용된다.
+기초적인 소개서로는 `A ReStructuredText Primer`_\ 가 있다.
+완벽하고 기술적인 세부 사항은 `reStructuredText Markup Specification`_\ 에 있다.
 
 
 .. _Docutils: http://docutils.sourceforge.net/
-.. _Docutils Generic DTD:
-.. _Docutils DTD:
+.. _독유틸즈 제너릭 DTD:
+.. _독유틸즈 DTD:
 .. _docutils.dtd: docutils.dtd
 .. _Introducing the Extensible Markup Language (XML):
    http://xml.coverpages.org/xmlIntro.html
@@ -46,132 +42,129 @@ ReStructuredText Primer`_.  For complete technical details, see the
 
 
 -------------------
- Element Hierarchy
+요소의 상하관계
 -------------------
 
 .. contents:: :local:
 
-Below is a simplified diagram of the hierarchy of elements in the
-Docutils document tree structure.  An element may contain any other
-elements immediately below it in the diagram.  Notes are written in
-square brackets.  Element types in parentheses indicate recursive or
-one-to-many relationships; sections may contain (sub)sections, tables
-contain further body elements, etc. ::
+아래는 독유틸즈 문서 트리 구조를 이루는 각 요소의 상하관계를 간단하게 그린 다이어그램이다.
+하나의 요소는 바로 아래에 다른 요소를 포함할 수 있다.
+대괄호안에는 주의 사항을 썼다.
+소괄호안의 요소 타입은 재귀적이거나 일대다(one-to-many) 관계를 나타낸다.
+절(section)은 소절(subsection)을 포함할 수 있고
+표는 다른 바디(body) 요소들을 포함할 수 있다.::
 
   +--------------------------------------------------------------------+
-  | document  [may begin with a title, subtitle, decoration, docinfo]  |
+  | 문서  [제목, 부제목, 꾸밈말, docinfo로 시작할 수 있다.]            |
   |                             +--------------------------------------+
-  |                             | sections  [each begins with a title] |
-  +-----------------------------+-------------------------+------------+
-  | [body elements:]                                      | (sections) |
-  |         | - literal | - lists  |       | - hyperlink  +------------+
-  |         |   blocks  | - tables |       |   targets    |
-  | para-   | - doctest | - block  | foot- | - sub. defs  |
-  | graphs  |   blocks  |   quotes | notes | - comments   |
-  +---------+-----------+----------+-------+--------------+
-  | [text]+ | [text]    | (body elements)  | [text]       |
-  | (inline +-----------+------------------+--------------+
-  | markup) |
-  +---------+
+  |                             | 절  [각 절은 제목으로 시작한다.]     |
+  +-----------------------------+--------------------------+-----------+
+  | [바디 요소:]                                           | (절)      |
+  |          | - 리터럴  | - 리스트  |      | - 하이퍼링크 +-----------+
+  |          |   블럭    | - 표      |      |   타겟       |
+  | 문단     | - doctest | - 블럭    | 각주 | - 정의       |
+  |          |   블럭    |   인용    |      | - 주석       |
+  +----------+-----------+-----------+------+--------------+
+  | [텍스트]+| [텍스트]  |(바디 요소)       | [텍스트]     |
+  | (인라인  +-----------+------------------+--------------+
+  | 마크업)  |
+  +----------+
 
-The Docutils document model uses a simple, recursive model for section
-structure.  A document_ node may contain body elements and section_
-elements.  Sections in turn may contain body elements and sections.
-The level (depth) of a section element is determined from its physical
-nesting level; unlike other document models (``<h1>`` in HTML_,
-``<sect1>`` in DocBook_, ``<div1>`` in XMLSpec_) the level is not
-incorporated into the element name.
+독유틸즈 문서(document) 모델은 단순하고 재귀적인 절(section) 구조이다.
+문서_ 노드는 바디 요소와 절_ 요소를 포함할 수 있다.
+절은 바디 요소와 다른 절을 포함할 수 있다.
+절 요소의 레벨(깊이)은 물리적인 포함 레벨로 결정된다.
+다른 문서 모델(HTML의 ``<h1>``, DocBook_\ 의 ``<sect1>``, 또는 XMLSpec_\ 의 ``<div1>`` 등)과 달리
+레벨과 이름은 관련성이가 없다.
 
-The Docutils document model uses strict element content models.  Every
-element has a unique structure and semantics, but elements may be
-classified into general categories (below).  Only elements which are
-meant to directly contain text data have a mixed content model, where
-text data and inline elements may be intermixed.  This is unlike the
-much looser HTML_ document model, where paragraphs and text data may
-occur at the same level.
+독유틸 문서 모형은 엄격한 요소 내용 모델(strict element content model)이다.
+모든 요소는 유일한 구조와 문법을 가지지만 (아래와 같이) 다른 카테고리로 분류될 수 있다.
+텍스트 데이터만 직접 가지고 있는 요소만이 혼합 내용 모형(mixed content model)을 가진다.
+여기에서는 텍스트 데이터와 인라인 요소들이 섞여있을 수 있다.
+이 점이 문단과 텍스트 데이터가 같은 레벨에 나올 수 있는 훨씬 덜 엄격한 HTML_ 문서 모델과 다른 점이다.
 
 
-Structural Elements
-===================
 
-Structural elements may only contain child elements; they do not
-directly contain text data.  Structural elements may contain body
-elements or further structural elements.  Structural elements can only
-be child elements of other structural elements.
+구조 요소(structural element)
+======================================
 
-Category members: document_, section_, topic_, sidebar_
+구조 요소는 자식 요소만 가질 수 있다.
+직접 텍스트 데이터를 가질 수는 없다.
+구조 요소는 바디 요소 또는 다른 구조 요소를 가질 수 있다.
+구조 요소는 다른 구조 요소의 자식 요소가 될 수 있다.
 
-
-Structural Subelements
-----------------------
-
-Structural subelements are child elements of structural elements.
-Simple structuctural subelements (title_, subtitle_) contain text
-data; the others are compound and do not directly contain text data.
-
-Category members: title_, subtitle_, decoration_, docinfo_,
-transition_
+카테고리 멤버: 문서_, 절_, 토픽_, 사이드바_
 
 
-Bibliographic Elements
-``````````````````````
+구조 서브요소(structural subelement)
+--------------------------------------------
 
-The docinfo_ element is an optional child of document_.  It groups
-bibliographic elements together.  All bibliographic elements except
-authors_ and field_ contain text data.  authors_ contains further
-bibliographic elements (most notably author_).  field_ contains
-field_name_ and field_body_ body subelements.
+구조 서브요소는 구조 요소의 자식 요소이다.
+간단한 구조 서브요소(제목_, 부제목_)는 텍스트 데이터를 가질 수 있다.
+다른 구조 서브요소는 복합 요소로서 직접 텍스트 데이터를 가질 수 없다.
 
-Category members: address_, author_, authors_, contact_, copyright_,
-date_, field_, organization_, revision_, status_, version_
+카테고리 멤버: 제목_, 부제목_, 장식_, 문서정보_, 전환_
 
 
-Decorative Elements
-```````````````````
+문헌 요소(bibliographic element)
+````````````````````````````````````````````
 
-The decoration_ element is also an optional child of document_.  It
-groups together elements used to generate page headers and footers.
+문서정보_ 요소는 문서_\ 의 선택적인(optional) 자식이 될 수 있다.
+문서정보 요소는 문헌 요소들을 합쳐놓을 것이다.
+복수저자_\ 와 필드_\ 를 제외한 모든 문헌 요소는 텍스트 데이터를 가진다.
+복수저자_\ 는 다른 문헌 요소(보통 저자_)를 가질 수 있다.
+필드_ 는 필드_이름_\ 과 필드_바디_ 바디 요소를 가진다.
 
-Category members: footer_, header_
+카테고리 멤버: 주소_, 저자_, 복수저자_, 연락처_, 저작권_,
+날짜_, 필드_, 기관_, 리비전_, 상태_, 버전_
 
 
-Body Elements
-=============
+장식 요소(decoration element)
+``````````````````````````````````````
 
-Body elements are contained within structural elements and compound
-body elements.  There are two subcategories of body elements: simple
-and compound.
+장식_ 요소는 문서_\ 의 선택적인(optional) 자식이 될 수 있다.
+장식 요소는 페이지 머리말과 꼬리말을 생성하는데 쓰인다.
 
-Category members: admonition_, attention_, block_quote_, bullet_list_,
+카테고리 멤버: 꼬리말_, 머리말_
+
+
+바디 요소(body element)
+==========================
+
+바디 요소는 구조 요소와 복합 바디 요소에 들어간다.
+바디 요소에는 단순 바디 요소와 복합 바디 요소, 두 종류가 있다.
+
+
+카테고리 멤버: admonition_, attention_, block_quote_, bullet_list_,
 caution_, citation_, comment_, compound_, container_, danger_,
 definition_list_, doctest_block_, enumerated_list_, error_,
-field_list_, figure_, footnote_, hint_, image_, important_,
+필드_리스트_, figure_, footnote_, hint_, image_, important_,
 line_block_, literal_block_, note_, option_list_, paragraph_,
 pending_, raw_, rubric_, substitution_definition_, system_message_,
 table_, target_, tip_, warning_
 
 
-Simple Body Elements
---------------------
+단순 바디 요소(simple body element)
+----------------------------------------
 
-Simple body elements are empty or directly contain text data.  Those
+단순 바디 요소 are empty or directly contain text data.  Those
 that contain text data may also contain inline elements.  Such
 elements therefore have a "mixed content model".
 
-Category members: comment_, doctest_block_, image_, literal_block_,
+카테고리 멤버: comment_, doctest_block_, image_, literal_block_,
 math_block_, paragraph_, pending_, raw_, rubric_, substitution_definition_,
 target_
 
 
-Compound Body Elements
-----------------------
+복합 바디 요소(compound body element)
+----------------------------------------
 
-Compound body elements contain local substructure (body subelements)
+복합 바디 요소 contain local substructure (body subelements)
 and further body elements.  They do not directly contain text data.
 
-Category members: admonition_, attention_, block_quote_, bullet_list_,
+카테고리 멤버: admonition_, attention_, block_quote_, bullet_list_,
 caution_, citation_, compound_, container_, danger_, definition_list_,
-enumerated_list_, error_, field_list_, figure_, footnote_, hint_,
+enumerated_list_, error_, 필드_리스트_, figure_, footnote_, hint_,
 important_, line_block, note_, option_list_, system_message_, table_,
 tip_, warning_
 
@@ -181,17 +174,17 @@ Body Subelements
 
 Compound body elements contain specific subelements (e.g. bullet_list_
 contains list_item_).  Subelements may themselves be compound elements
-(containing further child elements, like field_) or simple data
-elements (containing text data, like field_name_).  These subelements
+(containing further child elements, like 필드_) or simple data
+elements (containing text data, like 필드_이름_).  These subelements
 always occur within specific parent elements, never at the body
 element level (beside paragraphs, etc.).
 
 Category members (simple): attribution_, caption_, classifier_,
-colspec_, field_name_, label_, line_, option_argument_,
+colspec_, 필드_이름_, label_, line_, option_argument_,
 option_string_, term_
 
 Category members (compound): definition_, definition_list_item_,
-description_, entry_, field_, field_body_, legend_, list_item_,
+description_, entry_, 필드_, 필드_바디_, legend_, list_item_,
 option_, option_group_, option_list_item_, row_, tbody_, tgroup_,
 thead_
 
@@ -206,7 +199,7 @@ body elements.  Most inline elements have a "mixed content model".
 Category members: abbreviation_, acronym_, citation_reference_,
 emphasis_, footnote_reference_, generated_, image_, inline_, literal_,
 math_, problematic_, reference_, strong_, subscript_,
-substitution_reference_, superscript_, target_, title_reference_, raw_
+substitution_reference_, superscript_, target_, 제목_reference_, raw_
 
 
 .. _HTML: http://www.w3.org/MarkUp/
@@ -244,7 +237,7 @@ following subsections:
 
 * Content Model:
 
-  The formal XML content model from the `Docutils DTD`_, followed by:
+  The formal XML content model from the `독유틸즈 DTD`_, followed by:
 
   - Attributes: Describes (or refers to descriptions of) the possible
     values and semantics of each attribute.
@@ -339,10 +332,10 @@ Pseudo-XML_ example from a custom `:abbr:` role::
 `To be completed`_.
 
 
-``address``
+``주소``
 ===========
 
-The ``address`` element holds the surface mailing address information
+The ``주소`` element holds the surface mailing address information
 for the author (individual or group) of the document, or a third-party
 contact address.  Its structure is identical to that of the
 literal_block_ element: whitespace is significant, especially
@@ -356,20 +349,20 @@ Details
     `Bibliographic Elements`_
 
 :Parents:
-    The following elements may contain ``address``: docinfo_, authors_
+    The following elements may contain ``주소``: 문서정보_, 복수저자_
 
 :Children:
-    ``address`` elements contain text data plus `inline elements`_.
+    ``주소`` elements contain text data plus `inline elements`_.
 
 :Analogues:
-    ``address`` is analogous to the DocBook "address" element.
+    ``주소`` is analogous to the DocBook "address" element.
 
 :Processing:
     As with the literal_block_ element, newlines and other whitespace
     is significant and must be preserved.  However, a monospaced
     typeface need not be used.
 
-    See also docinfo_.
+    See also 문서정보_.
 
 
 Content Model
@@ -380,12 +373,12 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``address`` element contains the `common attributes`_ (ids_,
+    The ``주소`` element contains the `common attributes`_ (ids_,
     names_, dupnames_, source_, and classes_), plus `xml:space`_.
 
 :Parameter Entities:
     The `%bibliographic.elements;`_ parameter entity directly includes
-    ``address``.
+    ``주소``.
 
 
 Examples
@@ -409,7 +402,7 @@ Complete pseudo-XML_ result after parsing and applying transforms::
                 123 Example Ave.
                 Example, EX
 
-See docinfo_ for a more complete example, including processing
+See 문서정보_ for a more complete example, including processing
 context.
 
 
@@ -433,7 +426,7 @@ Details
     may contain ``admonition``.
 
 :Children:
-    ``admonition`` elements begin with a title_ and may contain one or
+    ``admonition`` elements begin with a 제목_ and may contain one or
     more `body elements`_.
 
 :Analogues:
@@ -449,7 +442,7 @@ Content Model
 
 .. parsed-literal::
 
-   (title_, (`%body.elements;`_)+)
+   (제목_, (`%body.elements;`_)+)
 
 :Attributes:
     The ``admonition`` element contains only the `common attributes`_:
@@ -548,10 +541,10 @@ Pseudo-XML_ fragment from simple parsing::
 `To be completed`_.
 
 
-``author``
+``저자``
 ==========
 
-The ``author`` element holds the name of the author of the document.
+The ``저자`` element holds the name of the author of the document.
 
 
 Details
@@ -561,16 +554,16 @@ Details
     `Bibliographic Elements`_
 
 :Parents:
-    The following elements may contain ``author``: docinfo_, authors_
+    The following elements may contain ``저자``: 문서정보_, 복수저자_
 
 :Children:
-    ``author`` elements may contain text data plus `inline elements`_.
+    ``저자`` elements may contain text data plus `inline elements`_.
 
 :Analogues:
-    ``author`` is analogous to the DocBook "author" element.
+    ``저자`` is analogous to the DocBook "author" element.
 
 :Processing:
-    See docinfo_.
+    See 문서정보_.
 
 
 Content Model
@@ -581,12 +574,12 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``author`` element contains only the `common attributes`_:
+    The ``저자`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%bibliographic.elements;`_ parameter entity directly includes
-    ``author``.
+    ``저자``.
 
 
 Examples
@@ -608,14 +601,14 @@ Complete pseudo-XML_ result after parsing and applying transforms::
             <author>
                 J. Random Hacker
 
-See docinfo_ for a more complete example, including processing
+See 문서정보_ for a more complete example, including processing
 context.
 
 
-``authors``
+``복수저자``
 ===========
 
-The ``authors`` element is a container for author information for
+The ``복수저자`` element is a container for author information for
 documents with multiple authors.
 
 
@@ -626,17 +619,17 @@ Details
     `Bibliographic Elements`_
 
 :Parents:
-    Only the docinfo_ element contains ``authors``.
+    Only the 문서정보_ element contains ``복수저자``.
 
 :Children:
-    ``authors`` elements may contain the following elements: author_,
-    organization_, address_, contact_
+    ``복수저자`` elements may contain the following elements: 저자_,
+    기관_, 주소_, 연락처_
 
 :Analogues:
-    ``authors`` is analogous to the DocBook "authors" element.
+    ``복수저자`` is analogous to the DocBook "authors" element.
 
 :Processing:
-    See docinfo_.
+    See 문서정보_.
 
 
 Content Model
@@ -644,15 +637,15 @@ Content Model
 
 .. parsed-literal::
 
-    ((author_, organization_?, address_?, contact_?)+)
+    ((저자_, 기관_?, 주소_?, 연락처_?)+)
 
 :Attributes:
-    The ``authors`` element contains only the `common attributes`_:
+    The ``복수저자`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%bibliographic.elements;`_ parameter entity directly includes
-    ``authors``.
+    ``복수저자``.
 
 
 Examples
@@ -682,7 +675,7 @@ semicolons (";") or commas (","); semicolons take precedence.  There
 is currently no way to represent the author's organization, address,
 or contact in a reStructuredText "Authors" field.
 
-See docinfo_ for a more complete example, including processing
+See 문서정보_ for a more complete example, including processing
 context.
 
 
@@ -1007,10 +1000,10 @@ Pseudo-XML_ fragment from simple parsing::
 `To be completed`_.
 
 
-``contact``
+``연락처``
 ===========
 
-The ``contact`` element holds contact information for the author
+The ``연락처`` element holds contact information for the author
 (individual or group) of the document, or a third-party contact.  It
 is typically used for an email or web address.
 
@@ -1022,18 +1015,18 @@ Details
     `Bibliographic Elements`_
 
 :Parents:
-    The following elements may contain ``contact``: docinfo_, authors_
+    The following elements may contain ``연락처``: 문서정보_, 복수저자_
 
 :Children:
-    ``contact`` elements may contain text data plus `inline
+    ``연락처`` elements may contain text data plus `inline
     elements`_.
 
 :Analogues:
-    ``contact`` is analogous to the DocBook "email" element.  The HTML
+    ``연락처`` is analogous to the DocBook "email" element.  The HTML
     "address" element serves a similar purpose.
 
 :Processing:
-    See docinfo_.
+    See 문서정보_.
 
 
 Content Model
@@ -1044,12 +1037,12 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``contact`` element contains only the `common attributes`_:
+    The ``연락처`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%bibliographic.elements;`_ parameter entity directly includes
-    ``contact``.
+    ``연락처``.
 
 
 Examples
@@ -1072,7 +1065,7 @@ Complete pseudo-XML_ result after parsing and applying transforms::
                 <reference refuri="mailto:jrh@example.com">
                     jrh@example.com
 
-See docinfo_ for a more complete example, including processing
+See 문서정보_ for a more complete example, including processing
 context.
 
 
@@ -1082,10 +1075,10 @@ context.
 `To be completed`_.
 
 
-``copyright``
+``저작권``
 =============
 
-The ``copyright`` element contains the document's copyright statement.
+The ``저작권`` element contains the document's copyright statement.
 
 
 Details
@@ -1095,17 +1088,17 @@ Details
     `Bibliographic Elements`_
 
 :Parents:
-    Only the docinfo_ element contains ``copyright``.
+    Only the 문서정보_ element contains ``저작권``.
 
 :Children:
-    ``copyright`` elements may contain text data plus `inline
+    ``저작권`` elements may contain text data plus `inline
     elements`_.
 
 :Analogues:
-    ``copyright`` is analogous to the DocBook "copyright" element.
+    ``저작권`` is analogous to the DocBook "copyright" element.
 
 :Processing:
-    See docinfo_.
+    See 문서정보_.
 
 
 Content Model
@@ -1116,12 +1109,12 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``copyright`` element contains only the `common attributes`_:
+    The ``저작권`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%bibliographic.elements;`_ parameter entity directly includes
-    ``copyright``.
+    ``저작권``.
 
 
 Examples
@@ -1143,7 +1136,7 @@ Complete pseudo-XML_ result after parsing and applying transforms::
             <copyright>
                 This document has been placed in the public domain.
 
-See docinfo_ for a more complete example, including processing
+See 문서정보_ for a more complete example, including processing
 context.
 
 
@@ -1210,10 +1203,10 @@ Pseudo-XML_ fragment from simple parsing::
             Mad scientist at work!
 
 
-``date``
+``날짜``
 ========
 
-The ``date`` element contains the date of publication, release, or
+The ``날짜`` element contains the date of publication, release, or
 last modification of the document.
 
 
@@ -1224,16 +1217,16 @@ Details
     `Bibliographic Elements`_
 
 :Parents:
-    Only the docinfo_ element contains ``date``.
+    Only the 문서정보_ element contains ``날짜``.
 
 :Children:
-    ``date`` elements may contain text data plus `inline elements`_.
+    ``날짜`` elements may contain text data plus `inline elements`_.
 
 :Analogues:
-    ``date`` is analogous to the DocBook "date" element.
+    ``날짜`` is analogous to the DocBook "date" element.
 
 :Processing:
-    Often used with the RCS/CVS keyword "Date".  See docinfo_.
+    Often used with the RCS/CVS keyword "Date".  See 문서정보_.
 
 
 Content Model
@@ -1244,12 +1237,12 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``date`` element contains only the `common attributes`_:
+    The ``날짜`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%bibliographic.elements;`_ parameter entity directly includes
-    ``date``.
+    ``날짜``.
 
 
 Examples
@@ -1271,14 +1264,14 @@ Complete pseudo-XML_ result after parsing and applying transforms::
             <date>
                 2002-08-20
 
-See docinfo_ for a more complete example, including processing
+See 문서정보_ for a more complete example, including processing
 context.
 
 
-``decoration``
+``장식``
 ==============
 
-The ``decoration`` element is a container for header_ and footer_
+The ``장식`` element is a container for 머리말_ and 꼬리말_
 elements and potential future extensions.  These elements are used for
 notes, time/datestamp, processing information, etc.
 
@@ -1290,13 +1283,13 @@ Details
     `Structural Subelements`_
 
 :Parents:
-    Only the document_ element contains ``decoration``.
+    Only the 문서_ element contains ``장식``.
 
 :Children:
-    ``decoration`` elements may contain `decorative elements`_.
+    ``장식`` elements may contain `decorative elements`_.
 
 :Analogues:
-    There are no direct analogies to ``decoration`` in HTML or in
+    There are no direct analogies to ``장식`` in HTML or in
     DocBook.  Equivalents are typically constructed from primitives
     and/or generated by the processing system.
 
@@ -1309,13 +1302,13 @@ Content Model
 
 .. parsed-literal::
 
-    (header_?, footer_?)
+    (머리말_?, 꼬리말_?)
 
 Although the content model doesn't specifically require contents, no
-empty ``decoration`` elements are ever created.
+empty ``장식`` elements are ever created.
 
 :Attributes:
-    The ``decoration`` element contains only the `common attributes`_:
+    The ``장식`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 
@@ -1597,10 +1590,10 @@ Examples
 See the examples for the option_list_ element.
 
 
-``docinfo``
+``문서정보``
 ===========
 
-The ``docinfo`` element is a container for document bibliographic
+The ``문서정보`` element is a container for document bibliographic
 data, or meta-data (data about the document).  It corresponds to the
 front matter of a book, such as the title page and copyright page.
 
@@ -1612,24 +1605,24 @@ Details
     `Structural Subelements`_
 
 :Parents:
-    Only the document_ element contains ``docinfo``.
+    Only the 문서_ element contains ``문서정보``.
 
 :Children:
-    ``docinfo`` elements contain `bibliographic elements`_.
+    ``문서정보`` elements contain `bibliographic elements`_.
 
 :Analogues:
-    ``docinfo`` is analogous to DocBook "info" elements ("bookinfo"
+    ``문서정보`` is analogous to DocBook "info" elements ("bookinfo"
     etc.).  There are no directly analogous HTML elements; the "meta"
     element carries some of the same information, albeit invisibly.
 
 :Processing:
-    The ``docinfo`` element may be rendered as a two-column table or
+    The ``문서정보`` element may be rendered as a two-column table or
     in other styles.  It may even be invisible or omitted from the
-    processed output.  Meta-data may be extracted from ``docinfo``
+    processed output.  Meta-data may be extracted from ``문서정보``
     children; for example, HTML ``<meta>`` tags may be constructed.
 
-    When Docutils_ transforms a reStructuredText_ field_list_ into a
-    ``docinfo`` element (see the examples below), RCS/CVS keywords are
+    When Docutils_ transforms a reStructuredText_ 필드_리스트_ into a
+    ``문서정보`` element (see the examples below), RCS/CVS keywords are
     normally stripped from simple (one paragraph) field bodies.  For
     complete details, please see `RCS Keywords`_ in the
     `reStructuredText Markup Specification`_.
@@ -1645,17 +1638,17 @@ Content Model
     (`%bibliographic.elements;`_)+
 
 :Attributes:
-    The ``docinfo`` element contains only the `common attributes`_:
+    The ``문서정보`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 
 Examples
 --------
 
-Docinfo is represented in reStructuredText_ by a field_list_ in a
-bibliographic context: the first non-comment element of a document_,
-after any document title_/subtitle_.  The field list is transformed
-into a ``docinfo`` element and its children by a transform.  Source::
+Docinfo is represented in reStructuredText_ by a 필드_리스트_ in a
+bibliographic context: the first non-comment element of a 문서_,
+after any document 제목_/부제목_.  The field list is transformed
+into a ``문서정보`` element and its children by a transform.  Source::
 
     Docinfo Example
     ===============
@@ -1686,19 +1679,19 @@ Complete pseudo-XML_ result after parsing and applying transforms::
             <version>
                 1
             <field>
-                <field_name>
+                <필드_name>
                     Filename
-                <field_body>
+                <필드_body>
                     <paragraph>
                         doctree.txt
             <copyright>
                 This document has been placed in the public domain.
 
-Note that "Filename" is a non-standard ``docinfo`` field, so becomes a
-generic ``field`` element.  Also note that the "RCSfile" keyword
+Note that "Filename" is a non-standard ``문서정보`` field, so becomes a
+generic ``필드`` element.  Also note that the "RCSfile" keyword
 syntax has been stripped from the "Filename" data.
 
-See field_list_ for an example in a non-bibliographic context.  Also
+See 필드_리스트_ for an example in a non-bibliographic context.  Also
 see the individual examples for the various `bibliographic elements`_.
 
 
@@ -1779,11 +1772,11 @@ Pseudo-XML_ fragment from simple parsing::
         this is a Doctest block
 
 
-``document``
+``문서``
 ============
 
-The ``document`` element is the root (topmost) element of the Docutils
-document tree.  ``document`` is the direct or indirect ancestor of
+The ``문서`` element is the root (topmost) element of the Docutils
+document tree.  ``문서`` is the direct or indirect ancestor of
 every other element in the tree.  It encloses the entire document
 tree.  It is the starting point for a document.
 
@@ -1795,14 +1788,14 @@ Details
     `Structural Elements`_
 
 :Parents:
-    The ``document`` element has no parents.
+    The ``문서`` element has no parents.
 
 :Children:
-    ``document`` elements may contain `structural subelements`_,
+    ``문서`` elements may contain `structural subelements`_,
     `structural elements`_, and `body elements`_.
 
 :Analogues:
-    ``document`` is analogous to the HTML "html" element and to
+    ``문서`` is analogous to the HTML "html" element and to
     several DocBook elements such as "book".
 
 
@@ -1811,28 +1804,28 @@ Content Model
 
 .. parsed-literal::
 
-    ( (title_, subtitle_?)?,
-      decoration_?,
-      (docinfo_, transition_?)?,
+    ( (제목_, 부제목_?)?,
+      장식_?,
+      (문서정보_, 전환_?)?,
       `%structure.model;`_ )
 
 Depending on the source of the data and the stage of processing, the
 "document" may not initially contain a "title".  A document title is
 not directly representable in reStructuredText_.  Instead, a lone
 top-level section may have its title promoted to become the document
-title_, and similarly for a lone second-level (sub)section's title to
-become the document subtitle_.
+제목_, and similarly for a lone second-level (sub)section's title to
+become the document 부제목_.
 
-The contents of "decoration_" may be specified in a document,
-constructed programmatically, or both.  The "docinfo_" may be
-transformed from an initial field_list_.
+The contents of "장식_" may be specified in a document,
+constructed programmatically, or both.  The "문서정보_" may be
+transformed from an initial 필드_리스트_.
 
 See the `%structure.model;`_ parameter entity for details of the body
-of a ``document``.
+of a ``문서``.
 
 :Attributes:
-    The ``document`` element contains the `common attributes`_ (ids_,
-    names_, dupnames_, source_, and classes_), plus an optional title__
+    The ``문서`` element contains the `common attributes`_ (ids_,
+    names_, dupnames_, source_, and classes_), plus an optional 제목__
     attribute which stores the document title metadata.
 
     __ `title (attribute)`_
@@ -2049,10 +2042,10 @@ Pseudo-XML_ fragment from simple parsing::
             Does not compute.
 
 
-``field``
+``필드``
 =========
 
-The ``field`` element contains a pair of field_name_ and field_body_
+The ``필드`` element contains a pair of 필드_이름_ and 필드_바디_
 elements.
 
 
@@ -2063,18 +2056,18 @@ Details
     `Body Subelements`_
 
 :Parents:
-    The following elements may contain ``field``: docinfo_,
-    field_list_
+    The following elements may contain ``필드``: 문서정보_,
+    필드_리스트_
 
 :Children:
-    Each ``field`` element contains one field_name_ and one
-    field_body_ element.
+    Each ``필드`` element contains one 필드_이름_ and one
+    필드_바디_ element.
 
 :Analogues:
-    ``field`` has no direct analogues in common DTDs.
+    ``필드`` has no direct analogues in common DTDs.
 
 :Processing:
-    See field_list_.
+    See 필드_리스트_.
 
 
 Content Model
@@ -2082,27 +2075,27 @@ Content Model
 
 .. parsed-literal::
 
-   (field_name_, field_body_)
+   (필드_이름_, 필드_바디_)
 
 :Attributes:
-    The ``field`` element contains only the `common attributes`_:
+    The ``필드`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%bibliographic.elements;`_ parameter entity directly includes
-    ``field``.
+    ``필드``.
 
 
 Examples
 --------
 
-See the examples for the field_list_ and docinfo_ elements.
+See the examples for the 필드_리스트_ and 문서정보_ elements.
 
 
-``field_body``
+``필드_바디``
 ==============
 
-The ``field_body`` element contains body elements.  It is analogous to
+The ``필드_바디`` element contains body elements.  It is analogous to
 a database field's data.
 
 
@@ -2113,16 +2106,16 @@ Details
     `Body Subelements`_
 
 :Parents:
-    Only the field_ element contains ``field_body``.
+    Only the 필드_ element contains ``필드_바디``.
 
 :Children:
-    ``field_body`` elements may contain `body elements`_.
+    ``필드_바디`` elements may contain `body elements`_.
 
 :Analogues:
-    ``field_body`` has no direct analogues in common DTDs.
+    ``필드_바디`` has no direct analogues in common DTDs.
 
 :Processing:
-    See field_list_.
+    See 필드_리스트_.
 
 
 Content Model
@@ -2133,23 +2126,23 @@ Content Model
    (`%body.elements;`_)*
 
 :Attributes:
-    The ``field_body`` element contains only the `common attributes`_:
+    The ``필드_바디`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 
 Examples
 --------
 
-See the examples for the field_list_ and docinfo_ elements.
+See the examples for the 필드_리스트_ and 문서정보_ elements.
 
 
-``field_list``
+``필드_리스트``
 ==============
 
-The ``field_list`` element contains two-column table-like structures
+The ``필드_리스트`` element contains two-column table-like structures
 resembling database records (label & data pairs).  Field lists are
 often meant for further processing.  In reStructuredText_, field lists
-are used to represent bibliographic fields (contents of the docinfo_
+are used to represent bibliographic fields (contents of the 문서정보_
 element) and directive options.
 
 
@@ -2162,17 +2155,17 @@ Details
 :Parents:
     All elements employing the `%body.elements;`_ or
     `%structure.model;`_ parameter entities in their content models
-    may contain ``field_list``.
+    may contain ``필드_리스트``.
 
 :Children:
-    ``field_list`` elements contain one or more field_ elements.
+    ``필드_리스트`` elements contain one or more 필드_ elements.
 
 :Analogues:
-    ``field_list`` has no direct analogues in common DTDs.  It can be
+    ``필드_리스트`` has no direct analogues in common DTDs.  It can be
     emulated with primitives such as tables.
 
 :Processing:
-    A ``field_list`` is typically rendered as a two-column list, where
+    A ``필드_리스트`` is typically rendered as a two-column list, where
     the first column contains "labels" (usually with a colon suffix).
     However, field lists are often used for extension syntax or
     special processing.  Such structures do not survive as field lists
@@ -2184,16 +2177,16 @@ Content Model
 
 .. parsed-literal::
 
-   (field_ +)
+   (필드_ +)
 
 :Attributes:
-    The ``field_list`` element contains only the `common attributes`_:
+    The ``필드_리스트`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%body.elements;`_ parameter entity directly includes
-    ``field_list``.  The `%structure.model;`_ parameter entity
-    indirectly includes ``field_list``.
+    ``필드_리스트``.  The `%structure.model;`_ parameter entity
+    indirectly includes ``필드_리스트``.
 
 
 Examples
@@ -2208,37 +2201,37 @@ reStructuredText_ source::
 
 Pseudo-XML_ fragment from simple parsing::
 
-    <field_list>
+    <필드_list>
         <field>
-            <field_name>
+            <필드_name>
                 Author
-            <field_body>
+            <필드_body>
                 <paragraph>
                     Me
         <field>
-            <field_name>
+            <필드_name>
                 Version
-            <field_body>
+            <필드_body>
                 <paragraph>
                     1
         <field>
-            <field_name>
+            <필드_name>
                 Date
-            <field_body>
+            <필드_body>
                 <paragraph>
                     2001-08-11
         <field>
-            <field_name>
+            <필드_name>
                 Parameter i
-            <field_body>
+            <필드_body>
                 <paragraph>
                     integer
 
 
-``field_name``
+``필드_이름``
 ==============
 
-The ``field_name`` element contains text; it is analogous to a
+The ``필드_이름`` element contains text; it is analogous to a
 database field's name.
 
 
@@ -2249,16 +2242,16 @@ Details
     `Body Subelements`_ (simple)
 
 :Parents:
-    Only the field_ element contains ``field_name``.
+    Only the 필드_ element contains ``필드_이름``.
 
 :Children:
-    ``field_name`` elements may contain text data plus `inline elements`_.
+    ``필드_이름`` elements may contain text data plus `inline elements`_.
 
 :Analogues:
-    ``field_name`` has no direct analogues in common DTDs.
+    ``필드_이름`` has no direct analogues in common DTDs.
 
 :Processing:
-    See field_list_.
+    See 필드_리스트_.
 
 
 Content Model
@@ -2269,14 +2262,14 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``field_name`` element contains only the `common attributes`_:
+    The ``필드_이름`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 
 Examples
 --------
 
-See the examples for the field_list_ and docinfo_ elements.
+See the examples for the 필드_리스트_ and 문서정보_ elements.
 
 
 ``figure``
@@ -2285,12 +2278,12 @@ See the examples for the field_list_ and docinfo_ elements.
 `To be completed`_.
 
 
-``footer``
+``꼬리말``
 ==========
 
-The ``footer`` element is a container element whose contents are meant
+The ``꼬리말`` element is a container element whose contents are meant
 to appear at the bottom of a web page, or repeated at the bottom of
-every printed page.  The ``footer`` element may contain processing
+every printed page.  The ``꼬리말`` element may contain processing
 information (datestamp, a link to Docutils_, etc.) as well as custom
 content.
 
@@ -2302,13 +2295,13 @@ Details
     `Decorative Elements`_
 
 :Parents:
-    Only the decoration_ element contains ``footer``.
+    Only the 장식_ element contains ``꼬리말``.
 
 :Children:
-    ``footer`` elements may contain `body elements`_.
+    ``꼬리말`` elements may contain `body elements`_.
 
 :Analogues:
-    There are no direct analogies to ``footer`` in HTML or DocBook.
+    There are no direct analogies to ``꼬리말`` in HTML or DocBook.
     Equivalents are typically constructed from primitives and/or
     generated by the processing system.
 
@@ -2321,7 +2314,7 @@ Content Model
     (`%body.elements;`_)+
 
 :Attributes:
-    The ``footer`` element contains only the `common attributes`_:
+    The ``꼬리말`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 
@@ -2367,10 +2360,10 @@ section numbers inserted by the "sectnum" directive.
 `To be completed`_.
 
 
-``header``
+``머리말``
 ==========
 
-The ``header`` element is a container element whose contents are meant
+The ``머리말`` element is a container element whose contents are meant
 to appear at the top of a web page, or at the top of every printed
 page.
 
@@ -2382,13 +2375,13 @@ Details
     `Decorative Elements`_
 
 :Parents:
-    Only the decoration_ element contains ``header``.
+    Only the 장식_ element contains ``머리말``.
 
 :Children:
-    ``header`` elements may contain `body elements`_.
+    ``머리말`` elements may contain `body elements`_.
 
 :Analogues:
-    There are no direct analogies to ``header`` in HTML or DocBook.
+    There are no direct analogies to ``머리말`` in HTML or DocBook.
     Equivalents are typically constructed from primitives and/or
     generated by the processing system.
 
@@ -2401,7 +2394,7 @@ Content Model
     (`%body.elements;`_)+
 
 :Attributes:
-    The ``header`` element contains only the `common attributes`_:
+    The ``머리말`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 
@@ -3387,10 +3380,10 @@ Examples
 See the examples for the option_list_ element.
 
 
-``organization``
+``기관``
 ================
 
-The ``organization`` element contains the name of document author's
+The ``기관`` element contains the name of document author's
 organization, or the organization responsible for the document.
 
 
@@ -3401,18 +3394,18 @@ Details
     `Bibliographic Elements`_
 
 :Parents:
-    Only the docinfo_ element contains ``organization``.
+    Only the 문서정보_ element contains ``기관``.
 
 :Children:
-    ``organization`` elements may contain text data plus `inline
+    ``기관`` elements may contain text data plus `inline
     elements`_.
 
 :Analogues:
-    ``organization`` is analogous to the DocBook "orgname",
+    ``기관`` is analogous to the DocBook "orgname",
     "corpname", or "publishername" elements.
 
 :Processing:
-    See docinfo_.
+    See 문서정보_.
 
 
 Content Model
@@ -3423,12 +3416,12 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``organization`` element contains only the `common attributes`_:
+    The ``기관`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%bibliographic.elements;`_ parameter entity directly includes
-    ``organization``.
+    ``기관``.
 
 
 Examples
@@ -3450,7 +3443,7 @@ Complete pseudo-XML_ result after parsing and applying transforms::
             <organization>
                 Humankind
 
-See docinfo_ for a more complete example, including processing
+See 문서정보_ for a more complete example, including processing
 context.
 
 
@@ -3535,11 +3528,11 @@ Pseudo-XML_ fragment from simple parsing::
 `To be completed`_.
 
 
-``revision``
+``리비전``
 ============
 
-The ``revision`` element contains the revision number of the document.
-It can be used alone or in conjunction with version_.
+The ``리비전`` element contains the revision number of the document.
+It can be used alone or in conjunction with 버전_.
 
 
 Details
@@ -3549,19 +3542,19 @@ Details
     `Bibliographic Elements`_
 
 :Parents:
-    Only the docinfo_ element contains ``revision``.
+    Only the 문서정보_ element contains ``리비전``.
 
 :Children:
-    ``revision`` elements may contain text data plus `inline
+    ``리비전`` elements may contain text data plus `inline
     elements`_.
 
 :Analogues:
-    ``revision`` is analogous to but simpler than the DocBook
+    ``리비전`` is analogous to but simpler than the DocBook
     "revision" element.  It closely matches the DocBook "revnumber"
     element, but in a simpler context.
 
 :Processing:
-    Often used with the RCS/CVS keyword "Revision".  See docinfo_.
+    Often used with the RCS/CVS keyword "Revision".  See 문서정보_.
 
 
 Content Model
@@ -3572,12 +3565,12 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``revision`` element contains only the `common attributes`_:
+    The ``리비전`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%bibliographic.elements;`_ parameter entity directly includes
-    ``revision``.
+    ``리비전``.
 
 
 Examples
@@ -3602,7 +3595,7 @@ Complete pseudo-XML_ result after parsing and applying transforms::
             <revision>
                 b
 
-See docinfo_ for a more complete example, including processing
+See 문서정보_ for a more complete example, including processing
 context.
 
 
@@ -3627,13 +3620,13 @@ document's structure.
 `To be completed`_.
 
 
-``section``
+``절``
 ===========
 
-The ``section`` element is the main unit of hierarchy for Docutils
-documents.  Docutils ``section`` elements are a recursive structure; a
-``section`` may contain other ``section`` elements, without limit.
-Paragraphs and other body elements may occur before a ``section``, but
+The ``절`` element is the main unit of hierarchy for Docutils
+documents.  Docutils ``절`` elements are a recursive structure; a
+``절`` may contain other ``절`` elements, without limit.
+Paragraphs and other body elements may occur before a ``절``, but
 not after it.
 
 
@@ -3644,15 +3637,15 @@ Details
     `Structural Elements`_
 
 :Parents:
-    The following elements may contain ``section``: document_,
-    section_
+    The following elements may contain ``절``: 문서_,
+    절_
 
 :Children:
-    ``section`` elements begin with a title_, and may contain `body
-    elements`_ as well as transition_, topic_, and sidebar_ elements.
+    ``절`` elements begin with a 제목_, and may contain `body
+    elements`_ as well as 전환_, 토픽_, and 사이드바_ elements.
 
 :Analogues:
-    ``section`` is analogous to DocBook recursive "section" elements,
+    ``절`` is analogous to DocBook recursive "section" elements,
     and to HTML "div" elements combined with "h1" etc. title elements.
 
 
@@ -3661,20 +3654,20 @@ Content Model
 
 .. parsed-literal::
 
-    (title_,
+    (제목_,
      `%structure.model;`_)
 
 See the `%structure.model;`_ parameter entity for details of the body
-of a ``section``.
+of a ``절``.
 
 :Attributes:
-    The ``section`` element contains only the `common attributes`_:
+    The ``절`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%section.elements;`_ parameter entity directly includes
-    ``section``.  The `%structure.model;`_ parameter entity indirectly
-    includes ``section``.
+    ``절``.  The `%structure.model;`_ parameter entity indirectly
+    includes ``절``.
 
 
 Examples
@@ -3723,22 +3716,22 @@ Complete pseudo-XML_ result after parsing::
                     Paragraph 4.
 
 
-``sidebar``
+``사이드바``
 ===========
 
 Sidebars are like miniature, parallel documents that occur inside
 other documents, providing related or reference material.  A
-``sidebar`` is typically offset by a border and "floats" to the side
+``사이드바`` is typically offset by a border and "floats" to the side
 of the page; the document's main text may flow around it.  Sidebars
 can also be likened to super-footnotes; their content is outside of
 the flow of the document's main text.
 
-The ``sidebar`` element is a nonrecursive section_-like construct
-which may occur at the top level of a section_ wherever a body element
-(list, table, etc.) is allowed.  In other words, ``sidebar`` elements
-cannot nest inside body elements, so you can't have a ``sidebar``
-inside a ``table`` or a ``list``, or inside another ``sidebar`` (or
-topic_).
+The ``사이드바`` element is a nonrecursive 절_-like construct
+which may occur at the top level of a 절_ wherever a body element
+(list, table, etc.) is allowed.  In other words, ``사이드바`` elements
+cannot nest inside body elements, so you can't have a ``사이드바``
+inside a ``table`` or a ``list``, or inside another ``사이드바`` (or
+토픽_).
 
 
 Details
@@ -3748,18 +3741,18 @@ Details
     `Structural Elements`_
 
 :Parents:
-    The following elements may contain ``sidebar``: document_,
-    section_
+    The following elements may contain ``사이드바``: 문서_,
+    절_
 
 :Children:
-    ``sidebar`` elements begin with a title_ and an optional subtitle_
-    and contain `body elements`_ and topic_ elements.
+    ``사이드바`` elements begin with a 제목_ and an optional 부제목_
+    and contain `body elements`_ and 토픽_ elements.
 
 :Analogues:
-    ``sidebar`` is analogous to the DocBook "sidebar" element.
+    ``사이드바`` is analogous to the DocBook "sidebar" element.
 
 :Processing:
-    A ``sidebar`` element should be set off from the rest of the
+    A ``사이드바`` element should be set off from the rest of the
     document somehow, typically with a border.  Sidebars typically
     "float" to the side of the page and the document's main text flows
     around them.
@@ -3770,22 +3763,22 @@ Content Model
 
 .. parsed-literal::
 
-    (title_, subtitle_?,
-     (`%body.elements;`_ | topic_)+)
+    (제목_, 부제목_?,
+     (`%body.elements;`_ | 토픽_)+)
 
 :Attributes:
-    The ``sidebar`` element contains only the `common attributes`_:
+    The ``사이드바`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%structure.model;`_ parameter entity directly includes
-    ``sidebar``.
+    ``사이드바``.
 
 
 Examples
 --------
 
-The `"sidebar" directive`_ is used to create a ``sidebar`` element.
+The `"sidebar" directive`_ is used to create a ``사이드바`` element.
 reStructuredText_ source::
 
     .. sidebar:: Title
@@ -3806,10 +3799,10 @@ Pseudo-XML_ fragment from simple parsing::
 .. _"sidebar" directive: rst/directives.html#sidebar
 
 
-``status``
+``상태``
 ==========
 
-The ``status`` element contains a status statement for the document,
+The ``상태`` element contains a status statement for the document,
 such as "Draft", "Final", "Work In Progress", etc.
 
 
@@ -3820,16 +3813,16 @@ Details
     `Bibliographic Elements`_
 
 :Parents:
-    Only the docinfo_ element contains ``status``.
+    Only the 문서정보_ element contains ``상태``.
 
 :Children:
-    ``status`` elements may contain text data plus `inline elements`_.
+    ``상태`` elements may contain text data plus `inline elements`_.
 
 :Analogues:
-    ``status`` is analogous to the DocBook "status" element.
+    ``상태`` is analogous to the DocBook "status" element.
 
 :Processing:
-    See docinfo_.
+    See 문서정보_.
 
 
 Content Model
@@ -3840,12 +3833,12 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``status`` element contains only the `common attributes`_:
+    The ``상태`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%bibliographic.elements;`_ parameter entity directly includes
-    ``status``.
+    ``상태``.
 
 
 Examples
@@ -3867,7 +3860,7 @@ Complete pseudo-XML_ result after parsing and applying transforms::
             <status>
                 Work In Progress
 
-See docinfo_ for a more complete example, including processing
+See 문서정보_ for a more complete example, including processing
 context.
 
 
@@ -3895,10 +3888,10 @@ context.
 `To be completed`_.
 
 
-``subtitle``
+``부제목``
 ============
 
-The ``subtitle`` element stores the subtitle of a document_.
+The ``부제목`` element stores the subtitle of a 문서_.
 
 
 Details
@@ -3908,18 +3901,18 @@ Details
     `Structural Subelements`_
 
 :Parents:
-    The document_ and sidebar_ elements may contain ``subtitle``.
+    The 문서_ and 사이드바_ elements may contain ``부제목``.
 
 :Children:
-    ``subtitle`` elements may contain text data plus `inline
+    ``부제목`` elements may contain text data plus `inline
     elements`_.
 
 :Analogues:
-    ``subtitle`` is analogous to HTML header elements ("h2" etc.) and
+    ``부제목`` is analogous to HTML header elements ("h2" etc.) and
     to the DocBook "subtitle" element.
 
 :Processing:
-    A document's subtitle is usually rendered smaller than its title_.
+    A document's subtitle is usually rendered smaller than its 제목_.
 
 
 Content Model
@@ -3930,7 +3923,7 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``subtitle`` element contains only the `common attributes`_:
+    The ``부제목`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 
@@ -3961,7 +3954,7 @@ Complete pseudo-XML_ result after parsing and applying transforms::
 Note how two section levels have collapsed, promoting their titles to
 become the document's title and subtitle.  Since there is only one
 structural element (document), the subsection's ``ids`` and ``names``
-attributes are stored in the ``subtitle`` element.
+attributes are stored in the ``부제목`` element.
 
 
 ``superscript``
@@ -4120,11 +4113,11 @@ Pseudo-XML_ fragment from simple parsing::
 
 .. _title:
 
-``title``
+``제목``
 =========
 
-The ``title`` element stores the title of a document_, section_,
-topic_, sidebar_, or generic admonition_.
+The ``제목`` element stores the title of a 문서_, 절_,
+토픽_, 사이드바_, or generic admonition_.
 
 
 Details
@@ -4134,14 +4127,14 @@ Details
     `Structural Subelements`_
 
 :Parents:
-    The following elements may contain ``title``: document_, section_,
-    topic_, sidebar_, admonition_
+    The following elements may contain ``제목``: 문서_, 절_,
+    토픽_, 사이드바_, admonition_
 
 :Children:
-    ``title`` elements may contain text data plus `inline elements`_.
+    ``제목`` elements may contain text data plus `inline elements`_.
 
 :Analogues:
-    ``title`` is analogous to HTML "title" and header ("h1" etc.)
+    ``제목`` is analogous to HTML "title" and header ("h1" etc.)
     elements, and to the DocBook "title" element.
 
 
@@ -4153,12 +4146,12 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``title`` element contains the `common attributes`_ (ids_,
+    The ``제목`` element contains the `common attributes`_ (ids_,
     names_, dupnames_, source_, and classes_), plus refid_ and auto_.
 
     ``refid`` is used as a backlink to a table of contents entry.
 
-    ``auto`` is used to indicate (with value "1") that the ``title``
+    ``auto`` is used to indicate (with value "1") that the ``제목``
     has been numbered automatically.
 
 
@@ -4181,20 +4174,20 @@ Pseudo-XML_ fragment from simple parsing::
             A paragraph.
 
 
-``title_reference``
+``제목_reference``
 ===================
 
 `To be completed`_.
 
 
-``topic``
+``토픽``
 =========
 
-The ``topic`` element is a nonrecursive section_-like construct which
-may occur at the top level of a section_ wherever a body element
-(list, table, etc.) is allowed.  In other words, ``topic`` elements
-cannot nest inside body elements, so you can't have a ``topic`` inside
-a ``table`` or a ``list``, or inside another ``topic``.
+The ``토픽`` element is a nonrecursive 절_-like construct which
+may occur at the top level of a 절_ wherever a body element
+(list, table, etc.) is allowed.  In other words, ``토픽`` elements
+cannot nest inside body elements, so you can't have a ``토픽`` inside
+a ``table`` or a ``list``, or inside another ``토픽``.
 
 
 Details
@@ -4204,18 +4197,18 @@ Details
     `Structural Elements`_
 
 :Parents:
-    The following elements may contain ``topic``: document_, section_,
-    sidebar_
+    The following elements may contain ``토픽``: 문서_, 절_,
+    사이드바_
 
 :Children:
-    ``topic`` elements begin with a title_ and may contain `body
+    ``토픽`` elements begin with a 제목_ and may contain `body
     elements`_.
 
 :Analogues:
-    ``topic`` is analogous to the DocBook "simplesect" element.
+    ``토픽`` is analogous to the DocBook "simplesect" element.
 
 :Processing:
-    A ``topic`` element should be set off from the rest of the
+    A ``토픽`` element should be set off from the rest of the
     document somehow, such as with indentation or a border.
 
 
@@ -4224,22 +4217,22 @@ Content Model
 
 .. parsed-literal::
 
-    (title_?,
+    (제목_?,
      (`%body.elements;`_)+)
 
 :Attributes:
-    The ``topic`` element contains only the `common attributes`_:
+    The ``토픽`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%structure.model;`_ parameter entity directly includes
-    ``topic``.
+    ``토픽``.
 
 
 Examples
 --------
 
-The `"topic" directive`_ is used to create a ``topic`` element.
+The `"topic" directive`_ is used to create a ``토픽`` element.
 reStructuredText_ source::
 
     .. topic:: Title
@@ -4257,10 +4250,10 @@ Pseudo-XML_ fragment from simple parsing::
 .. _"topic" directive: rst/directives.html#topic
 
 
-``transition``
+``전환``
 ==============
 
-The ``transition`` element is commonly seen in novels and short
+The ``전환`` element is commonly seen in novels and short
 fiction, as a gap spanning one or more lines, with or without a type
 ornament such as a row of asterisks.  Transitions separate body
 elements and sections, dividing a section into untitled divisions.  A
@@ -4286,17 +4279,17 @@ Details
     `Structural Subelements`_
 
 :Parents:
-    The following elements may contain ``transition``: document_,
-    section_
+    The following elements may contain ``전환``: 문서_,
+    절_
 
 :Children:
-    ``transition`` is an empty element and has no children.
+    ``전환`` is an empty element and has no children.
 
 :Analogues:
-    ``transition`` is analogous to the HTML "hr" element.
+    ``전환`` is analogous to the HTML "hr" element.
 
 :Processing:
-    The ``transition`` element is typically rendered as vertical
+    The ``전환`` element is typically rendered as vertical
     whitespace (more than that separating paragraphs), with or without
     a horizontal line or row of asterisks.  In novels, transitions are
     often represented as a row of three well-spaced asterisks with
@@ -4310,15 +4303,15 @@ Content Model
 
     EMPTY
 
-The ``transition`` element has no content; it is a "point element".
+The ``전환`` element has no content; it is a "point element".
 
 :Attributes:
-    The ``transition`` element contains only the `common attributes`_:
+    The ``전환`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%structure.model;`_ parameter entity directly includes
-    ``transition``.
+    ``전환``.
 
 
 Examples
@@ -4342,11 +4335,11 @@ Complete pseudo-XML_ result after parsing::
             Paragraph 2.
 
 
-``version``
+``버전``
 ===========
 
-The ``version`` element contains the version number of the document.
-It can be used alone or in conjunction with revision_.
+The ``버전`` element contains the version number of the document.
+It can be used alone or in conjunction with 리비전_.
 
 
 Details
@@ -4356,19 +4349,19 @@ Details
     `Bibliographic Elements`_
 
 :Parents:
-    Only the docinfo_ element contains ``version``.
+    Only the 문서정보_ element contains ``버전``.
 
 :Children:
-    ``version`` elements may contain text data plus `inline
+    ``버전`` elements may contain text data plus `inline
     elements`_.
 
 :Analogues:
-    ``version`` may be considered analogous to the DocBook "revision",
+    ``버전`` may be considered analogous to the DocBook "revision",
     "revnumber", or "biblioid" elements.
 
 :Processing:
-    Sometimes used with the RCS/CVS keyword "Revision".  See docinfo_
-    and revision_.
+    Sometimes used with the RCS/CVS keyword "Revision".  See 문서정보_
+    and 리비전_.
 
 
 Content Model
@@ -4379,12 +4372,12 @@ Content Model
     `%text.model;`_
 
 :Attributes:
-    The ``version`` element contains only the `common attributes`_:
+    The ``버전`` element contains only the `common attributes`_:
     ids_, names_, dupnames_, source_, and classes_.
 
 :Parameter Entities:
     The `%bibliographic.elements;`_ parameter entity directly includes
-    ``version``.
+    ``버전``.
 
 
 Examples
@@ -4406,7 +4399,7 @@ Complete pseudo-XML_ result after parsing and applying transforms::
             <version>
                 1.1
 
-See docinfo_ for a more complete example, including processing
+See 문서정보_ for a more complete example, including processing
 context.
 
 
@@ -4539,7 +4532,7 @@ entity).
 `Attribute type`_: ``CDATA``.  Default value: none.
 
 The ``auto`` attribute is used to indicate automatically-numbered
-footnote_, footnote_reference_ and title_ elements (via the
+footnote_, footnote_reference_ and 제목_ elements (via the
 `%auto.att;`_ parameter entity).
 
 
@@ -4659,7 +4652,7 @@ The ``prefix`` attribute is used in the enumerated_list_ element.
 
 The ``refid`` attribute contains references to `ids`_ attributes in
 other elements.  It is used by the target_, reference_,
-footnote_reference_, citation_reference_, title_ and problematic_
+footnote_reference_, citation_reference_, 제목_ and problematic_
 elements (via the `%refid.att;`_ and `%reference.atts;`_ parameter
 entities).
 
@@ -4732,14 +4725,14 @@ instance.
 
 .. _title (attribute):
 
-``title``
+``제목``
 =========
 
 `Attribute type`_: ``CDATA``.  Default value: none.
 
-The ``title`` attribute stores the title metadata of a document.  This
+The ``제목`` attribute stores the title metadata of a document.  This
 title is typically not part of the rendered document.  It may for
-example be used in HTML's ``title`` element.
+example be used in HTML's ``제목`` element.
 
 
 ----------------------------
@@ -4786,7 +4779,7 @@ Entity definition:
 
     auto_     CDATA     #IMPLIED
 
-The footnote_, footnote_reference_, and title_ elements directly
+The footnote_, footnote_reference_, and 제목_ elements directly
 employ the ``%auto.att;`` parameter entity in their attribute lists.
 
 
@@ -4837,15 +4830,15 @@ Entity definition:
 
 .. parsed-literal::
 
-    author_ | authors_ | organization_ | contact_ | address_
-    | version_ | revision_ | status_ | date_ | copyright_
-    | field_
+    저자_ | 복수저자_ | 기관_ | 연락처_ | 주소_
+    | 버전_ | 리비전_ | 상태_ | 날짜_ | 저작권_
+    | 필드_
     %additional.bibliographic.elements;
 
 The ``%additional.bibliographic.elements;`` parameter entity can be used by
 wrapper DTDs to extend ``%bibliographic.elements;``.
 
-Only the docinfo_ element directly employs the
+Only the 문서정보_ element directly employs the
 ``%bibliographic.elements;`` parameter entity in its content model.
 
 
@@ -4863,7 +4856,7 @@ Entity definition:
     admonition_ | attention_ | block_quote_ | bullet_list_ | caution_
     | citation_ | compound_ | comment_ | container_ | danger_ |
       definition_list_ | doctest_block_ | enumerated_list_ | error_ |
-      field_list_ | figure_ | footnote_ | hint_ | image_ | important_
+      필드_리스트_ | figure_ | footnote_ | hint_ | image_ | important_
       | line_block_ | literal_block_ | note_ | option_list_ |
       paragraph_ | pending_ | raw_ reference_ | rubric_ |
       substitution_definition_ | system_message_ | table_ | target_ |
@@ -4875,13 +4868,13 @@ wrapper DTDs to extend ``%body.elements;``.
 The ``%body.elements;`` parameter entity is directly employed in the
 content models of the following elements: admonition_, attention_,
 block_quote_, caution_, citation_, compound_, danger_, definition_,
-description_, entry_, error_, field_body_, footer_, footnote_,
-header_, hint_, important_, legend_, list_item_, note_, sidebar_,
-system_message_, tip_, topic_, warning_
+description_, entry_, error_, 필드_바디_, 꼬리말_, footnote_,
+머리말_, hint_, important_, legend_, list_item_, note_, 사이드바_,
+system_message_, tip_, 토픽_, warning_
 
 Via `%structure.model;`_, the ``%body.elements;`` parameter entity is
-indirectly employed in the content models of the document_ and
-section_ elements.
+indirectly employed in the content models of the 문서_ and
+절_ elements.
 
 
 ``%fixedspace.att;``
@@ -4898,7 +4891,7 @@ Entity definition:
     `xml:space`_ (default | preserve) #FIXED 'preserve'
 
 The ``%fixedspace.att;`` parameter entity is directly employed in the
-attribute lists of the following elements: address_, comment_,
+attribute lists of the following elements: 주소_, comment_,
 doctest_block_, line_block_, literal_block_, raw_
 
 
@@ -4915,7 +4908,7 @@ Entity definition:
     abbreviation_ | acronym_ | citation_reference_ | emphasis_ |
     footnote_reference_ | generated_ | image_ | inline_ | literal_ |
     problematic_ | raw_ | reference_ | strong_ | substitution_reference_ |
-    subscript_ | superscript_ | target_ | title_reference_
+    subscript_ | superscript_ | target_ | 제목_reference_
     %additional.inline.elements;
 
 The ``%additional.inline.elements;`` parameter entity can be used by
@@ -4923,14 +4916,14 @@ wrapper DTDs to extend ``%inline.elements;``.
 
 Via `%text.model;`_, the ``%inline.elements;`` parameter entity is
 indirectly employed in the content models of the following elements:
-abbreviation_, acronym_, address_, attribution_, author_, caption_,
-classifier_, contact_, copyright_, date_, doctest_block_, emphasis_,
+abbreviation_, acronym_, 주소_, attribution_, 저자_, caption_,
+classifier_, 연락처_, 저작권_, 날짜_, doctest_block_, emphasis_,
 generated_, inline_, line_block_, literal_block_, math_, math_block_,
-organization_,
-paragraph_, problematic_, raw_, reference_, revision_, rubric_,
-status_, strong_, subscript_, substitution_definition_,
-substitution_reference_, subtitle_, superscript_, target_, term_,
-title_, title_reference_, version_
+기관_,
+paragraph_, problematic_, raw_, reference_, 리비전_, rubric_,
+상태_, strong_, subscript_, substitution_definition_,
+substitution_reference_, 부제목_, superscript_, target_, term_,
+제목_, 제목_reference_, 버전_
 
 
 ``%reference.atts;``
@@ -4968,7 +4961,7 @@ Entity definition:
 
     refid_   CDATA     #IMPLIED
 
-The title_ and problematic_ elements directly employ the
+The 제목_ and problematic_ elements directly employ the
 ``%refid.att;`` parameter entity in their attribute lists.
 
 Via `%reference.atts;`_, the ``%refid.att;`` parameter entity is
@@ -5020,22 +5013,22 @@ footnote_reference_, reference_, and target_ elements.
 ======================
 
 The ``%section.elements;`` parameter entity contains an OR-list of all
-section_-equivalent elements.  ``%section.elements;`` is itself
+절_-equivalent elements.  ``%section.elements;`` is itself
 contained within the `%structure.model;`_ parameter entity.
 
 Entity definition:
 
 .. parsed-literal::
 
-    section_
+    절_
     %additional.section.elements;
 
 The ``%additional.section.elements;`` parameter entity can be used
 by wrapper DTDs to extend ``%section.elements;``.
 
 Via `%structure.model;`_, the ``%section.elements;`` parameter entity
-is indirectly employed in the content models of the document_ and
-section_ elements.
+is indirectly employed in the content models of the 문서_ and
+절_ elements.
 
 
 ``%structure.model;``
@@ -5049,10 +5042,10 @@ Entity definition:
 
 .. parsed-literal::
 
-   ( ( (`%body.elements;`_ | topic_ | sidebar_)+, transition_? )*,
-     ( (`%section.elements;`_), (transition_?, (`%section.elements;`_) )* )? )
+   ( ( (`%body.elements;`_ | 토픽_ | 사이드바_)+, 전환_? )*,
+     ( (`%section.elements;`_), (전환_?, (`%section.elements;`_) )* )? )
 
-Each document_ or section_ contains zero or more body elements,
+Each 문서_ or 절_ contains zero or more body elements,
 topics, and/or sidebars, optionally interspersed with single
 transitions, followed by zero or more sections (whose contents are
 recursively the same as this model) optionally interspersed with
@@ -5073,7 +5066,7 @@ of DTDs, is imposed by software:
 * A transition may not occur at the end of a document or section.
 
 The `%structure.model;`_ parameter entity is directly employed in the
-content models of the document_ and section_ elements.
+content models of the 문서_ and 절_ elements.
 
 
 ``%text.model;``
@@ -5090,11 +5083,11 @@ Entity definition:
 
 The ``%text.model;`` parameter entity is directly employed in the
 content models of the following elements: abbreviation_, acronym_,
-address_, author_, caption_, classifier_, contact_, copyright_, date_,
-doctest_block_, emphasis_, field_name_, generated_, line_block_,
-literal_block_, organization_, paragraph_, problematic_, raw_,
-reference_, revision_, status_, strong_, substitution_definition_,
-substitution_reference_, subtitle_, target_, term_, title_, version_
+주소_, 저자_, caption_, classifier_, 연락처_, 저작권_, 날짜_,
+doctest_block_, emphasis_, 필드_이름_, generated_, line_block_,
+literal_block_, 기관_, paragraph_, problematic_, raw_,
+reference_, 리비전_, 상태_, strong_, substitution_definition_,
+substitution_reference_, 부제목_, target_, term_, 제목_, 버전_
 
 
 
