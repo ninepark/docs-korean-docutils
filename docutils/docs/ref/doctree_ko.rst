@@ -221,7 +221,7 @@ following subsections:
 * Details (of element relationships and semantics):
 
   - Category: One or more references to the element categories in
-    `Element Hierarchy`_ above.  Some elements belong to more than one
+    `구조의 상하관계`_ above.  Some elements belong to more than one
     category.
 
   - Parents: A list of elements which may contain the element.
@@ -2292,7 +2292,7 @@ Details
 -------
 
 :Category:
-    `Decorative Elements`_
+    `장식 요소`_
 
 :Parents:
     Only the 장식_ element contains ``꼬리말``.
@@ -2372,7 +2372,7 @@ Details
 -------
 
 :Category:
-    `Decorative Elements`_
+    `장식 요소`_
 
 :Parents:
     Only the 장식_ element contains ``머리말``.
@@ -3641,8 +3641,8 @@ Details
     절_
 
 :Children:
-    ``절`` elements begin with a 제목_, and may contain `body
-    elements`_ as well as 전환_, 토픽_, and 사이드바_ elements.
+    ``절`` elements begin with a 제목_, and may contain `바디 요소`_
+    as well as 전환_, 토픽_, and 사이드바_ elements.
 
 :Analogues:
     ``절`` is analogous to DocBook recursive "section" elements,
@@ -4201,8 +4201,7 @@ Details
     사이드바_
 
 :Children:
-    ``토픽`` elements begin with a 제목_ and may contain `body
-    elements`_.
+    ``토픽`` elements begin with a 제목_ and may contain `바디 요소`_.
 
 :Analogues:
     ``토픽`` is analogous to the DocBook "simplesect" element.
@@ -4352,8 +4351,7 @@ Details
     Only the 문서정보_ element contains ``버전``.
 
 :Children:
-    ``버전`` elements may contain text data plus `inline
-    elements`_.
+    ``버전`` elements may contain text data plus `inline elements`_.
 
 :Analogues:
     ``버전`` may be considered analogous to the DocBook "revision",
