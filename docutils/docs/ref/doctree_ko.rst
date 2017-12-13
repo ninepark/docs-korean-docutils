@@ -221,7 +221,7 @@ following subsections:
 * Details (of element relationships and semantics):
 
   - Category: One or more references to the element categories in
-    `구조의 상하관계`_ above.  Some elements belong to more than one
+    `요소의 상하관계`_ above.  Some elements belong to more than one
     category.
 
   - Parents: A list of elements which may contain the element.
