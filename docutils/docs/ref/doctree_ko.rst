@@ -1,30 +1,27 @@
 ============================
- The Docutils Document Tree
+ 독유틸즈 문서 트리
 ============================
 
-A Guide to the Docutils DTD
+독유틸즈 DTD 가이드
 ***************************
 
-:Author: David Goodger
-:Contact: docutils-develop@lists.sourceforge.net
-:Revision: $Revision$
-:Date: $Date$
-:Copyright: This document has been placed in the public domain.
+:저자: 데이비드 굿저
+:연락처: docutils-develop@lists.sourceforge.net
+:버전: $Revision$
+:날짜: $Date$
+:저작권: 이 문서는 퍼블릭 도메인에 속한다.
 
 
 .. contents:: :depth: 1
 
 
-This document describes the XML data structure of Docutils_ documents:
-the relationships and semantics of elements and attributes.  The
-Docutils document structure is formally defined by the `Docutils
-Generic DTD`_ XML document type definition, docutils.dtd_, which is
-the definitive source for details of element structural relationships.
+이 문서는 독유틸 문서의 XML 데이터 구조 즉, 각 요소와 속성의 관계 및 문법을 서술한다.
+독유틸 문서 구조는 `Docutils Generic DTD`_ XML 문서 타입 정의 문서인 
+docutils.dtd_\ 에 정식으로 정의되어 있다. 
+이 문서는 각 요소의 구조적 관계에 대한 세부사항을 정의한다.
 
-This document does not discuss implementation details.  Those can be
-found in internal documentation (docstrings) for the
-``docutils.nodes`` module, where the document tree data structure is
-implemented in a class library.
+이 문서는 자세한 구현 사항까지 논의하지 않는다. 
+그러한 정보는 트리 데이터 구조를 클래스 라이브러리로 구현한 ``docutils.nodes`` 모듈의 내부 문서(독스트링)에서 볼 수 있다.
 
 The reader is assumed to have some familiarity with XML or SGML, and
 an understanding of the data structure meaning of "tree".  For a list
