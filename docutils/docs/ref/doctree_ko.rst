@@ -148,7 +148,7 @@ table_, target_, tip_, warning_
 ----------------------------------------
 
 단순 바디 요소(simple body elements) are empty or directly contain text data.  Those
-that contain text data may also contain inline elements.  Such
+that contain text data may also contain 인라인 요소.  Such
 elements therefore have a "mixed content model".
 
 카테고리 멤버: comment_, doctest_block_, image_, literal_block_,
@@ -159,7 +159,7 @@ target_
 복합 바디 요소
 ----------------------------------------
 
-복합 바디 요소(compound body elements) contain local substructure (body subelements)
+복합 바디 요소(compound body elements) contain local substructure (바디 서브요소)
 and further body elements.  They do not directly contain text data.
 
 카테고리 멤버: admonition_, attention_, block_quote_, bullet_list_,
@@ -169,8 +169,8 @@ important_, line_block, note_, option_list_, system_message_, table_,
 tip_, warning_
 
 
-Body Subelements
-````````````````
+바디 서브요소
+````````````````````````````````
 
 Compound body elements contain specific subelements (e.g. bullet_list_
 contains list_item_).  Subelements may themselves be compound elements
@@ -189,12 +189,12 @@ option_, option_group_, option_list_item_, row_, tbody_, tgroup_,
 thead_
 
 
-Inline Elements
-===============
+인라인 요소
+==============================
 
-Inline elements directly contain text data, and may also contain
-further inline elements.  Inline elements are contained within simple
-body elements.  Most inline elements have a "mixed content model".
+인라인 요소 directly contain text data, and may also contain
+further 인라인 요소.  인라인 요소 are contained within simple
+body elements.  Most 인라인 요소 have a "mixed content model".
 
 Category members: abbreviation_, acronym_, citation_reference_,
 emphasis_, footnote_reference_, generated_, image_, inline_, literal_,
@@ -289,14 +289,14 @@ Details
 -------
 
 :Category:
-    `Inline Elements`_
+    `인라인 요소`_
 
 :Parents:
      All elements employing the %inline.elements; parameter entities in their
      content models may contain ``abbreviation``.
 
 :Children:
-    ``abbreviation`` elements may contain text data plus `inline elements`_.
+    ``abbreviation`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``abbreviation`` is analogous to the HTML "abbr" element.
@@ -352,7 +352,7 @@ Details
     The following elements may contain ``주소``: 문서정보_, 복수저자_
 
 :Children:
-    ``주소`` elements contain text data plus `inline elements`_.
+    ``주소`` elements contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``주소`` is analogous to the DocBook "address" element.
@@ -557,7 +557,7 @@ Details
     The following elements may contain ``저자``: 문서정보_, 복수저자_
 
 :Children:
-    ``저자`` elements may contain text data plus `inline elements`_.
+    ``저자`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``저자`` is analogous to the DocBook "author" element.
@@ -923,13 +923,13 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_ (simple)
+    `바디 서브요소`_ (simple)
 
 :Parents:
     Only the definition_list_item_ element contains ``classifier``.
 
 :Children:
-    ``classifier`` elements may contain text data plus `inline elements`_.
+    ``classifier`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``classifier`` has no direct analogues in common DTDs.  It can be
@@ -1220,7 +1220,7 @@ Details
     Only the 문서정보_ element contains ``날짜``.
 
 :Children:
-    ``날짜`` elements may contain text data plus `inline elements`_.
+    ``날짜`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``날짜`` is analogous to the DocBook "date" element.
@@ -1343,7 +1343,7 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_ (compound)
+    `바디 서브요소`_ (compound)
 
 :Parents:
     Only definition_list_item_ elements contain ``definition``.
@@ -1472,7 +1472,7 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_ (compound)
+    `바디 서브요소`_ (compound)
 
 :Parents:
     Only the definition_list_ element contains
@@ -1557,7 +1557,7 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_
+    `바디 서브요소`_
 
 :Parents:
     Only the option_list_item_ element contains ``description``.
@@ -2053,7 +2053,7 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_
+    `바디 서브요소`_
 
 :Parents:
     The following elements may contain ``필드``: 문서정보_,
@@ -2103,7 +2103,7 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_
+    `바디 서브요소`_
 
 :Parents:
     Only the 필드_ element contains ``필드_바디``.
@@ -2239,13 +2239,13 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_ (simple)
+    `바디 서브요소`_ (simple)
 
 :Parents:
     Only the 필드_ element contains ``필드_이름``.
 
 :Children:
-    ``필드_이름`` elements may contain text data plus `inline elements`_.
+    ``필드_이름`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``필드_이름`` has no direct analogues in common DTDs.
@@ -2592,13 +2592,13 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_ (simple)
+    `바디 서브요소`_ (simple)
 
 :Parents:
     Only the `line_block`_ element contains ``line``.
 
 :Children:
-    ``line`` elements may contain text data plus `inline elements`_.
+    ``line`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``line`` has no direct analogues in common DTDs.  It can be
@@ -2753,7 +2753,7 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_ (compound)
+    `바디 서브요소`_ (compound)
 
 :Parents:
     The bullet_list_ and enumerated_list_ elements contain
@@ -2907,7 +2907,7 @@ Details
 -------
 
 :Category:
-    `Inline Elements`_
+    `인라인 요소`_
 
 :Parents:
     All elements employing the `%inline.elements;`_ parameter entities in
@@ -3061,7 +3061,7 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_
+    `바디 서브요소`_
 
 :Parents:
     Only the option_group_ element contains ``option``.
@@ -3106,7 +3106,7 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_
+    `바디 서브요소`_
 
 :Parents:
     Only the option_ element contains ``option_argument``.
@@ -3159,7 +3159,7 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_
+    `바디 서브요소`_
 
 :Parents:
     Only the option_list_item_ element contains ``option_group``.
@@ -3301,7 +3301,7 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_
+    `바디 서브요소`_
 
 :Parents:
     Only the option_list_ element contains ``option_list_item``.
@@ -3346,7 +3346,7 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_
+    `바디 서브요소`_
 
 :Parents:
     Only the option_ element contains ``option_string``.
@@ -3450,7 +3450,7 @@ context.
 ``paragraph``
 =============
 
-The ``paragraph`` element contains the text and inline elements of a
+The ``paragraph`` element contains the text and 인라인 요소 of a
 single paragraph, a fundamental building block of documents.
 
 
@@ -3816,7 +3816,7 @@ Details
     Only the 문서정보_ element contains ``상태``.
 
 :Children:
-    ``상태`` elements may contain text data plus `inline elements`_.
+    ``상태`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``상태`` is analogous to the DocBook "status" element.
@@ -4002,13 +4002,13 @@ Details
 -------
 
 :Category:
-    `Body Subelements`_ (simple)
+    `바디 서브요소`_ (simple)
 
 :Parents:
     Only the definition_list_item_ element contains ``term``.
 
 :Children:
-    ``term`` elements may contain text data plus `inline elements`_.
+    ``term`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``term`` is analogous to the HTML "dt" element and to the DocBook
@@ -4131,7 +4131,7 @@ Details
     토픽_, 사이드바_, admonition_
 
 :Children:
-    ``제목`` elements may contain text data plus `inline elements`_.
+    ``제목`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``제목`` is analogous to HTML "title" and header ("h1" etc.)
@@ -4351,7 +4351,7 @@ Details
     Only the 문서정보_ element contains ``버전``.
 
 :Children:
-    ``버전`` elements may contain text data plus `inline elements`_.
+    ``버전`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``버전`` may be considered analogous to the DocBook "revision",
@@ -4897,7 +4897,7 @@ doctest_block_, line_block_, literal_block_, raw_
 =====================
 
 The ``%inline.elements;`` parameter entity contains an OR-list of all
-`inline elements`_.
+`인라인 요소`_.
 
 Entity definition:
 
@@ -5071,7 +5071,7 @@ content models of the 문서_ and 절_ elements.
 ================
 
 The ``%text.model;`` parameter entity is used by many elements to
-represent text data mixed with `inline elements`_.
+represent text data mixed with `인라인 요소`_.
 
 Entity definition:
 

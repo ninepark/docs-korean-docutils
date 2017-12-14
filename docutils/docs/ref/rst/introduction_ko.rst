@@ -1,51 +1,51 @@
 =====================================
- reStructuredText 소개
+리스트럭처드텍스트 소개
 =====================================
-:저자: 데이비드 구저
+:저자: 데이비드 굿저
 :연락처: docutils-develop@lists.sourceforge.net
-:리비전: $리비전$
-:작성일: $작성일$
+:리비전: $Revision$
+:날짜: $Date$
 :저작권: 이 문서는 퍼블릭 도메인에 속한다.
 
-reStructuredText_ 는 평문 마크업 문법과 파싱 시스템으로 가독성이 좋고 보이는 것 그대로 결과가 된다는 장점이 있다.
-단일 문서나 인라인 프로그램 문서 (파이썬 docstring) 작업 또는 빠르게 간단한 웹페이지를 만들어야 할 때 유용하다.
-StructuredText_ 와 Setext_ 간편 마크업 시스템의 재해석과 개정이 reStructuredText_ 이다.
+리스트럭처드텍스트_\ (reStructuredText)는 읽기 쉽고 좋고 보이는 것 그대로 결과가 나오는 평문 마크업 문법과 파싱 시스템이다.
+(파이썬 독스트링과 같은) 인라인 프로그램 문서나 간단한 웹페이지, 혹은 독립적인 문서를 만들때 유용하다.
+StructuredText_ 와 Setext_ 간편 마크업 시스템의 재해석한 개정판으로 제안한 것이 바로 리스트럭처드텍스트_\ 이다.
 
-reStructuredText 는 특정 어플리케이션들의 도메인의 확장성을 위해 고안되었다.
-reStructuredText 파서는 Docutils 의 구성요소이다.
+리스트럭처드텍스트는 특정 어플리케이션 도메인으로 확장가능하도록 설계되었다.
+리스트럭처드텍스트 파서는 독유틸즈의 구성요소이다.
 
-이 문서는 reStructuredText의 `목표`_ 를 분명히 하고 이 프로젝트의 `이력`_ 을 제공한다.
-reStructuredText 의 마크업으로 작성되었으므로 reStructuredText의 사용 예시가 된다.
-reStructuredText 사용에 대한 친절한 설명은 `ReStructuredText 입문`_ 을 참고하라.
-`빠른 reStructuredText`_ 사용자 레퍼런스도 유용할 것이다.
-`reStructuredText 마크업 설명서`_ 가 가장 정확한 레퍼런스이다.
-`StructuredText 문제점`_ 에 대한 분석도 있다.
+이 문서는 리스트럭처드텍스트의 `목표`_\ 를 정의하고 프로젝트의 `이력`_\ 을 제공한다.
+리스트럭처드텍스트의 마크업으로 작성되었으므로 리스트럭처드텍스트의 사용 예도 된다.
+리스트럭처드텍스트 사용법에 대한 쉬운 설명은 `리스트럭처드텍스트 입문`_ 을 참고하라.
+`빠른 리스트럭처드텍스트`_ 사용자 참고서도 유용할 것이다.
+`리스트럭처드텍스트 마크업 설명서`_ 가 가장 정확한 참고서이다.
+`StructuredText의 문제점`_ 에 대한 분석도 있다.
 
-ReStructuredText 의 웹페이지 http://docutils.sourceforge.net/rst.html.
+리스트럭처드텍스트의 웹페이지는 https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html\ 이다.
 
-.. _reStructuredText: http://docutils.sourceforge.net/rst.html
+.. _리스트럭처드텍스트: http://docutils.sourceforge.net/rst.html
 .. _StructuredText:
     http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/FrontPage
 .. _Setext: http://docutils.sourceforge.net/mirror/setext.html
-.. _Docutils: http://docutils.sourceforge.net/
-.. _ReStructuredText 입문: ../../user/rst/quickstart_ko.html
-.. _빠른 reStructuredText: ../../user/rst/quickref_ko.html
-.. _reStructuredText 마크업 설명서: restructuredtext_ko.html
-.. _StructuredText 문제점: ../../dev/rst/problems.html
+.. _독유틸즈(Docutils): https://veranostech.github.io/docs-korean-docutils/web/index_ko.html
+.. _리스트럭처드텍스트 입문: ../../user/rst/quickstart_ko.html
+.. _빠른 리스트럭처드텍스트: ../../user/rst/quickref_ko.html
+.. _리스트럭처드텍스트 마크업 설명서: restructuredtext_ko.html
+.. _StructuredText의 문제점: ../../dev/rst/problems.html
 
 
 목표
 =======
 
-reStructuredText_ 의 주된 목표는 파이썬 docstring 과 다른 문서 도메인에서 사용할 마크업 문법의 정의이다.
+리스트럭처드텍스트_ 의 주된 목표는 파이썬 docstring 과 다른 문서 도메인에서 사용할 마크업 문법의 정의이다.
 마크업 문법은 가독성이 좋고 간편해야 하며 중요한 용도에 쓰일 만큼 강력해야 한다.
-reStructuredText 마크업이 목표로 하는 것 두가지이다. :
+리스트럭처드텍스트 마크업이 목표로 하는 것 두가지이다. :
 
 - 표준 규칙 세트를 확립하여 평문 내부 구조의 표현을 가능하게 한다.
 
 - 문서들을 유용한 데이터 포맷들로 변환한다.
 
-reStructuredText 의 이차 목표는 파이썬 인라인 문서화의 표준으로서 파이썬 커뮤니티에 인정받는 것이다.
+리스트럭처드텍스트 의 이차 목표는 파이썬 인라인 문서화의 표준으로서 파이썬 커뮤니티에 인정받는 것이다.
 (PythonLabs 과 BDFL [#]_ 덕에) 여러 표준 중 하나로 취향에 의존한다.
 
 .. [#] 파이썬 창시자와 "Benevolent Dictator For Life",
@@ -91,11 +91,11 @@ reStructuredText 의 이차 목표는 파이썬 인라인 문서화의 표준으
 
 위의 디자인 목표들은 문법을 수용, 기각하거나 대안을 선정할 때 기준이 된다.
 
-분명히 말해서 reStructuredText 의 목표는 doctring 컨텐츠나 길이와 같은 doctring 속성들을 정의하는 것이 아니다.
+분명히 말해서 리스트럭처드텍스트 의 목표는 doctring 컨텐츠나 길이와 같은 doctring 속성들을 정의하는 것이 아니다.
 이러한 쟁점들은 마크업 문법과 별개이며 이 설명서의 범위를 벗어난다.
 
-또한, StructuredText_ 나 Setext_ 와의 호환성을 강화하는 것도 reStructuredText 의 목표가 아니다.
-reStructuredText 는 두 포맷의 장점만을 참고한다.
+또한, StructuredText_ 나 Setext_ 와의 호환성을 강화하는 것도 리스트럭처드텍스트 의 목표가 아니다.
+리스트럭처드텍스트 는 두 포맷의 장점만을 참고한다.
 
 저자 노트:
 
@@ -117,7 +117,7 @@ reStructuredText 는 두 포맷의 장점만을 참고한다.
 이력
 =======
 
-reStructuredText_ 설명서는 StructuredText_ 와 Setext_ 에 기반한다.
+리스트럭처드텍스트_ 설명서는 StructuredText_ 와 Setext_ 에 기반한다.
 StructuredText 는 `Zope Corporation`_ (이전엔 Digital Creations)의
 Jim Fulton 에 의해 개발되고 1996년 처음 배포되었다.
 현재는 오픈소스 "Z Object Publishing Environment" (ZOPE_) 의 일부로 배포되고 있다.
@@ -134,7 +134,7 @@ StructuredText "표준"이 갖는 결점에 대한 논의가 진행중이라는 
 필자의 확장과 Doc-SIG 회원의 제안에 기반해 기존 모듈을 수정하기로 했다.
 곧 기존 모듈이 필자가 가진 확장으로 작성되지 않았다는 것을 알았고
 이를 "re" 정규 표현 모듈에 이식하는 것을 포함한 전면적인 재작업을 시작하기로 했다.
-(이 작업이 reStructuredText 의 작명에 영감을 주었다.)
+(이 작업이 리스트럭처드텍스트 의 작명에 영감을 주었다.)
 수정을 끝내고 얼마 지나지 않아 ZOPE 배포의 StructuredText.py 이 1.23 버전까지 포함되었다는걸 알게 되었다.
 모듈의 복잡성이 너무 심해져 1.23 버전으로부터 새로운 문법 확장을 이식하는 것은 절망적인 일이 되었다.
 
@@ -142,7 +142,7 @@ StructuredText "표준"이 갖는 결점에 대한 논의가 진행중이라는 
 많이 개선되긴 했지만 여전히 기존 StructuredText 이 갖는 많은 문제들을 안고 있었다.
 
 이에 필자는 완전히 새로 작성할 때가 됐다고 결심했고
-`reStructuredText SourceForge project`_ (현재는 비활성화) 를 시작했다.
+`리스트럭처드텍스트 SourceForge project`_ (현재는 비활성화) 를 시작했다.
 필자의 동기는 아래와 같다. :
 
 - 필자는 작성중인 프로그램의 인라인 문서화를 위한 표준 포맷이 필요했다.
@@ -152,10 +152,10 @@ StructuredText "표준"이 갖는 결점에 대한 논의가 진행중이라는 
 - Setext/StructuredText 의 구상을 지지하고 표준의 형식화를 돕고 싶다.
   그러나 현재의 사양와 구현은 개선을 분명히 필요로 하는 결점을 갖고 있다.
 
-- reStructuredText 은 파이썬에 이로운 문서 추출과 처리 시스템을 위한 기반의 일부를 구성할 수 있다.
+- 리스트럭처드텍스트 은 파이썬에 이로운 문서 추출과 처리 시스템을 위한 기반의 일부를 구성할 수 있다.
   하지만 이는 전체가 될 수 없고 일부일 뿐이다.
-  reStructuredText 는 마크업 언어 사양과 레퍼런스 파서의 구현이지만 시스템 전부를 구성하려 하진 않는다.
-  필자는 과도한 욕심으로 reStructuredText 나 가상의 파이썬 문서 프로세서가 사산되는건 원치 않는다.
+  리스트럭처드텍스트 는 마크업 언어 사양과 레퍼런스 파서의 구현이지만 시스템 전부를 구성하려 하진 않는다.
+  필자는 과도한 욕심으로 리스트럭처드텍스트 나 가상의 파이썬 문서 프로세서가 사산되는건 원치 않는다.
 
 - 무엇보다 많은 프로그래머들의 골칫거리인 문서화 업무를 수월하게 하는데 기여하고 싶다.
 
@@ -165,7 +165,7 @@ StructuredText "표준"이 갖는 결점에 대한 논의가 진행중이라는 
 
 - `A Plan for Structured Text`__
 - `Problems With StructuredText`__
-- `reStructuredText: Revised Structured Text Specification`__
+- `리스트럭처드텍스트: Revised Structured Text Specification`__
 
 __ http://mail.python.org/pipermail/doc-sig/2000-November/001239.html
 __ http://mail.python.org/pipermail/doc-sig/2000-November/001240.html
@@ -173,36 +173,36 @@ __ http://mail.python.org/pipermail/doc-sig/2000-November/001241.html
 
 2001년 3월 Doc-SIG 에서의 분주한 활동이 필자로 하여금
 위 사양의 개정에 박차를 가하게 했고 결과는 독자가 읽고 있는 것과 같다.
-reStructuredText 프로젝트를 통해 아무리 잘 고안되었더라도 단일 마크업 체계는 부족하는 것을 알게 되었다.
+리스트럭처드텍스트 프로젝트를 통해 아무리 잘 고안되었더라도 단일 마크업 체계는 부족하는 것을 알게 되었다.
 Doc-SIG에서 끝나지 않는 토론을 달래기 위해 유연한 `Docstring Processing System framework`_ 을 구현할 필요가 있었다.
 이 프레임워크는 두개의 중요한 프로젝트가 되었다.;
-reStructuredText_ 는 보다 큰 프레임워크의 단일 요소를 위한 선택지 중 하나로 자리 잡았다.
+리스트럭처드텍스트_ 는 보다 큰 프레임워크의 단일 요소를 위한 선택지 중 하나로 자리 잡았다.
 
 프로젝트 웹사이트와 첫번째 프로젝트의 배포는 2001년 5월에 진행됐다.
 이 배포에는서 사양의 두번째 안 [#spec-2]_ 과 PEPs 256, 257, 258 의 초안이 [#peps-1]_
 Doc-SIG 에 개재되었다. 이 문서와 프로젝트 구현은 빠른 속도로 진전되었다.
 구현 이력에 대한 세부사항은 `project history file`_ 을 참고하라.
 
-2001년 11월에 reStructuredText 파서가 완성을 앞두고 있었다.
+2001년 11월에 리스트럭처드텍스트 파서가 완성을 앞두고 있었다.
 파서의 개발은 작은 편의요소의 추가, 문법 개선, 공백 매우기, 버그 수정을 계속하고 있었다.
 긴 연휴를 끝내고 2002년 초에 대부분의 개발이 다른 Docutils 요소들 ("Readers", "Writers", "Transforms") 로 이전되었다.
 단독 리더(단독 텍스트 파일 문서를 처리)가 2월에 완료되었고 기본 HTML 작성기(CSS-1을 이용한 HTMl 4.01)가 3월초에 완성되었다.
 
-`PEP 287`_, "reStructuredText Standard Docstring Format" 은 reStructuredText 를
+`PEP 287`_, "리스트럭처드텍스트 Standard Docstring Format" 은 리스트럭처드텍스트 를
 파이썬 docstring, PEPs, 이 외 다른 파일들을 위한 표준 포맷으로 공식 제안하기 위해 작성되었다.
 2002-04-02 에 comp.lang.python_ 와 Python-dev_ 메일링 리스트에 처음 개재되었다.
 
-reStructuredText__ 의 버전 0.4와  `Docstring Processing System`_ 프로젝트는 2002년 4월에 배포되었다.
-이 두 프로젝트는 바로 통합되었고 "Docutils_" 로 개명 되어 0.1 에 배포되었다.
+리스트럭처드텍스트__ 의 버전 0.4와  `Docstring Processing System`_ 프로젝트는 2002년 4월에 배포되었다.
+이 두 프로젝트는 바로 통합되었고 "독유틸즈(Docutils)_" 로 개명 되어 0.1 에 배포되었다.
 
-.. __: `reStructuredText SourceForge project`_
+.. __: `리스트럭처드텍스트 SourceForge project`_
 
 .. [#spec-2] The second draft of the spec:
 
-   - `An Introduction to reStructuredText`__
+   - `리스트럭처드텍스트 소개`__
    - `Problems With StructuredText`__
-   - `reStructuredText 마크업 설명`__
-   - `Python Extensions to the reStructuredText Markup
+   - `리스트럭처드텍스트 마크업 설명`__
+   - `Python Extensions to the 리스트럭처드텍스트 Markup
      Specification`__
 
    __ http://mail.python.org/pipermail/doc-sig/2001-June/001858.html
@@ -227,7 +227,7 @@ reStructuredText__ 의 버전 0.4와  `Docstring Processing System`_ 프로젝�
 
 .. _Zope Corporation: http://www.zope.com
 .. _ZOPE: http://www.zope.org
-.. _reStructuredText SourceForge project:
+.. _리스트럭처드텍스트 SourceForge project:
    http://structuredtext.sourceforge.net/
 .. _pythondoc: http://starship.python.net/crew/danilo/pythondoc/
 .. _StructuredTextNG:
