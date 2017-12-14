@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # current git branch must be `docs-korean`
 git add . -A
 git commit -m "automatic commit"
