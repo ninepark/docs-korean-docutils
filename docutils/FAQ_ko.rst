@@ -847,8 +847,7 @@ and it's used by the python.org web site build system.
 
 (The "x-" prefix means it's an unregistered MIME type.)
 
-Also see `What's the standard filename extension for a
-reStructuredText file?`_
+Also see `리스트럭처드텍스트의 표준 파일 확장자는?`_
 
 
 HTML Writer
@@ -946,7 +945,7 @@ subtitle.
 If there's only one highest-level section title at the beginning of a
 document, it is treated specially, as the document title.  (Similarly, a
 lone second-highest-level section title may become the document
-subtitle.)  See `How can I indicate the document title?  Subtitle?`_ for
+subtitle.)  See `문서의 제목과 부제목을 어떻게 지정하는가?`_ for
 details.  Rather than use a plain H1 for the document title, we use ``<h1
 class="title">`` so that we can use H1 again within the document.  Why
 do we do this?  HTML only has H1-H6, so by making H1 do double duty, we
