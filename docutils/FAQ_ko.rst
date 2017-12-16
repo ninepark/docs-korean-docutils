@@ -249,7 +249,7 @@ __ tools/editors/README_ko.html
 예를 들어 문서에 엠-대시(em-dash. XML 캐릭터로는 &mdash;,
 유니코드로는 U+2014)를 넣고 싶다고 하자. 그러면 진짜 엠-대시를 사용하면 된다.
 실제 캐릭터를 입력 파일에 넣고(**진짜로** 엠-대시를 타이핑한다.)
-애플리캐이션에 맞는 인코딩을 하여 독유틸즈에 지시한다.
+애플리케이션에 맞는 인코딩을 하여 독유틸즈에 지시한다.
 독유틸즈는 내부적으로 유니코드를 사용하므로 엠-대시 캐릭터는
 내부적으로 진짜 엠-대시로 취급된다.
 
@@ -270,8 +270,8 @@ HTML 소스코드에서는 "&amp;mdash;"로 보여진다.
 
 만약 유니코드 호환 인코딩을 사용할 수 없고 7비트 아스키코드만 써야 한다면
 돌아가는 방법이 있기는 하다.
-독유틸즈 0.3.10에는 `표준 대체 정의 집합(Standard Substitution Definition Sets)`_\ 이 추가되었다.
-이를 사용하면 대체 정의(substitution definitions)를 사용하여
+독유틸즈 0.3.10에는 `표준 치환 정의 집합(Standard Substitution Definition Sets)`_\ 이 추가되었다.
+이를 사용하면 치환 정의(substitution definitions)를 사용하여
 XML이나 HTML 캐릭터를 넣을 수 있다.
 예를 들어 일본 엔화 표시는 다음과 같이 쓸 수 있다.
 
@@ -279,20 +279,18 @@ XML이나 HTML 캐릭터를 넣을 수 있다.
 
     식사가 |yen| 600이라고?  정말 싸네!
 
-For earlier versions of Docutils, equivalent files containing
-character entity set substitution definitions using the "unicode_"
-directive `are available`_.  Please read the `description and
-instructions`_ for use.  Thanks to David Priest for the original idea.
+옛날 버전의 독유틸즈에서는
+캐릭터 개체 셋의 치환 정의를 할 때 "unicode_" 지시어를 사용할 수 있다.
+아이디어를 제공해준 데이비드 프리스트(David Priest)에게 감사한다.
 
-If you insist on using XML-style charents, you'll have to implement a
-pre-processing system to convert to UTF-8 or something.  That
-introduces complications though; you can no longer *write* about
-charents naturally; instead of writing "&mdash;" you'd have to write
-"&amp;mdash;".
+만약 XML 스타일의 캐릭터 개체를 사용해야 한다면
+UTF-8이나 비슷한 걸로 변환하는 전처리기를 직접 구현해야 한다.
+하지만 이렇게 하면 더이상 캐릭터 개체를 자연스럽게 사용할 수 없기 때문에
+상황이 복잡해진다.
+"&mdash;"라고 쓰는 대신에 "&amp;mdash;"라고 써야 할 것이다.
 
-For the common case of long dashes, you might also want to insert the
-following substitution definitons into your document (both of them are
-using the "unicode_" directive)::
+롱-대시(long dash)의 경우에도 ("unicode_" 지시자를 사용하여)
+문서에 다음처럼 치환 정의를 넣을 수 있다.::
 
     .. |--| unicode:: U+2013   .. en dash
     .. |---| unicode:: U+2014  .. em dash, trimming surrounding whitespace
@@ -302,20 +300,18 @@ using the "unicode_" directive)::
 .. |---| unicode:: U+2014  .. em dash, trimming surrounding whitespace
    :trim:
 
-Now you can write dashes using pure ASCII: "``foo |--| bar; foo |---|
-bar``", rendered as "foo |--| bar; foo |---| bar".  (Note that Mozilla
-and Firefox may render this incorrectly.)  The ``:trim:`` option for
-the em dash is necessary because you cannot write "``foo|---|bar``";
-thus you need to add spaces ("``foo |---| bar``") and advise the
-reStructuredText parser to trim the spaces.
+이렇게 하면 다음 처럼 순수 아스키코드로 대시를 사용할 수 있다.:
+"``foo |--| bar; foo |---| bar``",
+는 "foo |--| bar; foo |---| bar"로
+보일 것이다(모질라와 파이어폭스에서는 잘 안보일 수도 있다.).
 
-.. _표준 대체 정의 집합(Standard Substitution Definition Sets):
+"``foo|---|bar``"라고는 쓸 수 없기 때문에 일단 공백을 넣고
+리스트럭처드텍스트 파서가 공백을 없애도록 ``:trim:`` 옵션이 필요하다.
+
+.. _표준 치환 정의 집합(Standard Substitution Definition Sets):
    docs/ref/rst/definitions_ko.html
 .. _unicode: docs/ref/rst/directives.html#unicode-character-codes
-.. _are available: http://docutils.sourceforge.net/tmp/charents/
 .. _tarball: http://docutils.sourceforge.net/tmp/charents.tgz
-.. _description and instructions:
-   http://docutils.sourceforge.net/tmp/charents/README.html
 .. _to-do list: docs/dev/todo.html
 
 
