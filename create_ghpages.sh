@@ -11,7 +11,8 @@ touch .nojekyll
 
 cd docutils/tools
 cp ../docutils/writers/html4css1/html4css1.css ..
-./buildhtml.py --config=tools/docutils.conf --stylesheet-path=../html4css1.css ./editors .. ../../web
+./buildhtml.py --config=tools/docutils.conf --stylesheet-path=../html4css1.css .. ../../web
+python rst2html.py ./editors/README_ko.rst
 cd ../..
 
 git add . -A
