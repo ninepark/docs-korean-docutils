@@ -206,76 +206,74 @@ __ tools/editors/README_ko.html
 문서의 제목과 부제목을 어떻게 지정하는가?
 -----------------------------------------------------------
 
-문서의 시작부분에서 특정하게 장식한 절 제목은 특별히
+문서의 시작부분에서 다른 절 제목들과 구분되는 유일한 형식으로 장식한 절 제목은 특별히
 문서 제목으로 취급한다.
-비슷하게 문서 제목 바로 다음에 오는 특정하게 장식한 절 제목은
+비슷하게 문서 제목 바로 다음에 오면서 다른 절 제목들과 구분되는 유일한 형식으로 장식한 절 제목은
 문서의 부제목(subtitle)으로 취급한다.
 
+예::
 
-A uniquely-adorned section title at the beginning of a document is
-treated specially, as the document title.  Similarly, a
-uniquely-adorned section title immediately after the document title
-becomes the document subtitle.  For example::
+    이것은 문서 제목입니다.
+    =======================
 
-    This is the Document Title
-    ==========================
+    이것은 문서 부제목입니다.
+    -------------------------
 
-    This is the Document Subtitle
-    -----------------------------
+    이것은 문서의 본문입니다.
 
-    Here's an ordinary paragraph.
+잘못된 예::
 
-Counterexample::
+    이것은 문서의 본문입니다.
 
-    Here's an ordinary paragraph.
+    이것은 문서 제목이 **아닙니다.**
+    ================================
 
-    This is *not* a Document Title
-    ==============================
+    절 제목 위에 본문이 오면 절 제목은 문서 제목이 되지 못합니다.
 
-    The "ordinary paragraph" above the section title
-    prevents it from becoming the document title.
+또다른 잘못된 예::
 
-Another counterexample::
+    이것도 문서 제목이 아닙니다. 왜나하면...
+    ========================================
 
-    This is not the Document Title,  because...
-    ===========================================
+    이것은 문서의 본문입니다.
 
-    Here's an ordinary paragraph.
+    ... 제목 장식이 다른 것들과 구분되지 않기 때문입니다.
+    =====================================================
 
-    ... the title adornment is not unique
-    =====================================
-
-    Another ordinary paragraph.
+    이것은 문서의 본문입니다.
 
 
-How can I represent esoteric characters (e.g. character entities) in a document?
+문서에서 특이한 글자는 어떻게 표시하는가?
 --------------------------------------------------------------------------------
 
-For example, say you want an em-dash (XML character entity &mdash;,
-Unicode character U+2014) in your document: use a real em-dash.
-Insert concrete characters (e.g. type a *real* em-dash) into your
-input file, using whatever encoding suits your application, and tell
-Docutils the input encoding.  Docutils uses Unicode internally, so the
-em-dash character is a real em-dash internally.
+예를 들어 문서에 엠-대시(em-dash. XML 캐릭터로는 &mdash;,
+유니코드로는 U+2014)를 넣고 싶다고 하자. 그러면 진짜 엠-대시를 사용하면 된다.
+실제 캐릭터를 입력 파일에 넣고(**진짜로** 엠-대시를 타이핑한다.)
+애플리캐이션에 맞는 인코딩을 하여 독유틸즈에 지시한다.
+독유틸즈는 내부적으로 유니코드를 사용하므로 엠-대시 캐릭터는
+내부적으로 진짜 엠-대시로 취급된다.
 
-Emacs users should refer to the `Emacs Support for reStructuredText`__
-document.  Tips for other editors are welcome.
+이맥스 사용자는 `이맥스의 리스트럭처드텍스트 지원`__
+문서를 참조한다.  다른 에디터도 지원하면 알려주기 바란다.
 
-__ tools/editors/emacs/README.html
+__ tools/editors/emacs/README_ko.html
 
-ReStructuredText has no character entity subsystem; it doesn't know
-anything about XML charents.  To Docutils, "&mdash;" in input text is
-7 discrete characters; no interpretation happens.  When writing HTML,
-the "&" is converted to "&amp;", so in the raw output you'd see
-"&amp;mdash;".  There's no difference in interpretation for text
-inside or outside inline literals or literal blocks -- there's no
-character entity interpretation in either case.
+리스트럭처드텍스트는 캐릭터 개체 서브시스템을 가지지 않는다.
+XML 캐릭터에 대해서는 전혀 알지 못한다.
+독유틀즈에게 입력 텍스트에 있는  "&mdash;" 글자는
+그냥 7개의 캐릭터일 뿐이다. 어떠한 해석도 이루어지지 않는다.
+HTML을 출력하면 "&"가 "&amp;"로 변환된다. 따라서
+HTML 소스코드에서는 "&amp;mdash;"로 보여진다.
+인라인 리터럴(literals)이나 리터럴 블럭(literals block) 내부의
+텍스트를 해설할 때도 마찬가지다. 어떤 경우에도 캐릭터 개체
+해석은 없다.
 
-If you can't use a Unicode-compatible encoding and must rely on 7-bit
-ASCII, there is a workaround.  New in Docutils 0.3.10 is a set of
-`Standard Substitution Definition Sets`_, which provide equivalents of
-XML & HTML character entity sets as substitution definitions.  For
-example, the Japanese yen currency symbol can be used as follows::
+만약 유니코드 호환 인코딩을 사용할 수 없고 7비트 아스키코드만 써야 한다면
+돌아가는 방법이 있기는 하다.
+독유틸즈 0.3.10에는 `Standard Substitution Definition Sets`_\ 이 추가되었다.
+이를 사용하면 대체 정의(substitution definitions)를 사용하여
+XML이나 HTML 캐릭터를 넣을 수 있다.
+예를 들어 일본 엔화 표시는 다음과 같이 쓸 수 있다.
 
     .. include:: <xhtml1-lat1.txt>
 
