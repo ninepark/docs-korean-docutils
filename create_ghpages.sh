@@ -12,7 +12,7 @@ touch .nojekyll
 cd docutils/tools
 cp ../docutils/writers/html4css1/html4css1.css ..
 ./buildhtml.py --config=tools/docutils.conf --stylesheet-path=../html4css1.css .. ../../web
-python rst2html.py ./editors/README_ko.rst
+python rst2html.py "./editors/README_ko.rst" > "./editors/README_ko.html"
 cd ../..
 
 git add . -A
