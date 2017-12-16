@@ -168,7 +168,7 @@ The name came from a combination of "StructuredText", one of
 reStructuredText's predecessors, with "re": "revised", "reworked", and
 "reinterpreted", and as in the ``re.py`` regular expression module.
 For a detailed history of reStructuredText and the Docutils project,
-see `An Introduction to reStructuredText`_.
+see `리스트럭처드텍스트의 소개`_.
 
 "reStructuredText" is **ONE** word, *not two!*
 
@@ -373,8 +373,7 @@ Are there any tools for HTML/XML-to-reStructuredText?  (Round-tripping)
 -----------------------------------------------------------------------
 
 People have tossed the idea around, and some implementations of
-reStructuredText-generating tools can be found in the `Docutils Link
-List`_.
+reStructuredText-generating tools can be found in the `Docutils Link List`_.
 
 There's no reason why reStructuredText should not be round-trippable
 to/from XML; any technicalities which prevent round-tripping would be
@@ -390,7 +389,7 @@ particularly useful.  An 80/20 approach should work though: build a
 tool that does 80% of the work automatically, leaving the other 20%
 for manual tweaks.
 
-.. _독유틸즈 Link List: docs/user/links.html
+.. _독유틸즈 링크 리스트: docs/user/links_ko.html
 
 
 Are there any Wikis that use reStructuredText syntax?
@@ -1117,7 +1116,7 @@ templating system.)
 You can use the `docutils.core.publish_parts()`_ function, which
 returns a dictionary containing an 'html_body_' entry.
 
-.. _독유틸즈.core.publish_parts(): docs/api/publisher.html#publish-parts
+.. _docutils.core.publish_parts(): docs/api/publisher.html#publish-parts
 .. _html_body: docs/api/publisher.html#html-body
 
 
