@@ -13,6 +13,7 @@ cd docutils/tools
 cp ../docutils/writers/html4css1/html4css1.css ..
 ./buildhtml.py --config=tools/docutils.conf --stylesheet-path=../html4css1.css .. ../../web
 python rst2html.py "./editors/README_ko.rst" > "./editors/README_ko.html"
+python rst2html.py "./editors/emacs/README_ko.rst" > "./editors/emacs/README_ko.html"
 cd ../..
 
 git add . -A
