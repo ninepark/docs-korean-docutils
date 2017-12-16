@@ -1,104 +1,96 @@
 .. -*- coding: utf-8 -*-
 
 
-.. NOTE TO MAINTAINERS: Please add new questions to the end of their
-   sections, so section/question numbers remain stable.
+.. 관리자 주의 사항: 새로운 질문은 각 절의 마지막에 덧붙여서 절과 질문의 번호가
+   바뀌지 않도록 한다.
 
 
-===========================================
- Docutils FAQ (Frequently Asked Questions)
-===========================================
+======================================================================================
+ 독유틸즈에 대해 자주 물어보는 질문들(FAQ: Frequently Asked Questions)
+======================================================================================
 
-:Date: $Date$
-:Revision: $Revision$
-:Web site: http://docutils.sourceforge.net/
-:Copyright: This document has been placed in the public domain.
+:날짜: $Date$
+:리비전: $Revision$
+:웹사이트: http://docutils.sourceforge.net/
+:저작권: 이 문서는 퍼블릭 도메인에 속한다.
 
 .. contents::
 .. sectnum::
 
 
-This is a work in progress.  If you are reading a local copy, the
-`master copy`_ might be newer.  This document uses are relative links;
-if they don't work, please use the `master copy`_.
+이 작업은 계속 진행 중이다. 만약 복사본을 읽고 있다면 `마스터 문서`_\ 이 더 새로운 문서이다.
+이 문서에는 상대 경로 링크들이 포함되어 있는데 만약 동작하지 않는다면 `마스터 문서`_\ 을 이용하라.
 
-Please feel free to ask questions and/or provide answers; send email
-to the `Docutils-users`_ mailing list.  Project members should feel
-free to edit the source text file directly.
+`독유틸즈 사용자`_ 메일링 리스트로 이 메일을 보내 자유롭게 질문을 하거나 대답을 작성해 줄 수 있다.
+프로젝트 멤버들은 소스 텍스트 파일을 직접 고칠 수도 있다.
 
-.. _master copy: http://docutils.sourceforge.net/FAQ.html
+.. _마스터 문서: https://veranostech.github.io/docs-korean-docutils/docutils/FAQ_ko.html
 .. _let us know:
-.. _Docutils-users: docs/user/mailing-lists.html#docutils-users
+.. _독유틸즈 사용자: docs/user/mailing-lists.html#Docutils-users
 
 
 
-Docutils
-========
+독유틸즈
+================
 
-What is Docutils?
------------------
+독유틸즈란 무엇인가?
+----------------------------------
 
-Docutils_ is a system for processing plaintext documentation into
-useful formats, such as HTML, XML, and LaTeX.  It supports multiple
-types of input, such as standalone files (implemented), inline
-documentation from Python modules and packages (under development),
-`PEPs (Python Enhancement Proposals)`_ (implemented), and others as
-discovered.
 
-The Docutils distribution consists of:
+독유틸즈_ 는 일반 텍스트 문서를 처리하여 HTML, XML, LaTeX과 같은 유용한 형식으로
+바꾸기 위한 시스템이다. 독립 파일(구현되었다.),
+파이썬 모듈과 패키지내의 인라인 문서(구현중이다.),
+`파이썬 개선 제안(PEP: Python Enhancement Proposals)`_ (구현되었다.) 등
+여러가지 입력 형식을 지원한다.
 
-* a library (the "docutils" package), which `can be used by client
-  code`_;
-* several `front-end tools`_ (such as ``rst2html.py``, which converts
-  reStructuredText input into HTML output);
-* a `test suite`_; and
-* extensive documentation_.
+독유틸즈 배포판은 다음처럼 구성된다.:
 
-For an overview of the Docutils project implementation, see `PEP
-258`_, "Docutils Design Specification".
+* 라이브러리("docutils" 패키지), `클라이언트 코드에서 자유롭게 사용`_\ 할 수 있다.
+* (리스트럭처드텍스트를 HTML로 바꾸는 ``rst2html.py`` 과 같은) 몇가지 `프론트엔드 도구`_
+* `테스트스위트`_
+* 방대한 문서_.
 
-Docutils is implemented in Python_.
+독유틸즈 프로젝트 개요에 대한 사항은 `PEP 258`_,
+"독유틸즈 설계 상세서(Docutils Design Specification)"를 참조한다.
 
-.. _Docutils: http://docutils.sourceforge.net/
-.. _PEPs (Python Enhancement Proposals):
-   http://www.python.org/peps/pep-0012.html
-.. _can be used by client code: docs/api/publisher.html
-.. _front-end tools: docs/user/tools.html
-.. _test suite: docs/dev/testing.html
-.. _documentation: docs/index.html
+독유틸즈는 파이썬_\ 으로 구현되었다.
+
+.. _독유틸즈: http://docutils.sourceforge.net/
+.. _파이썬 개선 제안(PEP: Python Enhancement Proposals): http://www.python.org/peps/pep-0012.html
+.. _클라이언트 코드에서 자유롭게 사용: docs/api/publisher_ko.html
+.. _프론트엔드 도구: docs/user/tools_ko.html
+.. _테스트스위트: docs/dev/testing_ko.html
+.. _문서: docs/index_ko.html
 .. _PEP 258: http://www.python.org/peps/pep-0258.html
-.. _Python: http://www.python.org/
+.. _파이썬: http://www.python.org/
 
 
-Why is it called "Docutils"?
-----------------------------
+왜 "독유틸즈(Docutils)"라고 부르는가?
+--------------------------------------------------------
 
-Docutils is short for "Python Documentation Utilities".  The name
-"Docutils" was inspired by "Distutils", the Python Distribution
-Utilities architected by Greg Ward, a component of Python's standard
-library.
+독유틸즈(Docutils)는 "파이썬 문서화 유틸리티(Python Documentation Utilities)"의 줄임말이다.
+그렉 와드(Greg Ward)가 설계한 파이썬 배포 유틸리티로 파이썬의 표준 라이브러리인 "Distutils" 패키지에서 영감을 받았다.
 
-The earliest known use of the term "docutils" in a Python context was
-a `fleeting reference`__ in a message by Fred Drake on 1999-12-02 in
-the Python Doc-SIG mailing list.  It was suggested `as a project
-name`__ on 2000-11-27 on Doc-SIG, again by Fred Drake, in response to
-a question from Tony "Tibs" Ibbs: "What do we want to *call* this
-thing?".  This was shortly after David Goodger first `announced
-reStructuredText`__ on Doc-SIG.
+독유틸즈라는 이름은 파이썬에서 처음 쓰인 것은 1999-12-02에 프레드 드레이크(Fred Drake)가
+파이썬 Doc-SIG 메일링리스트에 보낸 메세지에서 잠깐 `언급`__\ 한 때다.
+2000-11-27에는 Doc-SIG에서 토니 "팁스" 이비(Tony "Tibs" Ibbs)가
+"이걸 대체 뭐라고 부르죠?"라고 한 질문에 대해 프레드 드레이크가 대답할 때
+프로젝트 이름으로 다시 `제안`__\ 되었다.
+이는 데이비드 굿저(David Goodger)가 리스럭처드텍스트(reStructuredText)를
+Doc-SIG에 최초로 `발표`__\ 한 직후였다.
 
-Tibs used the name "Docutils" for `his effort`__ "to document what the
-Python docutils package should support, with a particular emphasis on
-documentation strings".  Tibs joined the current project (and its
-predecessors) and graciously donated the name.
+팁스는 "독유틸즈"란 이름을
+문서화 문자열(documentation strings)을 포함하여
+파이썬 독유틸즈 패키지가 지원해야 할 사항을 문서화할 때 이 이름을 사용하였다.
+팁스는 이 프로젝트에 참여하였고 너그럽게 그 이름을 프로젝트에 기증하였다.
 
-For more history of reStructuredText and the Docutils project, see `An
-Introduction to reStructuredText`_.
+리스트럭처드텍스트와 독유틸즈 프로젝트의 역사에 대한 더 자세한 내용은
+`리스트럭처드텍스트의 소개`_\ 를 참조한다.
 
-Please note that the name is "Docutils", not "DocUtils" or "Doc-Utils"
-or any other variation.  It is pronounced as in "DOCumentation
-UTILitieS", with emphasis on the first syllable.
+철자가 "DocUtils"나 "Doc-Utils"Docutils" 등이 아니고 "Docutils"임에 주의한다.
+발음할 때는 독유틸즈라고 한다.
 
-.. _An Introduction to reStructuredText: docs/ref/rst/introduction.html
+.. _리스트럭처드텍스트의 소개: docs/ref/rst/introduction_ko.html
 __ http://mail.python.org/pipermail/doc-sig/1999-December/000878.html
 __ http://mail.python.org/pipermail/doc-sig/2000-November/001252.html
 __ http://mail.python.org/pipermail/doc-sig/2000-November/001239.html
@@ -147,7 +139,7 @@ What is reStructuredText?
 
 reStructuredText_ is an easy-to-read, what-you-see-is-what-you-get
 plaintext markup syntax and parser system.  The reStructuredText
-parser is a component of Docutils_.  reStructuredText is a revision
+parser is a component of 독유틸즈_.  reStructuredText is a revision
 and reinterpretation of the StructuredText_ and Setext_ lightweight
 markup systems.
 
@@ -398,7 +390,7 @@ particularly useful.  An 80/20 approach should work though: build a
 tool that does 80% of the work automatically, leaving the other 20%
 for manual tweaks.
 
-.. _Docutils Link List: docs/user/links.html
+.. _독유틸즈 Link List: docs/user/links.html
 
 
 Are there any Wikis that use reStructuredText syntax?
@@ -778,7 +770,7 @@ transparent implicit solution for HTML:
 * Grab http://cben-hacks.sourceforge.net/bidi/hibidi.py and
   http://cben-hacks.sourceforge.net/bidi/rst2html_hibidi.py.
   Put them both in the same directory and make them executable.
-  
+
 * Use ``rst2html_hibidi.py`` instead of ``rst2html.py``.
 
 * It infers dir attributes in the HTML from the text.  It does it
@@ -817,7 +809,7 @@ classes in the HTML:
 
 * Select this new stylesheet with ``--stylesheet=<file>`` or the
   stylesheet_ setting.
-  
+
 * Now if you need to override the direction of some element (from a
   paragraph to a whole section), write::
 
@@ -845,7 +837,7 @@ algorithm, so all direction changes - even numbers in RTL text - must
 be explicitly marked).  Other formats are more-or-less easy.
 
 If you have any questions/problems/bugs related to bidi with docutils,
-ask `Beni Cherniavsky`__ directly or the `Docutils-users`_ mailing
+ask `Beni Cherniavsky`__ directly or the `독유틸즈 사용자`_ mailing
 list.
 
 __ mailto:cben@users.sf.net
@@ -856,7 +848,7 @@ What's the official MIME type for reStructuredText data?
 
 While there is no registered MIME type for reStructuredText, the
 "official unofficial" standard MIME type is "text/x-rst".  This was
-invented for the build system for PEPs (Python Enhancement Proposals),
+invented for the build system for 파이썬 개선 제안(PEP: Python Enhancement Proposals),
 and it's used by the python.org web site build system.
 
 (The "x-" prefix means it's an unregistered MIME type.)
@@ -1125,7 +1117,7 @@ templating system.)
 You can use the `docutils.core.publish_parts()`_ function, which
 returns a dictionary containing an 'html_body_' entry.
 
-.. _docutils.core.publish_parts(): docs/api/publisher.html#publish-parts
+.. _독유틸즈.core.publish_parts(): docs/api/publisher.html#publish-parts
 .. _html_body: docs/api/publisher.html#html-body
 
 
@@ -1229,11 +1221,11 @@ the reStructuredText markup.
 .. Here's a code css to make a table colourful::
 
    /* Table: */
-   
+
    th {
        background-color: #ede;
    }
-   
+
    /* alternating colors in table rows */
    table.docutils tr:nth-child(even) {
        background-color: #F3F3FF;
@@ -1241,9 +1233,9 @@ the reStructuredText markup.
    table.docutils tr:nth-child(odd) {
        background-color: #FFFFEE;
    }
-   
+
    table.docutils tr {
        border-style: solid none solid none;
        border-width: 1px 0 1px 0;
        border-color: #AAAAAA;
-   }  
+   }
