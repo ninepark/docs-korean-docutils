@@ -206,6 +206,12 @@ __ tools/editors/README_ko.html
 문서의 제목과 부제목을 어떻게 지정하는가?
 -----------------------------------------------------------
 
+문서의 시작부분에서 특정하게 장식한 절 제목은 특별히
+문서 제목으로 취급한다.
+비슷하게 문서 제목 바로 다음에 오는 특정하게 장식한 절 제목은
+문서의 부제목(subtitle)으로 취급한다.
+
+
 A uniquely-adorned section title at the beginning of a document is
 treated specially, as the document title.  Similarly, a
 uniquely-adorned section title immediately after the document title
