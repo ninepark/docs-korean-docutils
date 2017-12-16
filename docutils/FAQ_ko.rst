@@ -40,7 +40,7 @@
 독유틸즈_ 는 일반 텍스트 문서를 처리하여 HTML, XML, LaTeX과 같은 유용한 형식으로
 바꾸기 위한 시스템이다. 독립 파일(구현되었다.),
 파이썬 모듈과 패키지내의 인라인 문서(구현중이다.),
-`파이썬 개선 제안(PEP: Python Enhancement Proposals)`_ (구현되었다.) 등
+`파이썬 개선 제안(PEP)`_\ (구현되었다.) 등
 여러가지 입력 형식을 지원한다.
 
 독유틸즈 배포판은 다음처럼 구성된다.:
@@ -56,7 +56,7 @@
 독유틸즈는 파이썬_\ 으로 구현되었다.
 
 .. _독유틸즈: http://docutils.sourceforge.net/
-.. _파이썬 개선 제안(PEP: Python Enhancement Proposals): http://www.python.org/peps/pep-0012.html
+.. _`파이썬 개선 제안(PEP)`: http://www.python.org/peps/pep-0012.html
 .. _클라이언트 코드에서 자유롭게 사용: docs/api/publisher_ko.html
 .. _프론트엔드 도구: docs/user/tools_ko.html
 .. _테스트스위트: docs/dev/testing_ko.html
