@@ -81,7 +81,7 @@ Doc-SIG에 최초로 `발표`__\ 한 직후였다.
 
 팁스는 "독유틸즈"란 이름을
 문서화 문자열(documentation strings)을 포함하여
-파이썬 독유틸즈 패키지가 지원해야 할 사항을 문서화할 때 이 이름을 사용하였다.
+파이썬 독유틸즈 패키지가 지원해야 할 사항을 문서화할 때 이 이름을 `사용`__\ 하였다.
 팁스는 이 프로젝트에 참여하였고 너그럽게 그 이름을 프로젝트에 기증하였다.
 
 리스트럭처드텍스트와 독유틸즈 프로젝트의 역사에 대한 더 자세한 내용은
@@ -373,7 +373,7 @@ Are there any tools for HTML/XML-to-reStructuredText?  (Round-tripping)
 -----------------------------------------------------------------------
 
 People have tossed the idea around, and some implementations of
-reStructuredText-generating tools can be found in the `Docutils Link List`_.
+reStructuredText-generating tools can be found in the `독유틸즈 링크 리스트`_.
 
 There's no reason why reStructuredText should not be round-trippable
 to/from XML; any technicalities which prevent round-tripping would be
