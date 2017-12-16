@@ -23,9 +23,8 @@ StructuredText_ 와 Setext_ 간편 마크업 시스템의 재해석한 개정판
 
 리스트럭처드텍스트의 웹페이지는 https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html\ 이다.
 
-.. _리스트럭처드텍스트: http://docutils.sourceforge.net/rst.html
-.. _StructuredText:
-    http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/FrontPage
+.. _리스트럭처드텍스트: https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html
+.. _StructuredText: http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/FrontPage
 .. _Setext: http://docutils.sourceforge.net/mirror/setext.html
 .. _독유틸즈(Docutils): https://veranostech.github.io/docs-korean-docutils/web/index_ko.html
 .. _리스트럭처드텍스트 입문: ../../user/rst/quickstart_ko.html

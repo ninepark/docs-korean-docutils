@@ -71,9 +71,9 @@
 독유틸즈(Docutils)는 "파이썬 문서화 유틸리티(Python Documentation Utilities)"의 줄임말이다.
 그렉 와드(Greg Ward)가 설계한 파이썬 배포 유틸리티로 파이썬의 표준 라이브러리인 "Distutils" 패키지에서 영감을 받았다.
 
-독유틸즈라는 이름은 파이썬에서 처음 쓰인 것은 1999-12-02에 프레드 드레이크(Fred Drake)가
+독유틸즈라는 이름이 파이썬에서 처음 쓰인 것은 1999년 12월 2일 프레드 드레이크(Fred Drake)가
 파이썬 Doc-SIG 메일링리스트에 보낸 메세지에서 잠깐 `언급`__\ 한 때다.
-2000-11-27에는 Doc-SIG에서 토니 "팁스" 이비(Tony "Tibs" Ibbs)가
+2000년 11월 27일에는 Doc-SIG에서 토니 "팁스" 이비(Tony "Tibs" Ibbs)가
 "이걸 대체 뭐라고 부르죠?"라고 한 질문에 대해 프레드 드레이크가 대답할 때
 프로젝트 이름으로 다시 `제안`__\ 되었다.
 이는 데이비드 굿저(David Goodger)가 리스럭처드텍스트(reStructuredText)를
@@ -129,85 +129,82 @@ API와 구조적인 주제들이 바뀔 수 있다.
 .. _스냅샷: http://docutils.sourceforge.net/#download
 
 
-reStructuredText
-================
+리스트럭처드텍스트
+================================================================
 
-What is reStructuredText?
--------------------------
+리스트럭처드텍스트(reStructuredText)는 무엇인가?
+---------------------------------------------------------------------------
 
-reStructuredText_ is an easy-to-read, what-you-see-is-what-you-get
-plaintext markup syntax and parser system.  The reStructuredText
-parser is a component of 독유틸즈_.  reStructuredText is a revision
-and reinterpretation of the StructuredText_ and Setext_ lightweight
-markup systems.
+리스트럭처드텍스트_\ (reStructuredText)는 읽기 쉽고 좋고 보이는 것 그대로 결과가 나오는 평문 마크업 문법과 파싱 시스템이다.
+(파이썬 독스트링과 같은) 인라인 프로그램 문서나 간단한 웹페이지, 혹은 독립적인 문서를 만들때 유용하다.
+StructuredText_ 와 Setext_ 간편 마크업 시스템의 재해석한 개정판으로 제안한 것이 바로 리스트럭처드텍스트_\ 이다.
 
-If you are reading this on the web, you can see for yourself.  `The
-source for this FAQ <FAQ.txt>`_ is written in reStructuredText; open
-it in another window and compare them side by side.
+만약 이 문서를 웹에서 보고 잇다면
+`이 문서의 소스코드 <https://raw.githubusercontent.com/VeranosTech/docs-korean-docutils/docs-korean/docutils/FAQ_ko.rst>`_
+링크를 이용하여 리스트럭처드텍스트로 씌여진 소스코드를 볼 수 있다.
+소스코드를 옆 창에 열어놓고 비교해 보아라.
 
-`A ReStructuredText Primer`_ and the `Quick reStructuredText`_ user
-reference are a good place to start.  The `reStructuredText Markup
-Specification`_ is a detailed technical specification.
+`리스트럭처드텍스트 입문`_\ 과 `빠른 리스트럭처드텍스트`_\ 는
+출발점으로 좋은 문서이다.
+`리스트럭처드텍스트 마크업 상세`_\ 는 자세한 기술 명세서다.
 
-.. _A ReStructuredText Primer: docs/user/rst/quickstart.html
-.. _Quick reStructuredText: docs/user/rst/quickref.html
-.. _reStructuredText Markup Specification:
-   docs/ref/rst/restructuredtext.html
-.. _reStructuredText: http://docutils.sourceforge.net/rst.html
-.. _StructuredText:
-   http://dev.zope.org/Members/jim/StructuredTextWiki/FrontPage/
+.. _리스트럭처드텍스트 입문: docs/user/rst/quickstart_ko.html
+.. _빠른 리스트럭처드텍스트: docs/user/rst/quickref_ko.html
+.. _리스트럭처드텍스트 마크업 상세: docs/ref/rst/restructuredtext_ko.html
+.. _리스트럭처드텍스트: https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html
+.. _StructuredText: http://dev.zope.org/Members/jim/StructuredTextWiki/FrontPage/
 .. _Setext: http://docutils.sourceforge.net/mirror/setext.html
 
 
-Why is it called "reStructuredText"?
-------------------------------------
+왜 "리스트럭처드텍스트"라고 부르는가
+------------------------------------------------------------------------
 
-The name came from a combination of "StructuredText", one of
-reStructuredText's predecessors, with "re": "revised", "reworked", and
-"reinterpreted", and as in the ``re.py`` regular expression module.
-For a detailed history of reStructuredText and the Docutils project,
-see `리스트럭처드텍스트의 소개`_.
+이 단어는 리스트럭처드텍스트의 선조격인 "스트럭처드텍스트(StructuredText)"와
+"개정(revised)", "재작업(reworked)",  "재해석(reinterpreted)", 그리고
+정규 표현식(regular expression) 모듈을 뚯하는
+"re"라는 단어를 합성한 것이다.
 
-"reStructuredText" is **ONE** word, *not two!*
+리스트럭처드텍스트와 독유틸즈의 자세한 역사에 대해서는 `리스트럭처드텍스트의 소개`_
+문서를 참조한다.
 
 
-What's the standard abbreviation for "reStructuredText"?
+"리스트럭처드텍스트(reStructuredText)" **두 단어가 아니라 한 단어**이다!
+
+
+리스트럭처드텍스트의 표준 약자는?
 --------------------------------------------------------
 
-"RST" and "ReST" (or "reST") are both acceptable.  Care should be
-taken with capitalization, to avoid confusion with "REST__", an
-acronym for "Representational State Transfer".
+"RST"와 "ReST"(또는 "reST") 둘 다 사용할 수 있다.
+대문자를 사용할 때는 "Representational State Transfer"을 뜻하는
+"REST__"와 혼동되지 않도록 주의해야 한다.
 
-The abbreviations "reSTX" and "rSTX"/"rstx" should **not** be used;
-they overemphasize reStructuredText's precedessor, Zope's
-StructuredText.
+"reSTX"나 "rSTX", "rstx"는 Zope의 스트럭처드텍스트를 강조하는 표현이므로 사용하면 안된다.
 
 __ http://en.wikipedia.org/wiki/Representational_State_Transfer
 
 
-What's the standard filename extension for a reStructuredText file?
+리스트럭처드텍스트의 표준 파일 확장자는?
 -------------------------------------------------------------------
 
-It's ".txt".  Some people would like to use ".rest" or ".rst" or
-".restx", but why bother?  ReStructuredText source files are meant to
-be readable as plaintext, and most operating systems already associate
-".txt" with text files.  Using a specialized filename extension would
-require that users alter their OS settings, which is something that
-many users will not be willing or able to do.
+".txt"이다.  몇몇은 ".rest", ".rst", ".restx"를 사용하는데 그럴 필요가 있는가?
+리스트럭처드텍스트 소스코드는 읽기 쉬운 평문이고 대부분의 운영체제는 이미
+텍스트 파일에 대해 ".txt" 확장자를 사용한다. 특별한 파일 확장자를 사용하면
+사용자가 운영체제 설정을 바꿔야 하고 대부분의 사용자가 그렇게 할 수 없거나
+하기 싫어한다.
 
-Also see `What's the official MIME type for reStructuredText data?`_
-
-
-Are there any reStructuredText editor extensions?
--------------------------------------------------
-
-See `Editor Support for reStructuredText`__.
-
-__ tools/editors/README.html
+`리스트럭처드텍스트의 공식 MIME 타입은?`_ 질문을 참조하라.
 
 
-How can I indicate the document title?  Subtitle?
--------------------------------------------------
+리스트럭처드텍스트용 편집기 확장 프로그램이 있는가?
+-----------------------------------------------------------------------------------
+
+`리스트럭처드텍스트를 위한 편집기 지원`__ 참조.
+
+__ tools/editors/README_ko.html
+
+
+문서의 제목과 부제목을 어떻게 지정하는가?
+-----------------------------------------------------------
 
 A uniquely-adorned section title at the beginning of a document is
 treated specially, as the document title.  Similarly, a
@@ -840,7 +837,7 @@ list.
 __ mailto:cben@users.sf.net
 
 
-What's the official MIME type for reStructuredText data?
+리스트럭처드텍스트의 공식 MIME 타입은?
 --------------------------------------------------------
 
 While there is no registered MIME type for reStructuredText, the
