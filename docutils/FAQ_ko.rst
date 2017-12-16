@@ -270,14 +270,14 @@ HTML 소스코드에서는 "&amp;mdash;"로 보여진다.
 
 만약 유니코드 호환 인코딩을 사용할 수 없고 7비트 아스키코드만 써야 한다면
 돌아가는 방법이 있기는 하다.
-독유틸즈 0.3.10에는 `Standard Substitution Definition Sets`_\ 이 추가되었다.
+독유틸즈 0.3.10에는 `표준 대체 정의 집합(Standard Substitution Definition Sets)`_\ 이 추가되었다.
 이를 사용하면 대체 정의(substitution definitions)를 사용하여
 XML이나 HTML 캐릭터를 넣을 수 있다.
 예를 들어 일본 엔화 표시는 다음과 같이 쓸 수 있다.
 
     .. include:: <xhtml1-lat1.txt>
 
-    |yen| 600 for a complete meal?  That's cheap!
+    식사가 |yen| 600이라고?  정말 싸네!
 
 For earlier versions of Docutils, equivalent files containing
 character entity set substitution definitions using the "unicode_"
@@ -309,7 +309,8 @@ the em dash is necessary because you cannot write "``foo|---|bar``";
 thus you need to add spaces ("``foo |---| bar``") and advise the
 reStructuredText parser to trim the spaces.
 
-.. _Standard Substitution Definition Sets: docs/ref/rst/substitutions.html
+.. _표준 대체 정의 집합(Standard Substitution Definition Sets):
+   docs/ref/rst/definitions_ko.html
 .. _unicode: docs/ref/rst/directives.html#unicode-character-codes
 .. _are available: http://docutils.sourceforge.net/tmp/charents/
 .. _tarball: http://docutils.sourceforge.net/tmp/charents.tgz
