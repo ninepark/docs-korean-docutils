@@ -97,38 +97,36 @@ __ http://mail.python.org/pipermail/doc-sig/2000-November/001239.html
 __ http://homepage.ntlworld.com/tibsnjoan/docutils/STpy.html
 
 
-Is there a GUI authoring environment for Docutils?
+독유틸즈용 GUI 저작 도구가 있는가?
 --------------------------------------------------
 
-DocFactory_ is under development.  It uses wxPython and looks very
-promising.
+DocFactory_\ 가 개발중이다. wxPython을 사용하며 유망하게 보인다.
 
 .. _DocFactory:
    http://docutils.sf.net/sandbox/gschwant/docfactory/doc/
 
 
-What is the status of the Docutils project?
--------------------------------------------
+독유틸즈 프로젝트의 상황은 어떤가?
+---------------------------------------------------------------------
 
-Although useful and relatively stable, Docutils is experimental code,
-with APIs and architecture subject to change.
+독유틸즈는 유용하고 상대적으로 안정적이지만, 여전히 실험용 코드이며
+API와 구조적인 주제들이 바뀔 수 있다.
 
-Our highest priority is to fix bugs as they are reported.  So the
-latest code from the repository_ (or the snapshots_) is almost always
-the most stable (bug-free) as well as the most featureful.
+우리의 최우선 순위는 보고된 버그를 잡는 것이다.
+따라서 레포지토리_\ (또는 스냅샷_)은 항상 버그 없이 안정적이고
+기능도 가장 많이 포함한다.
 
 
-What is the Docutils project release policy?
+독유틸즈 프로젝트의 배포 정책은?
 --------------------------------------------
 
-It's "release early & often".  We also have automatically-generated
-snapshots_ which always contain the latest code from the repository_.
-As the project matures, we may formalize on a
-stable/development-branch scheme, but we're not using anything like
-that yet.
+"빨리 그리고 자주" 배포하는 것이다.
+스냅샷_\ 은 레포지토리_\ 의 최신코드를 포함하여 자동으로 생성된다.
+프로젝트가 성숙해지면 안정/개발-브랜치 방식을 사용하게 될 것이지만
+지금은 그런 것을 사용하지 않는다.
 
-.. _repository: docs/dev/repository.html
-.. _snapshots: http://docutils.sourceforge.net/#download
+.. _레포지토리: docs/dev/repository.html
+.. _스냅샷: http://docutils.sourceforge.net/#download
 
 
 reStructuredText
