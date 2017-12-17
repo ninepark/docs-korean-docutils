@@ -437,7 +437,7 @@ implied endorsement or recommendation, and in no particular order:
 .. _글머리 기호 목록: docs/ref/rst/restructuredtext_ko.html#bullet-lists
 .. _순서 목록: docs/ref/rst/restructuredtext_ko.html#enumerated-lists
 
-1. 목록을 들여쓰기하면 **안된다.**  다음은 옳은 예이다.::
+1. 목록을 **들여쓰기하면 안된다**\ . 다음은 옳은 예이다.::
 
        문장
 
@@ -463,11 +463,11 @@ implied endorsement or recommendation, and in no particular order:
    아마도 의도한 바와 다를 것이다.
    이렇게 하면 출력에서 목록이 너무 많이 들어가게 된다.
 
-2. 같은 레벨의 항목인 경우만 제외하고 목록 항목 **앞뒤로 반드시 빈 줄**이 있어야 한다.
+2. 같은 레벨의 항목인 경우만 제외하고 목록 항목 **앞뒤로 반드시 빈 줄**\ 이 있어야 한다.
    같은 레벨의 항목의 경우에는 빈 줄이 있어도 되고 없어도 된다.
    위 예제에서도 볼 수 있다.
 
-*출력*된 형식은 입력에 의존하지 않으며 출력기(writer)와 스타일시트에 의해 결정된다.
+*출력*\ 된 형식은 입력에 의존하지 않으며 출력기(writer)와 스타일시트에 의해 결정된다.
 예를 들어 HTML 출력에서 리스트는 기본으로 들여쓰기 되지는 않는다.
 자세한 내용은 `목록은 HTML에서 어떻게 보이나?`_ 항목을 참조한다.
 
