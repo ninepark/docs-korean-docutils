@@ -356,57 +356,55 @@ UTF-8이나 비슷한 걸로 변환하는 전처리기를 직접 구현해야 �
 만약 더 나은 방법이 있다면 `연락 바람`_\ .
 
 
-Are there any tools for HTML/XML-to-reStructuredText?  (Round-tripping)
------------------------------------------------------------------------
+HTML/XML을 리스트럭처드텍스트로 변환하는 도구가 있는가?
+---------------------------------------------------------------------------------------
 
-People have tossed the idea around, and some implementations of
-reStructuredText-generating tools can be found in the `독유틸즈 링크 리스트`_.
+여러 사람들이 이 아이디어를 교류하였으며 `독유틸즈 링크 목록`_\ 에
+몇가지 리스트럭처드텍스트 생성 도구가 구현되어 있다.
 
-There's no reason why reStructuredText should not be round-trippable
-to/from XML; any technicalities which prevent round-tripping would be
-considered bugs.  Whitespace would not be identical, but paragraphs
-shouldn't suffer.  The tricky parts would be the smaller details, like
+리스트럭처드텍스트에서 다시 XML로 변환하는것이 불가능한 이유는 없다.
+기술적으로 구현이 안된다면 버그로 간주해야 한다.
+공백은 같지 않아도 문단은 상관없다.
+링크나 ID 처리와 같은 자잘한 부분에서 어려움이 있을 수는 있다.
+
+The tricky parts would be the smaller details, like
 links and IDs and other bookkeeping.
 
-For HTML, true round-tripping may not be possible.  Even adding lots
-of extra "class" attributes may not be enough.  A "simple HTML" to RST
-filter is possible -- for some definition of "simple HTML" -- but HTML
-is used as dumb formatting so much that such a filter may not be
-particularly useful.  An 80/20 approach should work though: build a
-tool that does 80% of the work automatically, leaving the other 20%
-for manual tweaks.
+HTML의 경우에는 완벽하게 변환하는 것이 불가능하다.
+추가 클래스 속성을 많이 추가한다고 해도 어려울 수 있다.
+"아주 간단한 HTML"(간단한 정도를 잘 정의하면)을 리스트럭처드텍스트로
+변환하는 것은 가능하겠지만 HTML 자체가 단순한 형식화에 지나지 않기 때문에
+변환기가 유용하지 않을 것이다.
+80% 정도는 자동으로 변환하고 나머지 20%를 수동으로 변환하는 80/20 접근방법을 쓸 수도 있다.
 
-.. _독유틸즈 링크 리스트: docs/user/links_ko.html
+.. _독유틸즈 링크 목록: docs/user/links_ko.html
 
 
-Are there any Wikis that use reStructuredText syntax?
------------------------------------------------------
+리스트럭처드텍스트 문법을 사용하는 위키가 있는가?
+-----------------------------------------------------------------------------
 
 There are several, with various degrees of completeness.  With no
 implied endorsement or recommendation, and in no particular order:
 
-* `Ian Bicking's experimental code
+* `Ian Bicking'의 실험적인 코드
   <http://docutils.sf.net/sandbox/ianb/wiki/Wiki.py>`__
 
-* `MoinMoin <http://moinmoin.wikiwikiweb.de/>`__ has some support;
-  `here's a sample <http://moinmoin.wikiwikiweb.de/RestSample>`__
+* `모인모인(MoinMoin) <http://moinmoin.wikiwikiweb.de/>`__\ 도 일부 지원한다.
+  다음은 `샘플 <http://moinmoin.wikiwikiweb.de/RestSample>`__\ 이다.
 
-* Zope-based `Zwiki <http://zwiki.org/>`__
+* Zope 기반의 `Zwiki <http://zwiki.org/>`__
 
-* Zope3-based Zwiki (in the Zope 3 source tree as
-  ``zope.products.zwiki``)
+* Zope3 기반의 Zwiki (Zope 3 소스트리 ``zope.products.zwiki``)
 
 * `StikiWiki <http://mithrandr.moria.org/code/stikiwiki/>`__
 
-* `Trac <http://trac.edgewall.com//>`__ `supports using
-  reStructuredText
-  <http://trac.edgewall.com//wiki/WikiRestructuredText>`__ as
-  an alternative to wiki markup. This includes support for `TracLinks
-  <http://trac.edgewall.com//wiki/TracLinks>`__ from within
-  RST text via a custom RST reference-directive or, even easier, an
-  interpreted text role 'trac'
+* `Trac <http://trac.edgewall.com//>`__ \ 도 위키 마크업의 대체품으로
+  리스트럭처드텍스트 문법을
+  `지원 <http://trac.edgewall.com//wiki/WikiRestructuredText>`__\ 한다.
+  RST 참조 지시어나 'trac' 역할 지시자를 사용한 `TracLinks
+  <http://trac.edgewall.com//wiki/TracLinks>`__\ 도 지원한다.
 
-Please `연락 바람`_ of any other reStructuredText Wikis.
+다른 리스트럭처드텍스트 지원 위키가 있다면 `연락 바람`_\ .
 
 .. dead link
 .. The example application for the `Web Framework Shootout
@@ -414,19 +412,18 @@ Please `연락 바람`_ of any other reStructuredText Wikis.
 .. reStructuredText.
 
 
-Are there any Weblog (Blog) projects that use reStructuredText syntax?
-----------------------------------------------------------------------
+리스트럭처드텍스트 문법을 사용하는 블로그 프로젝트가 있는가?
+-----------------------------------------------------------------------------
 
-With no implied endorsement or recommendation, and in no particular
-order:
+다음 목록은 특정한 순서를 따르지 않으며 특별히 어떤 것을 추천하지도 않는다.
 
 * `Firedrop <http://www.voidspace.org.uk/python/firedrop2/>`__
 * `PyBloxsom <http://pyblosxom.sourceforge.net/>`__
 * `Lino WebMan <http://lino.sourceforge.net/webman.html>`__
 * `Pelican <http://blog.getpelican.com/>`__
-  (also  listed `on PyPi <http://pypi.python.org/pypi/pelican>`__)
+  (`PyPi <http://pypi.python.org/pypi/pelican>`__)
 
-Please `연락 바람`_ of any other reStructuredText Blogs.
+다른 리스트럭처드텍스트 지원 블로그가 있다면 `연락 바람`_\ .
 
 
 .. _Can lists be indented without generating block quotes?:
