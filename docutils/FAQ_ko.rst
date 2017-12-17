@@ -25,7 +25,7 @@
 프로젝트 멤버들은 소스 텍스트 파일을 직접 고칠 수도 있다.
 
 .. _마스터 문서: https://veranostech.github.io/docs-korean-docutils/docutils/FAQ_ko.html
-.. _let us know:
+.. _연락 바람:
 .. _독유틸즈 사용자: docs/user/mailing-lists.html#Docutils-users
 
 
@@ -315,55 +315,45 @@ UTF-8이나 비슷한 걸로 변환하는 전처리기를 직접 구현해야 �
 .. _to-do list: docs/dev/todo.html
 
 
-스칸디나비아 키보드를 사용하면 백틱(backtick, \`)은 어떻게 타이핑하나?
+스칸디나비아 키보드에서 백틱(backtick, \`)은 어떻게 타이핑하나?
 ---------------------------------------------------------------------------------------------------------
 
+스칸디나비아 키보드를 쓰면 백틱(backtick, \`)키가 없으므로
+리스트럭처드텍스트에서 백틱 사용이 어렵다.
+백틱(\`) 캐릭터를 쓰려면 SHIFT-` + SPACE를 눌러야 한다.
 
-The use of backticks in reStructuredText is a bit awkward with
-Scandinavian keyboards, where the backtick is a "dead" key.  To get
-one ` character one must press SHIFT-` + SPACE.
+불행하게도 현재까지 나온 어떤 방법으로도 모든 사람을 만족시킬 수 있는 방법은 없다.
 
-Unfortunately, with all the variations out there, there's no way to
-please everyone.  For Scandinavian programmers and technical writers,
-this is not limited to reStructuredText but affects many languages and
-environments.
+스칸디나비아 프로그래머와 기술서 작가의 경우, 이 상황은
+리스트럭처드텍스트 뿐 아니라 다른 프로그래밍 언어와 환경에서도 마찬가지이다.
 
-Possible solutions include
+가능한 해결방법은 다음과 같다.
 
-* If you have to input a lot of backticks, simply type one in the
-  normal/awkward way, select it, copy and then paste the rest (CTRL-V
-  is a lot faster than SHIFT-` + SPACE).
+* 백틱을 많이 상요하지 않는다면 가장 단순한 방법으로 백틱을 하나 치고서는
+  카피-페이스트(copy and then paste)를 한다.
+  이 방법이 SHIFT-` + SPACE를 계속 치는 것보다는 빠르다.
 
-* Use keyboard macros.
+* 키보드 마크로를 사용한다.
 
-* Remap the keyboard.  The Scandinavian keyboard layout is awkward for
-  other programming/technical characters too; for example, []{}
-  etc. are a bit awkward compared to US keyboards.
+* 키보드 매핑을 바꾼다. 스칸디나비아 키보드 배열은 프로그래밍과 기술서용의
+  다른 캐릭터도 사용하기 힘들다.
+  예를 들어 []{} 기호들도 미국식 자판에 비해 치기 힘들게 되어 있다.
 
-  According to Axel Kollmorgen,
+  Axel Kollmorgen을 인용하면,
 
-      Under Windows, you can use the `Microsoft Keyboard Layout Creator
-      <http://www.microsoft.com/globaldev/tools/msklc.mspx>`__ to easily
-      map the backtick key to a real backtick (no dead key). took me
-      five minutes to load my default (german) keyboard layout, untick
-      "Dead Key?" from the backtick key properties ("in all shift
-      states"), "build dll and setup package", install the generated
-      .msi, and add my custom keyboard layout via Control Panel >
-      Regional and Language Options > Languages > Details > Add
-      Keyboard layout (and setting it as default "when you start your
-      computer").
+      윈도우에서는 `Microsoft Keyboard Layout Creator
+      <http://www.microsoft.com/globaldev/tools/msklc.mspx>`__\ 를 쓰면
+      쉽게 백틱 키를 매핑할 수 있다.
 
-* Use a virtual/screen keyboard or character palette, such as:
+* 가상 키보드 및 캐릭터 팔레트를 사용한다.:
 
-  - `Web-based keyboards <http://keyboard.lab.co.il/>`__ (IE only
-    unfortunately).
-  - Windows: `Click-N-Type <http://www.lakefolks.org/cnt/>`__.
-  - Mac OS X: the Character Palette can store a set of favorite
-    characters for easy input.  Open System Preferences,
-    International, Input Menu tab, enable "Show input menu in menu
-    bar", and be sure that Character Palette is enabled in the list.
+  - `Web-based keyboards <http://keyboard.lab.co.il/>`__ (IE에서만 사용가능).
+  - 윈도우: `Click-N-Type <http://www.lakefolks.org/cnt/>`__.
+  - 맥 OS X: 선호하는 캐릭터를 쉽게 입력하도록 저장 가능한 캐릭터 팔레트.
+    시스템 환경설정을 열고 언어 및 지역, 키보드 환경 설정의 키보드 탭에서
+    "메뉴 막대에서 키보드 및 이모티콘 표시"를 설정한다.
 
-If anyone knows of other/better solutions, please `let us know`_.
+만약 더 나은 방법이 있다면 `연락 바람`_\ .
 
 
 Are there any tools for HTML/XML-to-reStructuredText?  (Round-tripping)
@@ -416,7 +406,7 @@ implied endorsement or recommendation, and in no particular order:
   RST text via a custom RST reference-directive or, even easier, an
   interpreted text role 'trac'
 
-Please `let us know`_ of any other reStructuredText Wikis.
+Please `연락 바람`_ of any other reStructuredText Wikis.
 
 .. dead link
 .. The example application for the `Web Framework Shootout
@@ -436,7 +426,7 @@ order:
 * `Pelican <http://blog.getpelican.com/>`__
   (also  listed `on PyPi <http://pypi.python.org/pypi/pelican>`__)
 
-Please `let us know`_ of any other reStructuredText Blogs.
+Please `연락 바람`_ of any other reStructuredText Blogs.
 
 
 .. _Can lists be indented without generating block quotes?:
@@ -667,7 +657,7 @@ Quixote_'s PTL, Cheetah_, etc.; see this non-exhaustive list of `some
 other templating systems`_), and many more for other languages, each
 with different approaches.  We invite you to try several and find one
 you like.  If you adapt it to use Docutils/reStructuredText, please
-consider contributing the code to Docutils or `let us know`_ and we'll
+consider contributing the code to Docutils or `연락 바람`_ and we'll
 keep a list here.
 
 One reST-specific web templating system is `rest2web
