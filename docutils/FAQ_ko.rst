@@ -428,49 +428,48 @@ implied endorsement or recommendation, and in no particular order:
 
 .. _Can lists be indented without generating block quotes?:
 
-How should I mark up lists?
----------------------------
+어떻게 목록 마크업을 하는가?
+------------------------------------------------------
 
-Bullet_ & enumerated_ list markup is very intuitive but there are 2
-points that must be noted:
+`글머리 기호 목록`_ & `순서 목록`_ 마크업은 아주 직관적이지만
+다음 두 가지를 주의해야 한다.
 
-.. _bullet: docs/ref/rst/restructuredtext.html#bullet-lists
-.. _enumerated: docs/ref/rst/restructuredtext.html#enumerated-lists
+.. _글머리 기호 목록: docs/ref/rst/restructuredtext_ko.html#bullet-lists
+.. _순서 목록: docs/ref/rst/restructuredtext_ko.html#enumerated-lists
 
-1. Lists should **not** be indented.  This is correct::
+1. 목록을 들여쓰기하면 **안된다.**  다음은 옳은 예이다.::
 
-       paragraph
+       문장
 
-       * list item 1
+       * 목록 항목 1
 
-         * nested item 1.1
-         * nested item 1.2
+         * 내포 항목 1.1
+         * 내포 항목 1.2
 
-       * list item 2
+       * 목록 항목 2
 
-   while this is probably incorrect::
+   다음은 틀린 예이다.::
 
-       paragraph
+       문장
 
-         * list item 1
+         * 목록 항목 1
 
-             * nested item 1.1
-             * nested item 1.2
+             * 내포 항목 1.1
+             * 내포 항목 1.2
 
-         * list item 2
+         * 목록 항목 2
 
-   The extra indentation (of the list containing items 1.1 and 1.2) is
-   recognized as a block quote.  This is usually not what you mean and
-   it causes the list in the output to be indented too much.
+   (항목 1.1이나 1.2처럼) 들여쓰기를 하면 블럭 인용(block quote)으로 간주한다.
+   아마도 의도한 바와 다를 것이다.
+   이렇게 하면 출력에서 목록이 너무 많이 들어가게 된다.
 
-2. There **must** be blank lines around list items, except between
-   items of the same level, where blank lines are optional.  The
-   example above shows this.
+2. 같은 레벨의 항목인 경우만 제외하고 목록 항목 **앞뒤로 반드시 빈 줄**이 있어야 한다.
+   같은 레벨의 항목의 경우에는 빈 줄이 있어도 되고 없어도 된다.
+   위 예제에서도 볼 수 있다.
 
-Note that formatting of the *output* is independent of the input, and
-is decided by the writer and the stylesheet.  For instance, lists
-*are* indented in HTML output by default.  See `How are lists
-formatted in HTML?`_ for details.
+*출력*된 형식은 입력에 의존하지 않으며 출력기(writer)와 스타일시트에 의해 결정된다.
+예를 들어 HTML 출력에서 리스트는 기본으로 들여쓰기 되지는 않는다.
+자세한 내용은 `목록은 HTML에서 어떻게 보이나?`_ 항목을 참조한다.
 
 
 Could lists be indented without generating block quotes?
@@ -970,7 +969,7 @@ without H2).
 (Thanks to Mark McEahern for the question and much of the answer.)
 
 
-How are lists formatted in HTML?
+목록은 HTML에서 어떻게 보이나?
 --------------------------------
 
 If list formatting looks strange, first check that you understand
