@@ -498,13 +498,14 @@ __ docs/dev/todo.html#indented-lists
 불명확한 경우를 피해야 한다.
 
 
-How can I include mathematical equations in documents?
+문서에 수학식을 포함할 수 있나?
 ------------------------------------------------------
 
-Use the `math directive`_ and `math role`_, available since Docutils 0.8.
+`수학 지시자(math directive)`_\ 와 `수학 역할자(math role)`_\ 를 사용한다.
+독유틸즈 0.8 이후 버전에서 사용할 수 있다.
 
-.. _math directive: docs/ref/rst/directives.html#math
-.. _math role: docs/ref/rst/roles.html#math
+.. _수학 지시자(math directive): docs/ref/rst/directives_ko.html#math
+.. _수학 역할자(math role): docs/ref/rst/roles_ko.html#math
 
 
 Is nested inline markup possible?
