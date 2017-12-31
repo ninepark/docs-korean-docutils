@@ -478,25 +478,24 @@ implied endorsement or recommendation, and in no particular order:
 어떤 사람들은 들여쓰기가 있는 목록을 쓰면서 블럭 인용을 만들지 않기를 바란다.
 리스트럭처드텍스트에서 이것을 허용하는가에 대한 많은 토론이 있었다. 하지만
 이렇게 구현하려면 몇가지 해결해야 할 이슈가 있다. 이 이슈에 대해 정리한 내용은
-`앞으로 해야 할 일`__\ 를 참조한다.
+`앞으로 해야 할 일`__\ 을 참조한다.
 
 __ docs/dev/todo.html#indented-lists
 
 
-Could the requirement for blank lines around lists be relaxed?
+꼭 목록 앞뒤로 빈 줄이 있어야 하는가? 생략할 수 없나?
 --------------------------------------------------------------
 
-Short answer: no.
+대답: 생략할 수 없다.
 
-In reStructuredText, it would be impossible to unambigously mark up
-and parse lists without blank lines before and after.  Deeply nested
-lists may look ugly with so many blank lines, but it's a price we pay
-for unambiguous markup.  Some other plaintext markup systems do not
-require blank lines in nested lists, but they have to compromise
-somehow, either accepting ambiguity or requiring extra complexity.
-For example, `Epytext <http://epydoc.sf.net/epytext.html#list>`__ does
-not require blank lines around lists, but it does require that lists
-be indented and that ambiguous cases be escaped.
+리스트럭처드텍스트에서는 목록의 앞뒤로 빈 줄(blank lines) 없이 목록을
+마크업하거나 파싱할 수 없다. 빈 줄이 많으면 중첩된 목록이 보기 흉해질 수 있지만
+불명확한 마크업을 피하기 위해 치루어야 할 대가이다.
+몇몇 다른 텍스트기반 마크업 시스템은 중첩된 목록에서 빈 줄을 요구하지 않는다.
+그 대신 더 불명확해 지거나 복잡하게 된다.
+예를 들어, `Epytext <http://epydoc.sf.net/epytext.html#list>`_\ 에서는
+목록 앞뒤로 빈 줄이 필요업지만 대신 목록 자체를 들여쓰기 해야 하고
+불명확한 경우를 피해야 한다.
 
 
 How can I include mathematical equations in documents?
