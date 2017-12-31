@@ -472,14 +472,13 @@ implied endorsement or recommendation, and in no particular order:
 자세한 내용은 `목록은 HTML에서 어떻게 보이나?`_ 항목을 참조한다.
 
 
-Could lists be indented without generating block quotes?
---------------------------------------------------------
+블럭 인용을 만들지 않고 목록을 들여쓰기 할 수 있는가?
+-----------------------------------------------------------------------------------------
 
-Some people like to write lists with indentation but don't intend a
-blockquote context.  There has been a lot of discussion about allowing
-this in reStructuredText, but there are some issues that would need to
-be resolved before it could be implemented.  There is a summary of the
-issues and pointers to the discussions in `the to-do list`__.
+어떤 사람들은 들여쓰기가 있는 목록을 쓰면서 블럭 인용을 만들지 않기를 바란다.
+리스트럭처드텍스트에서 이것을 허용하는가에 대한 많은 토론이 있었다. 하지만
+이렇게 구현하려면 몇가지 해결해야 할 이슈가 있다. 이 이슈에 대해 정리한 내용은
+`앞으로 해야 할 일`__\ 를 참조한다.
 
 __ docs/dev/todo.html#indented-lists
 
