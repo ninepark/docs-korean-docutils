@@ -494,7 +494,7 @@ __ docs/dev/todo.html#indented-lists
 몇몇 다른 텍스트기반 마크업 시스템은 중첩된 목록에서 빈 줄을 요구하지 않는다.
 그 대신 더 불명확해 지거나 복잡하게 된다.
 예를 들어, `Epytext <http://epydoc.sf.net/epytext.html#list>`_\ 에서는
-목록 앞뒤로 빈 줄이 필요업지만 대신 목록 자체를 들여쓰기 해야 하고
+목록 앞뒤로 빈 줄이 필요없지만 대신 목록 자체를 들여쓰기 해야 하고
 불명확한 경우를 피해야 한다.
 
 
@@ -508,52 +508,55 @@ __ docs/dev/todo.html#indented-lists
 .. _수학 역할자(math role): docs/ref/rst/roles_ko.html#math
 
 
-Is nested inline markup possible?
----------------------------------
+인라인 마크업을 중첩하는 것도 가능한가?
+-----------------------------------------------------------
 
-Not currently, no.  It's on the `to-do list`__ (`details here`__), and
-hopefully will be part of the reStructuredText parser soon.  At that
-time, markup like this will become possible::
+현재로서는 불가능하다.
+`앞으로 해야 할 일`__ (`세부사항은 여기에`__)\ 에 나와있다.
+리스트럭처드텍스트 파서에 곧 포함되기를 바란다.
+포함되면 다음과 같은 마크업도 가능해 진다.::
 
-    Here is some *emphasized text containing a `hyperlink`_ and
-    ``inline literals``*.
+    이 글은 *`하이퍼링크`_\ 와
+    ``인라인 리터럴``\ 을 포함하는 텍스트 강조*\ 의 예이다..
 
 __ docs/dev/todo.html#nested-inline-markup
 __ docs/dev/rst/alternatives.html#nested-inline-markup
 
-There are workarounds, but they are either convoluted or ugly or both.
-They are not recommended.
+해결 방법이 있지만, 꼬이거나 보기 안좋아지므로 권장하지 않는다.
 
-* Inline markup can be combined with hyperlinks using `substitution
-  definitions`__ and references__ with the `"replace" directive`__.
-  For example::
+* 인라인 마크업과 하이퍼링크를 결합하려면
+  `치환 정의(substitution_definition)`__\ 와
+  `참조(reference)`__\ 를
+  `"replace" 지시자`__\ 와 같이 사용하면 된다.
+  다음은 예문이다.::
 
-      Here is an |emphasized hyperlink|_.
+      이것은 |강조표시된 하이퍼링크|_\ 이다..
 
-      .. |emphasized hyperlink| replace:: *emphasized hyperlink*
-      .. _emphasized hyperlink: http://example.org
+      .. |강조표시된 하이퍼링크| replace:: *강조표시된 하이퍼링크*
+      .. _강조표시된 하이퍼링크: http://example.org
 
-  It is not possible for just a portion of the replacement text to be
-  a hyperlink; it's the entire replacement text or nothing.
+  하이퍼링크의 일부분만 치환하는 것은 불가능하다.
+  전체를 치환하거나 아예 치환하지 않아야 한다.
 
-  __ docs/ref/rst/restructuredtext.html#substitution-definitions
-  __ docs/ref/rst/restructuredtext.html#substitution-references
-  __ docs/ref/rst/directives.html#replace
+  __ docs/ref/rst/restructuredtext_ko.html#substitution-definitions
+  __ docs/ref/rst/restructuredtext_ko.html#substitution-references
+  __ docs/ref/rst/directives_ko.html#replace
 
-* The `"raw" directive`__ can be used to insert raw HTML into HTML
-  output::
+* `"raw" 지시자`__\ 를 사용하여 HTML 문을 HTML 출력에 삽입할 수 있다.::
 
-      Here is some |stuff|.
+      이것은 |stuff|\ 이다.
 
       .. |stuff| raw:: html
 
-         <em>emphasized text containing a
-         <a href="http://example.org">hyperlink</a> and
-         <tt>inline literals</tt></em>
+         <em>
+         <a href="http://example.org">하이펄링크</a>와
+         <tt>인라인 리터럴</tt>을 동시에 가지면서
+         강조표시가 된 예
+         </em>
 
-  Raw LaTeX is supported for LaTeX output, etc.
+  LaTeX 출력인 경우에는 LaTeX 명령을 삽입할 수도 있다.
 
-  __ docs/ref/rst/directives.html#raw
+  __ docs/ref/rst/directives_ko.html#raw
 
 
 How to indicate a line break or a significant newline?
