@@ -1018,8 +1018,7 @@ Details
     The following elements may contain ``연락처``: 문서정보_, 복수저자_
 
 :Children:
-    ``연락처`` elements may contain text data plus `inline
-    elements`_.
+    ``연락처`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``연락처`` is analogous to the DocBook "email" element.  The HTML
@@ -1091,8 +1090,7 @@ Details
     Only the 문서정보_ element contains ``저작권``.
 
 :Children:
-    ``저작권`` elements may contain text data plus `inline
-    elements`_.
+    ``저작권`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``저작권`` is analogous to the DocBook "copyright" element.
@@ -1723,8 +1721,7 @@ Details
     may contain ``doctest_block``.
 
 :Children:
-    ``doctest_block`` elements may contain text data plus `inline
-    elements`_.
+    ``doctest_block`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``doctest_block`` is analogous to the HTML "pre" element and to
@@ -2842,8 +2839,7 @@ Details
     may contain ``literal_block``.
 
 :Children:
-    ``literal_block`` elements may contain text data plus `inline
-    elements`_.
+    ``literal_block`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``literal_block`` is analogous to the HTML "pre" element and to
@@ -3397,8 +3393,7 @@ Details
     Only the 문서정보_ element contains ``기관``.
 
 :Children:
-    ``기관`` elements may contain text data plus `inline
-    elements`_.
+    ``기관`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``기관`` is analogous to the DocBook "orgname",
@@ -3466,8 +3461,7 @@ Details
     may contain ``paragraph``.
 
 :Children:
-    ``paragraph`` elements may contain text data plus `inline
-    elements`_.
+    ``paragraph`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``paragraph`` is analogous to the HTML "p" element and to the
@@ -3545,8 +3539,7 @@ Details
     Only the 문서정보_ element contains ``리비전``.
 
 :Children:
-    ``리비전`` elements may contain text data plus `inline
-    elements`_.
+    ``리비전`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``리비전`` is analogous to but simpler than the DocBook
@@ -3904,8 +3897,7 @@ Details
     The 문서_ and 사이드바_ elements may contain ``부제목``.
 
 :Children:
-    ``부제목`` elements may contain text data plus `inline
-    elements`_.
+    ``부제목`` elements may contain text data plus `인라인 요소`_.
 
 :Analogues:
     ``부제목`` is analogous to HTML header elements ("h2" etc.) and
