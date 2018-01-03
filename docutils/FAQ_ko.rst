@@ -977,7 +977,7 @@ without H2).
 If list formatting looks strange, first check that you understand
 `list markup`__.
 
-__ `How should I mark up lists?`_
+__ `어떻게 목록 마크업을 하는가?`_
 
 * By default, HTML browsers indent lists relative to their context.
   This follows a long tradition in browsers (but isn't so established
