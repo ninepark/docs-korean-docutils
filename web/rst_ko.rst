@@ -2,58 +2,54 @@
  |reStructuredText|
 ====================
 -------------------------------------------------
- Markup Syntax and Parser Component of Docutils_
+ 마크업 문법과 독유틸즈 파서 구성
 -------------------------------------------------
 
 :Date: $Date$
 
-.. Note:: "reStructuredText" is **ONE** word, *not two!*
+.. Note:: "리스트럭처드텍스트(reStructuredText)" is 두 단어가 아니고 **한** 단어이다!
 
 .. contents::
 
-reStructuredText is an easy-to-read, what-you-see-is-what-you-get
-plaintext markup syntax and parser system.  It is useful for in-line
-program documentation (such as Python docstrings), for quickly
-creating simple web pages, and for standalone documents.
-reStructuredText is designed for extensibility for specific
-application domains.  The reStructuredText parser is a component of
-Docutils_.  reStructuredText is a revision and reinterpretation of the
-StructuredText_ and Setext_ lightweight markup systems.
+리스트럭처드텍스트는 읽기 쉽고 쓰는 그대로 얻을 수 있는,
+일반 텍스트로 되어 있는 마크업 문법이자 파서 시스템이다.
+(파이썬 독스트링 같은) 프로그램 내의 인라인 문서를 만들때 혹은
+간단한 웹 페이지나 독립적인 문서를 만드는 데도 유용한다.
+리스트럭처드텍스트는 특정 애플리케이션 도메인에 대해 확장가능하도록 설계되었다.
+리스트럭처드텍스트 파서는 독유틸즈(Docutils_)의 구성 요소의 하나다.
+리스트럭처드텍스트는 스트럭처드텍스트(StructuredText_)과 셋텍스트(Setext_)라는
+가벼운 마크업 시스템의 개정판이다.
 
-The primary goal of reStructuredText is to define and implement a
-markup syntax for use in Python docstrings and other documentation
-domains, that is readable and simple, yet powerful enough for
-non-trivial use.  The intended purpose of the markup is the conversion
-of reStructuredText documents into useful structured data formats.
+리스트럭처드텍스트의 최종 목표는 파이썬 독스트링과 다른 문서화 부문에 쓰이는,
+가독성이 좋고 단순하지만 여러가지 경우에 사용할 수 있는 충분히 강력한
+마크업 문법을 정의하고 구현하는 것이다.
+마크업의 목표는 리스트럭처드텍스트 문서를 다른 유용한 구조화된 데이터 포맷으로
+변환하는 것이다.
 
-See statemachine.py_ for an example of a Python module fully
-documented using reStructuredText.
+리스트럭처드텍스트로 문서화된 파이썬 모듈의 예를 보고 싶다면
+statemachine.py_ 코드를 참조하라.
 
 
-User Documentation
+사용자 가이드
 ==================
 
-- `A ReStructuredText Primer`__ (HTML file, or `text source`__).
-- `Quick reStructuredText`__ (user reference)
-- `reStructuredText Cheat Sheet`__ (text only; 1 page for syntax, 1
-  page directive & role reference)
+- `리스트럭처드텍스트 기초`__ (`소스 코드`__).
+- `초간단 리스트럭처드텍스트 가이드`__ (사용자 참조 문서)
+- `리스트럭처드텍스트 치트시트`__ (텍스트 문서. 문법 1 페이지와 지시자, 역할자 목록 1 페이지)
 
-Users who have questions or need assistance with Docutils or
-reStructuredText should post a message to the Docutils-users_ mailing
-list.
+독유틸즈나 리스트럭처드텍스트에 대해 질문이 있거나 도움이 필요하면 `독유틸즈 사용자 메일링 리스트`_\ 를 참조한다.
 
-__ docs/user/rst/quickstart.html
-__ docs/user/rst/quickstart.txt
-__ docs/user/rst/quickref.html
-__ docs/user/rst/cheatsheet.txt
-.. _Docutils-users: docs/user/mailing-lists.html#docutils-users
+__ docs/user/rst/quickstart_ko.html
+__ https://github.com/VeranosTech/docs-korean-docutils/blob/docs-korean/docutils/docs/user/rst/quickstart_ko.rst
+__ docs/user/rst/quickref_ko.html
+__ https://github.com/VeranosTech/docs-korean-docutils/blob/docs-korean/docutils/docs/user/rst/cheatsheet_ko.rst
+.. _독유틸즈 사용자 메일링 리스트: docs/user/mailing-lists.html#docutils-users
 
 
-Reference Documentation
+참조 문서
 =======================
 
-- `An Introduction to reStructuredText`__ (includes the Goals__ and
-  History__ of reStructuredText)
+- `An Introduction to reStructuredText`__ (includes the Goals__ and History__ of reStructuredText)
 - `reStructuredText Markup Specification`__
 - `reStructuredText Directives`__
 - `reStructuredText Interpreted Text Roles`__
@@ -66,7 +62,7 @@ __ docs/ref/rst/directives.html
 __ docs/ref/rst/roles.html
 
 
-Developer Documentation
+개발자용 문서
 =======================
 
 - `A Record of reStructuredText Syntax Alternatives`__
@@ -76,8 +72,8 @@ __ docs/dev/rst/alternatives.html
 __ docs/dev/rst/problems.html
 
 
-How-To's
---------
+하우투 문서
+----------------
 
 - `Creating reStructuredText Directives`__
 - `Creating reStructuredText Interpreted Text Roles`__
@@ -86,8 +82,8 @@ __ docs/howto/rst-directives.html
 __ docs/howto/rst-roles.html
 
 
-Try it Online
-=============
+온라인에서 사용해 보기
+==========================
 
 If you want to try reStructuredText out without downloading Docutils, you
 can play with the "simple online editor for reStructuredText" on
