@@ -80,7 +80,7 @@
 * `독유틸즈 메일링 리스트 <user/mailing-lists.html>`__
 * `독유틸즈 링크 목록 <user/links.html>`__
 
-문서 작셩자용:
+문서 작성자용:
 
 * `독유틸즈로 HTML 작성 <user/html.html>`__
 * `리스트럭처드텍스트와 S5로 쉽게 슬라이드 쇼를 만드는 법 <user/slide-shows.html>`__
@@ -89,7 +89,7 @@
 
 `리스트럭처드텍스트 <https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html>`_\ (reStructuredTest):
 
-* `리스트럭처드텍스트 입문 (HTML) <user/rst/quickstart_ko.html>`__ (또는 `텍스트 소스 <user/rst/quickstart_ko.txt>`__)
+* `리스트럭처드텍스트 입문 (HTML) <user/rst/quickstart_ko.html>`__ (또는 `텍스트 소스 <https://github.com/VeranosTech/docs-korean-docutils/blob/docs-korean/docutils/docs/user/rst/quickstart_ko.rst>`__)
 * `리스트럭처드텍스트 간단 참고서 <user/rst/quickref_ko.html>`__ (사용자 레퍼런스)
 * `리스트럭처드텍스트 치트시트 <user/rst/cheatsheet_ko.txt>`__ (텍스트; 신택스 1 페이지, 명령어 & 역할 레퍼런스 1페이지)
 * `리스트럭처드텍스트 데모 <user/rst/demo_ko.html>`_ (리스트럭처드텍스트의 기능에 대부분에 대한 데모; `텍스트 소스 <user/rst/demo_ko.txt>`__\ 를 참고할 수도 있다.)
@@ -104,20 +104,18 @@
 ``ref/``: 모든 사용자를 위한 참고 자료
 =====================================================================
 
-Many of these files began as developer specifications, but now that
-they're mature and used by end-users and client-developers, they have
-become reference material.  Successful specs evolve into refs.
+이 파일들은 대부분 개발자용 명세서로 시작했지만 이제는 엔드 유저나 클라이언트 개발자에게도 유용한 문서들이다.
 
-Docutils-general:
+
+독유틸즈 일반:
 
 * `독유틸즈 문서 트리 <ref/doctree_ko.html>`__ (미완성)
-* `Docutils Transforms <ref/transforms.html>`__
-* `Docutils Generic DTD <ref/docutils.dtd>`__
-* `OASIS XML Exchange Table Model Declaration Module
-  <ref/soextblx.dtd>`__ (CALS tables DTD module)
+* `독유틸즈 변환 <ref/transforms.html>`__
+* `독유틸즈 제너릭 DTD <ref/docutils.dtd>`__
+* `OASIS XML 교환 테이블 모델 선언 모듈
+  <ref/soextblx.dtd>`__ (CALS 테이블 DTD 모듈)
 
-Although not in the "ref" directory, `PEP 258`_ is a must-read
-reference for any Docutils developer.
+PEP 258`_\ 는 "ref" 디렉토리에 있지만 모든 독유틸즈 개발자가 읽어야 할 필독 문서이다.
 
 리스트럭처드텍스트_:
 
@@ -127,13 +125,11 @@ reference for any Docutils developer.
 * `reStructuredText 마크업 설명서 <ref/rst/restructuredtext_ko.html>`__
 * `reStructuredText 명령어 <ref/rst/directives_ko.html>`__
 * `reStructuredText 해석 텍스트 기능 <ref/rst/roles_ko.html>`__
-* `reStructuredText 표준 정의 파일
-  <ref/rst/definitions_ko.html>`_
+* `reStructuredText 표준 정의 파일 <ref/rst/definitions_ko.html>`_
 
-Prehistoric:
+과거 문서:
 
-* `Setext Documents Mirror
-  <http://docutils.sourceforge.net/mirror/setext.html>`__
+* `Setext 문서 미러 <http://docutils.sourceforge.net/mirror/setext.html>`__
 
 
 .. _peps:
@@ -141,18 +137,13 @@ Prehistoric:
 ``peps/``: 파이썬 개선 제안서
 =======================================
 
-* `PEP 256: Docstring Processing System Framework`__ is a high-level
-  generic proposal.  [`PEP 256`__ in the `master repository`_]
-* `PEP 257: Docstring Conventions`__ addresses docstring style and
-  touches on content.  [`PEP 257`__ in the `master repository`_]
-* `PEP 258: Docutils Design Specification`__ is an overview of the
-  architecture of Docutils.  It documents design issues and
-  implementation details.  [`PEP 258`__ in the `master repository`_]
-* `PEP 287: reStructuredText Docstring Format`__ proposes a standard
-  markup syntax.  [`PEP 287`__ in the `master repository`_]
+* `PEP 256: 독스트링 처리 시스템 프레임워크`__\ 는 일반적 내용의 고수준 제안서이다.  [`PEP 256`__]
+* `PEP 257: 독스트링 관례`__\ 는 독스트링 스타일과 내용에 대해 다룬다.  [`PEP 257`__]
+* `PEP 258: 독유틸즈 설계 명세서`__\ 는 독유틸즈 구조를 개괄적으로 설명한다.
+  설계 이슈와 구현상의 세부 사항을 문서화 하였다.  [`PEP 258`__]
+* `PEP 287: 리트스럭처드 독스트링 형식`__\ 는 표준 마크업 문법을 제안한다. [`PEP 287`__]
 
-Please note that PEPs in the `master repository`_ may not be current,
-whereas the local versions are.
+이 레포지토리의 문서는 `PEP 마스터 레포지토리`_\ 의 PEP 문서와 다를 수 있다는 점에 유의하라.
 
 __ peps/pep-0256_ko.html
 __ http://www.python.org/peps/pep-0256.html
@@ -163,7 +154,7 @@ __ peps/pep-0258.html
 __ http://www.python.org/peps/pep-0258.html
 __ peps/pep-0287.html
 __ http://www.python.org/peps/pep-0287.html
-.. _master repository: http://www.python.org/peps/
+.. _PEP 마스터 레포지토리: http://www.python.org/peps/
 
 
 .. _api:
@@ -171,12 +162,12 @@ __ http://www.python.org/peps/pep-0287.html
 ``api/``: 클라이언트 개발자를 위한 API 참고서
 ================================================================
 
-* `The Docutils Publisher <api/publisher.html>`__
-* `Inside A Docutils Command-Line Front-End Tool <api/cmdline-tool.html>`__
-* `Docutils Runtime Settings <api/runtime-settings.html>`__
-* (`Docutils Transforms <ref/transforms.html>`__ should be moved here)
+* `독유틸즈 퍼블리셔 <api/publisher_ko.html>`__
+* `독유틸즈 명령행 프론트엔드 도구의 내부 구조 <api/cmdline-tool_ko.html>`__
+* `독유틸즈 실행시간 설정 <api/runtime-settings_ko.html>`__
+* (`독유틸즈 변환 <ref/transforms_ko.html>`__ 문서는 다른 곳으로 이동.)
 
-`PEP 258`_ is an overview of the architecture of Docutils.
+`PEP 258`_\ 는 독유틸즈 구조를 개괄적으로 설명한다.
 
 
 .. _howto:
