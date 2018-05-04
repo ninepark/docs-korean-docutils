@@ -91,7 +91,7 @@
 
 * `리스트럭처드텍스트 입문 (HTML) <user/rst/quickstart_ko.html>`__ (또는 `텍스트 소스 <https://github.com/VeranosTech/docs-korean-docutils/blob/docs-korean/docutils/docs/user/rst/quickstart_ko.rst>`__)
 * `리스트럭처드텍스트 간단 참고서 <user/rst/quickref_ko.html>`__ (사용자 레퍼런스)
-* `리스트럭처드텍스트 치트시트 <user/rst/cheatsheet_ko.txt>`__ (텍스트; 신택스 1 페이지, 명령어 & 역할 레퍼런스 1페이지)
+* `리스트럭처드텍스트 치트시트 <user/rst/cheatsheet_ko.html>`__ (텍스트; 신택스 1 페이지, 명령어 & 역할 레퍼런스 1페이지)
 * `리스트럭처드텍스트 데모 <user/rst/demo_ko.html>`_ (리스트럭처드텍스트의 기능에 대부분에 대한 데모; `텍스트 소스 <user/rst/demo_ko.txt>`__\ 를 참고할 수도 있다.)
 
 에디터 지원:
@@ -175,13 +175,11 @@ __ http://www.python.org/peps/pep-0287.html
 ``howto/``: 개발자를 위한 지침서
 ================================================================
 
-* **Security:** `Deploying Docutils Securely <howto/security.html>`__
-* `Writing HTML (CSS) Stylesheets for Docutils
-  <howto/html-stylesheets.html>`__
-* `Docutils Internationalization <howto/i18n.html>`__
-* `Creating reStructuredText Directives <howto/rst-directives.html>`__
-* `Creating reStructuredText Interpreted Text Roles
-  <howto/rst-roles.html>`__
+* **Security:** `독유틸즈 안전하게 배포하기 <howto/security.html>`__
+* `독유틸즈를 위한 HTML (CSS) 스타일 시트 <howto/html-stylesheets.html>`__
+* `독유틸즈 국제화 <howto/i18n.html>`__
+* `리스트럭처드텍스트 지시자 만들기 <howto/rst-directives.html>`__
+* `리스트럭처드텍스트 텍스트 역할자 만들기 <howto/rst-roles.html>`__
 
 
 .. _dev:
@@ -191,25 +189,24 @@ __ http://www.python.org/peps/pep-0287.html
 
 Docutils-general:
 
-* `Docutils Hacker's Guide <dev/hacking.html>`__
-* `Docutils Distributor's Guide <dev/distributing.html>`__
-* `Docutils To Do List <dev/todo.html>`__
-* `Docutils Project Policies <dev/policies.html>`__
-* `Docutils Web Site <dev/website.html>`__
-* `Docutils Release Procedure <dev/release.html>`__
-* `The Docutils Subversion Repository <dev/repository.html>`__
-* `Docutils Testing <dev/testing.html>`__
-* `Docstring Semantics <dev/semantics.html>`__ (incomplete)
-* `Python Source Reader <dev/pysource.html>`_ (incomplete)
-* `Docutils Python DTD <dev/pysource.dtd>`_ (experimental)
-* `Plan for Enthought API Documentation Tool <dev/enthought-plan.html>`_
-* `Enthought API Documentation Tool RFP <dev/enthought-rfp.html>`_
+* `독유틸즈 해커 가이드 <dev/hacking.html>`__
+* `독유틸즈 배포 가이드 <dev/distributing.html>`__
+* `독유틸즈 해야 할 일 목록 <dev/todo.html>`__
+* `독유틸즈 프로젝트 정책 <dev/policies.html>`__
+* `독유틸즈 웹사이트 <dev/website.html>`__
+* `독유틸즈 리스트 절차 <dev/release.html>`__
+* `독유틸즈 서브버전 레포지토리 <dev/repository.html>`__
+* `독유틸즈 테스팅 <dev/testing.html>`__
+* `독유틸즈 문맥 <dev/semantics.html>`__ (incomplete)
+* `파이썬 소스 리더 <dev/pysource.html>`_ (incomplete)
+* `독유틸즈 파이썬 DTD <dev/pysource.dtd>`_ (experimental)
+* `Enthought API 문서화 도구 계획 <dev/enthought-plan.html>`_
+* `Enthought API 문서화 도구 RFP <dev/enthought-rfp.html>`_
 
 리스트럭처드텍스트_:
 
-* `A Record of reStructuredText Syntax Alternatives
-  <dev/rst/alternatives.html>`__
-* `Problems With StructuredText <dev/rst/problems.html>`__
+* `리스트럭처드텍스트 문법의 대안에 대한 기록 <dev/rst/alternatives.html>`__
+* `StructuredText의 문제점 <dev/rst/problems.html>`__
 
 
 ..
