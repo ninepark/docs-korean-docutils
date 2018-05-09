@@ -2,12 +2,12 @@
 독유틸즈로 HTML 작성
 =====================
 
-.. 목차::
+.. contents::
 
 html
 ------
 
-`html`은 독유틸즈 HTML 작성기의 기본 명령어다. 최근, `html`은 html4css1_\ 에 맵핑됐다.
+`html` 은 독유틸즈 HTML 작성기의 기본 명령어다. 최근, `html` 은 html4css1_\ 에 맵핑됐다.
 
 HTML, 브라우저, 독유틸즈, 웹의 발전과 함께 목표는 바뀔 것이다.
 
@@ -26,7 +26,7 @@ html4css1
 :front-ends: rst2html4.py, rst2html.py_
 :config:     `[html4css1 writer]`_
 
-HTML 작성기 모듈인 ``docutils/writers/html4css1.py``은 첫 독유틸즈 작성기이며
+HTML 작성기 모듈인 ``docutils/writers/html4css1.py`` 은 첫 독유틸즈 작성기이며
 0.13까지 발행된 유일한 공식 HTML 작성기다.
 
 결과는 `XHTML 1 Transitional`_ 설명서를 따른다. XML에서 요구되지만 HTML4에서는
@@ -109,7 +109,7 @@ HTML 문서에는 하드코드된 포매팅 정보가 없다. 직접적으로 HT
 .. _custom style sheets: ../howto/html-stylesheets.html
 .. _어느 브라우저에서나 볼 수 있는: http://www.anybrowser.org/campaign
 .. _polyglot XHTML5의 장점: http://xmlplease.com/xhtml/xhtml5polyglot/
-.. _safe text content:
+.. _안전한 텍스트 내용:
      https://www.w3.org/TR/html-polyglot/#dfn-safe-text-content
 
 
@@ -140,12 +140,12 @@ html4trans
 
 :front-end: rst2html_trans.py_
 
-`가벼운 브라우용 HTML 작성기`_\ 는 2008년부터
+`가벼운 브라우저용 HTML 작성기`_\ 는 2008년부터
 독유틸즈 샌드박스 (`sandbox/html4trans`_)에 있다. CSS에 대한 의존성을 제거했다.
 출력은 `XHTML 1 Transitional`_\ 을 따르며, 스타일시트가 없는 렌더링에 대한
 충분한 포매팅 정보를 포함한다. (당연히, 이는 몇가지 `문제점`_\ 이 있다.)
 
-.. _가벼운 브라우용 HTML 작성기:
+.. _가벼운 브라우저용 HTML 작성기:
    ../../../sandbox/html4trans/README.html
 .. _문제점: ../../../sandbox/html4trans/README.html#drawbacks
 .. _sandbox/html4trans: ../../../sandbox/html4trans
