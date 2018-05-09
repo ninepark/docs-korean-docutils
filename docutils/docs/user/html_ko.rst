@@ -1,52 +1,47 @@
 =====================
-Docutils HTML writers
+독유틸즈로 HTML 작성
 =====================
 
-.. contents::
+.. 목차::
 
 html
-----
+------
 
-`html` is an alias for the default Docutils HTML writer.
-Currently, `html` is mapped to html4css1_.
+`html`은 독유틸즈 HTML 작성기의 기본 명령어다. 최근, `html`은 html4css1_\ 에 맵핑됐다.
 
-The target may change with the development of HTML, browsers, Docutils, and
-the web.
+HTML, 브라우저, 독유틸즈, 웹의 발전과 함께 목표는 바뀔 것이다.
 
-* Use ``get_writer_by_name('html')`` or the rst2html.py_ front end, if you
-  want the output to be up-to-date automatically.
+* 자동으로 결과가 최신으로 업데이트 되게 하려면,
+  ``get_writer_by_name('html')`` 나 rst2html.py_ 프론트엔드를 사용해라.
 
-* Use a specific writer name or front end, if you depend on stability of the
-  generated HTML code, e.g. because you use a custom style sheet or
-  post-processing that may break otherwise.
+* 생성된 HTML 코드의 안정성에 의존한다면, 특정 작성기 이름이나 프론트 엔드를 사용해라.
+  그렇게 하지 않으면 파손될 수 있는 사용자 정의 스타일시트나 후 처리(post-processing)를
+  사용할 수 있기 때문이다.
 
 
 html4css1
----------
+------------
 
 :aliases:    html4, html_
 :front-ends: rst2html4.py, rst2html.py_
 :config:     `[html4css1 writer]`_
 
-The HTML Writer module, ``docutils/writers/html4css1.py``, was the first
-Docutils writer and up to release 0.13 the only official HTML writer.
+HTML 작성기 모듈인 ``docutils/writers/html4css1.py``은 첫 독유틸즈 작성기이며
+0.13까지 발행된 유일한 공식 HTML 작성기다.
 
-The output conforms to the `XHTML 1 Transitional`_ specification. It does
-not validate as `HTML 4.01 Transitional`_ due to the closing of empty tags
-required in XML but not allowed in HTML 4. However, the output follows the
-`HTML Compatibility Guidelines`_ for proper rendering on most HTML user
-agents.
+결과는 `XHTML 1 Transitional`_ 설명서를 따른다. XML에서 요구되지만 HTML4에서는
+허용되지 않는 빈 태그의 종료로 인해 `HTML 4.01 Transitional`_\ 로 인정되지 않는다.
+그러나 대부분의 HTML 사용자가 올바르게 렌더링하기 위해, 결과는 `HTML 호환성 지침`_\ 을 따른다.
 
-Correct rendering depends on a CSS_ style sheet. A reference style sheet,
-`html4css1.css`_, is provided and used by default.
+정확한 렌더링은 CSS_ 스타일시트에 의존한다. 참조 스타일시트인 `html4css1.css`_\ 가 제공되며,
+기본적으로 사용된다.
 
-To support the `Internet Explorer` (with a market share of about 90% around
-2002, the time this writer was written), documents contain some hard-coded
-formatting hints and are tagged as "text/html" (instead of
-"application/xhtml+xml"). [#IE]_
+`Internet Explorer`(이 작성기가 쓰여진 2002년에는 시장점유율이 약 90%였다)를
+지원하기 위해 문서는 하드코드된 포매팅 힌트를 포함하며,
+"text/html" 로 태그되어 있다. ( "application/xhtml+xml" 대신). [#IE]_
 
-.. [#IE] Conformance to `CSS 2.1`_ has been added in IE 8 (2009), support
-   for XHTML in IE 9 (2011).
+.. [#IE] Conformance to `CSS 2.1`_\ 에 대한 적합성은 IE 8 (2009)부터 추가됐으며,
+   XHTML에 대한 지원은 IE 9 (2011)부터다.
 
 .. _rst2html.py: tools.html#rst2html-py
 .. _[html4css1 writer]: config.html#html4css1-writer
@@ -58,10 +53,9 @@ pep_html
 :front-end: rstpep2html.py_
 :config:    `[pep_html writer]`_
 
-This is a special writer for the generation of `Python Enhancement
-Proposals`_ (PEPs). It inherits from html4css1_ and adds some `PEP-specific
-options`_, a style sheet and template. The front-end uses also a specialised
-reader.
+이것은 `Python Enhancement Proposals`_ (PEPs)를 생성하기 위한 특별한 작성기다.
+html4css1_\ 에서 상속받으며, 몇몇 `PEP-specific options`_, 스타일시트, 템플릿을 추가한다.
+프론트엔드는 또한 특화된 판독기를 사용한다.
 
 .. _rstpep2html.py: tools.html#rstpep2html-py
 .. _PEP-specific options:
@@ -75,58 +69,56 @@ s5_html
 :front-end: rst2s5.py_
 :config:    `[s5_html writer]`_
 
-The `s5` writer inherits from html4css1_. It produces XHTML for use with
-S5_, the “Simple Standards-based Slide Show System” by Eric Meyer.  See
-`Easy Slide Shows With reST & S5`_ for details.
+`s5` 작성기는 html4css1_\ 에서 상속받는다. Eric Meyer가 만든
+“간단한 표준 기반 슬라이드 쇼 시스템”인 S5_ 사용을 위한, XHTML을 만든다.
+자세한 내용은 `reST & S5의 쉬운 슬라이드 쇼`_\ 를 봐라.
 
 .. _rst2s5.py: tools.html#rst2s5-py
 .. _[s5_html writer]: config.html#s5-html-writer
-.. _Easy Slide Shows With reST & S5: slide-shows.html
+.. _reST & S5의 쉬운 슬라이드 쇼: slide-shows.html
 .. _S5: http://meyerweb.com/eric/tools/s5/
 .. _theme: tools.html#themes
 
 
 html5_polyglot
---------------
+-----------------
 
 :aliases: html5
 :front-end: rst2html5.py_
 :config: `[html5 writer]`_
 
-The ``html5_polyglot`` writer generates `polyglot HTML`_ [#]_ output, valid
-XML [#safetext]_ that is compatible with `HTML5`_. New features and elements
-will only be used if they are widely supported to make documents `viewable
-with any browser`_.
+``html5_polyglot`` 작성기는 `HTML5`_\ 와 호환되는 유효한 XML [#safetext]_\ 인
+`polyglot HTML`_ [#]_ 출력을 생성한다. 새로운 특성과 요소는 오직 그것들이
+`어느 브라우저에서나 볼 수 있는`_ 문서를 만들기 위해 폭넓게 지원받을 때 사용된다.
 
-There is no hard-coded formatting information in the HTML document. Correct
-rendering of elements not directly supported by HTML depends on a CSS_ style
-sheet. The provided style sheets minimal.css_ and plain.css_ define required
-and optional styling rules respectively. Adaption of the layout is possible
-with `custom style sheets`_. [#safetext]_
+HTML 문서에는 하드코드된 포매팅 정보가 없다. 직접적으로 HTML의 지원을 받지 않는 요소의 정확한
+렌더링은 CSS_ 스타일시트에 의존한다. 제공된 스타일시트 minimal.css_\ 와 plain.css_\ 는
+각자 요구된 부가적인 스타일 규칙을 정의한다. 레이아웃의 개조는
+`custom style sheets`_\ 면 가능하다. [#safetext]_
 
-New in Docutils 0.13
+독유틸즈 0.13의 새로운 것
 
-.. [#] see also `Benefits of polyglot XHTML5`_
-.. [#safetext] The validity of raw HTML and custom stylesheets must be
-   ensured by the author (e.g. using `safe text content`_).
+.. [#] see also `polyglot XHTML5의 장점`_\ 도 봐라.
+.. [#safetext] 원본 HTML과 사용자 지정 스타일시트의 유효성은 작성자가 보장해야 한다.
+   (예: `안전한 텍스트 내용`_ 사용).
 
 .. _rst2html5.py: tools.html#rst2html5-py
 .. _[html5 writer]: config.html#html5-writer
 .. _minimal.css: ../../docutils/writers/html5_polyglot/minimal.css
 .. _plain.css: ../../docutils/writers/html5_polyglot/plain.css
 .. _custom style sheets: ../howto/html-stylesheets.html
-.. _viewable with any browser: http://www.anybrowser.org/campaign
-.. _Benefits of polyglot XHTML5: http://xmlplease.com/xhtml/xhtml5polyglot/
+.. _어느 브라우저에서나 볼 수 있는: http://www.anybrowser.org/campaign
+.. _polyglot XHTML5의 장점: http://xmlplease.com/xhtml/xhtml5polyglot/
 .. _safe text content:
      https://www.w3.org/TR/html-polyglot/#dfn-safe-text-content
 
 
-HTML writers in the sandbox
+샌드박스의 HTML 작성기
 ---------------------------
 
-There are two more HTML writers in the sandbox_:
+샌드박스_\ 의 HTML 작성기는 2개 이상이 있다:
 
-.. _sandbox: ../dev/policies.html#the-sandbox
+.. _샌드박스: ../dev/policies.html#the-sandbox
 
 xhtml11
 ~~~~~~~
@@ -134,13 +126,13 @@ xhtml11
 :front-end: rst2xhtml.py
 :config:    `[xhtml11 writer]`
 
-`XHTML 1.1`_ is the latest version of the XML based `extensible
-Hypertext Markup Language` with an official DTD.
+`XHTML 1.1`_\ 는 공식적인 DTD의 `extensible Hypertext Markup Language` 기반의
+최신버전 XML이다.
 
-The `xhtml11 writer`_ lives in the Docutils sandbox_ since 2008. The output
-conforms to the strict requirements of `XHTML 1.1`_.
+`xhtml11 작성기`_\ 는 2008년 이후로 독유틸즈 샌드박스_ 안에 있다.
+결과는 엄격한 `XHTML 1.1`_ 요구를 따른다.
 
-.. _xhtml11 writer: ../../../sandbox/html4strict/README.html
+.. _xhtml11 작성기: ../../../sandbox/html4strict/README.html
 
 
 html4trans
@@ -148,20 +140,19 @@ html4trans
 
 :front-end: rst2html_trans.py_
 
-The `HTML writer for lightweight browsers`_ lives in the Docutils sandbox
-(`sandbox/html4trans`_) since 2008. It removes the dependency on CSS. The
-output conforms to `XHTML 1 Transitional`_ and contains sufficient
-formatting information for rendering without style sheet. (Of course, this
-has some drawbacks_.)
+`가벼운 브라우용 HTML 작성기`_\ 는 2008년부터
+독유틸즈 샌드박스 (`sandbox/html4trans`_)에 있다. CSS에 대한 의존성을 제거했다.
+출력은 `XHTML 1 Transitional`_\ 을 따르며, 스타일시트가 없는 렌더링에 대한
+충분한 포매팅 정보를 포함한다. (당연히, 이는 몇가지 `문제점`_\ 이 있다.)
 
-.. _HTML writer for lightweight browsers:
+.. _가벼운 브라우용 HTML 작성기:
    ../../../sandbox/html4trans/README.html
-.. _drawbacks: ../../../sandbox/html4trans/README.html#drawbacks
+.. _문제점: ../../../sandbox/html4trans/README.html#drawbacks
 .. _sandbox/html4trans: ../../../sandbox/html4trans
 .. _rst2html_trans.py: ../../../sandbox/html4trans/tools/rst2html_trans.py
 
 
-Overview
+개요
 --------
 
 =============== =========== ============== ================= ===========
@@ -240,7 +231,7 @@ _`CSS 3`:
 .. other references
    ----------------
 
-.. _HTML Compatibility Guidelines: http://www.w3.org/TR/xhtml1/#guidelines
+.. _HTML 호환성 지침: http://www.w3.org/TR/xhtml1/#guidelines
 .. _CSS: http://www.w3.org/TR/CSS/
 .. _CSS1 specification: http://www.w3.org/TR/2008/REC-CSS1-20080411/
 .. _polyglot HTML: http://www.w3.org/TR/html-polyglot/
