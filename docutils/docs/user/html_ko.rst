@@ -94,7 +94,7 @@ html5_polyglot
 HTML 문서에는 하드코드된 포매팅 정보가 없다. 직접적으로 HTML의 지원을 받지 않는 요소의 정확한
 렌더링은 CSS_ 스타일시트에 의존한다. 제공된 스타일시트 minimal.css_\ 와 plain.css_\ 는
 각자 요구된 부가적인 스타일 규칙을 정의한다. 레이아웃의 개조는
-`custom style sheets`_\ 면 가능하다. [#safetext]_
+`사용자 지정 스타일시트`_\ 면 가능하다. [#safetext]_
 
 독유틸즈 0.13의 새로운 것
 
@@ -106,7 +106,7 @@ HTML 문서에는 하드코드된 포매팅 정보가 없다. 직접적으로 HT
 .. _[html5 writer]: config.html#html5-writer
 .. _minimal.css: ../../docutils/writers/html5_polyglot/minimal.css
 .. _plain.css: ../../docutils/writers/html5_polyglot/plain.css
-.. _custom style sheets: ../howto/html-stylesheets.html
+.. _사용자 지정 스타일시트: ../howto/html-stylesheets.html
 .. _어느 브라우저에서나 볼 수 있는: http://www.anybrowser.org/campaign
 .. _polyglot XHTML5의 장점: http://xmlplease.com/xhtml/xhtml5polyglot/
 .. _안전한 텍스트 내용:
