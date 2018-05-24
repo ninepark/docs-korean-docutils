@@ -58,7 +58,7 @@
     <li><a href="#line-blocks">라인 블럭</a></li>
     <li><a href="#block-quotes">블럭 인용</a></li>
     <li><a href="#doctest-blocks">독테스트 블럭</a></li>
-    <li><a href="#tables">데이블</a></li>
+    <li><a href="#tables">테이블</a></li>
     <li><a href="#transitions">전환</a></li>
     <li><a href="#explicit-markup">명시적 마크업</a>
     <ul>
@@ -83,132 +83,114 @@
 
     <p>(<a href="../../ref/rst/restructuredtext.html#inline-markup">details</a>)
 
-    <p>Inline markup allows words and phrases within text to have
-    character styles (like italics and boldface) and functionality
-    (like hyperlinks).
+    <p>인라인 마크업은 텍스트 사이의 단어나 구절들의 문자 스타일(이탤릭이나 굵은글씨와 같은)과 기능성(하이퍼링크 같은)을 변경케 한다.
 
     <p><table border="1" width="100%" bgcolor="#ffffcc" cellpadding="3">
       <thead>
     <tr align="left" bgcolor="#99CCFF">
-      <th>Plain text
-      <th>Typical result
-      <th>Notes
+      <th>원문
+      <th>일반적 결과
+      <th>설명
       </thead>
       <tbody>
     <tr valign="top">
       <td nowrap><samp>*emphasis*</samp>
       <td><em>emphasis</em>
-      <td>Normally rendered as italics.
+      <td>보통 이탤릭으로 렌더링 됨
 
     <tr valign="top">
       <td nowrap><samp>**strong&nbsp;emphasis**</samp>
       <td><strong>strong emphasis</strong>
-      <td>Normally rendered as boldface.
+      <td>보통 굵은 글씨로 렌더링 됨
 
     <tr valign="top">
       <td nowrap><samp>`interpreted&nbsp;text`</samp>
-      <td>(see note at right)
-      <td>The rendering and <em>meaning</em> of interpreted text is
-      domain- or application-dependent.  It can be used for things
-      like index entries or explicit descriptive markup (like program
-      identifiers).
+      <td>(오른쪽 설명 참고)
+      <td>해석된 텍스트(interpreted text)의 렌더링과 <em>뜻</em>은 그 도메인(domain)과 어플리케이션(application)에 달렸다.
+      인덱스 항목 혹은 program identifier와 같은
+      명시적인 기술적 마크업(explicit descriptive markup)으로 사용될 수 있다.
 
     <tr valign="top">
       <td nowrap><samp>``inline&nbsp;literal``</samp>
       <td><code>inline&nbsp;literal</code>
-      <td>Normally rendered as monospaced text. Spaces should be
-      preserved, but line breaks will not be.
+      <td>보통 고정폭 텍스트로 렌더링된다. 공백들은 유지되지만 개행표시는 그렇지 않다.
+
 
     <tr valign="top">
       <td nowrap><samp>reference_</samp>
       <td><a href="#hyperlink-targets">reference</a>
-      <td>A simple, one-word hyperlink reference.  See <a
-      href="#hyperlink-targets">Hyperlink Targets</a>.
+      <td>단순한 한 단어 하이퍼링크. 다음을 참고:<a
+      href="#hyperlink-targets">하이퍼링크 타겟</a>.
 
     <tr valign="top">
       <td nowrap><samp>`phrase reference`_</samp>
       <td><a href="#hyperlink-targets">phrase reference</a>
-      <td>A hyperlink reference with spaces or punctuation needs to be
-      quoted with backquotes.  See <a
-      href="#hyperlink-targets">Hyperlink Targets</a>.
+      <td>공백 혹은 구두점이 포함된 하이퍼링크 참조의 경우 백쿼트(')로 인용해야한다. 다음을 참고:<a
+      href="#hyperlink-targets">하이퍼링크 타겟</a>.
 
     <tr valign="top">
       <td nowrap><samp>anonymous__</samp>
       <td><a href="#hyperlink-targets">anonymous</a>
-      <td>With two underscores instead of one, both simple and phrase
-      references may be anonymous (the reference text is not repeated
-      at the target).  See <a
-      href="#hyperlink-targets">Hyperlink Targets</a>.
+      <td>하나가 아닌 두개의 연속된 언더스코어(_)가 있을 시 단순 참조 ,구절 참조 두가지 모든 경우 익명 참조일 수 있다.
+      (참조 문구가 타겟에서 반복되지 않음) 다음을 참고:<a
+      href="#hyperlink-targets">하이퍼링크 타겟</a>.
 
     <tr valign="top">
       <td nowrap><samp>_`inline internal target`</samp>
       <td><a name="inline-internal-target">inline internal target</a>
-      <td>A crossreference target within text.
-      See <a href="#hyperlink-targets">Hyperlink Targets</a>.
+      <td>텍스트 내에서의 상호 참조. 다음을 참조:
+      <a href="#hyperlink-targets">Hyperlink Targets</a>.
 
     <tr valign="top">
       <td nowrap><samp>|substitution reference|</samp>
       <td>(see note at right)
-      <td>The result is substituted in from the <a
-      href="#substitution-references-and-definitions">substitution
-      definition</a>.  It could be text, an image, a hyperlink, or a
-      combination of these and others.
+      <td>결과가 <a
+      href="#substitution-references-and-definitions">대체 정의(substitution
+      definition)</a>에 따라 대체되어 나타난다. 텍스트, 이미지, 하이퍼링크 또는 이들의 조합들이 나타날 수 있다.
 
     <tr valign="top">
       <td nowrap><samp>footnote reference [1]_</samp>
       <td>footnote reference <sup><a href="#footnotes">1</a></sup>
-      <td>See <a href="#footnotes">Footnotes</a>.
+      <td>다음을 참고:<a href="#footnotes">주석</a>.
 
     <tr valign="top">
       <td nowrap><samp>citation reference [CIT2002]_</samp>
       <td>citation reference <a href="#citations">[CIT2002]</a>
-      <td>See <a href="#citations">Citations</a>.
+      <td>다음을 참고:<a href="#citations">인용</a>.
 
     <tr valign="top">
       <td nowrap><samp>http://docutils.sf.net/</samp>
       <td><a href="http://docutils.sf.net/">http://docutils.sf.net/</a>
-      <td>A standalone hyperlink.
+      <td>스탠드얼론 하이퍼링
 
     </table>
 
-    <p>Asterisk, backquote, vertical bar, and underscore are inline
-    delimiter characters. Asterisk, backquote, and vertical bar act
-    like quote marks; matching characters surround the marked-up word
-    or phrase, whitespace or other quoting is required outside them,
-    and there can't be whitespace just inside them. If you want to use
-    inline delimiter characters literally, <a href="#escaping">escape
-    (with backslash)</a> or quote them (with double backquotes; i.e.
-    use inline literals).
+    <p>별표(asterisk), 백쿼트, 버티컬 바(vertical bar) 그리고 언더스코어는 인라인
+    구획문자(inline delimiter characters) 이다. 별표, 백쿼트, 버티컬 바는 인용 마크처럼 작동하며
+    매칭 캐릭터들은 마크드-업 단어 혹은 절, 공백, 기타 인용 바깥에 있어야하며 공백이 그 바로 안쪽에 존재해서는 안된다.
+    만약 인라인 구획문자를 그대로 보여지게 사용하고 싶다면 <a href="#escaping">이스케이프
+    (백슬래쉬 사용)</a> 혹은 참조를 사하면 된다. (이중 백쿼트, i.e. 인라인 리터럴 사용)
 
-    <p>In detail, the reStructuredText specification says that in
-      inline markup, the following rules apply to start-strings and
-      end-strings (inline markup delimiters):
+    <p>자세히 살펴보면 다음과 같으며 인라인 구획문자의
+      시작 스트링과 끝 스트링에 아래의 규칙들이 적용된다:
 
     <ol>
-      <li>The start-string must start a text block or be
-    immediately preceded by whitespace or any of&nbsp;
-    <samp>' " ( [ {</samp> or&nbsp;<samp>&lt;</samp>.
-      <li>The start-string must be immediately followed by non-whitespace.
-      <li>The end-string must be immediately preceded by non-whitespace.
-      <li>The end-string must end a text block (end of document or
-    followed by a blank line) or be immediately followed by whitespace
-    or any of&nbsp;<samp>' " . , : ; ! ? - ) ] } / \</samp>
-    or&nbsp;<samp>&gt;</samp>.
-      <li>If a start-string is immediately preceded by one of&nbsp;
-    <samp>' " ( [ {</samp> or&nbsp;<samp>&lt;</samp>, it must not be
-    immediately followed by the corresponding character from&nbsp;
-    <samp>' " ) ] }</samp> or&nbsp;<samp>&gt;</samp>.
-      <li>An end-string must be separated by at least one
-    character from the start-string.
-      <li>An <a href="#escaping">unescaped</a> backslash preceding a
-    start-string or end-string will disable markup recognition, except
-    for the end-string of inline literals.
+      <li>시작 스트링 은 반드시 텍스트 블록 혹은
+    <samp>' " ( [ {</samp> or&nbsp;<samp>&lt;</samp> 중 하나의 바로 뒤 부터 시작해야한다.
+      <li>시작 스트링 바로 뒤에는 공백이 있을 수 없다.
+      <li>끝 스트링은 공백 바로 뒤에 있어선 안 된다.
+      <li>끝 스트링은 반드시 텍스트블록으로 끝나야 하며
+    다음 <samp>' " . , : ; ! ? - ) ] } / \ ></samp> 중 하나가 바로 뒤에 있어야한다.
+      <li>만약 시작 스트링이
+    <samp>' " ( [ {</samp> 또는 <samp>&lt;</samp> 중 하나의 바로 뒤에 있다면 시작 스트링 바로 뒤에
+    <samp>' " ) ] }</samp> 또는&nbsp;<samp>&gt;</samp> 이 바로 이어지면 안된다.
+      <li>끝 스트링은 적어도 한 글자 이상으로 시작 스트링과 구분 되어야한다.
+      <li>시작 스트링이나 끝 스트링 앞에 있는 <a href="#escaping">언이스케이프</a>된 백슬래쉬는 마크업 적용을 비활성화 한다.
+      단, 인라인 리터럴의 끝 스트링은 예외로 취급한다.
     </ol>
 
-    <p>Also remember that inline markup may not be nested (well,
-      except that inline literals can contain any of the other inline
-      markup delimiter characters, but that doesn't count because
-      nothing is processed).
+    <p>또, 인라인 마크업은 네스티드 구조가 아닐 수도 있다는 사실을 기억하라.
+      (물론 인라인 리터럴이 다른 인라인 구획문자를 포함할 수 있는 경우에는 예외로 하나 보통 그런 경우는 아무일도 일어나지 않기 때문에 취급하지 않는다.)
 
     <h2><a href="#contents" name="escaping" class="backref"
         >Escaping with Backslashes</a></h2>
