@@ -18,7 +18,7 @@
 .. sectnum::
 
 
-이 작업은 계속 진행 중이다. 만약 복사본을 읽고 있다면 `마스터 문서`_\ 이 더 새로운 문서이다.
+이 작업은 계속 진행 중이다. 만약 복사본을 읽고 있다면 `마스터 문서`_\  더 새로운 문서이다.
 이 문서에는 상대 경로 링크들이 포함되어 있는데 만약 동작하지 않는다면 `마스터 문서`_\ 을 이용하라.
 
 `독유틸즈 사용자`_ 메일링 리스트로 이 메일을 보내 자유롭게 질문을 하거나 대답을 작성해 줄 수 있다.
@@ -367,8 +367,7 @@ HTML/XML을 리스트럭처드텍스트로 변환하는 도구가 있는가?
 공백은 같지 않아도 문단은 상관없다.
 링크나 ID 처리와 같은 자잘한 부분에서 어려움이 있을 수는 있다.
 
-The tricky parts would be the smaller details, like
-links and IDs and other bookkeeping.
+링크와 ID, 기타 부기(bookkeeping)와 같은 작은 디테일에서는 좀 더 까다로워 질 수 있다.
 
 HTML의 경우에는 완벽하게 변환하는 것이 불가능하다.
 추가 클래스 속성을 많이 추가한다고 해도 어려울 수 있다.
@@ -385,6 +384,8 @@ HTML의 경우에는 완벽하게 변환하는 것이 불가능하다.
 
 There are several, with various degrees of completeness.  With no
 implied endorsement or recommendation, and in no particular order:
+
+다양한 완성도의 여러 위키가 있다. 일체의 추천과 칭찬을 배제하여 무작위 순서로 정리한 목록은 다음과 같다.:
 
 * `Ian Bicking'의 실험적인 코드
   <http://docutils.sf.net/sandbox/ianb/wiki/Wiki.py>`__
@@ -559,13 +560,11 @@ __ docs/dev/rst/alternatives.html#nested-inline-markup
   __ docs/ref/rst/directives_ko.html#raw
 
 
-How to indicate a line break or a significant newline?
+강제개행 또는 의미있는 개행을  어떻게 표시하나?
 ------------------------------------------------------
 
-`Line blocks`__ are designed for address blocks, verse, and other
-cases where line breaks are significant and must be preserved.  Unlike
-literal blocks, the typeface is not changed, and inline markup is
-recognized.  For example::
+`라인 블록`__ 은 주소 블록, 절, 그리고 강제개행이 의미있거나 반드시 유지되어야 할때를 위해 마련된 기능이다.
+일반적인 리터럴 블록과는 달리 타입페이스(typeface)가 바뀌지 않으며 인라인 마크업 역시 인식된다. 예를 들면::
 
     | A one, two, a one two three four
     |
@@ -583,65 +582,56 @@ recognized.  For example::
 
 __ docs/ref/rst/restructuredtext.html#line-blocks
 
-Here's a workaround for manually inserting explicit line breaks in
-HTML output::
+수동으로 명시된 강제개행을 HTML 아웃풋에 삽입해야 할 경우의 또다른 해결책은 다음과 같다::
 
     .. |br| raw:: html
 
        <br />
 
-    I want to break this line here: |br| this is after the break.
+    여기서 강제개행을 하고 싶다: |br| 여긴 개행 이.
 
-    If the extra whitespace bothers you, |br|\ backslash-escape it.
+    혹시 여분의 공백이 신경 쓰인다면, |br|\ 백슬래쉬-이스케이프를 하시오.
 
 
-A URL containing asterisks doesn't work.  What to do?
+별표가 들어가있는 URL이 동작하지 않면 어떻게 해야하나?
 -----------------------------------------------------
 
-Asterisks are valid URL characters (see :RFC:`2396`), sometimes used
-in URLs.  For example::
+별표는 URL에 사용가능한 문자로 (참조 :RFC:`2396`), 종 URL에 사용되곤 한다. 예를 들면 다음과 같다::
 
     http://cvs.example.org/viewcvs.py/*checkout*/module/file
 
-Unfortunately, the parser thinks the asterisks are indicating
-emphasis.  The slashes serve as delineating punctuation, allowing the
-asterisks to be recognized as markup.  The example above is separated
-by the parser into a truncated URL, an emphasized word, and some
-regular text::
+안타깝게도 파서는 별표를 강조 표시로 받아들인다. 슬래쉬는 구두점을 나타내는 용도로 사용되며 별표들을 마크업으로 인지하게 된다.
+위의 예시를 파서를 사용하여 결절된 URL (truncated URL), 강조문구, 일반 텍스트들로 구분하면 다음과 같이 표현된다::
 
     http://cvs.example.org/viewcvs.py/
     *checkout*
     /module/file
 
-To turn off markup recognition, use a backslash to escape at least the
-first asterisk, like this::
+마크업 인식을 차단하기 위해서는 백슬래쉬를 적어도 첫번째 별표에 적용하여 다음과 같이 이스케이프 시켜야한다::
 
     http://cvs.example.org/viewcvs.py/\*checkout*/module/file
 
-Escaping the second asterisk doesn't hurt, but it isn't necessary.
+두번째 별표에 이스케이핑을 적용해도 문제될 것은 없지만 꼭 해야할 필요는 없다.
 
 
-How can I make a literal block with *some* formatting?
+일련의 포매팅을 지닌 리터럴 블록을 어떻게 만들수 있는가?
 ------------------------------------------------------
 
-Use the `parsed-literal`_ directive.
+`파싱된 리터럴`_ 디렉티브를 사용하면 된다.
 
-.. _parsed-literal: docs/ref/rst/directives.html#parsed-literal
+.. _파싱된 리터럴: docs/ref/rst/directives.html#parsed-literal
 
-Scenario: a document contains some source code, which calls for a
-literal block to preserve linebreaks and whitespace.  But part of the
-source code should be formatted, for example as emphasis or as a
-hyperlink.  This calls for a *parsed* literal block::
+시나리오: 강제개행과 공백을 유지하기 위해 리터럴 블록을 호출하는 소스코드를 지닌 문서가 있고
+문서 내 소스코드의 일부가 강조 표시 혹은 하이퍼링크와 같이 포매팅이 되어야 할 때 파싱된 리터럴 블록을 사용한다::
 
     .. parsed-literal::
 
        print "Hello world!"  # *tricky* code [1]_
 
-The emphasis (``*tricky*``) and footnote reference (``[1]_``) will be
-parsed.
+강조문구 (``*tricky*``) 와 주석 참조 (``[1]_``) 가 파싱될 것이다.
 
 
-Can reStructuredText be used for web or generic templating?
+리스트럭처드텍스트를 웹 혹은 일반적 템플레이팅에 활용 가능한가?
 -----------------------------------------------------------
 
 Docutils and reStructuredText can be used with or as a component of a
