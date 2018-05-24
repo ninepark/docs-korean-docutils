@@ -92,7 +92,7 @@
 * `리스트럭처드텍스트 입문 (HTML) <user/rst/quickstart_ko.html>`__ (또는 `텍스트 소스 <https://github.com/VeranosTech/docs-korean-docutils/blob/docs-korean/docutils/docs/user/rst/quickstart_ko.rst>`__)
 * `리스트럭처드텍스트 간단 참고서 <user/rst/quickref_ko.html>`__ (사용자 레퍼런스)
 * `리스트럭처드텍스트 치트시트 <user/rst/cheatsheet_ko.html>`__ (텍스트; 신택스 1 페이지, 명령어 & 역할 레퍼런스 1페이지)
-* `리스트럭처드텍스트 데모 <user/rst/demo_ko.html>`_ (리스트럭처드텍스트의 기능에 대부분에 대한 데모; `텍스트 소스 <user/rst/demo_ko.txt>`__\ 를 참고할 수도 있다.)
+* `리스트럭처드텍스트 데모 <user/rst/demo_ko.html>`_ (리스트럭처드텍스트의 기능에 대부분에 대한 데모; `텍스트 소스 <https://github.com/VeranosTech/docs-korean-docutils/blob/docs-korean/docutils/docs/user/rst/demo_ko.rst>`__\ 를 참고할 수도 있다.)
 
 에디터 지원:
 
