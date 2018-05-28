@@ -634,30 +634,25 @@ __ docs/ref/rst/restructuredtext.html#line-blocks
 리스트럭처드텍스트를 웹 혹은 일반적 템플레이팅에 활용 가능한가?
 -----------------------------------------------------------
 
-Docutils and reStructuredText can be used with or as a component of a
-templating system, but they do not themselves include templating
-functionality.  Templating should simply be left to dedicated
-templating systems.  Users can choose a templating system to apply to
-their reStructuredText documents as best serves their interests.
+독유틸즈와 리스턱처드텍스트는 템플레이팅 시스템으로서 혹은 템플레이팅 시스템과 함께 사용할 수 있으나
+템플레이팅 기능을 그 자체에 지니고 있는 것은 아니다. 템플레이팅은 주어진 템플레이팅 시스템과는 떨어져 있어야 한다.
+유저들은 가장 자신의 목적에 부합하는 템플레이팅 시스템을 골라서 그들의 리스트럭처드텍스트 문서에 적용할 수 있다.
 
-There are many good templating systems for Python (ht2html_, YAPTU_,
-Quixote_'s PTL, Cheetah_, etc.; see this non-exhaustive list of `some
-other templating systems`_), and many more for other languages, each
-with different approaches.  We invite you to try several and find one
-you like.  If you adapt it to use Docutils/reStructuredText, please
-consider contributing the code to Docutils or `연락 바람`_ and we'll
-keep a list here.
+파이썬용 (ht2html_, YAPTU_, Quixote_'s PTL, Cheetah_, 등등.. 다음 목록을 추가로 참고하라: `기타 템플레이팅 시스템`_)
+뿐만아니라 다른 언어들을 위한 다양한 접근법을 지닌 괜찮은 템플레이팅 시스템들이 있다. 여러 시스템들을 시도해보며 당신에게
+적합한 템플레이팅 시스템을 찾아보길 권장하는 바다. 혹시 기타 템플레이팅 시스템에 독유틸즈와 리스트럭처드텍스트를 접목시켰다면
+코드를 독유틸즈에 공유하는 것을 고려하길 부탁한다. 또는 '연락 바람'_ 으로 알려주면 우리가 여기에 리스트업을 하도록 하겠다.
 
-One reST-specific web templating system is `rest2web
-<http://www.voidspace.org.uk/python/rest2web>`_, a tool for
-automatically building websites, or parts of websites.
+
+한가지 리스트럭처드텍스트에 특화된 템플레이팅 시스템을 들자면 `rest2web
+<http://www.voidspace.org.uk/python/rest2web>`_ 이 있다. 자동으로 웹사이트를 꾸미거나 제작하는 기능이 있다.
 
 .. _ht2html: http://ht2html.sourceforge.net/
 .. _YAPTU:
    http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/52305
 .. _Quixote: http://www.mems-exchange.org/software/quixote/
 .. _Cheetah: http://www.cheetahtemplate.org/
-.. _some other templating systems:
+.. _기타 템플레이팅 시스템:
    http://webware.sourceforge.net/Papers/Templates/
 
 
