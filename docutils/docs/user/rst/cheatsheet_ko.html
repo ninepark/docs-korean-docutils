@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>reStructuredText 치트 시트</title>
+<link rel="stylesheet" href="../../../html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="restructuredtext">
+<h1 class="title"><a class="reference external" href="http://docutils.sf.net/rst.html">reStructuredText</a> 치트 시트</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name">정보:</th><td class="field-body">기본적인 부분은 &lt;<a class="reference external" href="http://docutils.sf.net/rst.html">http://docutils.sf.net/rst.html</a>&gt;를 참고</td>
+</tr>
+<tr class="field"><th class="docinfo-name">작가:</th><td class="field-body">데이비드 굿져 &lt;<a class="reference external" href="mailto:goodger&#64;python.org">goodger&#64;python.org</a>&gt;</td>
+</tr>
+<tr class="field"><th class="docinfo-name">날짜:</th><td class="field-body">$Date$</td>
+</tr>
+<tr><th class="docinfo-name">Revision:</th>
+<td>$Revision$</td></tr>
+<tr class="field"><th class="docinfo-name">설명:</th><td class="field-body">&quot;docinfo block&quot;이자, 참고 문헌 분야 목록임</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">HTML로 읽고 있다면, input syntax 예제 대신에
+<a class="reference external" href="cheatsheet.txt">cheatsheet.txt</a> 를 보자.</p>
+</div>
+<div class="section" id="section-structure">
+<h1>Section Structure</h1>
+<p>Section 제목은 밑줄이거나 윗줄과 밑줄로 되어 있다.</p>
+</div>
+<div class="section" id="body-elements">
+<h1>Body Elements</h1>
+<p>Grid table:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="52%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><p class="first">문단은 왼쪽 끝처리를 하며,
+빈 줄에 의해 구분되어 진다.</p>
+<blockquote class="last">
+Block quotes are indented.</blockquote>
+</td>
+<td rowspan="2"><p class="first">Literal block 앞에 &quot;::&quot;:</p>
+<pre class="literal-block">
+Indented
+</pre>
+<p>or:</p>
+<pre class="last literal-block">
+&gt; Quoted
+</pre>
+</td>
+</tr>
+<tr><td><pre class="first last doctest-block">
+&gt;&gt;&gt; print 'Doctest block'
+Doctest block
+</pre>
+</td>
+</tr>
+<tr><td colspan="2"><div class="first last line-block">
+<div class="line">Line blocks는 줄 바꿈 및 들여쓰기를 유지한다. [new in 0.3.6]</div>
+<div class="line-block">
+<div class="line">addresses, verse와  adornment-free lists에 유용하다.
+긴 줄은 연속되는 줄로 묶을 수도 있다.</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Simple tables:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">List Type</th>
+<th class="head">예 (<a class="reference external" href="cheatsheet.txt">text source</a> 에 있는 문법)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Bullet list</td>
+<td><ul class="first last simple">
+<li>은 &quot;-&quot;, &quot;+&quot;, 또는 &quot;*&quot;를 사용한다.</li>
+</ul>
+</td>
+</tr>
+<tr><td>Enumerated list</td>
+<td><ol class="first last arabic simple">
+<li>은  &quot;1.&quot;, &quot;A)&quot; 와 &quot;(i)&quot; 중에서 사용한다.</li>
+<li>자동으로 열거되어 진다.</li>
+</ol>
+</td>
+</tr>
+<tr><td>Definition list</td>
+<td><dl class="first last docutils">
+<dt>Term 은 왼쪽 끝에 맞춰져 있다 <span class="classifier-delimiter">:</span> <span class="classifier">선택적 분류</span></dt>
+<dd>Definition은 들여쓰기가 되어지고, 사이에 비어있는 줄이 없다</dd>
+</dl>
+</td>
+</tr>
+<tr><td>Field list</td>
+<td><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">field name:</th><td class="field-body">field body</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr><td>Option list</td>
+<td><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-o</span></kbd></td>
+<td>옵션과 설명 사이에 적어도 2개의 칸이 있어야 한다.</td></tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Explicit Markup</th>
+<th class="head">예 (<a class="reference external" href="cheatsheet.txt">text source</a> 에서 볼 수 있음)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Footnote</td>
+<td><table class="first last docutils footnote" frame="void" id="id1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[1]</a></td><td>수동 넘버링,  [#] 자동 넘버링
+또는 [*] 자동 심볼</td></tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr><td>Citation</td>
+<td><table class="first last docutils citation" frame="void" id="cit2002" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[CIT2002]</td><td>인용.</td></tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr><td>Hyperlink Target</td>
+<td></td>
+</tr>
+<tr id="internal-target"><td>Anonymous Target</td>
+<td></td>
+</tr>
+<tr><td>Directive (&quot;::&quot;)</td>
+<td><img alt="images/biohazard.png" class="first last" src="images/biohazard.png" />
+</td>
+</tr>
+<tr><td>Substitution Def</td>
+<td></td>
+</tr>
+<tr><td>Comment</td>
+<td><!-- is anything else -->
+</td>
+</tr>
+<tr><td>Empty Comment</td>
+<td>(빈 줄 앞 뒤에 있는 &quot;..&quot;는 들여쓰기된 문맥을 나누는 데 사용)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="inline-markup">
+<h1>Inline Markup</h1>
+<p><em>emphasis</em>;
+<strong>strong emphasis</strong>;
+<span class="incremental">interpreted text</span>;
+<em>interpreted text with rol</em>;
+<tt class="docutils literal">inline literal text</tt>;
+standalone hyperlink, <a class="reference external" href="http://docutils.sourceforge.net">http://docutils.sourceforge.net</a>;
+named reference, <a class="reference external" href="http://docutils.sf.net/rst.html">reStructuredText</a>;
+<a class="reference external" href="http://docutils.sf.net/docs/ref/rst/restructuredtext.html">anonymous reference</a>;
+footnote reference, <a class="footnote-reference" href="#id1" id="id4">[1]</a>;
+citiation reference,[CIT2002]_;
+like an inline directive;
+<span class="target" id="inline-internal-target">inline internal target</span>.</p>
+</div>
+<div class="section" id="directive-quick-reference">
+<h1>Directive Quick Reference</h1>
+<p>더 자세한 정보는 &lt;<a class="reference external" href="http://docutils.sf.net/docs/ref/rst/directives.html">http://docutils.sf.net/docs/ref/rst/directives.html</a>&gt;를 참고하면 된다.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Directive Name</th>
+<th class="head">설명 (Docutils 버젼은 [brackets]에 있음)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>attention</td>
+<td>구체적인 경고;  &quot;caution&quot;, &quot;danger&quot;,
+&quot;error&quot;, &quot;hint&quot;, &quot;important&quot;, &quot;note&quot;, &quot;tip&quot;, &quot;warning&quot;</td>
+</tr>
+<tr><td>admonition</td>
+<td>일반적인 제목에 대한 경고: <tt class="docutils literal">.. admonition:: By The Way</tt></td>
+</tr>
+<tr><td>image</td>
+<td><tt class="docutils literal">.. image:: picture.png</tt>; 다양한 옵션이 가능하다.</td>
+</tr>
+<tr><td>figure</td>
+<td>&quot;image&quot;와 같지만, 선택적인 제목과 범례를 가진다.</td>
+</tr>
+<tr><td>topic</td>
+<td><tt class="docutils literal">.. topic:: Title</tt>; 작은 섹션처럼 사용된다.</td>
+</tr>
+<tr><td>sidebar</td>
+<td><tt class="docutils literal">.. sidebar:: Title</tt>; 작고 문서처럼 사용된다.</td>
+</tr>
+<tr><td>parsed-literal</td>
+<td>parse된 inline markup이 있는 literal block</td>
+</tr>
+<tr><td>rubric</td>
+<td><tt class="docutils literal">.. rubric:: Informal Heading</tt></td>
+</tr>
+<tr><td>epigraph</td>
+<td>class=&quot;epigraph&quot;인 Block quote</td>
+</tr>
+<tr><td>highlights</td>
+<td>class=&quot;highlights&quot;인 Block quote</td>
+</tr>
+<tr><td>pull-quote</td>
+<td>class=&quot;pull-quote&quot;인 Block quote</td>
+</tr>
+<tr><td>compound</td>
+<td>복합 단락 [0.3.6]</td>
+</tr>
+<tr><td>container</td>
+<td>Generic block-level container element [0.3.10]</td>
+</tr>
+<tr><td>table</td>
+<td>제목이 있는 table을 만든다 [0.3.1]</td>
+</tr>
+<tr><td>list-table</td>
+<td>같은 형태의 2단계 bullet list를 가지고 table을 만든다. [0.3.8]</td>
+</tr>
+<tr><td>csv-table</td>
+<td>CSV 데이터로 테이블을 만든다. [0.3.4]</td>
+</tr>
+<tr><td>contents</td>
+<td>목차를 만든다.</td>
+</tr>
+<tr><td>sectnum</td>
+<td>자동으로 sections, subsections을 넘버링을 한다.</td>
+</tr>
+<tr><td>header, footer</td>
+<td>문서 decorations을 만든다. [0.3.8]</td>
+</tr>
+<tr><td>target-notes</td>
+<td>각각의 외부 타겟에 대해explicit footnote을 만든다.</td>
+</tr>
+<tr><td>math</td>
+<td>수학 표기법 (LaTeX format으로 입력)</td>
+</tr>
+<tr><td>meta</td>
+<td>HTML 관련 메타데이터</td>
+</tr>
+<tr><td>include</td>
+<td>inline인 것처럼 외부 reST 파일을 읽는다.</td>
+</tr>
+<tr><td>raw</td>
+<td>가공되지 않은채로 작가에 전달된 Non-reST data</td>
+</tr>
+<tr><td>replace</td>
+<td>substitution 정의에 맞춰 텍스트 대체한다.</td>
+</tr>
+<tr><td>unicode</td>
+<td>substitution 정의에 맞춰 유니코드 문자 코드 변환한다.</td>
+</tr>
+<tr><td>date</td>
+<td>오늘의 날짜를 만든다.</td>
+</tr>
+<tr><td>class</td>
+<td>다음 element에 &quot;class&quot;의 속성을 설정한다.</td>
+</tr>
+<tr><td>role</td>
+<td>사용자 정의 interpreted text role을 만든다. [0.3.2]</td>
+</tr>
+<tr><td>default-role</td>
+<td>default인 interpreted text role을 설정한다. [0.3.10]</td>
+</tr>
+<tr><td>title</td>
+<td>메타 데이터 문서 제목을 설정한다. [0.3.10]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="interpreted-text-role-quick-reference">
+<h1>Interpreted Text Role Quick Reference</h1>
+<p>더 자세한 정보는 &lt;<a class="reference external" href="http://docutils.sf.net/docs/ref/rst/roles.html">http://docutils.sf.net/docs/ref/rst/roles.html</a>&gt; 를 보면 된다.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Role Name</th>
+<th class="head">설명</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>emphasis</td>
+<td><em>emphasis</em> 와 같다.</td>
+</tr>
+<tr><td>literal</td>
+<td><tt class="docutils literal">literal</tt> 와 같지만 backslash escapes를 처리한다.</td>
+</tr>
+<tr><td>math</td>
+<td>수학 표기법 (LaTeX format으로 입력)</td>
+</tr>
+<tr><td>PEP</td>
+<td>a numbered Python Enhancement Proposal에 대한 참조</td>
+</tr>
+<tr><td>RFC</td>
+<td>a numbered Internet Request For Comments에 대한 참조</td>
+</tr>
+<tr><td>raw</td>
+<td>non-reST data의 경우 직접적으로 사용 될 수 없다. (docs 참조) [0.3.6]</td>
+</tr>
+<tr><td>strong</td>
+<td><strong>strong</strong> 와 같다.</td>
+</tr>
+<tr><td>sub</td>
+<td>서브스크립트</td>
+</tr>
+<tr><td>sup</td>
+<td>슈퍼스크립트</td>
+</tr>
+<tr><td>title</td>
+<td>제목 참조 (book, etc.); standard default role이다.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="footer">
+<hr class="footer" />
+<a class="reference external" href="cheatsheet_ko.rst">View document source</a>.
+Generated on: 2019-01-03 08:26 UTC.
+Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
+
+</div>
+</body>
+</html>

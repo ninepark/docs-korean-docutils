@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>독유틸즈(docutils) 프로젝트 문서 개요</title>
+<link rel="stylesheet" href="../html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="docutils">
+<h1 class="title"><a class="reference external" href="https://veranostech.github.io/docs-korean-docutils/web/index_ko.html">독유틸즈</a>(docutils) 프로젝트 문서 개요</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name">저자:</th><td class="field-body">데이비드 굿저(David Goodger)</td>
+</tr>
+<tr class="field"><th class="docinfo-name">연락처:</th><td class="field-body"><a class="reference external" href="mailto:docutils-develop&#64;lists.sourceforge.net">docutils-develop&#64;lists.sourceforge.net</a></td>
+</tr>
+<tr class="field"><th class="docinfo-name">날짜:</th><td class="field-body">$Date$</td>
+</tr>
+<tr class="field"><th class="docinfo-name">리비전:</th><td class="field-body">$Revision$</td>
+</tr>
+<tr class="field"><th class="docinfo-name">저작권:</th><td class="field-body">이 문서는 퍼블릭 도메인에 속한다.</td>
+</tr>
+</tbody>
+</table>
+<p>이 문서의 가장 최신 버전은 아래의 <a class="reference external" href="https://veranostech.github.io/docs-korean-docutils/web/index_ko.html#download">독유틸즈 배포판</a>의 <tt class="docutils literal">docs</tt> 디렉토리나 아래의 개별 링크에서 구할 수 있다.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id3" id="id21">독유틸즈 관련자</a></li>
+<li><a class="reference internal" href="#id4" id="id22">프로젝트 핵심</a></li>
+<li><a class="reference internal" href="#id5" id="id23"><tt class="docutils literal">user/</tt>: 최종 사용자를 위한 소개와 입문용 자료</a></li>
+<li><a class="reference internal" href="#id8" id="id24"><tt class="docutils literal">ref/</tt>: 모든 사용자를 위한 참고 자료</a></li>
+<li><a class="reference internal" href="#id9" id="id25"><tt class="docutils literal">peps/</tt>: 파이썬 개선 제안서</a></li>
+<li><a class="reference internal" href="#api-api" id="id26"><tt class="docutils literal">api/</tt>: 클라이언트 개발자를 위한 API 참고서</a></li>
+<li><a class="reference internal" href="#id18" id="id27"><tt class="docutils literal">howto/</tt>: 개발자를 위한 지침서</a></li>
+<li><a class="reference internal" href="#id19" id="id28"><tt class="docutils literal">dev/</tt>: 핵심 개발자를 위한 개발시 주의 사항과 계획</a></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h1><a class="toc-backref" href="#id21">독유틸즈 관련자</a></h1>
+<p>독유틸즈 관련자는 몇 가지 그룹으로 나뉜다.</p>
+<ol class="arabic simple">
+<li>최종 사용자: 리스트럭처드텍스트(reStructuredTest)와 독유틸즈 도구를 사용하는 사람들.
+일부 개발자(소스코드의 독스트링에 리스트럭처드텍스트를 사용하는 파이썬 개발자)가 해당되며 대부분은 최종 사용자가 아니다.</li>
+<li>클라이언트 개발자: 독유틸즈를 라이브러리로 사용하는 개발자 혹은 독유틸즈를 (도구로) 사용하여 개발하는 개발자.</li>
+<li>컴포넌트 개발자: 특정 응용프로그램을 위한 독유틸즈 컴포넌트, 지시자(directives), 역할자(roles) 등을 개발하는 사람.</li>
+<li>핵심 개발자: 독유틸즈 코드 자체를 개발하고 독유틸즈 프로젝트 커뮤니티에 참여하는 사람.</li>
+<li>재구현자(re-implementers): 독유틸즈의 다른 구현(implementation)을 만드는 개발자.</li>
+</ol>
+<p>이 그룹들은 겹칠수 있다.
+(다는 아니라도) 대부분의 핵심 개발자와 컴포넌트 개발자, 클라이어트 개발자, 그리고 재구현자는 최종 사용자이기도 하다.
+핵심 개발자는 클라이언트 개발자일 수도 있고 다른 프로젝트의 컴포넌트 개발자일 수도 있다.
+컴포넌트 개발자도 클라이언트 개발자 일 수 있다.</p>
+</div>
+<div class="section" id="id4">
+<h1><a class="toc-backref" href="#id22">프로젝트 핵심</a></h1>
+<p>이 파일들은 모든 독유틸즈 관련자에게 필요하다.
+이 파일들은 독유틸즈 프로젝트 디렉토리의 최상단에 있다.</p>
+<p>(역주. 파일의 이름과 확장자는 편의를 위해 변경하였다.)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name"><a class="reference external" href="../README_ko.html">README_ko.rst</a>:</th><td class="field-body">프로젝트 개요: 간단한 지침서, 필요사항과 설치방법, 그리고 사용법</td>
+</tr>
+<tr class="field"><th class="field-name"><a class="reference external" href="../COPYING_ko.html">COPYING_ko.rst</a>:</th><td class="field-body">독유틸즈 재배포 조건. 라이선스와 링크.</td>
+</tr>
+<tr class="field"><th class="field-name"><a class="reference external" href="../FAQ_ko.html">FAQ_ko.rst</a>:</th><td class="field-body">독유틸즈에 관련하여 자주 물어보는 질문들.
+만약 질문이나 이슈가 있으면 여기에 이미 대답이 있을 가능성이 높다.</td>
+</tr>
+<tr class="field"><th class="field-name"><a class="reference external" href="../BUGS_ko.html">BUGS_ko.rst</a>:</th><td class="field-body">알려진 버그 목록과 버그를 보고하는 방법.</td>
+</tr>
+<tr class="field"><th class="field-name"><a class="reference external" href="../RELEASE-NOTES_ko.html">RELEASE-NOTES_ko.rst</a>:</th><td class="field-body">최근 배포판의 중요한 변화 요약.</td>
+</tr>
+<tr class="field"><th class="field-name"><a class="reference external" href="../HISTORY_ko.html">HISTORY_ko.rst</a>:</th><td class="field-body">상세 변화 기록 로그.</td>
+</tr>
+<tr class="field"><th class="field-name"><a class="reference external" href="../THANKS_ko.html">THANKS_ko.rst</a>:</th><td class="field-body">감사의 글.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<span id="user"></span><h1><a class="toc-backref" href="#id23"><tt class="docutils literal">user/</tt>: 최종 사용자를 위한 소개와 입문용 자료</a></h1>
+<p>독유틸즈 일반:</p>
+<ul class="simple">
+<li><a class="reference external" href="user/tools.html">독유틸즈 프론트엔드 도구</a></li>
+<li><a class="reference external" href="user/config.html">독유틸즈 설정</a></li>
+<li><a class="reference external" href="user/mailing-lists.html">독유틸즈 메일링 리스트</a></li>
+<li><a class="reference external" href="user/links.html">독유틸즈 링크 목록</a></li>
+</ul>
+<p>문서 작성자용:</p>
+<ul class="simple">
+<li><a class="reference external" href="user/html.html">독유틸즈로 HTML 작성</a></li>
+<li><a class="reference external" href="user/slide-shows.html">리스트럭처드텍스트와 S5로 쉽게 슬라이드 쇼를 만드는 법</a></li>
+<li><a class="reference external" href="user/latex.html">독유틸즈로 레이텍(LaTeX) 작성</a></li>
+<li><a class="reference external" href="user/odt.html">독유틸즈로 ODF/OpenOffice/odt 작성</a></li>
+</ul>
+<p><a class="reference external" href="https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html">리스트럭처드텍스트</a>(reStructuredTest):</p>
+<ul class="simple">
+<li><a class="reference external" href="user/rst/quickstart_ko.html">리스트럭처드텍스트 입문 (HTML)</a> (또는 <a class="reference external" href="https://github.com/VeranosTech/docs-korean-docutils/blob/docs-korean/docutils/docs/user/rst/quickstart_ko.rst">텍스트 소스</a>)</li>
+<li><a class="reference external" href="user/rst/quickref_ko.html">리스트럭처드텍스트 간단 참고서</a> (사용자 레퍼런스)</li>
+<li><a class="reference external" href="user/rst/cheatsheet_ko.html">리스트럭처드텍스트 치트시트</a> (텍스트; 신택스 1 페이지, 명령어 &amp; 역할 레퍼런스 1페이지)</li>
+<li><a class="reference external" href="user/rst/demo_ko.html">리스트럭처드텍스트 데모</a> (리스트럭처드텍스트의 기능에 대부분에 대한 데모; <a class="reference external" href="https://github.com/VeranosTech/docs-korean-docutils/blob/docs-korean/docutils/docs/user/rst/demo_ko.rst">텍스트 소스</a>를 참고할 수도 있다.)</li>
+</ul>
+<p>에디터 지원:</p>
+<ul class="simple">
+<li><a class="reference external" href="user/emacs.html">이맥스(Emacs)의 리스트럭처드텍스트 지원</a></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<span id="ref"></span><h1><a class="toc-backref" href="#id24"><tt class="docutils literal">ref/</tt>: 모든 사용자를 위한 참고 자료</a></h1>
+<p>이 파일들은 대부분 개발자용 명세서로 시작했지만 이제는 엔드 유저나 클라이언트 개발자에게도 유용한 문서들이다.</p>
+<p>독유틸즈 일반:</p>
+<ul class="simple">
+<li><a class="reference external" href="ref/doctree_ko.html">독유틸즈 문서 트리</a> (미완성)</li>
+<li><a class="reference external" href="ref/transforms.html">독유틸즈 변환</a></li>
+<li><a class="reference external" href="ref/docutils.dtd">독유틸즈 제너릭 DTD</a></li>
+<li><a class="reference external" href="ref/soextblx.dtd">OASIS XML 교환 테이블 모델 선언 모듈</a> (CALS 테이블 DTD 모듈)</li>
+</ul>
+<p><a class="reference external" href="peps/pep-0258.html">PEP 258</a>는 &quot;ref&quot; 디렉토리에 있지만 모든 독유틸즈 개발자가 읽어야 할 필독 문서이다.</p>
+<p><a class="reference external" href="https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html">리스트럭처드텍스트</a>:</p>
+<ul class="simple">
+<li><a class="reference external" href="ref/rst/introduction_ko.html">reStructuredText 소개</a>
+(<a class="reference external" href="ref/rst/introduction_ko.html#목표">목표</a>와
+<a class="reference external" href="ref/rst/introduction_ko.html#이력">reStructuredText 이력</a> 포함)</li>
+<li><a class="reference external" href="ref/rst/restructuredtext_ko.html">reStructuredText 마크업 설명서</a></li>
+<li><a class="reference external" href="ref/rst/directives_ko.html">reStructuredText 명령어</a></li>
+<li><a class="reference external" href="ref/rst/roles_ko.html">reStructuredText 해석 텍스트 기능</a></li>
+<li><a class="reference external" href="ref/rst/definitions_ko.html">reStructuredText 표준 정의 파일</a></li>
+</ul>
+<p>과거 문서:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docutils.sourceforge.net/mirror/setext.html">Setext 문서 미러</a></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<span id="peps"></span><h1><a class="toc-backref" href="#id25"><tt class="docutils literal">peps/</tt>: 파이썬 개선 제안서</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="peps/pep-0256_ko.html">PEP 256: 독스트링 처리 시스템 프레임워크</a>는 일반적 내용의 고수준 제안서이다.  [<a class="reference external" href="http://www.python.org/peps/pep-0256.html">PEP 256</a>]</li>
+<li><a class="reference external" href="peps/pep-0257_ko.html">PEP 257: 독스트링 관례</a>는 독스트링 스타일과 내용에 대해 다룬다.  [<a class="reference external" href="http://www.python.org/peps/pep-0257.html">PEP 257</a>]</li>
+<li><a class="reference external" href="peps/pep-0258.html">PEP 258: 독유틸즈 설계 명세서</a>는 독유틸즈 구조를 개괄적으로 설명한다.
+설계 이슈와 구현상의 세부 사항을 문서화 하였다.  [<a class="reference external" href="http://www.python.org/peps/pep-0258.html">PEP 258</a>]</li>
+<li><a class="reference external" href="peps/pep-0287.html">PEP 287: 리트스럭처드 독스트링 형식</a>는 표준 마크업 문법을 제안한다. [<a class="reference external" href="http://www.python.org/peps/pep-0287.html">PEP 287</a>]</li>
+</ul>
+<p>이 레포지토리의 문서는 <a class="reference external" href="http://www.python.org/peps/">PEP 마스터 레포지토리</a>의 PEP 문서와 다를 수 있다는 점에 유의하라.</p>
+</div>
+<div class="section" id="api-api">
+<span id="api"></span><h1><a class="toc-backref" href="#id26"><tt class="docutils literal">api/</tt>: 클라이언트 개발자를 위한 API 참고서</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="api/publisher_ko.html">독유틸즈 퍼블리셔</a></li>
+<li><a class="reference external" href="api/cmdline-tool_ko.html">독유틸즈 명령행 프론트엔드 도구의 내부 구조</a></li>
+<li><a class="reference external" href="api/runtime-settings_ko.html">독유틸즈 실행시간 설정</a></li>
+<li>(<a class="reference external" href="ref/transforms_ko.html">독유틸즈 변환</a> 문서는 다른 곳으로 이동.)</li>
+</ul>
+<p><a class="reference external" href="peps/pep-0258.html">PEP 258</a>는 독유틸즈 구조를 개괄적으로 설명한다.</p>
+</div>
+<div class="section" id="id18">
+<span id="howto"></span><h1><a class="toc-backref" href="#id27"><tt class="docutils literal">howto/</tt>: 개발자를 위한 지침서</a></h1>
+<ul class="simple">
+<li><strong>Security:</strong> <a class="reference external" href="howto/security.html">독유틸즈 안전하게 배포하기</a></li>
+<li><a class="reference external" href="howto/html-stylesheets.html">독유틸즈를 위한 HTML (CSS) 스타일 시트</a></li>
+<li><a class="reference external" href="howto/i18n.html">독유틸즈 국제화</a></li>
+<li><a class="reference external" href="howto/rst-directives.html">리스트럭처드텍스트 지시자 만들기</a></li>
+<li><a class="reference external" href="howto/rst-roles.html">리스트럭처드텍스트 텍스트 역할자 만들기</a></li>
+</ul>
+</div>
+<div class="section" id="id19">
+<span id="dev"></span><h1><a class="toc-backref" href="#id28"><tt class="docutils literal">dev/</tt>: 핵심 개발자를 위한 개발시 주의 사항과 계획</a></h1>
+<p>Docutils-general:</p>
+<ul class="simple">
+<li><a class="reference external" href="dev/hacking.html">독유틸즈 해커 가이드</a></li>
+<li><a class="reference external" href="dev/distributing.html">독유틸즈 배포 가이드</a></li>
+<li><a class="reference external" href="dev/todo.html">독유틸즈 해야 할 일 목록</a></li>
+<li><a class="reference external" href="dev/policies.html">독유틸즈 프로젝트 정책</a></li>
+<li><a class="reference external" href="dev/website.html">독유틸즈 웹사이트</a></li>
+<li><a class="reference external" href="dev/release.html">독유틸즈 리스트 절차</a></li>
+<li><a class="reference external" href="dev/repository.html">독유틸즈 서브버전 레포지토리</a></li>
+<li><a class="reference external" href="dev/testing.html">독유틸즈 테스팅</a></li>
+<li><a class="reference external" href="dev/semantics.html">독유틸즈 문맥</a> (incomplete)</li>
+<li><a class="reference external" href="dev/pysource.html">파이썬 소스 리더</a> (incomplete)</li>
+<li><a class="reference external" href="dev/pysource.dtd">독유틸즈 파이썬 DTD</a> (experimental)</li>
+<li><a class="reference external" href="dev/enthought-plan.html">Enthought API 문서화 도구 계획</a></li>
+<li><a class="reference external" href="dev/enthought-rfp.html">Enthought API 문서화 도구 RFP</a></li>
+</ul>
+<p><a class="reference external" href="https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html">리스트럭처드텍스트</a>:</p>
+<ul class="simple">
+<li><a class="reference external" href="dev/rst/alternatives.html">리스트럭처드텍스트 문법의 대안에 대한 기록</a></li>
+<li><a class="reference external" href="dev/rst/problems.html">StructuredText의 문제점</a></li>
+</ul>
+<!-- Local Variables:
+mode: indented-text
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+End: -->
+</div>
+</div>
+<div class="footer">
+<hr class="footer" />
+<a class="reference external" href="index_ko.rst">View document source</a>.
+Generated on: 2019-01-03 08:26 UTC.
+Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
+
+</div>
+</body>
+</html>

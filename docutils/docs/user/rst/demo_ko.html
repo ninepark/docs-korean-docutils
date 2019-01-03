@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>reStructuredText 데모</title>
+<meta content="reStructuredText, demonstration, demo, parser" name="keywords" />
+<meta content="A demonstration of the reStructuredText markup language, containing examples of all basic constructs and many advanced constructs." lang="en" name="description" />
+<link rel="stylesheet" href="../../../html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="restructuredtext">
+<h1 class="title">reStructuredText 데모</h1>
+<h2 class="subtitle" id="examples-of-syntax-constructs">Examples of Syntax Constructs</h2>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name">저자:</th><td class="field-body">데이비드 굿져</td>
+</tr>
+<tr class="field"><th class="docinfo-name">주소:</th><td class="field-body">123 Example Street
+Example, EX  Canada
+A1B 2C3</td>
+</tr>
+<tr class="field"><th class="docinfo-name">연락처:</th><td class="field-body"><a class="reference external" href="mailto:docutils-develop&#64;lists.sourceforge.net">docutils-develop&#64;lists.sourceforge.net</a></td>
+</tr>
+<tr class="field"><th class="docinfo-name">공동 저자:</th><td class="field-body">Me, Myself, I</td>
+</tr>
+<tr class="field"><th class="docinfo-name">조직:</th><td class="field-body">humankind</td>
+</tr>
+<tr class="field"><th class="docinfo-name">날짜:</th><td class="field-body">$Date$</td>
+</tr>
+<tr class="field"><th class="docinfo-name">상태:</th><td class="field-body">진행중</td>
+</tr>
+<tr class="field"><th class="docinfo-name">개정:</th><td class="field-body">$Revision$</td>
+</tr>
+<tr class="field"><th class="docinfo-name">버젼:</th><td class="field-body">1</td>
+</tr>
+<tr class="field"><th class="docinfo-name">저작권:</th><td class="field-body">이 문서는 공개 도메인이다. 원하는대로 복사, 변형, 재분배, 판매, 구매, 대여 등을 하여도 상관없다.</td>
+</tr>
+<tr class="field"><th class="docinfo-name">분야:</th><td class="field-body">일반적인 도서 목록 분야.</td>
+</tr>
+<tr class="field"><th class="docinfo-name">분야2:</th><td class="field-body">일반적인 도서 목록 분야는 다음과 같은 다양한 요소를 포함할 수도 있다.</td>
+</tr>
+</tbody>
+</table>
+<div class="dedication topic">
+<p class="topic-title first">Dedication</p>
+<p>Docutils 유저와 공동 개발자들에게 바침.</p>
+</div>
+<div class="abstract topic">
+<p class="topic-title first">Abstract</p>
+<p>이 문서는 모든 기본적인  reStructuredText의 부분과 고급적인 부분들을 포함한 reStructuredText markup language의 예시이다.</p>
+</div>
+<!-- This is a comment. Note how any initial comments are moved by
+transforms to after the document title, subtitle, and docinfo. -->
+<!-- Above is the document title, and below is the subtitle.
+They are transformed from section titles after parsing. -->
+<!-- bibliographic fields (which also require a transform): -->
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#structural-elements" id="id27">1&nbsp;&nbsp;&nbsp;Structural Elements</a><ul class="auto-toc">
+<li><a class="reference internal" href="#section-title" id="id28">1.1&nbsp;&nbsp;&nbsp;Section Title</a></li>
+<li><a class="reference internal" href="#transitions" id="id29">1.2&nbsp;&nbsp;&nbsp;Transitions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#body-elements" id="id30">2&nbsp;&nbsp;&nbsp;Body Elements</a><ul class="auto-toc">
+<li><a class="reference internal" href="#paragraphs" id="id31">2.1&nbsp;&nbsp;&nbsp;Paragraphs</a><ul class="auto-toc">
+<li><a class="reference internal" href="#inline-markup" id="id32">2.1.1&nbsp;&nbsp;&nbsp;Inline Markup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bullet-lists" id="id33">2.2&nbsp;&nbsp;&nbsp;Bullet Lists</a></li>
+<li><a class="reference internal" href="#enumerated-lists" id="id34">2.3&nbsp;&nbsp;&nbsp;Enumerated Lists</a></li>
+<li><a class="reference internal" href="#definition-lists" id="id35">2.4&nbsp;&nbsp;&nbsp;Definition Lists</a></li>
+<li><a class="reference internal" href="#field-lists" id="id36">2.5&nbsp;&nbsp;&nbsp;Field Lists</a></li>
+<li><a class="reference internal" href="#option-lists" id="id37">2.6&nbsp;&nbsp;&nbsp;Option Lists</a></li>
+<li><a class="reference internal" href="#literal-blocks" id="id38">2.7&nbsp;&nbsp;&nbsp;Literal Blocks</a></li>
+<li><a class="reference internal" href="#line-blocks" id="id39">2.8&nbsp;&nbsp;&nbsp;Line Blocks</a></li>
+<li><a class="reference internal" href="#block-quotes" id="id40">2.9&nbsp;&nbsp;&nbsp;Block Quotes</a></li>
+<li><a class="reference internal" href="#doctest-blocks" id="id41">2.10&nbsp;&nbsp;&nbsp;Doctest Blocks</a></li>
+<li><a class="reference internal" href="#tables" id="id42">2.11&nbsp;&nbsp;&nbsp;Tables</a></li>
+<li><a class="reference internal" href="#footnotes" id="id43">2.12&nbsp;&nbsp;&nbsp;Footnotes</a></li>
+<li><a class="reference internal" href="#citations" id="id44">2.13&nbsp;&nbsp;&nbsp;Citations</a></li>
+<li><a class="reference internal" href="#targets" id="id45">2.14&nbsp;&nbsp;&nbsp;Targets</a><ul class="auto-toc">
+<li><a class="reference internal" href="#duplicate-target-names" id="id46">2.14.1&nbsp;&nbsp;&nbsp;Duplicate Target Names</a></li>
+<li><a class="reference internal" href="#id18" id="id47">2.14.2&nbsp;&nbsp;&nbsp;Duplicate Target Names</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#directives" id="id48">2.15&nbsp;&nbsp;&nbsp;Directives</a><ul class="auto-toc">
+<li><a class="reference internal" href="#document-parts" id="id49">2.15.1&nbsp;&nbsp;&nbsp;Document Parts</a></li>
+<li><a class="reference internal" href="#images" id="id50">2.15.2&nbsp;&nbsp;&nbsp;Images</a></li>
+<li><a class="reference internal" href="#admonitions" id="id51">2.15.3&nbsp;&nbsp;&nbsp;Admonitions</a></li>
+<li><a class="reference internal" href="#topics-sidebars-and-rubrics" id="id52">2.15.4&nbsp;&nbsp;&nbsp;Topics, Sidebars, and Rubrics</a></li>
+<li><a class="reference internal" href="#target-footnotes" id="id53">2.15.5&nbsp;&nbsp;&nbsp;Target Footnotes</a></li>
+<li><a class="reference internal" href="#replacement-text" id="id54">2.15.6&nbsp;&nbsp;&nbsp;Replacement Text</a></li>
+<li><a class="reference internal" href="#compound-paragraph" id="id55">2.15.7&nbsp;&nbsp;&nbsp;Compound Paragraph</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#substitution-definitions" id="id56">2.16&nbsp;&nbsp;&nbsp;Substitution Definitions</a></li>
+<li><a class="reference internal" href="#comments" id="id57">2.17&nbsp;&nbsp;&nbsp;Comments</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#error-handling" id="id58">3&nbsp;&nbsp;&nbsp;Error Handling</a></li>
+</ul>
+</div>
+<div class="section" id="structural-elements">
+<h1><a class="toc-backref" href="#id27">1&nbsp;&nbsp;&nbsp;Structural Elements</a></h1>
+<div class="section" id="section-title">
+<h2><a class="toc-backref" href="#id28">1.1&nbsp;&nbsp;&nbsp;Section Title</a></h2>
+<p>텍스트는 이 줄 바로 위에 위치한다.</p>
+</div>
+<div class="section" id="transitions">
+<h2><a class="toc-backref" href="#id29">1.2&nbsp;&nbsp;&nbsp;Transitions</a></h2>
+<p>아래의 줄이 transition이고 :</p>
+<hr class="docutils" />
+<p>transition은 section을 나눈다.</p>
+</div>
+</div>
+<div class="section" id="body-elements">
+<h1><a class="toc-backref" href="#id30">2&nbsp;&nbsp;&nbsp;Body Elements</a></h1>
+<div class="section" id="paragraphs">
+<h2><a class="toc-backref" href="#id31">2.1&nbsp;&nbsp;&nbsp;Paragraphs</a></h2>
+<p>A paragraph.</p>
+<div class="section" id="inline-markup">
+<h3><a class="toc-backref" href="#id32">2.1.1&nbsp;&nbsp;&nbsp;Inline Markup</a></h3>
+<p>단락들은 텍스트를 포함하고 inline markup(<em>emphasis</em>, <strong>strong emphasis</strong>, <tt class="docutils literal">inline literals</tt>, standalone hyperlinks(<a class="reference external" href="http://www.python.org">http://www.python.org</a>), external hyperlinks (<a class="reference external" href="http://www.python.org/">Python</a> <a class="footnote-reference" href="#id23" id="id24">[5]</a>), internal cross-references (<a class="reference internal" href="#example">example</a>), external hyperlinks with embedded URIs(<a class="reference external" href="http://www.python.org">Python web site</a>), footnote references(manually numbered <a class="footnote-reference" href="#id6" id="id1">[1]</a>, anonymous auto-numbered <a class="footnote-reference" href="#id9" id="id2">[3]</a>, labeled auto-numbered <a class="footnote-reference" href="#label" id="id3">[2]</a>, or symbolic <a class="footnote-reference" href="#id10" id="id4">[*]</a>), citation references
+(<a class="citation-reference" href="#cit2002" id="id5">[CIT2002]</a>), substitution references (<img alt="EXAMPLE" src="images/biohazard.png" />), 그리고 <span class="target" id="inline-hyperlink-targets">inline
+hyperlink targets</span> (<a class="reference internal" href="#targets">Targets</a> ) 또한 포함할 수 있다.
+문자 레벨의 inline markup 또한 가능하다.(<em>re</em><tt class="docutils literal">Structured</tt><em>Text</em>). 문제가 발생할 경우 <a href="#id19"><span class="problematic" id="id20">|problematic|</span></a> text (processing errors에 의해 발생됨)에 의해 나타난다.</p>
+<p>The default role for interpreted text은 <span class="incremental">Title Reference`이다. 여기에는 명시적인 interpreted text roles이 있다. : a PEP reference (:PEP:`287</span>); an
+RFC reference (<a class="reference external" href="http://tools.ietf.org/html/rfc2822.html">RFC 2822</a>); a <sub>subscript</sub>; a <sup>superscript</sup>;
+<em>standard</em> <strong>inline</strong>
+<tt class="docutils literal">markup</tt>.</p>
+<!-- DO NOT RE-WRAP THE FOLLOWING PARAGRAPH! -->
+<p>inline literals에서 wrapping과 whitespace의 중요성을 테스트해보자:
+<tt class="docutils literal">This is an example of <span class="pre">--inline-literal</span> <span class="pre">--text,</span> <span class="pre">--including</span> <span class="pre">some--</span>
+<span class="pre">strangely--hyphenated-words.</span>&nbsp; <span class="pre">Adjust-the-width-of-your-browser-window</span>
+to see how the text is wrapped.&nbsp; <span class="pre">--</span> <span class="pre">----</span> <span class="pre">--------</span>&nbsp; Now note&nbsp;&nbsp;&nbsp; the
+spacing&nbsp;&nbsp;&nbsp; between the&nbsp;&nbsp;&nbsp; words of&nbsp;&nbsp;&nbsp; this sentence&nbsp;&nbsp;&nbsp; (words
+should&nbsp;&nbsp;&nbsp; be grouped&nbsp;&nbsp;&nbsp; in pairs).</tt></p>
+<p><tt class="docutils literal"><span class="pre">--pep-references</span></tt> 옵션이 제공 된다면, PEP 258과 연결되는 링크가 여기에 있어야 한다.</p>
+</div>
+</div>
+<div class="section" id="bullet-lists">
+<h2><a class="toc-backref" href="#id33">2.2&nbsp;&nbsp;&nbsp;Bullet Lists</a></h2>
+<ul>
+<li><p class="first">A bullet list</p>
+<ul class="simple">
+<li>Nested bullet list.</li>
+<li>Nested item 2.</li>
+</ul>
+</li>
+<li><p class="first">Item 2.</p>
+<p>Paragraph 2 of item 2.</p>
+<ul class="simple">
+<li>Nested bullet list.</li>
+<li>Nested item 2.<ul>
+<li>Third level.</li>
+<li>Item 2.</li>
+</ul>
+</li>
+<li>Nested item 3.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="enumerated-lists">
+<h2><a class="toc-backref" href="#id34">2.3&nbsp;&nbsp;&nbsp;Enumerated Lists</a></h2>
+<ol class="arabic">
+<li><p class="first">Arabic numerals.</p>
+<ol class="loweralpha simple">
+<li>lower alpha)<ol class="lowerroman">
+<li>(lower roman)<ol class="upperalpha">
+<li>upper alpha.<ol class="upperroman">
+<li>upper roman)</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p class="first">1에서 시작하지 않는 리스트:</p>
+<ol class="arabic simple" start="3">
+<li>Three</li>
+<li>Four</li>
+</ol>
+<ol class="upperalpha simple" start="3">
+<li>C</li>
+<li>D</li>
+</ol>
+<ol class="lowerroman simple" start="3">
+<li>iii</li>
+<li>iv</li>
+</ol>
+</li>
+<li><p class="first">리스트 아이템들은 자동으로 열거된다.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="definition-lists">
+<h2><a class="toc-backref" href="#id35">2.4&nbsp;&nbsp;&nbsp;Definition Lists</a></h2>
+<dl class="docutils">
+<dt>용어</dt>
+<dd>Definition</dd>
+<dt>용어 <span class="classifier-delimiter">:</span> <span class="classifier">분류</span></dt>
+<dd><p class="first">Definition paragraph 1.</p>
+<p class="last">Definition paragraph 2.</p>
+</dd>
+<dt>용어</dt>
+<dd>Definition</dd>
+</dl>
+</div>
+<div class="section" id="field-lists">
+<h2><a class="toc-backref" href="#id36">2.5&nbsp;&nbsp;&nbsp;Field Lists</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">what:</th><td class="field-body"><p class="first">Field list는 field name과field body를 데이터 베이스의 레코드처럼 매핑하고, 종종 확장한 문법의 일부분이 된다. 또한 Field list는 RFC 282       2 fields의 변형이다.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name">how arg1 arg2:</th><td class="field-body"><p class="first">field marker는 colon, field name, colon 이다.</p>
+<p class="last">field body는 field marker와 관련이 있는 들여쓰기된 body elements를          하나 이상 포함할 수도 있다.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="option-lists">
+<h2><a class="toc-backref" href="#id37">2.6&nbsp;&nbsp;&nbsp;Option Lists</a></h2>
+<p>커맨드 라인 옵션 목록:</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-a</span></kbd></td>
+<td>커맨드 라인 옵션 &quot;a&quot;</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b <var>file</var></span></kbd></td>
+<td>옵션은 arguments와 자세한 설명을 가질 수 있다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--long</span></kbd></td>
+<td>옵션이 길어질 수 있다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--input=<var>file</var></span></kbd></td>
+<td>긴 옵션은 arguments를 가질 수 있다.</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--very-long-option</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td><p class="first">설명은 다음 줄에서 시작될 수 있다.</p>
+<p class="last">설명은 어디서 시작하던지 상관없이 다양한 body elements를 포함할 수 있다.</p>
+</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-x</span>, <span class="option">-y</span>, <span class="option">-z</span></kbd></td>
+<td>여러 옵션들은 &quot;option group&quot;이다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span>, <span class="option">--verbose</span></kbd></td>
+<td>흔히 볼 수 있는 짧고 긴 옵션</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-1 <var>file</var></span>, <span class="option">--one=<var>file</var></span>, <span class="option">--two <var>file</var></span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>arguments를 가진 여러 옵션.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">/V</span></kbd></td>
+<td>DOS/VMS 스타일의 옵션</td></tr>
+</tbody>
+</table>
+<p>옵션과 설명 사이에는 최소 2개의 공백이 있어야한다.</p>
+</div>
+<div class="section" id="literal-blocks">
+<h2><a class="toc-backref" href="#id38">2.7&nbsp;&nbsp;&nbsp;Literal Blocks</a></h2>
+<p>Literal blocks은 앞단락 끝에서 double-colon(&quot;::&quot;)으로 나타내진 후에, 들여쓰기 되어진다.:</p>
+<pre class="literal-block">
+if literal_block:
+    text = 'is left as-is'
+    spaces_and_linebreaks = 'are preserved'
+    markup_processing = None
+</pre>
+<p>또는 들여쓰기 없이 인용되어 질 수 있다.:</p>
+<pre class="literal-block">
+&gt;&gt; Great idea!
+&gt;
+&gt; Why didn't I think of that?
+</pre>
+</div>
+<div class="section" id="line-blocks">
+<h2><a class="toc-backref" href="#id39">2.8&nbsp;&nbsp;&nbsp;Line Blocks</a></h2>
+<div class="line-block">
+<div class="line">이것은 line block이고, 빈 줄로 끝이난다.</div>
+<div class="line-block">
+<div class="line">각각의 새로운 줄은 vertical bar (&quot;|&quot;)로 시작한다.</div>
+<div class="line">줄 바꿈과 초기 들여쓰기는 유지된다.</div>
+</div>
+<div class="line">많은 줄들의 부분으로 연속되는 줄들을 감싼다.;
+연속되는 줄들은 vertical bar 대신에 공백을 사용한다.</div>
+<div class="line-block">
+<div class="line">연속되는 줄의 왼쪽 가장자리는 위의 텍스트들의 왼쪽 끝처럼 정렬될 필요는 없다.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">이것은 두번째 line block이다.</div>
+<div class="line"><br /></div>
+<div class="line">내부적으로 빈 줄은 허용되지만, 반드시 &quot;|&quot;로 시작해야한다.</div>
+</div>
+<p>Take it away, Eric the Orchestra Leader!</p>
+<blockquote>
+<div class="line-block">
+<div class="line">A one, two, a one two three four</div>
+<div class="line"><br /></div>
+<div class="line">Half a bee, philosophically,</div>
+<div class="line-block">
+<div class="line">must, <em>ipso facto</em>, half not be.</div>
+</div>
+<div class="line">But half the bee has got to be,</div>
+<div class="line-block">
+<div class="line"><em>vis a vis</em> its entity.  D'you see?</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">But can a bee be said to be</div>
+<div class="line-block">
+<div class="line">or not to be an entire bee,</div>
+<div class="line-block">
+<div class="line">when half the bee is not a bee,</div>
+<div class="line-block">
+<div class="line">due to some ancient injury?</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="line">Singing...</div>
+</div>
+</blockquote>
+</div>
+<div class="section" id="block-quotes">
+<h2><a class="toc-backref" href="#id40">2.9&nbsp;&nbsp;&nbsp;Block Quotes</a></h2>
+<p>Block quotes는 들여쓰기된 body elements로 구성되어 있다.:</p>
+<blockquote>
+<p>My theory by A. Elk.  Brackets Miss, brackets.  This theory goes
+as follows and begins now.  All brontosauruses are thin at one
+end, much much thicker in the middle and then thin again at the
+far end.  That is my theory, it is mine, and belongs to me and I
+own it, and what it is too.</p>
+<p class="attribution">&mdash;Anne Elk (Miss)</p>
+</blockquote>
+</div>
+<div class="section" id="doctest-blocks">
+<h2><a class="toc-backref" href="#id41">2.10&nbsp;&nbsp;&nbsp;Doctest Blocks</a></h2>
+<pre class="doctest-block">
+&gt;&gt;&gt; print 'Python-specific usage examples; begun with &quot;&gt;&gt;&gt;&quot;'
+Python-specific usage examples; begun with &quot;&gt;&gt;&gt;&quot;
+&gt;&gt;&gt; print '(cut and pasted from interactive Python sessions)'
+(cut and pasted from interactive Python sessions)
+</pre>
+</div>
+<div class="section" id="tables">
+<h2><a class="toc-backref" href="#id42">2.11&nbsp;&nbsp;&nbsp;Tables</a></h2>
+<p>여기에 간단한 도표가 있다.:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="21%" />
+<col width="18%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Header row, column 1
+(header rows optional)</th>
+<th class="head">Header 2</th>
+<th class="head">Header 3</th>
+<th class="head">Header 4</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>body row 1, column 1</td>
+<td>column 2</td>
+<td>column 3</td>
+<td>column 4</td>
+</tr>
+<tr><td>body row 2</td>
+<td colspan="3">Cells may span columns.</td>
+</tr>
+<tr><td>body row 3</td>
+<td rowspan="2">Cells may
+span rows.</td>
+<td colspan="2" rowspan="2"><ul class="first last simple">
+<li>Table cells</li>
+<li>contain</li>
+<li>body elements.</li>
+</ul>
+</td>
+</tr>
+<tr><td>body row 4</td>
+</tr>
+<tr><td>body row 5</td>
+<td colspan="2">Cells may also be
+empty: <tt class="docutils literal"><span class="pre">--&gt;</span></tt></td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="31%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head" colspan="2">Inputs</th>
+<th class="head">Output</th>
+</tr>
+<tr><th class="head">A</th>
+<th class="head">B</th>
+<th class="head">A or B</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr><td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr><td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr><td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="footnotes">
+<h2><a class="toc-backref" href="#id43">2.12&nbsp;&nbsp;&nbsp;Footnotes</a></h2>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> <p>footnote는 body elements를 포함하고, 일관성 있게 적어도 3개의 공간으로 들여쓰기가 되어진다.</p>
+<p class="last">여기는 footnote의 두번째 단락이다.</p>
+</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="label" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id8">2</a>)</em> Footnotes는 수동적(<a class="footnote-reference" href="#id6" id="id7">[1]</a> 에서 한 것처럼)으로 넘버링 되어지거나   &quot;#&quot;-prefixed label을 사용해 자동적으로 넘버링 할 수 있다. 이 footnote는 label을 가지기 때문에 다양한 위치에서 (footnote reference (<a class="footnote-reference" href="#label" id="id8">[2]</a>) 와 hyperlink reference(<a class="reference internal" href="#label">label</a>)) 참조되어질 수 있다.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[3]</a></td><td>This footnote는&quot;#&quot;만을 사용해서 자동적이지만 특징 없이 넘버링을 한다.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[*]</a></td><td>Footnote는 &quot;*&quot; label로 구체화된 심볼을 사용할 수도 있다. 여기에 다음 footnote에 대한 참조: <a class="footnote-reference" href="#id12" id="id11">[†]</a> 가 있다.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id11">[†]</a></td><td>이 footnote는 순서에 따라 다음 심볼을 보여준다.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[4]</td><td>여기에 참조되지 않은 footnote가 있다. 이는 존재하지 않는 footnote에 대한 참조이다.: <a href="#id66"><span class="problematic" id="id14">[5]_</span></a>.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="citations">
+<h2><a class="toc-backref" href="#id44">2.13&nbsp;&nbsp;&nbsp;Citations</a></h2>
+<table class="docutils citation" frame="void" id="cit2002" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[CIT2002]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id15">2</a>)</em> Citation은 텍스트로 레이블된 footnote이다. Citation은 footnote와는 별개로 렌더링 되어 질수도 있다.</td></tr>
+</tbody>
+</table>
+<p>위에 대한 참조 <a class="citation-reference" href="#cit2002" id="id15">[CIT2002]</a> 와 <a href="#id67"><span class="problematic" id="id16">[nonexistent]_</span></a> citation.</p>
+</div>
+<div class="section" id="targets">
+<h2><a class="toc-backref" href="#id45">2.14&nbsp;&nbsp;&nbsp;Targets</a></h2>
+<p id="example">이 단락은 the explicit &quot;example&quot; target에 의해 가리켜진다. reference는 위의 <a class="reference internal" href="#inline-markup">Inline Markup</a> 아래에서 발견되어질 수 있다, <a class="reference internal" href="#inline-hyperlink-targets">Inline hyperlink targets</a>  역시 가능하다.</p>
+<p>Section headers는 implicit target이고, 이름에 의해 참조되어진다.
+<a class="reference internal" href="#body-elements">Body Elements</a> 의 subsection인 <a class="reference internal" href="#targets">Targets</a> 를 봐라.</p>
+<p>Explicit external targets는 &quot;<a class="reference external" href="http://www.python.org/">Python</a> <a class="footnote-reference" href="#id23" id="id25">[5]</a>&quot; 과 같은 references에 삽입되어진다.</p>
+<p>Targets 간접적이고 익명적일 수도 있다. 그러므로 <a class="reference internal" href="#targets">이 구절</a> 은 또한 <a class="reference internal" href="#targets">Targets</a> section을 참조할 수도 있다.</p>
+<p>여기에 에러를 발생시키는 <a href="#id68"><span class="problematic" id="id69">`hyperlink reference without a target`_</span></a> 이 있다.</p>
+<div class="section" id="duplicate-target-names">
+<h3><a class="toc-backref" href="#id46">2.14.1&nbsp;&nbsp;&nbsp;Duplicate Target Names</a></h3>
+<p>Section headers 또는 다른 implicit targets에 있는 Duplicate name은 &quot;info&quot; (level-1) 시스템 메시지를 발생 시킬 것이다. Explicit target에 있는 Duplicate names은 &quot;warning&quot; (level-2) 시스템 메시지를 발생 시킬 것이다.</p>
+</div>
+<div class="section" id="id18">
+<h3><a class="toc-backref" href="#id47">2.14.2&nbsp;&nbsp;&nbsp;Duplicate Target Names</a></h3>
+<p>두 개의 &quot;Duplicate Target Names&quot; section header가 있기 때문에, 이름에 의해서는 유일하게 어떤 것을 참조할 수 없다. 참조를 하게 되면 이런 ( <a href="#id70"><span class="problematic" id="id71">`Duplicate Target Names`_</span></a> ) 에러가 발생한다.</p>
+</div>
+</div>
+<div class="section" id="directives">
+<h2><a class="toc-backref" href="#id48">2.15&nbsp;&nbsp;&nbsp;Directives</a></h2>
+<div class="contents local topic" id="contents">
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#document-parts" id="id59">2.15.1&nbsp;&nbsp;&nbsp;Document Parts</a></li>
+<li><a class="reference internal" href="#images" id="id60">2.15.2&nbsp;&nbsp;&nbsp;Images</a></li>
+<li><a class="reference internal" href="#admonitions" id="id61">2.15.3&nbsp;&nbsp;&nbsp;Admonitions</a></li>
+<li><a class="reference internal" href="#topics-sidebars-and-rubrics" id="id62">2.15.4&nbsp;&nbsp;&nbsp;Topics, Sidebars, and Rubrics</a></li>
+<li><a class="reference internal" href="#target-footnotes" id="id63">2.15.5&nbsp;&nbsp;&nbsp;Target Footnotes</a></li>
+<li><a class="reference internal" href="#replacement-text" id="id64">2.15.6&nbsp;&nbsp;&nbsp;Replacement Text</a></li>
+<li><a class="reference internal" href="#compound-paragraph" id="id65">2.15.7&nbsp;&nbsp;&nbsp;Compound Paragraph</a></li>
+</ul>
+</div>
+<p>이는 많은 reStructuredText Directives들의 일부일 뿐이다. 더 많은 부분을 알고 싶다면
+<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html">http://docutils.sourceforge.net/docs/ref/rst/directives.html</a> 를 참고하면 된다.</p>
+<div class="section" id="document-parts">
+<h3><a class="toc-backref" href="#id59">2.15.1&nbsp;&nbsp;&nbsp;Document Parts</a></h3>
+<p>&quot;contents&quot; directive 의 예는 이번 section(a local, untitled table of <a class="reference internal" href="#contents">contents</a>)과 문서의 첫 부분(a document-wide <a class="reference internal" href="#table-of-contents">table of contents</a>)에서 확인할 수 있다.</p>
+</div>
+<div class="section" id="images">
+<h3><a class="toc-backref" href="#id60">2.15.2&nbsp;&nbsp;&nbsp;Images</a></h3>
+<p>An image directive (클릭으로 하이퍼링크 참조가 가능):</p>
+<a class="reference internal image-reference" href="#directives"><img alt="images/title.png" src="images/title.png" /></a>
+<p>A figure directive:</p>
+<div class="figure">
+<img alt="reStructuredText, the markup syntax" src="images/title.png" />
+<p class="caption">Figure 는 caption이 있는 image이고 legend를 포함할 수도 있다.:</p>
+<div class="legend">
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>re</td>
+<td>Revised, revisited, based on 're' module.</td>
+</tr>
+<tr><td>Structured</td>
+<td>Structure-enhanced text, structuredtext.</td>
+</tr>
+<tr><td>Text</td>
+<td>Well it is, isn't it?</td>
+</tr>
+</tbody>
+</table>
+<p>이 단락 또한 legend의 일부이다.</p>
+</div>
+</div>
+</div>
+<div class="section" id="admonitions">
+<h3><a class="toc-backref" href="#id61">2.15.3&nbsp;&nbsp;&nbsp;Admonitions</a></h3>
+<div class="admonition attention">
+<p class="first admonition-title">Attention!</p>
+<p class="last">Directives at large.</p>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">Caution!</p>
+<p class="last">Don't take any wooden nickels.</p>
+</div>
+<div class="admonition danger">
+<p class="first admonition-title">!DANGER!</p>
+<p class="last">Mad scientist at work!</p>
+</div>
+<div class="admonition error">
+<p class="first admonition-title">Error</p>
+<p class="last">Does not compute.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">It's bigger than a bread box.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<ul class="last simple">
+<li>Wash behind your ears.</li>
+<li>Clean up your room.</li>
+<li>Call your mother.</li>
+<li>Back up your data.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is a note.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">15% if the service is good.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Strong prose may provoke extreme mental exertion.
+Reader discretion is strongly advised.</p>
+</div>
+<div class="admonition admonition-and-by-the-way">
+<p class="first admonition-title">And, by the way...</p>
+<p class="last">You can make up your own admonition too.</p>
+</div>
+</div>
+<div class="section" id="topics-sidebars-and-rubrics">
+<h3><a class="toc-backref" href="#id62">2.15.4&nbsp;&nbsp;&nbsp;Topics, Sidebars, and Rubrics</a></h3>
+<div class="sidebar">
+<p class="first sidebar-title">Sidebar Title</p>
+<p class="sidebar-subtitle">Optional Subtitle</p>
+<p>이것이 사이드 바이다. 사이드 바는 본문의 흐름 밖에 있는 텍스트를 위해서 사용한다.</p>
+<p class="rubric">이것은 사이드 바 안에 있는 rubric이다.</p>
+<p class="last">사이드 바는 테두리와 배경색을 포함하고 있고 본문 옆에 나타난다.</p>
+</div>
+<div class="topic">
+<p class="topic-title first">Topic Title</p>
+<p>이것이 topic이다.</p>
+</div>
+<p class="rubric">이것이 rubric이다.</p>
+</div>
+<div class="section" id="target-footnotes">
+<h3><a class="toc-backref" href="#id63">2.15.5&nbsp;&nbsp;&nbsp;Target Footnotes</a></h3>
+<table class="docutils footnote" frame="void" id="id23" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[5]</td><td><em>(<a class="fn-backref" href="#id24">1</a>, <a class="fn-backref" href="#id25">2</a>, <a class="fn-backref" href="#id26">3</a>)</em> <a class="reference external" href="http://www.python.org/">http://www.python.org/</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="replacement-text">
+<h3><a class="toc-backref" href="#id64">2.15.6&nbsp;&nbsp;&nbsp;Replacement Text</a></h3>
+<p>I recommend you try <a class="reference external" href="http://www.python.org/">Python, <em>the</em> best language around</a> <a class="footnote-reference" href="#id23" id="id26">[5]</a>.</p>
+</div>
+<div class="section" id="compound-paragraph">
+<h3><a class="toc-backref" href="#id65">2.15.7&nbsp;&nbsp;&nbsp;Compound Paragraph</a></h3>
+<div class="compound">
+<p class="compound-first">이 단락은 literal block을 포함한다.:</p>
+<pre class="compound-middle literal-block">
+Connecting... OK
+Transmitting data... OK
+Disconnecting... OK
+</pre>
+<p class="compound-last">그러므로 하나의 simple paragraph, 하나의 literal block, 또 다른 하나의 simple paragraph로 구성되어 있다. 그럼에도 불구하고 의미론적으로는 <em>하나의</em> paragraph로 볼 수 있다.</p>
+</div>
+<p>이러한 구성은 <em>compound paragraph</em> 라고 하며 &quot;compound&quot; directive를 이용하여 만들어진다.</p>
+</div>
+</div>
+<div class="section" id="substitution-definitions">
+<h2><a class="toc-backref" href="#id56">2.16&nbsp;&nbsp;&nbsp;Substitution Definitions</a></h2>
+<p>An inline image (<img alt="EXAMPLE" src="images/biohazard.png" />) example:</p>
+<p>(Substitution definitions는 HTML source에서는 보이지 않는다.)</p>
+</div>
+<div class="section" id="comments">
+<h2><a class="toc-backref" href="#id57">2.17&nbsp;&nbsp;&nbsp;Comments</a></h2>
+<p>Here's one:</p>
+<!-- Comments는 두 점과 하나의 공간으로 시작한다. footnote, hyperline targets, directives, 또는 substitution definitions의 문법을 제외하고는 어떤것이든 뒤에 올 수 있다.
+
+Double-dashes - - "- -" - - must be escaped somehow in HTML output. -->
+<p>(Comment를 보려면 HTML source를 보자.)</p>
+</div>
+</div>
+<div class="section" id="error-handling">
+<h1><a class="toc-backref" href="#id58">3&nbsp;&nbsp;&nbsp;Error Handling</a></h1>
+<p>Processing 을 하면서 발생한 에러는 시스템 메시지를 발생시킨다.</p>
+<p><a href="#id21"><span class="problematic" id="id22">|*** Expect 6 errors (including this one). ***|</span></a></p>
+<p>다음과 같은 6개의 메시지가 있어야 하며, 자동으로 만들어진 section인 &quot;Docutils System Messages&quot;가 있어야한다.</p>
+<!-- section should be added by Docutils automatically -->
+</div>
+<div class="system-messages section">
+<h1>Docutils System Messages</h1>
+<div class="system-message" id="id19">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">../docs/user/rst/demo_ko.rst</tt>, line 80); <em><a href="#id20">backlink</a></em></p>
+Undefined substitution referenced: &quot;problematic&quot;.</div>
+<div class="system-message" id="id21">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">../docs/user/rst/demo_ko.rst</tt>, line 491); <em><a href="#id22">backlink</a></em></p>
+Undefined substitution referenced: &quot;*** Expect 6 errors (including this one). ***&quot;.</div>
+<div class="system-message" id="id66">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">../docs/user/rst/demo_ko.rst</tt>, line 310); <em><a href="#id14">backlink</a></em></p>
+Unknown target name: &quot;5&quot;.</div>
+<div class="system-message" id="id67">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">../docs/user/rst/demo_ko.rst</tt>, line 317); <em><a href="#id16">backlink</a></em></p>
+Unknown target name: &quot;nonexistent&quot;.</div>
+<div class="system-message" id="id68">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">../docs/user/rst/demo_ko.rst</tt>, line 339); <em><a href="#id69">backlink</a></em></p>
+Unknown target name: &quot;hyperlink reference without a target&quot;.</div>
+<div class="system-message" id="id70">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">../docs/user/rst/demo_ko.rst</tt>, line 349); <em><a href="#id71">backlink</a></em></p>
+Duplicate target name, cannot be used as a unique reference: &quot;duplicate target names&quot;.</div>
+</div>
+</div>
+<div class="footer">
+<hr class="footer" />
+<a class="reference external" href="demo_ko.rst">View document source</a>.
+Generated on: 2019-01-03 08:26 UTC.
+Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
+
+</div>
+</body>
+</html>

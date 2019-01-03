@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>reStructuredText 표준 정의 파일</title>
+<link rel="stylesheet" href="../../../html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="restructuredtext">
+<h1 class="title">reStructuredText 표준 정의 파일</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name">저자:</th><td class="field-body">데이비드 구저</td>
+</tr>
+<tr class="field"><th class="docinfo-name">연락처:</th><td class="field-body"><a class="reference external" href="mailto:docutils-develop&#64;lists.sourceforge.net">docutils-develop&#64;lists.sourceforge.net</a></td>
+</tr>
+<tr class="field"><th class="docinfo-name">리비전:</th><td class="field-body">$리비전$</td>
+</tr>
+<tr class="field"><th class="docinfo-name">날짜:</th><td class="field-body">$날짜$</td>
+</tr>
+<tr class="field"><th class="docinfo-name">저작권:</th><td class="field-body">이 문서는 퍼블릭 도메인에 속한다.</td>
+</tr>
+</tbody>
+</table>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id15">대체 정의</a><ul>
+<li><a class="reference internal" href="#id6" id="id16">문자 객체 집합</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#s5-html" id="id17">S5/HTML 정의</a></li>
+</ul>
+</div>
+<p>이 문서는 대체 정의, 번역 텍스트 기능과 같이 reStructuredText 문서에 포함될 수 있는 정의 파일들을 기술한다.
+<a class="reference external" href="directives_ko.html#include">&quot;include&quot; 명령어</a> 는 표준 정의 파일을 위한 특별한 문법을 갖는다. 이를 위 꺽쇠괄호를 사용한다.:</p>
+<pre class="literal-block">
+.. include:: &lt;파일명.txt&gt;
+</pre>
+<p>각각의 데이터 파일들은 &quot;docutils&quot; 패키지 내부에 Docutils 소스코드와 함께 저장된다.
+이 파일들의 경로는 <tt class="docutils literal">docutils/parsers/rst/include</tt> 이다.</p>
+<div class="section" id="id2">
+<h1><a class="toc-backref" href="#id15">대체 정의</a></h1>
+<p>다수의 표준 정의 파일들은 문서 내부의 <a class="reference external" href="restructuredtext_ko.html#substitution-definitions">대체 레퍼런스</a> 를 통해 사용할 수 있는 <a class="reference external" href="restructuredtext_ko.html#substitution-references">대체 정의</a> 의 묶음을 포함한다.
+예를 들어 저작권 기호는 &quot;copy&quot;으로 <tt class="docutils literal">isonum_ko.txt</tt> 에 저장되어 있다.:</p>
+<pre class="literal-block">
+.. include:: &lt;isonum.txt&gt;
+
+저작권 |copy| 2003 by John Q. Public, 판권소유.
+</pre>
+<p>각각의 대체 정의들은 정의 파일로부터 복사되거나 문서로 붙여넣기 할 수 있다.
+이 기능은 두가지 장점을 갖는다. 이로 인해 의존성이 제거되고 사용되지 않은 정의들의 처리를 저장한다.
+그러나 다수의 대체 정의는 문서를 복잡하게 만든다.</p>
+<p>대체 레퍼런스는 공백이나 구두점을 사용해 인접한 텍스트와 구별해 주어야 한다.
+공백을 사용하지 않는다면 백슬래시 이스케이프 시퀀스를 사용하면 된다.:</p>
+<pre class="literal-block">
+.. include:: isonum.txt
+
+저작권 |사본| 2003, BogusMegaCorp\ |trade|.
+</pre>
+<p>커스텀 대체 정의는 <a class="reference external" href="directives_ko.html#unicode">&quot;unicode&quot; 명령어</a> 를 사용할 수 있다.
+공백은 무시되거나 삭제되어 실제로는 텍스트에 녹아든다.:</p>
+<pre class="literal-block">
+.. |copy|   unicode:: U+000A9 .. COPYRIGHT SIGN
+.. |BogusMegaCorp (TM)| unicode:: BogusMegaCorp U+2122
+   .. with trademark sign
+
+저작권 |copy| 2003, |BogusMegaCorp (TM)|.
+</pre>
+<p>추가로 대체 레퍼런스에서 &quot;unicode&quot; 명령어와 함께 &quot;ltrim&quot;, &quot;rtrim&quot; &quot;trim&quot; 을 사용하면 자동으로 공백을 제거해 준다.
+&quot;ltrim&quot;은 왼쪽, &quot;rtrim&quot;은 오른쪽, &quot;trim&quot;은 양쪽으로부터 공백을 제거한다.:</p>
+<pre class="literal-block">
+.. |---| unicode:: U+02014 .. em dash
+   :trim:
+</pre>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id16">문자 객체 집합</a></h2>
+<p>아래의 파일들은 XML 문자 객체 집합에 대응되는 대체 정의들로 다음의 표준을 따른다. :
+ISO 8879 &amp; ISO 9573-13 (combined), MathML, and XHTML1.
+이 파일들은 <tt class="docutils literal">tools/dev/unicode2rstsubs.py</tt> 프로그램에 <a class="reference external" href="http://www.w3.org/2003/entities/xml/">unicode.xml</a> 을 입력으로 받아 생성되었다.
+입력이 되는 <a class="reference external" href="http://www.w3.org/2003/entities/xml/">unicode.xml</a> 은 MathML 2 Recommentation XML source 의 일부로서 지원 받고 있다.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Entity Set File</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isoamsa.txt">isoamsa.txt</a></td>
+<td>Added Mathematical Symbols: Arrows</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isoamsb.txt">isoamsb.txt</a></td>
+<td>Added Mathematical Symbols: Binary Operators</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isoamsc.txt">isoamsc.txt</a></td>
+<td>Added Mathematical Symbols: Delimiters</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isoamsn.txt">isoamsn.txt</a></td>
+<td>Added Mathematical Symbols: Negated Relations</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isoamso.txt">isoamso.txt</a></td>
+<td>Added Mathematical Symbols: Ordinary</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isoamsr.txt">isoamsr.txt</a></td>
+<td>Added Mathematical Symbols: Relations</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isobox.txt">isobox.txt</a></td>
+<td>Box and Line Drawing</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isocyr1.txt">isocyr1.txt</a></td>
+<td>Russian Cyrillic</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isocyr2.txt">isocyr2.txt</a></td>
+<td>Non-Russian Cyrillic</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isodia.txt">isodia.txt</a></td>
+<td>Diacritical Marks</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isogrk1.txt">isogrk1.txt</a></td>
+<td>Greek Letters</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isogrk2.txt">isogrk2.txt</a></td>
+<td>Monotoniko Greek</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isogrk3.txt">isogrk3.txt</a></td>
+<td>Greek Symbols</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isogrk4.txt">isogrk4.txt</a>  <a class="footnote-reference" href="#id14" id="id9">[1]</a></td>
+<td>Alternative Greek Symbols</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isolat1.txt">isolat1.txt</a></td>
+<td>Added Latin 1</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isolat2.txt">isolat2.txt</a></td>
+<td>Added Latin 2</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isomfrk.txt">isomfrk.txt</a>  <a class="footnote-reference" href="#id14" id="id10">[1]</a></td>
+<td>Mathematical Fraktur</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isomopf.txt">isomopf.txt</a>  <a class="footnote-reference" href="#id14" id="id11">[1]</a></td>
+<td>Mathematical Openface (Double-struck)</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isomscr.txt">isomscr.txt</a>  <a class="footnote-reference" href="#id14" id="id12">[1]</a></td>
+<td>Mathematical Script</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isonum.txt">isonum.txt</a></td>
+<td>Numeric and Special Graphic</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isopub.txt">isopub.txt</a></td>
+<td>Publishing</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/isotech.txt">isotech.txt</a></td>
+<td>General Technical</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/mmlalias.txt">mmlalias.txt</a></td>
+<td>MathML aliases for entities from other sets</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/mmlextra.txt">mmlextra.txt</a> <a class="footnote-reference" href="#id14" id="id13">[1]</a></td>
+<td>Extra names added by MathML</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/xhtml1-lat1.txt">xhtml1-lat1.txt</a></td>
+<td>XHTML Latin 1</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/xhtml1-special.txt">xhtml1-special.txt</a></td>
+<td>XHTML Special Characters</td>
+</tr>
+<tr><td><a class="reference external" href="../../../docutils/parsers/rst/include/xhtml1-symbol.txt">xhtml1-symbol.txt</a></td>
+<td>XHTML Mathematical, Greek and Symbolic Characters</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id9">1</a>, <a class="fn-backref" href="#id10">2</a>, <a class="fn-backref" href="#id11">3</a>, <a class="fn-backref" href="#id12">4</a>, <a class="fn-backref" href="#id13">5</a>)</em> <tt class="docutils literal"><span class="pre">*-wide.txt</span></tt> 와 같은 형태의 파일들이 있다. 이러한 형태의 파일들은
+유니코드 다국어 평면이나 BMP 바깥의 문자들을 포함한다.
+(wide-Unicode; U+FFFF 보다 큰 코드 포인트)
+이미 구현되어 있는 대부분의 파이썬 배포들은 &quot;한정&quot;되어 있고 wide-Unicode 문자를 지원하지 않는다.
+파이썬을 wide-Unicode로 구현할 수 있지만 세부사항은 파이썬 개발 지침서를 참고하라.</td></tr>
+</tbody>
+</table>
+<p>예를 들어 저작권 기호는 XML 문자 객체 <tt class="docutils literal">&amp;copy:</tt> 로 정의되어 있다.
+이에 대응하는 reStructuredText 대체 레퍼런스(<tt class="docutils literal">isonum.txt</tt> 와 <tt class="docutils literal">xhtml_lat1.txt</tt> 로 정의됨)는 <tt class="docutils literal">|copy|</tt> 이다.</p>
+</div>
+</div>
+<div class="section" id="s5-html">
+<h1><a class="toc-backref" href="#id17">S5/HTML 정의</a></h1>
+<p>&quot;<a class="reference external" href="../../../docutils/parsers/rst/include/s5defs.txt">s5defs.txt</a>&quot; 표준 정의 파일은 번역 텍스트 기능(클래스)와 문서들을 위한 다른 정의들을 포함한다.
+이 정의 파일은 <a class="reference external" href="../../user/slide-shows.html">S5/HTML slide shows</a> 가 된다.</p>
+<!-- Local Variables:
+mode: indented-text
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+End: -->
+</div>
+</div>
+<div class="footer">
+<hr class="footer" />
+<a class="reference external" href="definitions_ko.rst">View document source</a>.
+Generated on: 2019-01-03 08:26 UTC.
+Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
+
+</div>
+</body>
+</html>

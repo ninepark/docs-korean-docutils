@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>독유틸즈에 대해 자주 물어보는 질문들(FAQ: Frequently Asked Questions)</title>
+<link rel="stylesheet" href="html4css1.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="faq-frequently-asked-questions">
+<h1 class="title">독유틸즈에 대해 자주 물어보는 질문들(FAQ: Frequently Asked Questions)</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr class="field"><th class="docinfo-name">날짜:</th><td class="field-body">$Date$</td>
+</tr>
+<tr class="field"><th class="docinfo-name">리비전:</th><td class="field-body">$Revision$</td>
+</tr>
+<tr class="field"><th class="docinfo-name">웹사이트:</th><td class="field-body"><a class="reference external" href="http://docutils.sourceforge.net/">http://docutils.sourceforge.net/</a></td>
+</tr>
+<tr class="field"><th class="docinfo-name">저작권:</th><td class="field-body">이 문서는 퍼블릭 도메인에 속한다.</td>
+</tr>
+</tbody>
+</table>
+<!-- -*- coding: utf-8 -*- -->
+<!-- 관리자 주의 사항: 새로운 질문은 각 절의 마지막에 덧붙여서 절과 질문의 번호가
+바뀌지 않도록 한다. -->
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#id4" id="id62">1&nbsp;&nbsp;&nbsp;독유틸즈</a><ul class="auto-toc">
+<li><a class="reference internal" href="#id5" id="id63">1.1&nbsp;&nbsp;&nbsp;독유틸즈란 무엇인가?</a></li>
+<li><a class="reference internal" href="#docutils" id="id64">1.2&nbsp;&nbsp;&nbsp;왜 &quot;독유틸즈(Docutils)&quot;라고 부르는가?</a></li>
+<li><a class="reference internal" href="#gui" id="id65">1.3&nbsp;&nbsp;&nbsp;독유틸즈용 GUI 저작 도구가 있는가?</a></li>
+<li><a class="reference internal" href="#id17" id="id66">1.4&nbsp;&nbsp;&nbsp;독유틸즈 프로젝트의 상황은 어떤가?</a></li>
+<li><a class="reference internal" href="#id18" id="id67">1.5&nbsp;&nbsp;&nbsp;독유틸즈 프로젝트의 배포 정책은?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id21" id="id68">2&nbsp;&nbsp;&nbsp;리스트럭처드텍스트</a><ul class="auto-toc">
+<li><a class="reference internal" href="#restructuredtext" id="id69">2.1&nbsp;&nbsp;&nbsp;리스트럭처드텍스트(reStructuredText)는 무엇인가?</a></li>
+<li><a class="reference internal" href="#id27" id="id70">2.2&nbsp;&nbsp;&nbsp;왜 &quot;리스트럭처드텍스트&quot;라고 부르는가</a></li>
+<li><a class="reference internal" href="#id28" id="id71">2.3&nbsp;&nbsp;&nbsp;리스트럭처드텍스트의 표준 약자는?</a></li>
+<li><a class="reference internal" href="#id30" id="id72">2.4&nbsp;&nbsp;&nbsp;리스트럭처드텍스트의 표준 파일 확장자는?</a></li>
+<li><a class="reference internal" href="#id31" id="id73">2.5&nbsp;&nbsp;&nbsp;리스트럭처드텍스트용 편집기 확장 프로그램이 있는가?</a></li>
+<li><a class="reference internal" href="#id33" id="id74">2.6&nbsp;&nbsp;&nbsp;문서의 제목과 부제목을 어떻게 지정하는가?</a></li>
+<li><a class="reference internal" href="#id34" id="id75">2.7&nbsp;&nbsp;&nbsp;문서에서 특수 글자는 어떻게 표시하는가?</a></li>
+<li><a class="reference internal" href="#backtick" id="id76">2.8&nbsp;&nbsp;&nbsp;스칸디나비아 키보드에서 백틱(backtick, `)은 어떻게 타이핑하나?</a></li>
+<li><a class="reference internal" href="#html-xml" id="id77">2.9&nbsp;&nbsp;&nbsp;HTML/XML을 리스트럭처드텍스트로 변환하는 도구가 있는가?</a></li>
+<li><a class="reference internal" href="#id37" id="id78">2.10&nbsp;&nbsp;&nbsp;리스트럭처드텍스트 문법을 사용하는 위키가 있는가?</a></li>
+<li><a class="reference internal" href="#id38" id="id79">2.11&nbsp;&nbsp;&nbsp;리스트럭처드텍스트 문법을 사용하는 블로그 프로젝트가 있는가?</a></li>
+<li><a class="reference internal" href="#id39" id="id80">2.12&nbsp;&nbsp;&nbsp;어떻게 목록 마크업을 하는가?</a></li>
+<li><a class="reference internal" href="#id42" id="id81">2.13&nbsp;&nbsp;&nbsp;블럭 인용을 만들지 않고 목록을 들여쓰기 할 수 있는가?</a></li>
+<li><a class="reference internal" href="#id44" id="id82">2.14&nbsp;&nbsp;&nbsp;꼭 목록 앞뒤로 빈 줄이 있어야 하는가? 생략할 수 없나?</a></li>
+<li><a class="reference internal" href="#id45" id="id83">2.15&nbsp;&nbsp;&nbsp;문서에 수학식을 포함할 수 있나?</a></li>
+<li><a class="reference internal" href="#id46" id="id84">2.16&nbsp;&nbsp;&nbsp;인라인 마크업을 중첩하는 것도 가능한가?</a></li>
+<li><a class="reference internal" href="#id53" id="id85">2.17&nbsp;&nbsp;&nbsp;강제개행 또는 의미있는 개행을  어떻게 표시하나?</a></li>
+<li><a class="reference internal" href="#url" id="id86">2.18&nbsp;&nbsp;&nbsp;별표가 들어가있는 URL이 동작하지 않면 어떻게 해야하나?</a></li>
+<li><a class="reference internal" href="#id55" id="id87">2.19&nbsp;&nbsp;&nbsp;일련의 포매팅을 지닌 리터럴 블록을 어떻게 만들수 있는가?</a></li>
+<li><a class="reference internal" href="#id57" id="id88">2.20&nbsp;&nbsp;&nbsp;리스트럭처드텍스트를 웹 혹은 일반적 템플레이팅에 활용 가능한가?</a></li>
+<li><a class="reference internal" href="#how-can-i-mark-up-a-faq-or-other-list-of-questions-answers" id="id89">2.21&nbsp;&nbsp;&nbsp;How can I mark up a FAQ or other list of questions &amp; answers?</a></li>
+<li><a class="reference internal" href="#can-i-produce-documents-in-right-to-left-languages" id="id90">2.22&nbsp;&nbsp;&nbsp;Can I produce documents in right-to-left languages?</a></li>
+<li><a class="reference internal" href="#mime" id="id91">2.23&nbsp;&nbsp;&nbsp;리스트럭처드텍스트의 공식 MIME 타입은?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#html-writer" id="id92">3&nbsp;&nbsp;&nbsp;HTML Writer</a><ul class="auto-toc">
+<li><a class="reference internal" href="#what-is-the-status-of-the-html-writer" id="id93">3.1&nbsp;&nbsp;&nbsp;What is the status of the HTML Writer?</a></li>
+<li><a class="reference internal" href="#what-kind-of-html-does-it-produce" id="id94">3.2&nbsp;&nbsp;&nbsp;What kind of HTML does it produce?</a></li>
+<li><a class="reference internal" href="#what-browsers-are-supported" id="id95">3.3&nbsp;&nbsp;&nbsp;What browsers are supported?</a></li>
+<li><a class="reference internal" href="#unexpected-results-from-tools-rst2html-py-h1-h1-instead-of-h1-h2-why" id="id96">3.4&nbsp;&nbsp;&nbsp;Unexpected results from tools/rst2html.py: H1, H1 instead of H1, H2.  Why?</a></li>
+<li><a class="reference internal" href="#html" id="id97">3.5&nbsp;&nbsp;&nbsp;목록은 HTML에서 어떻게 보이나?</a></li>
+<li><a class="reference internal" href="#why-do-enumerated-lists-only-use-numbers-no-letters-or-roman-numerals" id="id98">3.6&nbsp;&nbsp;&nbsp;Why do enumerated lists only use numbers (no letters or roman numerals)?</a></li>
+<li><a class="reference internal" href="#there-appear-to-be-garbage-characters-in-the-html-what-s-up" id="id99">3.7&nbsp;&nbsp;&nbsp;There appear to be garbage characters in the HTML.  What's up?</a></li>
+<li><a class="reference internal" href="#how-can-i-retrieve-the-body-of-the-html-document" id="id100">3.8&nbsp;&nbsp;&nbsp;How can I retrieve the body of the HTML document?</a></li>
+<li><a class="reference internal" href="#why-is-the-docutils-xhtml-served-as-content-type-text-html" id="id101">3.9&nbsp;&nbsp;&nbsp;Why is the Docutils XHTML served as &quot;Content-type: text/html&quot;?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-source-reader" id="id102">4&nbsp;&nbsp;&nbsp;Python Source Reader</a><ul class="auto-toc">
+<li><a class="reference internal" href="#can-i-use-docutils-for-python-auto-documentation" id="id103">4.1&nbsp;&nbsp;&nbsp;Can I use Docutils for Python auto-documentation?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#miscellaneous" id="id104">5&nbsp;&nbsp;&nbsp;Miscellaneous</a><ul class="auto-toc">
+<li><a class="reference internal" href="#is-the-docutils-document-model-based-on-any-existing-xml-models" id="id105">5.1&nbsp;&nbsp;&nbsp;Is the Docutils document model based on any existing XML models?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>이 작업은 계속 진행 중이다. 만약 복사본을 읽고 있다면 <a class="reference external" href="https://veranostech.github.io/docs-korean-docutils/docutils/FAQ_ko.html">마스터 문서</a>가 더 새로운 문서이다.
+이 문서에는 상대 경로 링크들이 포함되어 있는데 만약 동작하지 않는다면 <a class="reference external" href="https://veranostech.github.io/docs-korean-docutils/docutils/FAQ_ko.html">마스터 문서</a>을 이용하라.</p>
+<p><a class="reference external" href="docs/user/mailing-lists.html#Docutils-users">독유틸즈 사용자</a> 메일링 리스트로 이 메일을 보내 자유롭게 질문을 하거나 대답을 작성해 줄 수 있다.
+프로젝트 멤버들은 소스 텍스트 파일을 직접 고칠 수도 있다.</p>
+<div class="section" id="id4">
+<h1><a class="toc-backref" href="#id62">1&nbsp;&nbsp;&nbsp;독유틸즈</a></h1>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id63">1.1&nbsp;&nbsp;&nbsp;독유틸즈란 무엇인가?</a></h2>
+<p><a class="reference external" href="http://docutils.sourceforge.net/">독유틸즈</a> 는 일반 텍스트 문서를 처리하여 HTML, XML, LaTeX과 같은 유용한 형식으로
+바꾸기 위한 시스템이다. 독립 파일(구현되었다.),
+파이썬 모듈과 패키지내의 인라인 문서(구현중이다.),
+<a class="reference external" href="http://www.python.org/peps/pep-0012.html">파이썬 개선 제안(PEP)</a>(구현되었다.) 등
+여러가지 입력 형식을 지원한다.</p>
+<p>독유틸즈 배포판은 다음처럼 구성된다.:</p>
+<ul class="simple">
+<li>라이브러리(&quot;docutils&quot; 패키지), <a class="reference external" href="docs/api/publisher_ko.html">클라이언트 코드에서 자유롭게 사용</a>할 수 있다.</li>
+<li>(리스트럭처드텍스트를 HTML로 바꾸는 <tt class="docutils literal">rst2html.py</tt> 과 같은) 몇가지 <a class="reference external" href="docs/user/tools_ko.html">프론트엔드 도구</a></li>
+<li><a class="reference external" href="docs/dev/testing_ko.html">테스트스위트</a></li>
+<li>방대한 <a class="reference external" href="docs/index_ko.html">문서</a>.</li>
+</ul>
+<p>독유틸즈 프로젝트 개요에 대한 사항은 <a class="reference external" href="http://www.python.org/peps/pep-0258.html">PEP 258</a>,
+&quot;독유틸즈 설계 상세서(Docutils Design Specification)&quot;를 참조한다.</p>
+<p>독유틸즈는 <a class="reference external" href="http://www.python.org/">파이썬</a>으로 구현되었다.</p>
+</div>
+<div class="section" id="docutils">
+<h2><a class="toc-backref" href="#id64">1.2&nbsp;&nbsp;&nbsp;왜 &quot;독유틸즈(Docutils)&quot;라고 부르는가?</a></h2>
+<p>독유틸즈(Docutils)는 &quot;파이썬 문서화 유틸리티(Python Documentation Utilities)&quot;의 줄임말이다.
+그렉 와드(Greg Ward)가 설계한 파이썬 배포 유틸리티로 파이썬의 표준 라이브러리인 &quot;Distutils&quot; 패키지에서 영감을 받았다.</p>
+<p>독유틸즈라는 이름이 파이썬에서 처음 쓰인 것은 1999년 12월 2일 프레드 드레이크(Fred Drake)가
+파이썬 Doc-SIG 메일링리스트에 보낸 메세지에서 잠깐 <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/1999-December/000878.html">언급</a>한 때다.
+2000년 11월 27일에는 Doc-SIG에서 토니 &quot;팁스&quot; 이비(Tony &quot;Tibs&quot; Ibbs)가
+&quot;이걸 대체 뭐라고 부르죠?&quot;라고 한 질문에 대해 프레드 드레이크가 대답할 때
+프로젝트 이름으로 다시 <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/2000-November/001252.html">제안</a>되었다.
+이는 데이비드 굿저(David Goodger)가 리스럭처드텍스트(reStructuredText)를
+Doc-SIG에 최초로 <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/2000-November/001239.html">발표</a>한 직후였다.</p>
+<p>팁스는 &quot;독유틸즈&quot;란 이름을
+문서화 문자열(documentation strings)을 포함하여
+파이썬 독유틸즈 패키지가 지원해야 할 사항을 문서화할 때 이 이름을 <a class="reference external" href="http://homepage.ntlworld.com/tibsnjoan/docutils/STpy.html">사용</a>하였다.
+팁스는 이 프로젝트에 참여하였고 너그럽게 그 이름을 프로젝트에 기증하였다.</p>
+<p>리스트럭처드텍스트와 독유틸즈 프로젝트의 역사에 대한 더 자세한 내용은
+<a class="reference external" href="docs/ref/rst/introduction_ko.html">리스트럭처드텍스트의 소개</a>를 참조한다.</p>
+<p>철자가 &quot;DocUtils&quot;나 &quot;Doc-Utils&quot;Docutils&quot; 등이 아니고 &quot;Docutils&quot;임에 주의한다.
+발음할 때는 독유틸즈라고 한다.</p>
+</div>
+<div class="section" id="gui">
+<h2><a class="toc-backref" href="#id65">1.3&nbsp;&nbsp;&nbsp;독유틸즈용 GUI 저작 도구가 있는가?</a></h2>
+<p><a class="reference external" href="http://docutils.sf.net/sandbox/gschwant/docfactory/doc/">DocFactory</a>가 개발중이다. wxPython을 사용하며 유망하게 보인다.</p>
+</div>
+<div class="section" id="id17">
+<h2><a class="toc-backref" href="#id66">1.4&nbsp;&nbsp;&nbsp;독유틸즈 프로젝트의 상황은 어떤가?</a></h2>
+<p>독유틸즈는 유용하고 상대적으로 안정적이지만, 여전히 실험용 코드이며
+API와 구조적인 주제들이 바뀔 수 있다.</p>
+<p>우리의 최우선 순위는 보고된 버그를 잡는 것이다.
+따라서 <a class="reference external" href="docs/dev/repository.html">레포지토리</a>(또는 <a class="reference external" href="http://docutils.sourceforge.net/#download">스냅샷</a>)은 항상 버그 없이 안정적이고
+기능도 가장 많이 포함한다.</p>
+</div>
+<div class="section" id="id18">
+<h2><a class="toc-backref" href="#id67">1.5&nbsp;&nbsp;&nbsp;독유틸즈 프로젝트의 배포 정책은?</a></h2>
+<p>&quot;빨리 그리고 자주&quot; 배포하는 것이다.
+<a class="reference external" href="http://docutils.sourceforge.net/#download">스냅샷</a>은 <a class="reference external" href="docs/dev/repository.html">레포지토리</a>의 최신코드를 포함하여 자동으로 생성된다.
+프로젝트가 성숙해지면 안정/개발-브랜치 방식을 사용하게 될 것이지만
+지금은 그런 것을 사용하지 않는다.</p>
+</div>
+</div>
+<div class="section" id="id21">
+<h1><a class="toc-backref" href="#id68">2&nbsp;&nbsp;&nbsp;리스트럭처드텍스트</a></h1>
+<div class="section" id="restructuredtext">
+<h2><a class="toc-backref" href="#id69">2.1&nbsp;&nbsp;&nbsp;리스트럭처드텍스트(reStructuredText)는 무엇인가?</a></h2>
+<p><a class="reference external" href="https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html">리스트럭처드텍스트</a>(reStructuredText)는 읽기 쉽고 좋고 보이는 것 그대로 결과가 나오는 평문 마크업 문법과 파싱 시스템이다.
+(파이썬 독스트링과 같은) 인라인 프로그램 문서나 간단한 웹페이지, 혹은 독립적인 문서를 만들때 유용하다.
+<a class="reference external" href="http://dev.zope.org/Members/jim/StructuredTextWiki/FrontPage/">StructuredText</a> 와 <a class="reference external" href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> 간편 마크업 시스템의 재해석한 개정판으로 제안한 것이 바로 <a class="reference external" href="https://veranostech.github.io/docs-korean-docutils/web/rst_ko.html">리스트럭처드텍스트</a>이다.</p>
+<p>만약 이 문서를 웹에서 보고 잇다면
+<a class="reference external" href="https://raw.githubusercontent.com/VeranosTech/docs-korean-docutils/docs-korean/docutils/FAQ_ko.rst">이 문서의 소스코드</a>
+링크를 이용하여 리스트럭처드텍스트로 씌여진 소스코드를 볼 수 있다.
+소스코드를 옆 창에 열어놓고 비교해 보아라.</p>
+<p><a class="reference external" href="docs/user/rst/quickstart_ko.html">리스트럭처드텍스트 입문</a>과 <a class="reference external" href="docs/user/rst/quickref_ko.html">빠른 리스트럭처드텍스트</a>는
+출발점으로 좋은 문서이다.
+<a class="reference external" href="docs/ref/rst/restructuredtext_ko.html">리스트럭처드텍스트 마크업 상세</a>는 자세한 기술 명세서다.</p>
+</div>
+<div class="section" id="id27">
+<h2><a class="toc-backref" href="#id70">2.2&nbsp;&nbsp;&nbsp;왜 &quot;리스트럭처드텍스트&quot;라고 부르는가</a></h2>
+<p>이 단어는 리스트럭처드텍스트의 선조격인 &quot;스트럭처드텍스트(StructuredText)&quot;와
+&quot;개정(revised)&quot;, &quot;재작업(reworked)&quot;,  &quot;재해석(reinterpreted)&quot;, 그리고
+정규 표현식(regular expression) 모듈을 뚯하는
+&quot;re&quot;라는 단어를 합성한 것이다.</p>
+<p>리스트럭처드텍스트와 독유틸즈의 자세한 역사에 대해서는 <a class="reference external" href="docs/ref/rst/introduction_ko.html">리스트럭처드텍스트의 소개</a>
+문서를 참조한다.</p>
+<p>&quot;리스트럭처드텍스트(reStructuredText)&quot;는 <strong>두 단어가 아니라 한 단어</strong>다!</p>
+</div>
+<div class="section" id="id28">
+<h2><a class="toc-backref" href="#id71">2.3&nbsp;&nbsp;&nbsp;리스트럭처드텍스트의 표준 약자는?</a></h2>
+<p>&quot;RST&quot;와 &quot;ReST&quot;(또는 &quot;reST&quot;) 둘 다 사용할 수 있다.
+대문자를 사용할 때는 &quot;Representational State Transfer&quot;을 뜻하는
+&quot;<a class="reference external" href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>&quot;와 혼동되지 않도록 주의해야 한다.</p>
+<p>&quot;reSTX&quot;나 &quot;rSTX&quot;, &quot;rstx&quot;는 Zope의 스트럭처드텍스트를 강조하는 표현이므로 사용하면 안된다.</p>
+</div>
+<div class="section" id="id30">
+<h2><a class="toc-backref" href="#id72">2.4&nbsp;&nbsp;&nbsp;리스트럭처드텍스트의 표준 파일 확장자는?</a></h2>
+<p>&quot;.txt&quot;이다.  몇몇은 &quot;.rest&quot;, &quot;.rst&quot;, &quot;.restx&quot;를 사용하는데 그럴 필요가 있는가?
+리스트럭처드텍스트 소스코드는 읽기 쉬운 평문이고 대부분의 운영체제는 이미
+텍스트 파일에 대해 &quot;.txt&quot; 확장자를 사용한다. 특별한 파일 확장자를 사용하면
+사용자가 운영체제 설정을 바꿔야 하고 대부분의 사용자가 그렇게 할 수 없거나
+하기 싫어한다.</p>
+<p><a class="reference internal" href="#mime">리스트럭처드텍스트의 공식 MIME 타입은?</a> 질문을 참조하라.</p>
+</div>
+<div class="section" id="id31">
+<h2><a class="toc-backref" href="#id73">2.5&nbsp;&nbsp;&nbsp;리스트럭처드텍스트용 편집기 확장 프로그램이 있는가?</a></h2>
+<p><a class="reference external" href="tools/editors/README_ko.html">리스트럭처드텍스트를 위한 편집기 지원</a> 참조.</p>
+</div>
+<div class="section" id="id33">
+<h2><a class="toc-backref" href="#id74">2.6&nbsp;&nbsp;&nbsp;문서의 제목과 부제목을 어떻게 지정하는가?</a></h2>
+<p>문서의 시작부분에서 다른 절 제목들과 구분되는 유일한 형식으로 장식한 절 제목은 특별히
+문서 제목으로 취급한다.
+비슷하게 문서 제목 바로 다음에 오면서 다른 절 제목들과 구분되는 유일한 형식으로 장식한 절 제목은
+문서의 부제목(subtitle)으로 취급한다.</p>
+<p>예:</p>
+<pre class="literal-block">
+이것은 문서 제목입니다.
+=======================
+
+이것은 문서 부제목입니다.
+-------------------------
+
+이것은 문서의 본문입니다.
+</pre>
+<p>잘못된 예:</p>
+<pre class="literal-block">
+이것은 문서의 본문입니다.
+
+이것은 문서 제목이 **아닙니다.**
+================================
+
+절 제목 위에 본문이 오면 절 제목은 문서 제목이 되지 못합니다.
+</pre>
+<p>또다른 잘못된 예:</p>
+<pre class="literal-block">
+이것도 문서 제목이 아닙니다. 왜나하면...
+========================================
+
+이것은 문서의 본문입니다.
+
+... 제목 장식이 다른 것들과 구분되지 않기 때문입니다.
+=====================================================
+
+이것은 문서의 본문입니다.
+</pre>
+</div>
+<div class="section" id="id34">
+<h2><a class="toc-backref" href="#id75">2.7&nbsp;&nbsp;&nbsp;문서에서 특수 글자는 어떻게 표시하는가?</a></h2>
+<p>예를 들어 문서에 엠-대시(em-dash. XML 캐릭터로는 &amp;mdash;,
+유니코드로는 U+2014)를 넣고 싶다고 하자. 그러면 진짜 엠-대시를 사용하면 된다.
+실제 캐릭터를 입력 파일에 넣고(<strong>진짜로</strong> 엠-대시를 타이핑한다.)
+애플리케이션에 맞는 인코딩을 하여 독유틸즈에 지시한다.
+독유틸즈는 내부적으로 유니코드를 사용하므로 엠-대시 캐릭터는
+내부적으로 진짜 엠-대시로 취급된다.</p>
+<p>이맥스 사용자는 <a class="reference external" href="tools/editors/emacs/README_ko.html">이맥스의 리스트럭처드텍스트 지원</a>
+문서를 참조한다.  다른 에디터도 지원하면 알려주기 바란다.</p>
+<p>리스트럭처드텍스트는 캐릭터 개체 서브시스템을 가지지 않는다.
+XML 캐릭터에 대해서는 전혀 알지 못한다.
+독유틀즈에게 입력 텍스트에 있는  &quot;&amp;mdash;&quot; 글자는
+그냥 7개의 캐릭터일 뿐이다. 어떠한 해석도 이루어지지 않는다.
+HTML을 출력하면 &quot;&amp;&quot;가 &quot;&amp;amp;&quot;로 변환된다. 따라서
+HTML 소스코드에서는 &quot;&amp;amp;mdash;&quot;로 보여진다.
+인라인 리터럴(literals)이나 리터럴 블럭(literals block) 내부의
+텍스트를 해설할 때도 마찬가지다. 어떤 경우에도 캐릭터 개체
+해석은 없다.</p>
+<p>만약 유니코드 호환 인코딩을 사용할 수 없고 7비트 아스키코드만 써야 한다면
+돌아가는 방법이 있기는 하다.
+독유틸즈 0.3.10에는 <a class="reference external" href="docs/ref/rst/definitions_ko.html">표준 치환 정의 집합(Standard Substitution Definition Sets)</a>이 추가되었다.
+이를 사용하면 치환 정의(substitution definitions)를 사용하여
+XML이나 HTML 캐릭터를 넣을 수 있다.
+예를 들어 일본 엔화 표시는 다음과 같이 쓸 수 있다.</p>
+<blockquote>
+<!-- This data file has been placed in the public domain. -->
+<!-- Derived from the Unicode character mappings available from
+<http://www.w3.org/2003/entities/xml/>.
+Processed by unicode2rstsubs.py, part of Docutils:
+<http://docutils.sourceforge.net>. -->
+식사가 ¥ 600이라고?  정말 싸네!</blockquote>
+<p>옛날 버전의 독유틸즈에서는
+캐릭터 개체 셋의 치환 정의를 할 때 &quot;<a class="reference external" href="docs/ref/rst/directives.html#unicode-character-codes">unicode</a>&quot; 지시어를 사용할 수 있다.
+아이디어를 제공해준 데이비드 프리스트(David Priest)에게 감사한다.</p>
+<p>만약 XML 스타일의 캐릭터 개체를 사용해야 한다면
+UTF-8이나 비슷한 걸로 변환하는 전처리기를 직접 구현해야 한다.
+하지만 이렇게 하면 더이상 캐릭터 개체를 자연스럽게 사용할 수 없기 때문에
+상황이 복잡해진다.
+&quot;&amp;mdash;&quot;라고 쓰는 대신에 &quot;&amp;amp;mdash;&quot;라고 써야 할 것이다.</p>
+<p>롱-대시(long dash)의 경우에도 (&quot;<a class="reference external" href="docs/ref/rst/directives.html#unicode-character-codes">unicode</a>&quot; 지시자를 사용하여)
+문서에 다음처럼 치환 정의를 넣을 수 있다.:</p>
+<pre class="literal-block">
+.. |--| unicode:: U+2013   .. 엔-대시(en dash)
+.. |---| unicode:: U+2014  .. 엠-대시(em dash), 좌우의 공백을 없앰.
+   :trim:
+</pre>
+<p>이렇게 하면 다음 처럼 순수 아스키코드로 대시를 사용할 수 있다.:
+&quot;<tt class="docutils literal">foo <span class="pre">|--|</span> bar; foo <span class="pre">|---|</span> bar</tt>&quot;,
+는 &quot;foo – bar; foo—bar&quot;로
+보일 것이다(모질라와 파이어폭스에서는 잘 안보일 수도 있다.).</p>
+<p>&quot;<tt class="docutils literal"><span class="pre">foo|---|bar</span></tt>&quot;라고는 쓸 수 없기 때문에 일단 공백을 넣고
+리스트럭처드텍스트 파서가 공백을 없애도록 <tt class="docutils literal">:trim:</tt> 옵션이 필요하다.</p>
+</div>
+<div class="section" id="backtick">
+<h2><a class="toc-backref" href="#id76">2.8&nbsp;&nbsp;&nbsp;스칸디나비아 키보드에서 백틱(backtick, `)은 어떻게 타이핑하나?</a></h2>
+<p>스칸디나비아 키보드를 쓰면 백틱(backtick, `)키가 없으므로
+리스트럭처드텍스트에서 백틱 사용이 어렵다.
+백틱(`) 캐릭터를 쓰려면 SHIFT-` + SPACE를 눌러야 한다.</p>
+<p>불행하게도 현재까지 나온 어떤 방법으로도 모든 사람을 만족시킬 수 있는 방법은 없다.</p>
+<p>스칸디나비아 프로그래머와 기술서 작가의 경우, 이 상황은
+리스트럭처드텍스트 뿐 아니라 다른 프로그래밍 언어와 환경에서도 마찬가지이다.</p>
+<p>가능한 해결방법은 다음과 같다.</p>
+<ul>
+<li><p class="first">백틱을 많이 상요하지 않는다면 가장 단순한 방법으로 백틱을 하나 치고서는
+카피-페이스트(copy and then paste)를 한다.
+이 방법이 SHIFT-` + SPACE를 계속 치는 것보다는 빠르다.</p>
+</li>
+<li><p class="first">키보드 마크로를 사용한다.</p>
+</li>
+<li><p class="first">키보드 매핑을 바꾼다. 스칸디나비아 키보드 배열은 프로그래밍과 기술서용의
+다른 캐릭터도 사용하기 힘들다.
+예를 들어 []{} 기호들도 미국식 자판에 비해 치기 힘들게 되어 있다.</p>
+<p>Axel Kollmorgen을 인용하면,</p>
+<blockquote>
+<p>윈도우에서는 <a class="reference external" href="http://www.microsoft.com/globaldev/tools/msklc.mspx">Microsoft Keyboard Layout Creator</a>를 쓰면
+쉽게 백틱 키를 매핑할 수 있다.</p>
+</blockquote>
+</li>
+<li><p class="first">가상 키보드 및 캐릭터 팔레트를 사용한다.:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://keyboard.lab.co.il/">Web-based keyboards</a> (IE에서만 사용가능).</li>
+<li>윈도우: <a class="reference external" href="http://www.lakefolks.org/cnt/">Click-N-Type</a>.</li>
+<li>맥 OS X: 선호하는 캐릭터를 쉽게 입력하도록 저장 가능한 캐릭터 팔레트.
+시스템 환경설정을 열고 언어 및 지역, 키보드 환경 설정의 키보드 탭에서
+&quot;메뉴 막대에서 키보드 및 이모티콘 표시&quot;를 설정한다.</li>
+</ul>
+</li>
+</ul>
+<p>만약 더 나은 방법이 있다면 <a class="reference external" href="docs/user/mailing-lists.html#Docutils-users">연락 바람</a>.</p>
+</div>
+<div class="section" id="html-xml">
+<h2><a class="toc-backref" href="#id77">2.9&nbsp;&nbsp;&nbsp;HTML/XML을 리스트럭처드텍스트로 변환하는 도구가 있는가?</a></h2>
+<p>여러 사람들이 이 아이디어를 교류하였으며 <a class="reference external" href="docs/user/links_ko.html">독유틸즈 링크 목록</a>에
+몇가지 리스트럭처드텍스트 생성 도구가 구현되어 있다.</p>
+<p>리스트럭처드텍스트에서 다시 XML로 변환하는것이 불가능한 이유는 없다.
+기술적으로 구현이 안된다면 버그로 간주해야 한다.
+공백은 같지 않아도 문단은 상관없다.
+링크나 ID 처리와 같은 자잘한 부분에서 어려움이 있을 수는 있다.</p>
+<p>링크와 ID, 기타 부기(bookkeeping)와 같은 작은 디테일에서는 좀 더 까다로워 질 수 있다.</p>
+<p>HTML의 경우에는 완벽하게 변환하는 것이 불가능하다.
+추가 클래스 속성을 많이 추가한다고 해도 어려울 수 있다.
+&quot;아주 간단한 HTML&quot;(간단한 정도를 잘 정의하면)을 리스트럭처드텍스트로
+변환하는 것은 가능하겠지만 HTML 자체가 단순한 형식화에 지나지 않기 때문에
+변환기가 유용하지 않을 것이다.
+80% 정도는 자동으로 변환하고 나머지 20%를 수동으로 변환하는 80/20 접근방법을 쓸 수도 있다.</p>
+</div>
+<div class="section" id="id37">
+<h2><a class="toc-backref" href="#id78">2.10&nbsp;&nbsp;&nbsp;리스트럭처드텍스트 문법을 사용하는 위키가 있는가?</a></h2>
+<p>There are several, with various degrees of completeness.  With no
+implied endorsement or recommendation, and in no particular order:</p>
+<p>다양한 완성도의 여러 위키가 있다. 일체의 추천과 칭찬을 배제하여 무작위 순서로 정리한 목록은 다음과 같다.:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docutils.sf.net/sandbox/ianb/wiki/Wiki.py">Ian Bicking'의 실험적인 코드</a></li>
+<li><a class="reference external" href="http://moinmoin.wikiwikiweb.de/">모인모인(MoinMoin)</a>도 일부 지원한다.
+다음은 <a class="reference external" href="http://moinmoin.wikiwikiweb.de/RestSample">샘플</a>이다.</li>
+<li>Zope 기반의 <a class="reference external" href="http://zwiki.org/">Zwiki</a></li>
+<li>Zope3 기반의 Zwiki (Zope 3 소스트리 <tt class="docutils literal">zope.products.zwiki</tt>)</li>
+<li><a class="reference external" href="http://mithrandr.moria.org/code/stikiwiki/">StikiWiki</a></li>
+<li><a class="reference external" href="http://trac.edgewall.com//">Trac</a> 도 위키 마크업의 대체품으로
+리스트럭처드텍스트 문법을
+<a class="reference external" href="http://trac.edgewall.com//wiki/WikiRestructuredText">지원</a>한다.
+RST 참조 지시어나 'trac' 역할 지시자를 사용한 <a class="reference external" href="http://trac.edgewall.com//wiki/TracLinks">TracLinks</a>도 지원한다.</li>
+</ul>
+<p>다른 리스트럭처드텍스트 지원 위키가 있다면 <a class="reference external" href="docs/user/mailing-lists.html#Docutils-users">연락 바람</a>.</p>
+<!-- dead link -->
+<!-- The example application for the `Web Framework Shootout -->
+<!-- <http://colorstudy.com/docs/shootout.html>`__ article is a Wiki using -->
+<!-- reStructuredText. -->
+</div>
+<div class="section" id="id38">
+<h2><a class="toc-backref" href="#id79">2.11&nbsp;&nbsp;&nbsp;리스트럭처드텍스트 문법을 사용하는 블로그 프로젝트가 있는가?</a></h2>
+<p>다음 목록은 특정한 순서를 따르지 않으며 특별히 어떤 것을 추천하지도 않는다.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.voidspace.org.uk/python/firedrop2/">Firedrop</a></li>
+<li><a class="reference external" href="http://pyblosxom.sourceforge.net/">PyBloxsom</a></li>
+<li><a class="reference external" href="http://lino.sourceforge.net/webman.html">Lino WebMan</a></li>
+<li><a class="reference external" href="http://blog.getpelican.com/">Pelican</a>
+(<a class="reference external" href="http://pypi.python.org/pypi/pelican">PyPi</a>)</li>
+</ul>
+<p>다른 리스트럭처드텍스트 지원 블로그가 있다면 <a class="reference external" href="docs/user/mailing-lists.html#Docutils-users">연락 바람</a>.</p>
+</div>
+<div class="section" id="id39">
+<span id="can-lists-be-indented-without-generating-block-quotes"></span><h2><a class="toc-backref" href="#id80">2.12&nbsp;&nbsp;&nbsp;어떻게 목록 마크업을 하는가?</a></h2>
+<p><a class="reference external" href="docs/ref/rst/restructuredtext_ko.html#bullet-lists">글머리 기호 목록</a> &amp; <a class="reference external" href="docs/ref/rst/restructuredtext_ko.html#enumerated-lists">순서 목록</a> 마크업은 아주 직관적이지만
+다음 두 가지를 주의해야 한다.</p>
+<ol class="arabic">
+<li><p class="first">목록을 <strong>들여쓰기하면 안된다</strong>. 다음은 옳은 예이다.:</p>
+<pre class="literal-block">
+문장
+
+* 목록 항목 1
+
+  * 내포 항목 1.1
+  * 내포 항목 1.2
+
+* 목록 항목 2
+</pre>
+<p>다음은 틀린 예이다.:</p>
+<pre class="literal-block">
+문장
+
+  * 목록 항목 1
+
+      * 내포 항목 1.1
+      * 내포 항목 1.2
+
+  * 목록 항목 2
+</pre>
+<p>(항목 1.1이나 1.2처럼) 들여쓰기를 하면 블럭 인용(block quote)으로 간주한다.
+아마도 의도한 바와 다를 것이다.
+이렇게 하면 출력에서 목록이 너무 많이 들어가게 된다.</p>
+</li>
+<li><p class="first">같은 레벨의 항목인 경우만 제외하고 목록 항목 <strong>앞뒤로 반드시 빈 줄</strong>이 있어야 한다.
+같은 레벨의 항목의 경우에는 빈 줄이 있어도 되고 없어도 된다.
+위 예제에서도 볼 수 있다.</p>
+</li>
+</ol>
+<p><em>출력</em>된 형식은 입력에 의존하지 않으며 출력기(writer)와 스타일시트에 의해 결정된다.
+예를 들어 HTML 출력에서 리스트는 기본으로 들여쓰기 되지는 않는다.
+자세한 내용은 <a class="reference internal" href="#html">목록은 HTML에서 어떻게 보이나?</a> 항목을 참조한다.</p>
+</div>
+<div class="section" id="id42">
+<h2><a class="toc-backref" href="#id81">2.13&nbsp;&nbsp;&nbsp;블럭 인용을 만들지 않고 목록을 들여쓰기 할 수 있는가?</a></h2>
+<p>어떤 사람들은 들여쓰기가 있는 목록을 쓰면서 블럭 인용을 만들지 않기를 바란다.
+리스트럭처드텍스트에서 이것을 허용하는가에 대한 많은 토론이 있었다. 하지만
+이렇게 구현하려면 몇가지 해결해야 할 이슈가 있다. 이 이슈에 대해 정리한 내용은
+<a class="reference external" href="docs/dev/todo.html#indented-lists">앞으로 해야 할 일</a>을 참조한다.</p>
+</div>
+<div class="section" id="id44">
+<h2><a class="toc-backref" href="#id82">2.14&nbsp;&nbsp;&nbsp;꼭 목록 앞뒤로 빈 줄이 있어야 하는가? 생략할 수 없나?</a></h2>
+<p>대답: 생략할 수 없다.</p>
+<p>리스트럭처드텍스트에서는 목록의 앞뒤로 빈 줄(blank lines) 없이 목록을
+마크업하거나 파싱할 수 없다. 빈 줄이 많으면 중첩된 목록이 보기 흉해질 수 있지만
+불명확한 마크업을 피하기 위해 치루어야 할 대가이다.
+몇몇 다른 텍스트기반 마크업 시스템은 중첩된 목록에서 빈 줄을 요구하지 않는다.
+그 대신 더 불명확해 지거나 복잡하게 된다.
+예를 들어, <a class="reference external" href="http://epydoc.sf.net/epytext.html#list">Epytext</a>에서는
+목록 앞뒤로 빈 줄이 필요없지만 대신 목록 자체를 들여쓰기 해야 하고
+불명확한 경우를 피해야 한다.</p>
+</div>
+<div class="section" id="id45">
+<h2><a class="toc-backref" href="#id83">2.15&nbsp;&nbsp;&nbsp;문서에 수학식을 포함할 수 있나?</a></h2>
+<p><a class="reference external" href="docs/ref/rst/directives_ko.html#math">수학 지시자(math directive)</a>와 <a class="reference external" href="docs/ref/rst/roles_ko.html#math">수학 역할자(math role)</a>를 사용한다.
+독유틸즈 0.8 이후 버전에서 사용할 수 있다.</p>
+</div>
+<div class="section" id="id46">
+<h2><a class="toc-backref" href="#id84">2.16&nbsp;&nbsp;&nbsp;인라인 마크업을 중첩하는 것도 가능한가?</a></h2>
+<p>현재로서는 불가능하다.
+<a class="reference external" href="docs/dev/todo.html#nested-inline-markup">앞으로 해야 할 일</a> (<a class="reference external" href="docs/dev/rst/alternatives.html#nested-inline-markup">세부사항은 여기에</a>)에 나와있다.
+리스트럭처드텍스트 파서에 곧 포함되기를 바란다.
+포함되면 다음과 같은 마크업도 가능해 진다.:</p>
+<pre class="literal-block">
+이 글은 *`하이퍼링크`_\ 와
+``인라인 리터럴``\ 을 포함하는 텍스트 강조*\ 의 예이다..
+</pre>
+<p>해결 방법이 있지만, 꼬이거나 보기 안좋아지므로 권장하지 않는다.</p>
+<ul>
+<li><p class="first">인라인 마크업과 하이퍼링크를 결합하려면
+<a class="reference external" href="docs/ref/rst/restructuredtext_ko.html#substitution-definitions">치환 정의(substitution_definition)</a>와
+<a class="reference external" href="docs/ref/rst/restructuredtext_ko.html#substitution-references">참조(reference)</a>를
+<a class="reference external" href="docs/ref/rst/directives_ko.html#replace">&quot;replace&quot; 지시자</a>와 같이 사용하면 된다.
+다음은 예문이다.:</p>
+<pre class="literal-block">
+이것은 |강조표시된 하이퍼링크|_\ 이다..
+
+.. |강조표시된 하이퍼링크| replace:: *강조표시된 하이퍼링크*
+.. _강조표시된 하이퍼링크: http://example.org
+</pre>
+<p>하이퍼링크의 일부분만 치환하는 것은 불가능하다.
+전체를 치환하거나 아예 치환하지 않아야 한다.</p>
+</li>
+<li><p class="first"><a class="reference external" href="docs/ref/rst/directives_ko.html#raw">&quot;raw&quot; 지시자</a>를 사용하여 HTML 문을 HTML 출력에 삽입할 수 있다.:</p>
+<pre class="literal-block">
+이것은 |stuff|\ 이다.
+
+.. |stuff| raw:: html
+
+   &lt;em&gt;
+   &lt;a href=&quot;http://example.org&quot;&gt;하이펄링크&lt;/a&gt;와
+   &lt;tt&gt;인라인 리터럴&lt;/tt&gt;을 동시에 가지면서
+   강조표시가 된 예
+   &lt;/em&gt;
+</pre>
+<p>LaTeX 출력인 경우에는 LaTeX 명령을 삽입할 수도 있다.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id53">
+<h2><a class="toc-backref" href="#id85">2.17&nbsp;&nbsp;&nbsp;강제개행 또는 의미있는 개행을  어떻게 표시하나?</a></h2>
+<p><a class="reference external" href="docs/ref/rst/restructuredtext.html#line-blocks">라인 블록</a> 은 주소 블록, 절, 그리고 강제개행이 의미있거나 반드시 유지되어야 할때를 위해 마련된 기능이다.
+일반적인 리터럴 블록과는 달리 타입페이스(typeface)가 바뀌지 않으며 인라인 마크업 역시 인식된다. 예를 들면:</p>
+<pre class="literal-block">
+| A one, two, a one two three four
+|
+| Half a bee, philosophically,
+|     must, *ipso facto*, half not be.
+| But half the bee has got to be,
+|     *vis a vis* its entity.  D'you see?
+|
+| But can a bee be said to be
+|     or not to be an entire bee,
+|         when half the bee is not a bee,
+|             due to some ancient injury?
+|
+| Singing...
+</pre>
+<p>수동으로 명시된 강제개행을 HTML 아웃풋에 삽입해야 할 경우의 또다른 해결책은 다음과 같다:</p>
+<pre class="literal-block">
+.. |br| raw:: html
+
+   &lt;br /&gt;
+
+여기서 강제개행을 하고 싶다: |br| 여긴 개행 이.
+
+혹시 여분의 공백이 신경 쓰인다면, |br|\ 백슬래쉬-이스케이프를 하시오.
+</pre>
+</div>
+<div class="section" id="url">
+<h2><a class="toc-backref" href="#id86">2.18&nbsp;&nbsp;&nbsp;별표가 들어가있는 URL이 동작하지 않면 어떻게 해야하나?</a></h2>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">../FAQ_ko.rst</tt>, line 597)</p>
+<p>Title underline too short.</p>
+<pre class="literal-block">
+별표가 들어가있는 URL이 동작하지 않면 어떻게 해야하나?
+-----------------------------------------------------
+</pre>
+</div>
+<p>별표는 URL에 사용가능한 문자로 (참조 <a class="reference external" href="http://tools.ietf.org/html/rfc2396.html">RFC 2396</a>), 종 URL에 사용되곤 한다. 예를 들면 다음과 같다:</p>
+<pre class="literal-block">
+http://cvs.example.org/viewcvs.py/*checkout*/module/file
+</pre>
+<p>안타깝게도 파서는 별표를 강조 표시로 받아들인다. 슬래쉬는 구두점을 나타내는 용도로 사용되며 별표들을 마크업으로 인지하게 된다.
+위의 예시를 파서를 사용하여 결절된 URL (truncated URL), 강조문구, 일반 텍스트들로 구분하면 다음과 같이 표현된다:</p>
+<pre class="literal-block">
+http://cvs.example.org/viewcvs.py/
+*checkout*
+/module/file
+</pre>
+<p>마크업 인식을 차단하기 위해서는 백슬래쉬를 적어도 첫번째 별표에 적용하여 다음과 같이 이스케이프 시켜야한다:</p>
+<pre class="literal-block">
+http://cvs.example.org/viewcvs.py/\*checkout*/module/file
+</pre>
+<p>두번째 별표에 이스케이핑을 적용해도 문제될 것은 없지만 꼭 해야할 필요는 없다.</p>
+</div>
+<div class="section" id="id55">
+<h2><a class="toc-backref" href="#id87">2.19&nbsp;&nbsp;&nbsp;일련의 포매팅을 지닌 리터럴 블록을 어떻게 만들수 있는가?</a></h2>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">../FAQ_ko.rst</tt>, line 618)</p>
+<p>Title underline too short.</p>
+<pre class="literal-block">
+일련의 포매팅을 지닌 리터럴 블록을 어떻게 만들수 있는가?
+------------------------------------------------------
+</pre>
+</div>
+<p><a class="reference external" href="docs/ref/rst/directives.html#parsed-literal">파싱된 리터럴</a> 디렉티브를 사용하면 된다.</p>
+<p>시나리오: 강제개행과 공백을 유지하기 위해 리터럴 블록을 호출하는 소스코드를 지닌 문서가 있고
+문서 내 소스코드의 일부가 강조 표시 혹은 하이퍼링크와 같이 포매팅이 되어야 할 때 파싱된 리터럴 블록을 사용한다:</p>
+<pre class="literal-block">
+.. parsed-literal::
+
+   print &quot;Hello world!&quot;  # *tricky* code [1]_
+</pre>
+<p>강조문구 (<tt class="docutils literal">*tricky*</tt>) 와 주석 참조 (<tt class="docutils literal">[1]_</tt>) 가 파싱될 것이다.</p>
+</div>
+<div class="section" id="id57">
+<h2><a class="toc-backref" href="#id88">2.20&nbsp;&nbsp;&nbsp;리스트럭처드텍스트를 웹 혹은 일반적 템플레이팅에 활용 가능한가?</a></h2>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">../FAQ_ko.rst</tt>, line 635)</p>
+<p>Title underline too short.</p>
+<pre class="literal-block">
+리스트럭처드텍스트를 웹 혹은 일반적 템플레이팅에 활용 가능한가?
+-----------------------------------------------------------
+</pre>
+</div>
+<p>독유틸즈와 리스턱처드텍스트는 템플레이팅 시스템으로서 혹은 템플레이팅 시스템과 함께 사용할 수 있으나
+템플레이팅 기능을 그 자체에 지니고 있는 것은 아니다. 템플레이팅은 주어진 템플레이팅 시스템과는 떨어져 있어야 한다.
+유저들은 가장 자신의 목적에 부합하는 템플레이팅 시스템을 골라서 그들의 리스트럭처드텍스트 문서에 적용할 수 있다.</p>
+<p>파이썬용 (<a class="reference external" href="http://ht2html.sourceforge.net/">ht2html</a>, <a class="reference external" href="http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/52305">YAPTU</a>, <a class="reference external" href="http://www.mems-exchange.org/software/quixote/">Quixote</a>'s PTL, <a class="reference external" href="http://www.cheetahtemplate.org/">Cheetah</a>, 등등.. 다음 목록을 추가로 참고하라: <a class="reference external" href="http://webware.sourceforge.net/Papers/Templates/">기타 템플레이팅 시스템</a>)
+뿐만아니라 다른 언어들을 위한 다양한 접근법을 지닌 괜찮은 템플레이팅 시스템들이 있다. 여러 시스템들을 시도해보며 당신에게
+적합한 템플레이팅 시스템을 찾아보길 권장하는 바다. 혹시 기타 템플레이팅 시스템에 독유틸즈와 리스트럭처드텍스트를 접목시켰다면
+코드를 독유틸즈에 공유하는 것을 고려하길 부탁한다. 또는 '연락 바람'_ 으로 알려주면 우리가 여기에 리스트업을 하도록 하겠다.</p>
+<p>한가지 리스트럭처드텍스트에 특화된 템플레이팅 시스템을 들자면 <a class="reference external" href="http://www.voidspace.org.uk/python/rest2web">rest2web</a> 이 있다. 자동으로 웹사이트를 꾸미거나 제작하는 기능이 있다.</p>
+</div>
+<div class="section" id="how-can-i-mark-up-a-faq-or-other-list-of-questions-answers">
+<h2><a class="toc-backref" href="#id89">2.21&nbsp;&nbsp;&nbsp;How can I mark up a FAQ or other list of questions &amp; answers?</a></h2>
+<p>There is no specific syntax for FAQs and Q&amp;A lists.  Here are two
+options:</p>
+<ol class="arabic">
+<li><p class="first">For a FAQ (Frequently Asked Questions, usually with answers), a
+convenient way to mark up the questions is as section titles, with
+the answer(s) as section content.  This document is marked up in
+this way.</p>
+<p>The advantages of using section titles for questions are: sections
+can be numbered automatically, and a table of contents can be
+generated automatically.  One limitation of this format is that
+questions must fit on one line (section titles may not wrap, in the
+source text).  For very long questions, the title may be a summary
+of the question, with the full question in the section body.</p>
+</li>
+<li><p class="first">Field lists work well as Q&amp;A lists:</p>
+<pre class="literal-block">
+:Q: What kind of questions can we
+    put here?
+
+:A: Any kind we like!
+</pre>
+<p>In order to separate questions, lists can be used:</p>
+<blockquote>
+<ol class="arabic simple">
+<li><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Q:</th><td class="field-body">What kind of question can we
+put here?</td>
+</tr>
+<tr class="field"><th class="field-name">A:</th><td class="field-body">Any kind we like!</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Q:</th><td class="field-body">How many answers can a question have?</td>
+</tr>
+<tr class="field"><th class="field-name">A:</th><td class="field-body">It can have one,</td>
+</tr>
+<tr class="field"><th class="field-name">A:</th><td class="field-body">or more.</td>
+</tr>
+<tr class="field"><th class="field-name">A3:</th><td class="field-body">Answers can be numbered like this.</td>
+</tr>
+<tr class="field"><th class="field-name">A:</th><td class="field-body"><ol class="first last arabic">
+<li>Or like this.</li>
+<li>We're flexible!</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</blockquote>
+<p>If you don't want to number or otherwise mark questions, you can
+use an empty comment between individual field lists to separate
+them:</p>
+<pre class="literal-block">
+:Q: First question?
+:A: Answer.
+
+..
+
+:Q: Second question?
+:A: Answer.
+</pre>
+</li>
+</ol>
+</div>
+<div class="section" id="can-i-produce-documents-in-right-to-left-languages">
+<span id="bidi"></span><h2><a class="toc-backref" href="#id90">2.22&nbsp;&nbsp;&nbsp;Can I produce documents in right-to-left languages?</a></h2>
+<p>Languages written from right to left, such as Arabic and Hebrew, must
+be reordered according to the <a class="reference external" href="http://www.unicode.org/reports/tr9/">Unicode Bidi Algorithm</a>.  This
+requires support from the editor and special markup in the output
+format.</p>
+<p>The source format of reStructuredText is relatively bidi-friendly:
+most constructs are denoted by punctuation without intrusion of
+English and when you must write in English, it's usually on a separate
+line.  So any editor that auto-detects direction per-line (like gedit
+or <a class="reference external" href="http://www.typo.co.il/~mooffie/geresh/">geresh</a>) will suffice.</p>
+<p>Moreover, it's possible to <a class="reference external" href="docs/howto/i18n.html">translate</a> all reStructuredText keywords.
+This was not yet done for any RTL language, but when it is, it will be
+possible to write an RTL document with vitually no English.  This will
+allow reasonable use of editors limited to a single base direction for
+the whole document (like Notepad, Vim and text boxes in Firefox).</p>
+<p>The second problem is bidi markup of the output.  There is an almost
+transparent implicit solution for HTML:</p>
+<ul class="simple">
+<li>Grab <a class="reference external" href="http://cben-hacks.sourceforge.net/bidi/hibidi.py">http://cben-hacks.sourceforge.net/bidi/hibidi.py</a> and
+<a class="reference external" href="http://cben-hacks.sourceforge.net/bidi/rst2html_hibidi.py">http://cben-hacks.sourceforge.net/bidi/rst2html_hibidi.py</a>.
+Put them both in the same directory and make them executable.</li>
+<li>Use <tt class="docutils literal">rst2html_hibidi.py</tt> instead of <tt class="docutils literal">rst2html.py</tt>.</li>
+<li>It infers dir attributes in the HTML from the text.  It does it
+hierachically, giving much better results than usual.  You can still
+use LRM/RLM and LRE/RLE/PDF control codes to help it.<ul>
+<li>If you want the gory details: See the full <a class="reference external" href="http://cben-hacks.sf.net/bidi/hibidi.html">theory</a>, and note the
+incomplete <a class="reference external" href="http://cben-hacks.sf.net/bidi/hibidi.html#practice">practice</a> (this is still a partial implementation - but
+sufficient for most needs).</li>
+</ul>
+</li>
+</ul>
+<p>There is also an explicit way to set directions through CSS and
+classes in the HTML:</p>
+<ul>
+<li><p class="first">Copy <tt class="docutils literal">default.css</tt> to a new file and add relevant parts of the
+following:</p>
+<pre class="literal-block">
+/* Use these two if the main document direction is RTL */
+body { direction: rtl; }
+div.sidebar { float: left !important; }
+
+/* The next 3 rules are very useful in documents containing pieces
+of code in english */
+/* Use this if you all your literal blocks (::) are LTR */
+pre {direction: ltr; unicode-bidi: embed; }
+/* Use this if you all your inline literals (``) are LTR */
+tt {direction: ltr; unicode-bidi: embed; }
+/* Use this if you all your interpretted text (`) is LTR */
+cite {direction: ltr; unicode-bidi: embed; }
+
+/* Allow manual direction override by class directive and roles */
+.rtl { direction: rtl; }
+.ltr { direction: ltr; }
+</pre>
+</li>
+<li><p class="first">Select this new stylesheet with <tt class="docutils literal"><span class="pre">--stylesheet=&lt;file&gt;</span></tt> or the
+<a class="reference external" href="docs/user/config.html#stylesheet">stylesheet</a> setting.</p>
+</li>
+<li><p class="first">Now if you need to override the direction of some element (from a
+paragraph to a whole section), write:</p>
+<pre class="literal-block">
+.. class:: rtl
+</pre>
+<p>or:</p>
+<pre class="literal-block">
+.. class:: ltr
+</pre>
+<p>before it (see the <a class="reference external" href="docs/ref/rst/directives.txt#class">class</a> directive for details).</p>
+</li>
+<li><p class="first">To change the direction of some inline text fragment, you can use
+RLE/LRE/PDF control characters, or write <tt class="docutils literal"><span class="pre">:rtl:`RTL</span> text`</tt> /
+<tt class="docutils literal"><span class="pre">:ltr:`RTL</span> text`</tt>.  To use the latter syntax, you must write this
+once at the beginning of your document:</p>
+<pre class="literal-block">
+.. role:: ltr
+.. role:: rtl
+</pre>
+</li>
+</ul>
+<p>LaTeX is quite hard to implement (it doesn't support the bidi
+algorithm, so all direction changes - even numbers in RTL text - must
+be explicitly marked).  Other formats are more-or-less easy.</p>
+<p>If you have any questions/problems/bugs related to bidi with docutils,
+ask <a class="reference external" href="mailto:cben&#64;users.sf.net">Beni Cherniavsky</a> directly or the <a class="reference external" href="docs/user/mailing-lists.html#Docutils-users">독유틸즈 사용자</a> mailing
+list.</p>
+</div>
+<div class="section" id="mime">
+<h2><a class="toc-backref" href="#id91">2.23&nbsp;&nbsp;&nbsp;리스트럭처드텍스트의 공식 MIME 타입은?</a></h2>
+<p>While there is no registered MIME type for reStructuredText, the
+&quot;official unofficial&quot; standard MIME type is &quot;text/x-rst&quot;.  This was
+invented for the build system for 파이썬 개선 제안(PEP: Python Enhancement Proposals),
+and it's used by the python.org web site build system.</p>
+<p>(The &quot;x-&quot; prefix means it's an unregistered MIME type.)</p>
+<p>Also see <a class="reference internal" href="#id30">리스트럭처드텍스트의 표준 파일 확장자는?</a></p>
+</div>
+</div>
+<div class="section" id="html-writer">
+<h1><a class="toc-backref" href="#id92">3&nbsp;&nbsp;&nbsp;HTML Writer</a></h1>
+<div class="section" id="what-is-the-status-of-the-html-writer">
+<h2><a class="toc-backref" href="#id93">3.1&nbsp;&nbsp;&nbsp;What is the status of the HTML Writer?</a></h2>
+<p>The HTML Writer module, <tt class="docutils literal">docutils/writers/html4css1.py</tt>, is a
+proof-of-concept reference implementation.  While it is a complete
+implementation, some aspects of the HTML it produces may be incompatible
+with older browsers or specialized applications (such as web templating).
+The sandbox has some alternative HTML writers, contributions are welcome.</p>
+</div>
+<div class="section" id="what-kind-of-html-does-it-produce">
+<h2><a class="toc-backref" href="#id94">3.2&nbsp;&nbsp;&nbsp;What kind of HTML does it produce?</a></h2>
+<p>It produces XHTML compatible with the <a class="reference external" href="http://www.w3.org/TR/xhtml1/">XHTML 1.0</a> specification.  A
+cascading stylesheet is required for proper viewing with a modern
+graphical browser.  Correct rendering of the HTML produced depends on
+the CSS support of the browser.  A general-purpose stylesheet,
+<tt class="docutils literal">html4css1.css</tt> is provided with the code, and is embedded by
+default.  It is installed in the &quot;writers/html4css1/&quot; subdirectory
+within the Docutils package.  Use the <tt class="docutils literal"><span class="pre">--help</span></tt> command-line option
+to see the specific location on your machine.</p>
+</div>
+<div class="section" id="what-browsers-are-supported">
+<h2><a class="toc-backref" href="#id95">3.3&nbsp;&nbsp;&nbsp;What browsers are supported?</a></h2>
+<p>No specific browser is targeted; all modern graphical browsers should
+work.  Some older browsers, text-only browsers, and browsers without
+full CSS support are known to produce inferior results.  Firefox,
+Safari, Mozilla (version 1.0 and up), Opera, and MS Internet Explorer
+(version 5.0 and up) are known to give good results.  Reports of
+experiences with other browsers are welcome.</p>
+</div>
+<div class="section" id="unexpected-results-from-tools-rst2html-py-h1-h1-instead-of-h1-h2-why">
+<h2><a class="toc-backref" href="#id96">3.4&nbsp;&nbsp;&nbsp;Unexpected results from tools/rst2html.py: H1, H1 instead of H1, H2.  Why?</a></h2>
+<p>Here's the question in full:</p>
+<blockquote>
+<p>I have this text:</p>
+<pre class="literal-block">
+Heading 1
+=========
+
+All my life, I wanted to be H1.
+
+Heading 1.1
+-----------
+
+But along came H1, and so shouldn't I be H2?
+No!  I'm H1!
+
+Heading 1.1.1
+*************
+
+Yeah, imagine me, I'm stuck at H3!  No?!?
+</pre>
+<p>When I run it through tools/rst2html.py, I get unexpected results
+(below).  I was expecting H1, H2, then H3; instead, I get H1, H1,
+H2:</p>
+<pre class="literal-block">
+...
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+...
+&lt;title&gt;Heading 1&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;document&quot; id=&quot;heading-1&quot;&gt;
+&lt;h1 class=&quot;title&quot;&gt;Heading 1&lt;/h1&gt;                &lt;-- first H1
+&lt;p&gt;All my life, I wanted to be H1.&lt;/p&gt;
+&lt;div class=&quot;section&quot; id=&quot;heading-1-1&quot;&gt;
+&lt;h1&gt;&lt;a name=&quot;heading-1-1&quot;&gt;Heading 1.1&lt;/a&gt;&lt;/h1&gt;        &lt;-- H1
+&lt;p&gt;But along came H1, and so now I must be H2.&lt;/p&gt;
+&lt;div class=&quot;section&quot; id=&quot;heading-1-1-1&quot;&gt;
+&lt;h2&gt;&lt;a name=&quot;heading-1-1-1&quot;&gt;Heading 1.1.1&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Yeah, imagine me, I'm stuck at H3!&lt;/p&gt;
+...
+</pre>
+<p>What gives?</p>
+</blockquote>
+<p>Check the &quot;class&quot; attribute on the H1 tags, and you will see a
+difference.  The first H1 is actually <tt class="docutils literal">&lt;h1 <span class="pre">class=&quot;title&quot;&gt;</span></tt>; this is
+the document title, and the default stylesheet renders it centered.
+There can also be an <tt class="docutils literal">&lt;h2 <span class="pre">class=&quot;subtitle&quot;&gt;</span></tt> for the document
+subtitle.</p>
+<p>If there's only one highest-level section title at the beginning of a
+document, it is treated specially, as the document title.  (Similarly, a
+lone second-highest-level section title may become the document
+subtitle.)  See <a class="reference internal" href="#id33">문서의 제목과 부제목을 어떻게 지정하는가?</a> for
+details.  Rather than use a plain H1 for the document title, we use <tt class="docutils literal">&lt;h1
+<span class="pre">class=&quot;title&quot;&gt;</span></tt> so that we can use H1 again within the document.  Why
+do we do this?  HTML only has H1-H6, so by making H1 do double duty, we
+effectively reserve these tags to provide 6 levels of heading beyond the
+single document title.</p>
+<p>HTML is being used for dumb formatting for nothing but final display.
+A stylesheet <em>is required</em>, and one is provided; see <a class="reference internal" href="#what-kind-of-html-does-it-produce">What kind of
+HTML does it produce?</a> above.  Of course, you're welcome to roll your
+own.  The default stylesheet provides rules to format <tt class="docutils literal">&lt;h1
+<span class="pre">class=&quot;title&quot;&gt;</span></tt> and <tt class="docutils literal">&lt;h2 <span class="pre">class=&quot;subtitle&quot;&gt;</span></tt> differently from
+ordinary <tt class="docutils literal">&lt;h1&gt;</tt> and <tt class="docutils literal">&lt;h2&gt;</tt>:</p>
+<pre class="literal-block">
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+</pre>
+<p>If you don't want the top section heading to be interpreted as a
+title at all, disable the <a class="reference external" href="docs/user/config.html#doctitle-xform">doctitle_xform</a> setting
+(<tt class="docutils literal"><span class="pre">--no-doc-title</span></tt> option).  This will interpret your document
+differently from the standard settings, which might not be a good
+idea.  If you don't like the reuse of the H1 in the HTML output, you
+can tweak the <a class="reference external" href="docs/user/config.html#initial-header-level">initial_header_level</a> setting
+(<tt class="docutils literal"><span class="pre">--initial-header-level</span></tt> option) -- but unless you match its value
+to your specific document, you might end up with bad HTML (e.g. H3
+without H2).</p>
+<p>(Thanks to Mark McEahern for the question and much of the answer.)</p>
+</div>
+<div class="section" id="html">
+<h2><a class="toc-backref" href="#id97">3.5&nbsp;&nbsp;&nbsp;목록은 HTML에서 어떻게 보이나?</a></h2>
+<p>If list formatting looks strange, first check that you understand
+<a class="reference internal" href="#id39">list markup</a>.</p>
+<ul>
+<li><p class="first">By default, HTML browsers indent lists relative to their context.
+This follows a long tradition in browsers (but isn't so established
+in print).  If you don't like it, you should change the stylesheet.</p>
+<p>This is different from how lists look in reStructuredText source.
+Extra indentation in the source indicates a blockquote, resulting in
+too much indentation in the browser.</p>
+</li>
+<li><p class="first">A list item can contain multiple paragraphs etc.  In complex cases
+list items are separated by vertical space.  By default this spacing
+is omitted in &quot;simple&quot; lists.  A list is simple if every item
+contains a simple paragraph and/or a &quot;simple&quot; nested list.  For
+example:</p>
+<blockquote>
+<ul>
+<li><p class="first">text</p>
+<ul class="simple">
+<li>simple<ul>
+<li>simple</li>
+<li>simple</li>
+</ul>
+</li>
+<li>simple</li>
+</ul>
+<p>text after a nested list</p>
+</li>
+<li><p class="first">multiple</p>
+<p>paragraphs</p>
+</li>
+</ul>
+</blockquote>
+<p>In this example the nested lists are simple (and should appear
+compacted) but the outer list is not.</p>
+<p>If you want all lists to have equal spacing, disable the
+<a class="reference external" href="docs/user/config.html#compact-lists">compact_lists</a> setting (<tt class="docutils literal"><span class="pre">--no-compact-lists</span></tt> option).  The
+precise spacing can be controlled in the stylesheet.</p>
+<p>Note again that this is not exactly WYSIWYG: it partially resembles
+the rules about blank lines being optional between list items in
+reStructuredText -- but adding/removing optional blank lines does
+not affect spacing in the output!  It's a feature, not a bug: you
+write it as you like but the output is styled consistently.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="why-do-enumerated-lists-only-use-numbers-no-letters-or-roman-numerals">
+<h2><a class="toc-backref" href="#id98">3.6&nbsp;&nbsp;&nbsp;Why do enumerated lists only use numbers (no letters or roman numerals)?</a></h2>
+<p>The rendering of enumerators (the numbers or letters acting as list
+markers) is completely governed by the stylesheet, so either the
+browser can't find the stylesheet (try enabling the
+<a class="reference external" href="docs/user/config.html#embed-stylesheet">embed_stylesheet</a> setting [<tt class="docutils literal"><span class="pre">--embed-stylesheet</span></tt> option]), or the
+browser can't understand it (try a recent Firefox, Mozilla, Konqueror,
+Opera, Safari, or even MSIE).</p>
+</div>
+<div class="section" id="there-appear-to-be-garbage-characters-in-the-html-what-s-up">
+<h2><a class="toc-backref" href="#id99">3.7&nbsp;&nbsp;&nbsp;There appear to be garbage characters in the HTML.  What's up?</a></h2>
+<p>What you're seeing is most probably not garbage, but the result of a
+mismatch between the actual encoding of the HTML output and the
+encoding your browser is expecting.  Your browser is misinterpreting
+the HTML data, which is encoded text.  A discussion of text encodings
+is beyond the scope of this FAQ; see one or more of these documents
+for more info:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.cl.cam.ac.uk/~mgk25/unicode.html">UTF-8 and Unicode FAQ for Unix/Linux</a></li>
+<li>Chapters 3 and 4 of <a class="reference external" href="http://www.debian.org/doc/manuals/intro-i18n/">Introduction to i18n [Internationalization]</a></li>
+<li><a class="reference external" href="http://www.reportlab.com/i18n/python_unicode_tutorial.html">Python Unicode Tutorial</a></li>
+<li><a class="reference external" href="http://effbot.org/zone/unicode-objects.htm">Python Unicode Objects: Some Observations on Working With Non-ASCII
+Character Sets</a></li>
+</ul>
+<p>The common case is with the default output encoding (UTF-8), when
+either numbered sections are used (via the &quot;<a class="reference external" href="docs/ref/rst/directives.html#sectnum">sectnum</a>&quot; directive) or
+symbol-footnotes.  3 non-breaking spaces are inserted in each numbered
+section title, between the generated number and the title text.  Most
+footnote symbols are not available in ASCII, nor are non-breaking
+spaces.  When encoded with UTF-8 and viewed with ordinary ASCII tools,
+these characters will appear to be multi-character garbage.</p>
+<p>You may have an decoding problem in your browser (or editor, etc.).
+The encoding of the output is set to &quot;utf-8&quot;, but your browswer isn't
+recognizing that.  You can either try to fix your browser (enable
+&quot;UTF-8 character set&quot;, sometimes called &quot;Unicode&quot;), or choose a
+different encoding for the HTML output.  You can also try
+<tt class="docutils literal"><span class="pre">--output-encoding=ascii:xmlcharrefreplace</span></tt> for HTML or XML, but not
+applicable to non-XMLish outputs (if using runtime
+settings/configuration files, use <tt class="docutils literal">output_encoding=ascii</tt> and
+<tt class="docutils literal">output_encoding_error_handler=xmlcharrefreplace</tt>).</p>
+<p>If you're generating document fragments, the &quot;Content-Type&quot; metadata
+(between the HTML <tt class="docutils literal">&lt;head&gt;</tt> and <tt class="docutils literal">&lt;/head&gt;</tt> tags) must agree with the
+encoding of the rest of the document.  For UTF-8, it should be:</p>
+<pre class="literal-block">
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+</pre>
+<p>Also, Docutils normally generates an XML declaration as the first line
+of the output.  It must also match the document encoding.  For UTF-8:</p>
+<pre class="literal-block">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+</pre>
+</div>
+<div class="section" id="how-can-i-retrieve-the-body-of-the-html-document">
+<h2><a class="toc-backref" href="#id100">3.8&nbsp;&nbsp;&nbsp;How can I retrieve the body of the HTML document?</a></h2>
+<p>(This is usually needed when using Docutils in conjunction with a
+templating system.)</p>
+<p>You can use the <a class="reference external" href="docs/api/publisher.html#publish-parts">docutils.core.publish_parts()</a> function, which
+returns a dictionary containing an '<a class="reference external" href="docs/api/publisher.html#html-body">html_body</a>' entry.</p>
+</div>
+<div class="section" id="why-is-the-docutils-xhtml-served-as-content-type-text-html">
+<h2><a class="toc-backref" href="#id101">3.9&nbsp;&nbsp;&nbsp;Why is the Docutils XHTML served as &quot;Content-type: text/html&quot;?</a></h2>
+<p>Full question:</p>
+<blockquote>
+<p>Docutils' HTML output looks like XHTML and is advertised as such:</p>
+<pre class="literal-block">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+ &quot;http://www.w3.org/TR/xht ml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+</pre>
+<p>But this is followed by:</p>
+<pre class="literal-block">
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+</pre>
+<p>Shouldn't this be &quot;application/xhtml+xml&quot; instead of &quot;text/html&quot;?</p>
+</blockquote>
+<p>In a perfect web, the Docutils XHTML output would be 100% strict
+XHTML.  But it's not a perfect web, and a major source of imperfection
+is Internet Explorer.  Despite it's drawbacks, IE still represents the
+majority of web browsers, and cannot be ignored.</p>
+<p>Short answer: if we didn't serve XHTML as &quot;text/html&quot; (which is a
+perfectly valid thing to do), it couldn't be viewed in Internet
+Explorer.</p>
+<p>Long answer: see the <a class="reference external" href="http://en.wikipedia.org/wiki/Criticisms_of_Internet_Explorer#XHTML">&quot;Criticisms of Internet Explorer&quot; Wikipedia
+entry</a>.</p>
+<p>However, there's also <a class="reference external" href="http://hixie.ch/advocacy/xhtml">Sending XHTML as text/html Considered
+Harmful</a>.  What to do, what to do?  We're damned no matter what we
+do.  So we'll continue to do the practical instead of the pure:
+support the browsers that are actually out there, and not fight for
+strict standards compliance.</p>
+<p>(Thanks to Martin F. Krafft, Robert Kern, Michael Foord, and Alan
+G. Isaac.)</p>
+</div>
+</div>
+<div class="section" id="python-source-reader">
+<h1><a class="toc-backref" href="#id102">4&nbsp;&nbsp;&nbsp;Python Source Reader</a></h1>
+<div class="section" id="can-i-use-docutils-for-python-auto-documentation">
+<h2><a class="toc-backref" href="#id103">4.1&nbsp;&nbsp;&nbsp;Can I use Docutils for Python auto-documentation?</a></h2>
+<p>Yes, in conjunction with other projects.</p>
+<p>The <a class="reference external" href="http://sphinx.pocoo.org/index.html">Sphinx</a> documentation generator includes an autodoc module.</p>
+<p>Version 2.0 of Ed Loper's <a class="reference external" href="http://epydoc.sourceforge.net/">Epydoc</a>
+supports reStructuredText-format docstrings for HTML output.  Docutils
+0.3 or newer is required.  Development of a Docutils-specific
+auto-documentation tool will continue.  Epydoc works by importing
+Python modules to be documented, whereas the Docutils-specific tool,
+described above, will parse modules without importing them (as with
+<a class="reference external" href="http://happydoc.sourceforge.net/">HappyDoc</a>, which doesn't support
+reStructuredText).</p>
+<p>The advantages of parsing over importing are security and flexibility;
+the disadvantage is complexity/difficulty.</p>
+<ul class="simple">
+<li>Security: untrusted code that shouldn't be executed can be parsed;
+importing a module executes its top-level code.</li>
+<li>Flexibility: comments and unofficial docstrings (those not supported
+by Python syntax) can only be processed by parsing.</li>
+<li>Complexity/difficulty: it's a lot harder to parse and analyze a
+module than it is to <tt class="docutils literal">import</tt> and analyze one.</li>
+</ul>
+<p>For more details, please see &quot;Docstring Extraction Rules&quot; in <a class="reference external" href="http://www.python.org/peps/pep-0258.html">PEP
+258</a>, item 3 (&quot;How&quot;).</p>
+</div>
+</div>
+<div class="section" id="miscellaneous">
+<h1><a class="toc-backref" href="#id104">5&nbsp;&nbsp;&nbsp;Miscellaneous</a></h1>
+<div class="section" id="is-the-docutils-document-model-based-on-any-existing-xml-models">
+<h2><a class="toc-backref" href="#id105">5.1&nbsp;&nbsp;&nbsp;Is the Docutils document model based on any existing XML models?</a></h2>
+<p>Not directly, no.  It borrows bits from DocBook, HTML, and others.  I
+(David Goodger) have designed several document models over the years,
+and have my own biases.  The Docutils document model is designed for
+simplicity and extensibility, and has been influenced by the needs of
+the reStructuredText markup.</p>
+<!-- Local Variables:
+mode: indented-text
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+End: -->
+<!-- Here's a code css to make a table colourful::
+
+/* Table: */
+
+th {
+    background-color: #ede;
+}
+
+/* alternating colors in table rows */
+table.docutils tr:nth-child(even) {
+    background-color: #F3F3FF;
+}
+table.docutils tr:nth-child(odd) {
+    background-color: #FFFFEE;
+}
+
+table.docutils tr {
+    border-style: solid none solid none;
+    border-width: 1px 0 1px 0;
+    border-color: #AAAAAA;
+} -->
+</div>
+</div>
+</div>
+<div class="footer">
+<hr class="footer" />
+<a class="reference external" href="FAQ_ko.rst">View document source</a>.
+Generated on: 2019-01-03 08:26 UTC.
+Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
+
+</div>
+</body>
+</html>
